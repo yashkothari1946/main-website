@@ -13,11 +13,3 @@ window.onscroll = function () {
   }
 };
 
-const navLinks = document.querySelectorAll(".navlink");
-
-navLinks.forEach((navLinks) => {
-  navLinks.addEventListener("click", () => {
-    document.querySelector(".active")?.classList.remove("active");
-    navLinks.classList.add("active");
-  });
-});

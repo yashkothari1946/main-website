@@ -16,23 +16,6 @@ class SpecialHeader extends HTMLElement {
 
         <!-- Contact + Navigation -->
         <div class="hidden md:flex items-center gap-8">
-          <!-- Contact Info 
-          <div class="flex gap-6 text-sm">
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-location-dot text-blue-700 text-lg"></i>
-              <div>
-                <p class="font-semibold">Address</p>
-                <a href="https://www.google.com/maps/search/Amrit+shree,+319,+Ashok+Nagar,+Udaipur,+Rajasthan+313001" target="_blank" class="text-gray-600">Ashok Nagar, Udaipur</a>
-              </div>
-            </div>
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-envelope text-blue-700 text-lg"></i>
-              <div>
-                <p class="font-semibold">Email</p>
-                <a href="mailto:info@vybtek.com" class="text-gray-600">info@vybtek.com</a>
-              </div>
-            </div>
-          </div> -->
 
           <!-- Nav Menu -->
           <ul class="flex gap-6 items-center text-sm font-medium text-blue-900">
@@ -56,23 +39,8 @@ class SpecialHeader extends HTMLElement {
             <li><a href="projects" class="nav-link inactive-link">Projects</a></li>
             <li><a href="contact" class="nav-link inactive-link">Contact</a></li>
 
-            <!-- 
-            <li class="relative group">
-              <button class="transition">More ▾</button>
-              <div class="absolute left-0 top-full w-28 bg-white border shadow-lg rounded-lg p-4 hidden group-hover:block z-50">
-                <a href="faq" class="nav-link block hover:text-blue-600 mb-1">FAQs</a>
-                <a href="careers" class="nav-link block hover:text-blue-600">Careers</a>
-              </div>
-            </li>  -->
           </ul>
 
-          <!-- Social Icons 
-          <div class="flex gap-3 text-blue-800 text-lg">
-            <a href="https://www.facebook.com/profile.php?id=61572940687826" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/vybtekIT" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/company/vybtek/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/vybtek_it/" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div> -->
         </div>
       </div>
 
@@ -94,14 +62,6 @@ class SpecialHeader extends HTMLElement {
           </details>
           <a href="projects" class="nav-link block py-2 hover:text-blue-700">Projects</a>
           <a href="contact" class="nav-link block py-2 hover:text-blue-700">Contact</a>
-           <!--  
-          <details>
-            <summary class="py-2 cursor-pointer">More</summary>
-            <div class="ml-4 space-y-2">
-              <a href="faq" class="nav-link block hover:text-blue-700">FAQs</a>
-              <a href="careers" class="nav-link block hover:text-blue-700">Careers</a>
-            </div>
-          </details> -->
         </nav>
       </div>
     </header>
@@ -112,11 +72,12 @@ class SpecialHeader extends HTMLElement {
 
   activateCurrentNavLink() {
     const navLinks = this.querySelectorAll(".nav-link");
-    const currentPath =
-      window.location.pathname.split("/").pop() || "index.html";
+    const currentPath = window.location.pathname.split("/").pop().replace(".html", "") || "index";
 
     navLinks.forEach((link) => {
-      const linkPath = link.getAttribute("href")?.split("/").pop();
+      const href = link.getAttribute("href");
+      if (!href) return;
+      const linkPath = href.split("/").pop().replace(".html", "");
 
       if (linkPath === currentPath) {
         link.classList.add("active-link");
@@ -235,13 +196,12 @@ class SpecialFooter extends HTMLElement {
 
   activateCurrentFooterLink() {
     const footerLinks = this.querySelectorAll(".footer-link");
-    const currentPath =
-      window.location.pathname.split("/").pop() || "index.html"; // Default to index.html if empty
+    const currentPath = window.location.pathname.split("/").pop().replace(".html", "") || "index";
 
     footerLinks.forEach((link) => {
-      const linkPath = link.getAttribute("href")
-        ? link.getAttribute("href").split("/").pop()
-        : null;
+      const href = link.getAttribute("href");
+      if (!href) return;
+      const linkPath = href.split("/").pop().replace(".html", "");
 
       if (linkPath === currentPath) {
         link.classList.add("active-footer-link");
