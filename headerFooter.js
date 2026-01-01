@@ -61,6 +61,7 @@ class SpecialHeader extends HTMLElement {
             </div>
           </details>
           <a href="projects" class="nav-link block py-2 hover:text-blue-700">Projects</a>
+          <a href="blog" class="nav-link block py-2 hover:text-blue-700">Blog</a>
           <a href="contact" class="nav-link block py-2 hover:text-blue-700">Contact</a>
         </nav>
       </div>
