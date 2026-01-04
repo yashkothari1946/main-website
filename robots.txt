@@ -5,4 +5,20 @@ Allow: /public/
 Allow: /css/
 Allow: /js/
 
-Sitemap: https://yourwebsite.com/sitemap.xml
+# Explicitly disallow known bad bots (advisory)
+User-agent: wget
+Disallow: /
+
+User-agent: curl
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: python-requests
+Disallow: /
+
+User-agent: libwww-perl
+Disallow: /
+
+Sitemap: https://vybtek.com/sitemap.xml
