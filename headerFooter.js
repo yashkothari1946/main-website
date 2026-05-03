@@ -19,25 +19,25 @@ class SpecialHeader extends HTMLElement {
 
           <!-- Nav Menu -->
           <ul class="flex gap-6 items-center text-sm font-medium text-blue-900">
-            <li><a href="about" class="nav-link inactive-link">About</a></li>
+            <li><a href="about.html" class="nav-link inactive-link">About</a></li>
 
             <!-- Services Dropdown -->
             <li class="relative group">
               <button class="transition">Services ▾</button>
               <div class="absolute left-0 top-full w-44 bg-white border shadow-lg rounded-lg p-4 hidden group-hover:block z-50">
                 <ul class="space-y-2 text-gray-800">
-                  <li><a href="software" class="nav-link block hover:text-blue-600">Software Development</a></li>
-                  <li><a href="design" class="nav-link block hover:text-blue-600">Web Design</a></li>
-                  <li><a href="marketing" class="nav-link block hover:text-blue-600">Digital Marketing</a></li>
-                  <li><a href="techsupport" class="nav-link block hover:text-blue-600">IT Tech Support</a></li>
-                  <li><a href="outsourcing" class="nav-link block hover:text-blue-600">Tech Outsourcing</a></li>
-                  <li><a href="consultation" class="nav-link block hover:text-blue-600">Tech Consultation</a></li>
+                  <li><a href="software.html" class="nav-link block hover:text-blue-600">Software Development</a></li>
+                  <li><a href="design.html" class="nav-link block hover:text-blue-600">Web Design</a></li>
+                  <li><a href="marketing.html" class="nav-link block hover:text-blue-600">Digital Marketing</a></li>
+                  <li><a href="techsupport.html" class="nav-link block hover:text-blue-600">IT Tech Support</a></li>
+                  <li><a href="outsourcing.html" class="nav-link block hover:text-blue-600">Tech Outsourcing</a></li>
+                  <li><a href="consultation.html" class="nav-link block hover:text-blue-600">Tech Consultation</a></li>
                 </ul>
               </div>
             </li>
 
-            <li><a href="projects" class="nav-link inactive-link">Projects</a></li>
-            <li><a href="contact" class="nav-link inactive-link">Contact</a></li>
+            <li><a href="projects.html" class="nav-link inactive-link">Projects</a></li>
+            <li><a href="contact.html" class="nav-link inactive-link">Contact</a></li>
 
           </ul>
 
@@ -48,21 +48,21 @@ class SpecialHeader extends HTMLElement {
       <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full bg-white z-40 overflow-y-auto transition-all px-6 pt-20 pb-10">
         <button id="menu-close" class="absolute top-4 right-4 text-3xl text-gray-800"><i class="fas fa-times"></i></button>
         <nav class="space-y-4 text-blue-900 text-base font-medium">
-          <a href="about" class="nav-link block py-2 hover:text-blue-700">About</a>
+          <a href="about.html" class="nav-link block py-2 hover:text-blue-700">About</a>
           <details>
             <summary class="py-2 cursor-pointer">Services</summary>
             <div class="ml-4 space-y-2">
-              <a href="software" class="nav-link block hover:text-blue-700">Software Development</a>
-              <a href="design" class="nav-link block hover:text-blue-700">Web Design</a>
-              <a href="marketing" class="nav-link block hover:text-blue-700">Digital Marketing</a>
-              <a href="techsupport" class="nav-link block hover:text-blue-700">IT Tech Support</a>
-              <a href="outsourcing" class="nav-link block hover:text-blue-700">Tech Outsourcing</a>
-              <a href="consultation" class="nav-link block hover:text-blue-700">Tech Consultation</a>
+              <a href="software.html" class="nav-link block hover:text-blue-700">Software Development</a>
+              <a href="design.html" class="nav-link block hover:text-blue-700">Web Design</a>
+              <a href="marketing.html" class="nav-link block hover:text-blue-700">Digital Marketing</a>
+              <a href="techsupport.html" class="nav-link block hover:text-blue-700">IT Tech Support</a>
+              <a href="outsourcing.html" class="nav-link block hover:text-blue-700">Tech Outsourcing</a>
+              <a href="consultation.html" class="nav-link block hover:text-blue-700">Tech Consultation</a>
             </div>
           </details>
-          <a href="projects" class="nav-link block py-2 hover:text-blue-700">Projects</a>
-          <a href="blog" class="nav-link block py-2 hover:text-blue-700">Blog</a>
-          <a href="contact" class="nav-link block py-2 hover:text-blue-700">Contact</a>
+          <a href="projects.html" class="nav-link block py-2 hover:text-blue-700">Projects</a>
+          <a href="blog.html" class="nav-link block py-2 hover:text-blue-700">Blog</a>
+          <a href="contact.html" class="nav-link block py-2 hover:text-blue-700">Contact</a>
         </nav>
       </div>
     </header>
@@ -145,12 +145,12 @@ class SpecialFooter extends HTMLElement {
           <div>
             <h3 class="text-lg font-semibold">IT Services</h3>
             <ul class="mt-2 space-y-2 text-gray-600">
-              <li><a href="software" class="footer-link">Software Development</a></li>
-              <li><a href="design" class="footer-link">Web Design</a></li>
-              <li><a href="marketing" class="footer-link">Digital Marketing</a></li>
-              <li><a href="techsupport" class="footer-link">IT Tech Support</a></li>
-              <li><a href="outsourcing" class="footer-link">Tech Outsourcing</a></li>
-              <li><a href="consultation" class="footer-link">Tech Consultation</a></li>
+              <li><a href="software.html" class="footer-link">Software Development</a></li>
+              <li><a href="design.html" class="footer-link">Web Design</a></li>
+              <li><a href="marketing.html" class="footer-link">Digital Marketing</a></li>
+              <li><a href="techsupport.html" class="footer-link">IT Tech Support</a></li>
+              <li><a href="outsourcing.html" class="footer-link">Tech Outsourcing</a></li>
+              <li><a href="consultation.html" class="footer-link">Tech Consultation</a></li>
             </ul>
           </div>
 
@@ -179,14 +179,14 @@ class SpecialFooter extends HTMLElement {
         <div class="mt-10 text-center text-gray-600 border-t pt-4">
           <p>&copy; 2025 All Rights Reserved.</p>
           <div class="mt-2 space-x-4">
-            <a href="index" class="footer-link">Home</a>
-            <a href="about" class="footer-link">About</a>
-            <a href="services" class="footer-link">Services</a>
-            <a href="projects" class="footer-link">Projects</a>
-            <a href="careers" class="footer-link">Career</a>
-            <a href="faq" class="footer-link">FAQs</a>
-            <a href="contact" class="footer-link">Contact Us</a>
-            <a href="sitemap" class="footer-link">Sitemap</a>
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="projects.html" class="footer-link">Projects</a>
+            <a href="careers.html" class="footer-link">Career</a>
+            <a href="faq.html" class="footer-link">FAQs</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+            <a href="sitemap.html" class="footer-link">Sitemap</a>
              <!--  <a href="ourteam" class="footer-link">Our Team</a> -->         
           </div>
         </div>

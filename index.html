@@ -13,375 +13,451 @@
   <meta name="author" content="Vybtek IT Solutions" />
   <link rel="canonical" href="https://www.vybtek.com/" />
 
-  <!-- Open Graph Data -->
   <meta property="og:title" content="VybTek IT Solutions - Leading IT Services Provider" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.vybtek.com/" />
   <meta property="og:description"
-    content="Transform your business with VybTek IT Solutions’ cutting-edge services in software development, web design, digital marketing, and IT support." />
+    content="Transform your business with VybTek IT Solutions' cutting-edge services in software development, web design, digital marketing, and IT support." />
   <meta property="og:image" content="https://www.vybtek.com/images/banner.avif" />
-
-  <!-- Twitter Card Data -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VybTek IT Solutions - Leading IT Services Provider" />
   <meta name="twitter:description"
-    content="Transform your business with VybTek IT Solutions’ cutting-edge services in software development, web design, digital marketing, and IT support." />
+    content="Transform your business with VybTek IT Solutions' cutting-edge services in software development, web design, digital marketing, and IT support." />
   <meta name="twitter:image" content="https://www.vybtek.com/images/banner.avif" />
 
-  <!-- External Resources -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
   <link href="style.css" rel="stylesheet" />
   <link href="whatsapp.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="script.js"></script>
   <script defer src="whatsapp.js"></script>
-  <!-- Structured Data -->
   <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "name": "VybTek IT Solutions",
-            "url": "https://www.vybtek.com",
-            "logo": "https://www.vybtek.com/images/logo.png",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+1-123-456-7890",
-              "contactType": "Customer Service",
-              "email": "info@vybtek.com"
-            },
-            "sameAs": [
-              "https://www.facebook.com/vybtek",
-              "https://www.twitter.com/vybtek",
-              "https://www.linkedin.com/company/vybtek"
-            ]
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "VybTek IT Solutions",
+          "url": "https://www.vybtek.com",
+          "logo": "https://www.vybtek.com/images/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-123-456-7890",
+            "contactType": "Customer Service",
+            "email": "info@vybtek.com"
           },
-          {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.vybtek.com"
-              }
-            ]
-          }
-        ]
-      }
-    </script>
+          "sameAs": [
+            "https://www.facebook.com/vybtek",
+            "https://www.twitter.com/vybtek",
+            "https://www.linkedin.com/company/vybtek"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vybtek.com" }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
   <header>
     <special-header></special-header>
   </header>
+
   <main>
-    <!-- Banner Area Section -->
-    <section class="relative w-full mt-10 bg-cover bg-center flex items-center justify-center px-6 md:px-12 lg:px-20"
-      aria-labelledby="banner-heading">
-      <div
-        class="relative z-30 flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl space-y-10 lg:space-y-0 lg:space-x-12">
-        <!-- Left Content -->
-        <article class="text-gray-700 max-w-2xl space-y-6 text-center lg:text-left">
-          <h1 id="banner-heading" class="text-4xl md:text-4xl lg:text-5xl font-extrabold leading-tight drop-shadow-lg">
-            Build Your Brand. <br />
-            <span class="text-blue-600">Manage Your Relationships.</span>
+
+    <!-- ═══════════════════════════════════
+         HERO — white, clean, bold
+    ═══════════════════════════════════ -->
+    <section class="vt-hero" aria-labelledby="banner-heading">
+      <!-- single subtle accent shape, top-right -->
+      <div class="vt-hero-blob" aria-hidden="true"></div>
+
+      <div class="vt-container vt-hero-inner">
+        <!-- Left: Copy -->
+        <article class="vt-hero-copy reveal-left">
+          <span class="vt-badge">
+            <span class="vt-badge-dot"></span>
+            Branding &amp; Marketing Experts
+          </span>
+
+          <h1 id="banner-heading" class="vt-hero-heading">
+            Build Your <span class="vt-accent">Brand.</span><br />
+            Rule Your <span class="vt-accent">Market.</span>
           </h1>
-          <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold leading-tight text-gray-600">
-            We specialize in <span class="text-blue-600">Strategic Brand Marketing</span> and <span
-              class="text-blue-600">Custom CRM Solutions</span>.
-          </h2>
-          <p class="mt-4 text-lg text-gray-400 leading-relaxed">
-            Vybtek IT Solutions is your partner for growth. We craft compelling brand narratives and build tailored CRM
-            ecosystems that drive efficiency and engagement.
+
+          <p class="vt-hero-sub">
+            We craft compelling brand narratives and build tailored CRM ecosystems
+            that drive efficiency, engagement, and measurable growth.
           </p>
-          <div class="mt-10">
-            <a href="https://calendar.app.google/fiMxQ1hjqZXo8vBc8" target="_blank"
-              class="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-900 hover:from-blue-900 hover:to-blue-600 text-white text-lg font-semibold rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105">
-              <i class="fa-solid fa-calendar-days mr-2"></i> Schedule Your
-              Appointment
+
+          <div class="vt-hero-actions">
+            <a href="https://calendar.app.google/fiMxQ1hjqZXo8vBc8" target="_blank" class="vt-btn-primary">
+              <i class="fa-solid fa-calendar-days"></i> Book a Free Call
+            </a>
+            <a href="projects.html" class="vt-btn-ghost">
+              View Our Work <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
+
+          <!-- micro-stats -->
+          <div class="vt-hero-stats">
+            <div class="vt-hero-stat">
+              <strong class="counter" data-target="50">0</strong><span>+</span>
+              <em>Happy Clients</em>
+            </div>
+            <div class="vt-hero-stat-sep"></div>
+            <div class="vt-hero-stat">
+              <strong class="counter" data-target="100">0</strong><span>+</span>
+              <em>Projects Done</em>
+            </div>
+            <div class="vt-hero-stat-sep"></div>
+            <div class="vt-hero-stat">
+              <strong class="counter" data-target="5">0</strong><span>+</span>
+              <em>Years Active</em>
+            </div>
+            <div class="vt-hero-stat-sep"></div>
+            <div class="vt-hero-stat">
+              <strong>98</strong><span>%</span>
+              <em>Satisfaction</em>
+            </div>
+          </div>
         </article>
-        <!-- Right Content -->
-        <aside class="text-white max-w-md text-center lg:text-left space-y-4">
-          <img src="images/banner.avif" alt="VybTek IT Solutions team working on innovative technology"
-            class="md:w-[100%] h-auto rounded-xl shadow-lg mt-10" loading="lazy" />
+
+        <!-- Right: Image -->
+        <aside class="vt-hero-visual reveal-right">
+          <div class="vt-hero-img-wrap">
+            <img src="images/banner.avif"
+              alt="VybTek team crafting brand and marketing strategies"
+              class="vt-hero-img" loading="eager" />
+            <!-- floating credibility badges -->
+            <div class="vt-float-card vt-float-bl">
+              <div class="vt-float-icon" style="background:#EFF6FF;color:#2563EB">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div>
+                <div class="vt-float-label">Avg. Client Growth</div>
+                <div class="vt-float-val">+240%</div>
+              </div>
+            </div>
+            <div class="vt-float-card vt-float-tr">
+              <div class="vt-float-icon" style="background:#FFF7ED;color:#EA580C">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>
+                <div class="vt-float-label">Client Rating</div>
+                <div class="vt-float-val">5.0 ★</div>
+              </div>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
 
-    <!-- About Area Section -->
-    <section class="relative bg-white py-10 px-6 mt-10" aria-labelledby="about-heading">
-      <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center">
-        <!-- Left Side - Images -->
-        <div class="relative w-full lg:w-1/2 flex justify-center ml-6 mt-10 md:mt-0">
-          <div
-            class="absolute top-0 left-0 transform -translate-x-6 -translate-y-6 w-36 h-36 lg:w-48 lg:h-48 bg-white bg-opacity-30 backdrop-blur-lg rounded-lg shadow-xl overflow-hidden hover:scale-110 hover:rotate-3 transition-all duration-300">
-            <img src="images/about1.avif" class="w-full h-full object-cover"
-              alt="VybTek team collaborating on IT projects" loading="lazy" />
-          </div>
-          <div
-            class="relative w-64 h-64 lg:w-80 lg:h-80 bg-white bg-opacity-30 backdrop-blur-lg rounded-lg shadow-xl overflow-hidden hover:scale-105 transition-all duration-300">
+    <!-- ═══════════════════════════════════
+         MARQUEE — single navy strip
+    ═══════════════════════════════════ -->
+    <div class="vt-marquee" aria-hidden="true">
+      <div class="vt-marquee-track">
+        <span class="vt-marquee-item">Brand Strategy</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Digital Marketing</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">CRM Development</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Web Design</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">IT Support</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Tech Consultation</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Brand Identity</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">SEO &amp; Growth</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">UI/UX Design</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Social Media</span><span class="vt-marquee-sep">✦</span>
+        <!-- duplicate for seamless loop -->
+        <span class="vt-marquee-item">Brand Strategy</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Digital Marketing</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">CRM Development</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Web Design</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">IT Support</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Tech Consultation</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Brand Identity</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">SEO &amp; Growth</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">UI/UX Design</span><span class="vt-marquee-sep">✦</span>
+        <span class="vt-marquee-item">Social Media</span><span class="vt-marquee-sep">✦</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+         ABOUT — white
+    ═══════════════════════════════════ -->
+    <section class="vt-section bg-white" aria-labelledby="about-heading">
+      <div class="vt-container vt-about-inner">
+        <!-- Image cluster -->
+        <div class="vt-about-images reveal-left">
+          <div class="vt-about-img vt-about-img-main">
             <img src="images/about2.jpeg" class="w-full h-full object-cover"
-              alt="VybTek team discussing innovative solutions" loading="lazy" />
+              alt="VybTek team discussing brand solutions" loading="lazy" />
           </div>
-          <div
-            class="absolute bottom-0 right-0 transform translate-x-6 translate-y-6 w-36 h-36 lg:w-48 lg:h-48 bg-white bg-opacity-30 backdrop-blur-lg rounded-lg shadow-xl overflow-hidden hover:scale-110 hover:-rotate-3 transition-all duration-300">
+          <div class="vt-about-img vt-about-img-tl">
+            <img src="images/about1.avif" class="w-full h-full object-cover"
+              alt="VybTek team collaborating" loading="lazy" />
+          </div>
+          <div class="vt-about-img vt-about-img-br">
             <img src="images/about3.avif" class="w-full h-full object-cover"
-              alt="VybTek developers working on software solutions" loading="lazy" />
+              alt="VybTek developers at work" loading="lazy" />
+          </div>
+          <div class="vt-about-badge">
+            <div class="vt-about-badge-num">5+</div>
+            <div class="vt-about-badge-text">Years of<br>Excellence</div>
           </div>
         </div>
-        <!-- Right Side - Text -->
-        <article class="w-full lg:w-1/2 lg:pl-12 text-center lg:text-left">
-          <h3 class="text-blue-700 font-semibold uppercase text-sm tracking-widest mb-2">
-            About Us
-          </h3>
-          <div class="h-1 w-12 bg-blue-600 rounded-full mb-4"></div>
-          <h2 id="about-heading" class="text-4xl font-extrabold text-gray-900 leading-snug">
-            Empowering Businesses with
-            <span class="text-blue-600">Strategic Marketing & CRM Solutions</span>
+
+        <!-- Text -->
+        <article class="vt-about-copy reveal-right">
+          <div class="vt-section-label">About Us</div>
+          <h2 id="about-heading" class="vt-section-heading">
+            Empowering Businesses with <span class="vt-accent">Strategic Marketing</span>
+            &amp; CRM Solutions
           </h2>
-          <p class="text-gray-700 mt-4 text-lg">
+          <p class="vt-body-text">
             At VybTek IT Solutions, we connect you with your audience through powerful
-            <span class="font-semibold text-gray-900">Brand Marketing</span>
-            and streamline your operations with
-            <span class="font-semibold text-gray-900">Custom CRM Ecosystems</span>.
-            Our expertise ensures scalable, efficient, and impactful growth for your business.
+            <strong>Brand Marketing</strong> and streamline operations with
+            <strong>Custom CRM Ecosystems</strong>. Our expertise ensures scalable,
+            efficient, and impactful growth for your business.
           </p>
-          <div class="mt-8">
-            <a href="about"
-              class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-900 hover:from-blue-900 hover:to-blue-500 text-white font-medium text-lg rounded-full shadow-lg transform transition hover:scale-105">Learn
-              More</a>
-          </div>
+
+          <ul class="vt-checklist">
+            <li><i class="fa-solid fa-circle-check"></i> Data-Driven Campaigns</li>
+            <li><i class="fa-solid fa-circle-check"></i> Bespoke CRM Builds</li>
+            <li><i class="fa-solid fa-circle-check"></i> End-to-End Branding</li>
+            <li><i class="fa-solid fa-circle-check"></i> 24/7 Tech Support</li>
+          </ul>
+
+          <a href="about.html" class="vt-btn-primary">
+            Learn More <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </article>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-16 px-4 text-center bg-gray-100" aria-labelledby="services-heading">
-      <h3 class="text-black font-semibold text-sm uppercase">Our Services</h3>
-      <h2 id="services-heading" class="text-3xl font-bold mt-2">
-        Comprehensive IT Solutions Services for Your Business
-      </h2>
-      <div class="mt-4 flex justify-center">
-        <div class="h-1 w-12 bg-blue-600 rounded-full"></div>
-      </div>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <a href="software"
-          class="relative bg-white rounded-lg shadow-md p-6 text-center block hover:shadow-lg transition duration-300 ease-in-out before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-orange-600 hover:after:w-full hover:after:h-full hover:after:border-orange-600 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out">
-          <i class="fa-solid fa-users-gear text-orange-600 text-7xl mx-auto"></i>
-          <h3 class="text-xl font-semibold mt-4">Custom CRM Solutions</h3>
-          <p class="text-gray-600 mt-2">
-            We build bespoke CRM systems tailored to your workflows, ensuring better customer relationships and
-            operational efficiency.
+    <!-- ═══════════════════════════════════
+         SERVICES — light gray
+    ═══════════════════════════════════ -->
+    <section class="vt-section vt-section-gray" aria-labelledby="services-heading">
+      <div class="vt-container">
+        <div class="vt-section-header reveal-up">
+          <div class="vt-section-label">What We Do</div>
+          <h2 id="services-heading" class="vt-section-heading">
+            Comprehensive Solutions <span class="vt-accent">for Your Business</span>
+          </h2>
+          <p class="vt-section-sub">
+            Six focused service lines, each designed to grow a specific part of your business.
           </p>
-        </a>
-        <a href="marketing"
-          class="relative bg-white rounded-lg shadow-md p-6 text-center block hover:shadow-lg transition duration-300 ease-in-out before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-pink-500 hover:after:w-full hover:after:h-full hover:after:border-pink-500 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out">
-          <i class="fa-solid fa-bullhorn text-pink-500 text-7xl mx-auto"></i>
-          <h3 class="text-xl font-semibold mt-4">Brand & Digital Marketing</h3>
-          <p class="text-gray-600 mt-2">
-            Amplify your brand voice with our strategic marketing, SEO, and social media campaigns designed to engage
-            and convert.
-          </p>
-        </a>
-        <a href="design"
-          class="relative bg-white rounded-lg shadow-md p-6 text-center block hover:shadow-lg transition duration-300 ease-in-out before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-cyan-500 hover:after:w-full hover:after:h-full hover:after:border-cyan-500 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out">
-          <i class="fa-brands fa-sketch text-cyan-500 text-7xl mx-auto"></i>
-          <h3 class="text-xl font-semibold mt-4">Web Design</h3>
-          <p class="text-gray-600 mt-2">
-            Our visually stunning, responsive, and user-friendly websites
-            enhance engagement and drive higher conversion rates for your
-            business.
-          </p>
-        </a>
-        <a href="techsupport"
-          class="relative bg-white rounded-lg shadow-md p-6 text-center block hover:shadow-lg transition duration-300 ease-in-out before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-purple-500 hover:after:w-full hover:after:h-full hover:after:border-purple-500 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out">
-          <i class="fa-solid fa-microchip text-purple-600 text-7xl mx-auto"></i>
-          <h3 class="text-xl font-semibold mt-4">IT Tech Support</h3>
-          <p class="text-gray-600 mt-2">
-            Our expert IT support team ensures your systems run smoothly with
-            quick resolutions and minimal downtime.
-          </p>
-        </a>
-        <a href="consultation"
-          class="relative bg-white rounded-lg shadow-md p-6 text-center block hover:shadow-lg transition duration-300 ease-in-out before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-violet-500 hover:after:w-full hover:after:h-full hover:after:border-violet-500 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out">
-          <i class="fa-solid fa-chalkboard-user text-violet-500 text-7xl mx-auto"></i>
-          <h3 class="text-xl font-semibold mt-4">Tech Consultation</h3>
-          <p class="text-gray-600 mt-2">
-            Receive expert guidance on digital transformation and IT
-            strategies to enhance productivity and drive business growth.
-          </p>
-        </a>
-        <a href="outsourcing"
-          class="relative bg-white rounded-lg shadow-md p-6 text-center block hover:shadow-lg transition duration-300 ease-in-out before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-red-500 hover:after:w-full hover:after:h-full hover:after:border-red-500 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out">
-          <i class="fa-solid fa-robot text-red-500 text-7xl mx-auto"></i>
-          <h3 class="text-xl font-semibold mt-4">Tech Outsourcing</h3>
-          <p class="text-gray-600 mt-2">
-            Outsource your IT needs to our skilled professionals for
-            cost-effective, high-quality solutions that boost efficiency.
-          </p>
-        </a>
+        </div>
+
+        <div class="vt-services-grid">
+          <a href="software.html" class="vt-card reveal-up" style="--d:0ms">
+            <div class="vt-card-icon" style="background:#EFF6FF;color:#2563EB">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h3 class="vt-card-title">Custom CRM Solutions</h3>
+            <p class="vt-card-desc">Bespoke CRM systems tailored to your workflows, ensuring better customer relationships and operational efficiency.</p>
+            <span class="vt-card-link">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="marketing.html" class="vt-card reveal-up" style="--d:60ms">
+            <div class="vt-card-icon" style="background:#FDF4FF;color:#9333EA">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <h3 class="vt-card-title">Brand &amp; Digital Marketing</h3>
+            <p class="vt-card-desc">Amplify your brand voice with strategic marketing, SEO, and social campaigns designed to engage and convert.</p>
+            <span class="vt-card-link">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="design.html" class="vt-card reveal-up" style="--d:120ms">
+            <div class="vt-card-icon" style="background:#F0FDFA;color:#0D9488">
+              <i class="fa-brands fa-sketch"></i>
+            </div>
+            <h3 class="vt-card-title">Web Design</h3>
+            <p class="vt-card-desc">Visually stunning, responsive, user-friendly websites that enhance engagement and drive higher conversion rates.</p>
+            <span class="vt-card-link">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="techsupport.html" class="vt-card reveal-up" style="--d:180ms">
+            <div class="vt-card-icon" style="background:#FFF7ED;color:#EA580C">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="vt-card-title">IT Tech Support</h3>
+            <p class="vt-card-desc">Expert IT support ensuring your systems run smoothly with quick resolutions and minimal downtime.</p>
+            <span class="vt-card-link">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="consultation.html" class="vt-card reveal-up" style="--d:240ms">
+            <div class="vt-card-icon" style="background:#EFF6FF;color:#2563EB">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3 class="vt-card-title">Tech Consultation</h3>
+            <p class="vt-card-desc">Expert guidance on digital transformation and IT strategies to enhance productivity and drive business growth.</p>
+            <span class="vt-card-link">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="outsourcing.html" class="vt-card reveal-up" style="--d:300ms">
+            <div class="vt-card-icon" style="background:#FFF1F2;color:#E11D48">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3 class="vt-card-title">Tech Outsourcing</h3>
+            <p class="vt-card-desc">Outsource your IT needs to skilled professionals for cost-effective, high-quality solutions that boost efficiency.</p>
+            <span class="vt-card-link">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <!-- <section class="py-8 px-4 sm:py-12 md:py-16 lg:py-20 bg-gray-100" aria-labelledby="testimonials-heading">
-      <div class="text-center mb-8 sm:mb-12">
-        <h2 id="testimonials-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-700 mb-2">
-          What Our Clients Say
+    <!-- ═══════════════════════════════════
+         STATS — navy (the ONE dark section)
+    ═══════════════════════════════════ -->
+    <section class="vt-stats" aria-label="Key Statistics">
+      <div class="vt-container">
+        <div class="vt-stats-copy reveal-left">
+          <div class="vt-section-label" style="color:#93C5FD">Our Impact</div>
+          <h2 class="vt-section-heading" style="color:#fff">
+            Numbers That <span style="color:#60A5FA">Speak for Themselves</span>
+          </h2>
+          <p style="color:#94A3B8;font-size:1rem;line-height:1.7;margin-top:12px">
+            Real outcomes from real partnerships — clients, projects, and milestones that define who we are.
+          </p>
+        </div>
+        <div class="vt-stats-grid reveal-right">
+          <div class="vt-stat">
+            <div class="vt-stat-num"><span class="counter" data-target="50">0</span>+</div>
+            <div class="vt-stat-label">Happy Clients</div>
+          </div>
+          <div class="vt-stat">
+            <div class="vt-stat-num"><span class="counter" data-target="100">0</span>+</div>
+            <div class="vt-stat-label">Projects Delivered</div>
+          </div>
+          <div class="vt-stat">
+            <div class="vt-stat-num"><span class="counter" data-target="5">0</span>+</div>
+            <div class="vt-stat-label">Years Active</div>
+          </div>
+          <div class="vt-stat">
+            <div class="vt-stat-num">98%</div>
+            <div class="vt-stat-label">Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         PROCESS — white
+    ═══════════════════════════════════ -->
+    <section class="vt-section bg-white" aria-labelledby="process-heading">
+      <div class="vt-container">
+        <div class="vt-section-header reveal-up">
+          <div class="vt-section-label">How We Work</div>
+          <h2 id="process-heading" class="vt-section-heading">
+            Our Proven <span class="vt-accent">4-Step Process</span>
+          </h2>
+          <p class="vt-section-sub">From first conversation to final delivery — transparent, collaborative, on time.</p>
+        </div>
+
+        <div class="vt-process-grid">
+          <div class="vt-process-step reveal-up" style="--d:0ms">
+            <div class="vt-process-num">01</div>
+            <div class="vt-process-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h3 class="vt-process-title">Discovery</h3>
+            <p class="vt-process-desc">We listen to your goals and challenges to build a clear foundation for your project.</p>
+          </div>
+          <div class="vt-process-step reveal-up" style="--d:80ms">
+            <div class="vt-process-num">02</div>
+            <div class="vt-process-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+            <h3 class="vt-process-title">Planning</h3>
+            <p class="vt-process-desc">Our team crafts a detailed strategy, organizing every component for seamless execution.</p>
+          </div>
+          <div class="vt-process-step reveal-up" style="--d:160ms">
+            <div class="vt-process-num">03</div>
+            <div class="vt-process-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3 class="vt-process-title">Execute</h3>
+            <p class="vt-process-desc">We implement with precision, adapting to challenges to deliver high-quality results.</p>
+          </div>
+          <div class="vt-process-step reveal-up" style="--d:240ms">
+            <div class="vt-process-num">04</div>
+            <div class="vt-process-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3 class="vt-process-title">Deliver</h3>
+            <p class="vt-process-desc">We launch with confidence and provide ongoing support to keep your project thriving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         TESTIMONIALS — light gray
+    ═══════════════════════════════════ -->
+    <section class="vt-section vt-section-gray" aria-labelledby="testimonials-heading">
+      <div class="vt-container">
+        <div class="vt-section-header reveal-up">
+          <div class="vt-section-label">Testimonials</div>
+          <h2 id="testimonials-heading" class="vt-section-heading">
+            What Our <span class="vt-accent">Clients Say</span>
+          </h2>
+        </div>
+
+        <div class="vt-testimonials-grid">
+          <div class="vt-testimonial reveal-up" style="--d:0ms">
+            <div class="vt-testimonial-quote">❝</div>
+            <p class="vt-testimonial-text">VybTek's team thrives on sharp intellect and exceptional problem-solving, delivering top-notch IT solutions that exceeded every expectation.</p>
+            <div class="vt-testimonial-author">
+              <div class="vt-testimonial-avatar" style="background:#EFF6FF;color:#2563EB">KK</div>
+              <div>
+                <div class="vt-testimonial-name">Kanchan Khera</div>
+                <div class="vt-testimonial-role">Founder &amp; CEO, Zykrr</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vt-testimonial reveal-up" style="--d:80ms">
+            <div class="vt-testimonial-quote">❝</div>
+            <p class="vt-testimonial-text">Collaborating with VybTek has been a genuine pleasure — their passion, innovation, and commitment to results make them a standout tech partner.</p>
+            <div class="vt-testimonial-author">
+              <div class="vt-testimonial-avatar" style="background:#FDF4FF;color:#9333EA">KM</div>
+              <div>
+                <div class="vt-testimonial-name">Karan Mehra</div>
+                <div class="vt-testimonial-role">Founder &amp; CEO, Tyke Technologies</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vt-testimonial reveal-up" style="--d:160ms">
+            <div class="vt-testimonial-quote">❝</div>
+            <p class="vt-testimonial-text">Working with VybTek across multiple projects has been an incredible journey — they consistently deliver outstanding, impactful results.</p>
+            <div class="vt-testimonial-author">
+              <div class="vt-testimonial-avatar" style="background:#F0FDFA;color:#0D9488">PD</div>
+              <div>
+                <div class="vt-testimonial-name">Poonam Dungerwal</div>
+                <div class="vt-testimonial-role">Founder &amp; CEO, Xportmine</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         CTA — blue accent
+    ═══════════════════════════════════ -->
+    <section class="vt-cta" aria-label="Call to action">
+      <div class="vt-container vt-cta-inner reveal-up">
+        <div class="vt-section-label" style="color:#BFDBFE">Ready to grow?</div>
+        <h2 class="vt-cta-heading">
+          Let's Build Something<br><strong>Extraordinary Together</strong>
         </h2>
-        <p class="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-          Discover the experiences of our valued clients with VybTek IT
-          Solutions’ services.
+        <p class="vt-cta-sub">
+          Book a free strategy call and discover how VybTek can transform your brand, marketing, and digital presence.
         </p>
-      </div>
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="md:hidden">
-          <div class="swiper mobile-testimonials-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <article class="bg-white rounded-lg p-6 shadow-lg text-center h-full">
-                  <div class="text-blue-700 text-4xl sm:text-5xl">❝</div>
-                  <p class="text-gray-600 mt-3">
-                    VybTek’s team thrives on sharp intellect and exceptional
-                    problem-solving skills, delivering top-notch IT solutions.
-                  </p>
-                  <h3 class="text-lg font-semibold mt-4">Kanchan Khera</h3>
-                  <h4 class="text-sm font-medium mt-1 text-gray-500">
-                    (Founder & CEO - Zykrr)
-                  </h4>
-                </article>
-              </div>
-              <div class="swiper-slide">
-                <article class="bg-white rounded-lg p-6 shadow-lg text-center h-full">
-                  <div class="text-blue-700 text-4xl sm:text-5xl">❝</div>
-                  <p class="text-gray-600 mt-3">
-                    Collaborating with VybTek has been a pleasure, driven by
-                    their passion and innovative approach to IT services.
-                  </p>
-                  <h3 class="text-lg font-semibold mt-4">Karan Mehra</h3>
-                  <h4 class="text-sm font-medium mt-1 text-gray-500">
-                    (Founder & CEO - Tyke Technologies)
-                  </h4>
-                </article>
-              </div>
-              <div class="swiper-slide">
-                <article class="bg-white rounded-lg p-6 shadow-lg text-center h-full">
-                  <div class="text-blue-700 text-4xl sm:text-5xl">❝</div>
-                  <p class="text-gray-600 mt-3">
-                    Working with VybTek on multiple projects has been an
-                    incredible journey, delivering outstanding results.
-                  </p>
-                  <h3 class="text-lg font-semibold mt-4">Poonam Dungerwal</h3>
-                  <h4 class="text-sm font-medium mt-1 text-gray-500">
-                    (Founder & CEO - Xportmine)
-                  </h4>
-                </article>
-              </div>
-            </div>
-            <div class="swiper-pagination mt-6"></div>
-          </div>
-        </div>
-        <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <article class="bg-white rounded-lg p-6 lg:p-8 shadow-lg text-center h-full flex flex-col">
-            <div class="text-blue-700 text-5xl">❝</div>
-            <p class="text-gray-600 mt-3 flex-grow">
-              VybTek’s team thrives on sharp intellect and exceptional
-              problem-solving skills, delivering top-notch IT solutions.
-            </p>
-            <div class="mt-4">
-              <h3 class="text-lg font-semibold">Kanchan Khera</h3>
-              <h4 class="text-sm font-medium mt-1 text-gray-500">
-                (Founder & CEO - Zykrr)
-              </h4>
-            </div>
-          </article>
-          <article class="bg-white rounded-lg p-6 lg:p-8 shadow-lg text-center h-full flex flex-col">
-            <div class="text-blue-700 text-5xl">❝</div>
-            <p class="text-gray-600 mt-3 flex-grow">
-              Collaborating with VybTek has been a pleasure, driven by their
-              passion and innovative approach to IT services.
-            </p>
-            <div class="mt-4">
-              <h3 class="text-lg font-semibold">Karan Mehra</h3>
-              <h4 class="text-sm font-medium mt-1 text-gray-500">
-                (Founder & CEO - Tyke Technologies)
-              </h4>
-            </div>
-          </article>
-          <article class="bg-white rounded-lg p-6 lg:p-8 shadow-lg text-center h-full flex flex-col">
-            <div class="text-blue-700 text-5xl">❝</div>
-            <p class="text-gray-600 mt-3 flex-grow">
-              Working with VybTek on multiple projects has been an incredible
-              journey, delivering outstanding results.
-            </p>
-            <div class="mt-4">
-              <h3 class="text-lg font-semibold">Poonam Dungerwal</h3>
-              <h4 class="text-sm font-medium mt-1 text-gray-500">
-                (Founder & CEO - Xportmine)
-              </h4>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Working Process Section -->
-    <section class="max-w-full mx-auto grid md:grid-cols-3 gap-6 items-center p-6 bg-white"
-      aria-labelledby="process-heading">
-      <article
-        class="bg-gradient-to-r from-blue-600 to-blue-900 md:h-[90%] md:w-[80%] text-white m-4 p-8 rounded-lg md:col-span-1 flex flex-col justify-center">
-        <h3 class="uppercase text-lg tracking-wide">Working Process</h3>
-        <h2 id="process-heading" class="text-2xl font-bold mt-2">
-          Our Proven Process for Delivering IT Solutions
-        </h2>
-        <button class="mt-10 px-6 py-3 bg-blue-600 rounded-lg text-white font-semibold hover:bg-blue-700 transition">
-          <a href="contact">Contact Us</a>
-        </button>
-      </article>
-      <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 m-4">
-        <article class="bg-gradient-to-r from-blue-900 to-blue-600 text-white p-4 rounded-md">
-          <h3 class="text-4xl font-bold text-white">
-            1. <br /><span class="text-white text-xl">Discovery</span>
-          </h3>
-          <p class="text-gray-300 mt-2">
-            We listen to your goals and challenges to build a strong
-            foundation for your IT project, ensuring a clear path to success.
-          </p>
-        </article>
-        <article>
-          <h3 class="text-4xl font-bold text-blue-900">
-            2. <br /><span class="text-black text-xl">Planning</span>
-          </h3>
-          <p class="text-gray-600 mt-2">
-            Our team crafts a detailed strategy, organizing every aspect to
-            ensure seamless execution of your IT solutions.
-          </p>
-        </article>
-        <article>
-          <h3 class="text-4xl font-bold text-blue-900">
-            3. <br /><span class="text-black text-xl">Execute</span>
-          </h3>
-          <p class="text-gray-600 mt-2">
-            We implement your project with precision, adapting to challenges
-            to deliver tangible, high-quality results.
-          </p>
-        </article>
-        <article class="bg-gradient-to-r from-blue-900 to-blue-600 text-white p-4 rounded-md">
-          <h3 class="text-4xl font-bold text-white">
-            4. <br /><span class="text-white text-xl">Deliver</span>
-          </h3>
-          <p class="text-gray-300 mt-2">
-            We ensure your project meets the highest standards, delivering
-            exceptional outcomes and ongoing support.
-          </p>
-        </article>
+        <a href="https://calendar.app.google/fiMxQ1hjqZXo8vBc8" target="_blank" class="vt-btn-white">
+          <i class="fa-solid fa-calendar-days"></i> Schedule Free Consultation
+        </a>
       </div>
     </section>
 
@@ -390,12 +466,9 @@
       <div class="notification">1</div>
       <div class="whatsapp-button">
         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path
-            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
         </svg>
       </div>
-
-      <!-- Chat Box -->
       <div class="chat-box">
         <div class="chat-header">
           <div class="header-info">
@@ -425,30 +498,39 @@
     <special-footer></special-footer>
   </footer>
 
-  <!-- Scroll Up Button -->
-  <!-- <button id="scrollUpBtn" onclick="scrollToTop()" aria-label="Scroll to top">
-      <i class="fas fa-long-arrow-alt-up"></i>
-    </button> -->
-
-  <!-- Scripts -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
   <script defer src="headerFooter.js"></script>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const mobileSwiper = new Swiper(".mobile-testimonials-swiper", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+    /* Scroll-reveal */
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const delay = parseInt(e.target.style.getPropertyValue('--d') || '0');
+        setTimeout(() => e.target.classList.add('is-visible'), delay);
+        revealObs.unobserve(e.target);
       });
-    });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right').forEach(el => revealObs.observe(el));
+
+    /* Counter animation */
+    const ctrObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.target, 10);
+        const dur = 1400;
+        const interval = Math.max(Math.floor(dur / target), 16);
+        let cur = 0;
+        const t = setInterval(() => {
+          cur = Math.min(cur + 1, target);
+          el.textContent = cur;
+          if (cur >= target) clearInterval(t);
+        }, interval);
+        ctrObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => ctrObs.observe(el));
   </script>
 </body>
 
