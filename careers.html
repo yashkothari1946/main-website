@@ -1,211 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Careers - Join Our Innovative Tech Team</title>
-    <meta name="description" content="Explore exciting career opportunities in tech. Join our team as a Frontend or Backend Developer. Flexible hours, remote work, and career growth await!" />
-    <meta name="keywords" content="tech careers, frontend developer jobs, backend developer jobs, remote tech jobs, flexible work, career opportunities" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Careers - Join Our Innovative Tech Team" />
-    <meta property="og:description" content="Explore exciting career opportunities in tech. Join our team as a Frontend or Backend Developer. Flexible hours, remote work, and career growth await!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourwebsite.com/careers" />
-    <meta property="og:image" content="https://yourwebsite.com/images/logo.png" />
-    <link rel="icon" type="image/png" href="./images/logo.png" />
-    <link href="style.css" rel="stylesheet" />
-    <link href="whatsapp.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
-    <script src="whatsapp.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Careers at Vybtek | Join Our Engineering Team</title>
+  <meta name="description" content="Explore career opportunities at Vybtek IT Solutions. We are hiring Frontend and Backend developers for remote and hybrid roles.">
+  <link rel="canonical" href="https://vybtek.com/careers" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vybtek.com/careers" />
+  <meta property="og:title" content="Careers at Vybtek | Join Our Engineering Team" />
+  <meta property="og:description" content="Explore career opportunities at Vybtek IT Solutions. We are hiring developers for remote and hybrid roles." />
+  <meta property="og:image" content="https://vybtek.com/images/og-image-careers.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vybtek.com/careers" />
+  <meta property="twitter:title" content="Careers at Vybtek | Join Our Engineering Team" />
+  <meta property="twitter:description" content="Explore career opportunities at Vybtek IT Solutions. We are hiring developers for remote and hybrid roles." />
+  <meta property="twitter:image" content="https://vybtek.com/images/og-image-careers.png" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <script defer src="headerFooter.js"></script>
   </head>
+<body class="bg-mesh overflow-x-hidden">
+  <header><special-header></special-header></header>
 
-  <body>
-    <!-- Header area section start -->
-    <special-header></special-header>
-    <div class="bg-gray-">
-      <!-- Careers Hero Section -->
-      <section
-        class="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-24 px-8 text-center overflow-hidden"
-      >
-        <!-- Animated Gradient Background -->
-        <div
-          class="absolute inset-0 animate-gradient bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-800 opacity-40"
-        ></div>
+  <main id="main-content" class="pt-32">
+    <!-- HERO -->
+    <section class="vt-section min-h-[50vh] flex items-center">
+      <div class="vt-container text-center max-w-4xl mx-auto">
+        <div class="vt-section-label reveal-up !pl-0 !before:hidden">Join The Team</div>
+        <h1 class="text-6xl md:text-8xl font-black text-[#002D62] reveal-up">Engineer the <span class="text-[#007CC3]">Future</span>.</h1>
+        <p class="text-xl text-gray-500 mt-8 reveal-up">We are a collective of developers, AI researchers, and designers building enterprise-grade software. We value deep work, flexible hours, and continuous learning.</p>
+      </div>
+    </section>
 
-        <!-- Floating Glowing Circle -->
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div
-            class="w-72 h-72 bg-white opacity-10 rounded-full blur-3xl animate-floating"
-          ></div>
+    <!-- BENEFITS -->
+    <section class="vt-section pt-0">
+       <div class="vt-container">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+             <div class="glass-card p-10 rounded-3xl reveal-up text-center hover:-translate-y-2 transition-transform">
+                <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-[#007CC3] mx-auto mb-6 text-2xl"><i class="fas fa-clock"></i></div>
+                <h3 class="text-xl font-bold text-[#002D62] mb-3">Flexible Hours</h3>
+                <p class="text-sm text-gray-500">We judge by output, not hours tracked. Work when you are most productive, aligned with US/UK sprint cycles.</p>
+             </div>
+             <div class="glass-card p-10 rounded-3xl reveal-up text-center hover:-translate-y-2 transition-transform">
+                <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-[#007CC3] mx-auto mb-6 text-2xl"><i class="fas fa-laptop-house"></i></div>
+                <h3 class="text-xl font-bold text-[#002D62] mb-3">Remote / Hybrid</h3>
+                <p class="text-sm text-gray-500">Work from anywhere or join us at our Global Engineering Hubs. We provide the equipment, you provide the intellect.</p>
+             </div>
+             <div class="glass-card p-10 rounded-3xl reveal-up text-center hover:-translate-y-2 transition-transform">
+                <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-[#007CC3] mx-auto mb-6 text-2xl"><i class="fas fa-rocket"></i></div>
+                <h3 class="text-xl font-bold text-[#002D62] mb-3">Career Growth</h3>
+                <p class="text-sm text-gray-500">Work on cutting-edge AI and Next.js architectures. We invest in your certifications and deep-tech research.</p>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- ENGINEERING CULTURE -->
+    <section class="vt-section bg-slate-50">
+       <div class="vt-container">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+             <div class="reveal-left">
+                <div class="vt-section-label">Engineering Ethos</div>
+                <h2 class="vt-section-heading">Built on <span class="text-[#007CC3]">Deep Work</span>.</h2>
+                <div class="space-y-6 mt-10">
+                   <p class="text-slate-600 leading-relaxed">At Vybtek, we don't just ship features; we engineer systems. Our culture is built on the principles of <strong>Clean Code</strong>, <strong>Technical Scalability</strong>, and <strong>Autonomous Ownership</strong>.</p>
+                   <div class="grid grid-cols-2 gap-6 mt-8">
+                      <div class="p-6 bg-white rounded-2xl shadow-sm">
+                         <div class="text-accent-blue font-black mb-2">Scalable</div>
+                         <div class="text-[10px] uppercase font-bold text-slate-400">Architecture</div>
+                      </div>
+                      <div class="p-6 bg-white rounded-2xl shadow-sm">
+                         <div class="text-accent-blue font-black mb-2">CI / CD</div>
+                         <div class="text-[10px] uppercase font-bold text-slate-400">Automated Pipeline</div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="grid grid-cols-1 gap-6 reveal-right">
+                <div class="glass-card p-8 rounded-[30px] border border-white/5 bg-white">
+                   <h4 class="font-black text-[#002D62] mb-2">AI-First Workflows</h4>
+                   <p class="text-xs text-slate-500">We utilize AI orchestration to eliminate grunt work, allowing our engineers to focus on high-level architecture and logic.</p>
+                </div>
+                <div class="glass-card p-8 rounded-[30px] border border-white/5 bg-white">
+                   <h4 class="font-black text-[#002D62] mb-2">Technical Sovereignty</h4>
+                   <p class="text-xs text-slate-500">Engineers at Vybtek have the freedom to propose architectural changes and own the full lifecycle of their modules.</p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- OPEN POSITIONS -->
+    <section class="vt-section bg-[#002D62] text-white">
+      <div class="vt-container">
+        <div class="vt-section-header text-center mb-20">
+           <div class="vt-section-label !text-white !before:bg-white !pl-0 !before:hidden">We Are Hiring</div>
+           <h2 class="vt-section-heading !text-white">Open <span class="text-[#007CC3]">Positions</span></h2>
         </div>
 
-        <div class="relative max-w-4xl mx-auto">
-          <!-- Heading Animation -->
-          <h1
-            class="text-5xl font-extrabold tracking-tight drop-shadow-lg opacity-0 animate-fade-in-scale"
-          >
-            Join Our Team
-          </h1>
-
-          <!-- Paragraph Animation -->
-          <p class="mt-5 text-lg opacity-0 animate-slide-in">
-            Build a career with us and innovate the future of technology.
-          </p>
-        </div>
-      </section>
-
-      <!-- Job Listings Section -->
-      <section class="max-w-6xl mx-auto py-16 px-6">
-        <h2 class="text-4xl font-semibold text-center mb-12">Open Positions</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Job Card -->
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-blue-500/50 transition group"
-          >
-            <h3 class="text-2xl font-semibold">Frontend Developer</h3>
-            <p class="text-gray-600 mt-2">
-              Experience: 2+ years | Location: Remote
-            </p>
-            <p class="mt-4">
-              We are looking for a skilled frontend developer proficient in
-              React and Tailwind CSS.
-            </p>
-            <a href="#" class="mt-4 inline-block text-blue-600 font-semibold"
-              >Apply Now</a
-            >
-          </div>
-
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-blue-500/50 transition group"
-          >
-            <h3 class="text-2xl font-semibold">Backend Developer</h3>
-            <p class="text-gray-600 mt-2">
-              Experience: 3+ years | Location: Hybrid
-            </p>
-            <p class="mt-4">
-              Join our team as a backend developer with expertise in Node.js and
-              MongoDB.
-            </p>
-            <a href="#" class="mt-4 inline-block text-blue-600 font-semibold"
-              >Apply Now</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- Benefits Section -->
-      <section class="bg-blue-50 py-16 px-6">
-        <h2 class="text-4xl font-semibold text-center mb-12">
-          Why Work With Us?
-        </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <div
-            class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 ease-in-out text-center before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-blue-500 hover:after:w-full hover:after:h-full hover:after:border-blue-500 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out"
-          >
-            <h3 class="text-xl font-semibold">Flexible Hours</h3>
-            <p class="mt-2 text-gray-600">
-              We value work-life balance and offer flexible working schedules.
-            </p>
-          </div>
-
-          <div
-            class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 ease-in-out text-center before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-blue-500 hover:after:w-full hover:after:h-full hover:after:border-blue-500 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out"
-          >
-            <h3 class="text-xl font-semibold">Career Growth</h3>
-            <p class="mt-2 text-gray-600">
-              We provide opportunities for career development and learning.
-            </p>
-          </div>
-
-          <div
-            class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 ease-in-out text-center before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-t-2 before:border-l-2 before:border-transparent before:rounded-tl-lg after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 after:border-b-2 after:border-r-2 after:border-transparent after:rounded-br-lg hover:before:w-full hover:before:h-full hover:before:border-blue-500 hover:after:w-full hover:after:h-full hover:after:border-blue-500 before:transition-all before:duration-500 before:ease-in-out after:transition-all after:duration-500 after:ease-in-out"
-          >
-            <h3 class="text-xl font-semibold">Remote Work</h3>
-            <p class="mt-2 text-gray-600">
-              Enjoy the flexibility of working from home or hybrid options.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call to Action -->
-      <section class="text-center py-16 px-6">
-        <h2 class="text-4xl font-semibold">Ready to Start Your Journey?</h2>
-        <p class="mt-4 text-lg">
-          Explore our open positions and be part of an innovative team.
-        </p>
-        <a
-          href="contact"
-          class="mt-6 inline-block bg-gradient-to-r from-blue-500 to-blue-900 hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-500 text-white px-6 py-3 rounded-full shadow-lg transition"
-          >Apply Now</a
-        >
-      </section>
-            <!-- Floating WhatsApp Button -->
-      <div class="floating-whatsapp">
-        <div class="notification">1</div>
-        <div class="whatsapp-button">
-          <svg
-            class="whatsapp-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-          >
-            <path
-              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
-            />
-          </svg>
-        </div>
-
-        <!-- Chat Box -->
-        <div class="chat-box">
-          <div class="chat-header">
-            <div class="header-info">
-              <p class="account-name">Patient Xpress</p>
-              <p class="status-message">Typically replies within 30 min</p>
-            </div>
-            <button class="close-button">&times;</button>
-          </div>
-          <div class="chat-body">
-            <div class="message">Hello! How can we assist you today?</div>
-          </div>
-          <div class="chat-footer">
-            <input
-              type="text"
-              class="chat-input"
-              placeholder="Type a message..."
-            />
-            <button class="send-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-          </div>
+        <div id="dynamic-careers-grid" class="max-w-4xl mx-auto space-y-6">
+           <!-- Dynamic Content Injected via JS -->
+           <div class="text-center text-white/50 py-10"><i class="fas fa-spinner fa-spin text-2xl mb-4"></i><p>Loading open positions...</p></div>
         </div>
       </div>
+    <!-- FAQ SECTION -->
+    <section class="vt-section pb-32">
+      <div class="vt-container max-w-4xl">
+        <div class="text-center mb-16">
+          <div class="vt-section-label !pl-0 !before:hidden">Got Questions?</div>
+          <h2 class="vt-section-heading">Career <span class="text-[#007CC3]">FAQs</span></h2>
+        </div>
+        
+        <div id="dynamic-faq-list" class="space-y-4">
+           <!-- Dynamic FAQs -->
+           <div class="text-center text-gray-400 py-10"><i class="fas fa-spinner fa-spin mr-2"></i> Loading FAQs...</div>
+        </div>
+      </div>
+    </section>
 
-      <special-footer></special-footer>
+  </main>
 
-      <!-- scroll up button -->
-      <!-- <button id="scrollUpBtn" onclick="scrollToTop()">
-        <i class="fas fa-long-arrow-alt-up"></i>
-      </button> -->
-    </div>
+  <footer><special-footer></special-footer></footer>
+  <script src="animations.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/vybtek/careers");
+        const json = await response.json();
+        
+        const grid = document.getElementById("dynamic-careers-grid");
+        
+        if (json.data && json.data.length > 0) {
+          // Filter out only active jobs
+          const activeJobs = json.data.filter(job => job.status === 'Active');
+          
+          if (activeJobs.length === 0) {
+             grid.innerHTML = '<div class="text-center text-white/70 py-10">We currently have no open positions. Please check back later!</div>';
+             return;
+          }
 
-    <script src="headerFooter.js"></script>
-  </body>
+          // SEO: Inject JSON-LD Schema
+          const schemaData = activeJobs.map(job => ({
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": job.title,
+            "description": job.description,
+            "datePosted": job.created_at,
+            "employmentType": job.type === 'Full-Time' ? 'FULL_TIME' : (job.type === 'Contract' ? 'CONTRACTOR' : 'PART_TIME'),
+            "hiringOrganization": {
+              "@type": "Organization",
+              "name": "Vybtek IT Solutions",
+              "sameAs": "https://vybtek.com",
+              "logo": "https://vybtek.com/images/logo.png"
+            },
+            "jobLocation": {
+              "@type": "Place",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": job.location,
+                "addressCountry": "IN"
+              }
+            }
+          }));
+
+          const script = document.createElement('script');
+          script.type = 'application/ld+json';
+          script.text = JSON.stringify(schemaData);
+          document.head.appendChild(script);
+
+          grid.innerHTML = activeJobs.map(job => `
+             <div class="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center gap-6 hover:bg-white/10 transition-colors reveal-up">
+                <div>
+                   <div class="flex gap-3 mb-3">
+                      <span class="text-[10px] uppercase font-bold text-white bg-[#007CC3] px-3 py-1 rounded-full">${job.department}</span>
+                      <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full">${job.location}</span>
+                      <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full">${job.type}</span>
+                   </div>
+                   <h3 class="text-2xl font-bold mb-2">${job.title}</h3>
+                   <p class="text-sm text-white/60 line-clamp-2">${job.description}</p>
+                </div>
+                <a href="career-detail.html?s=${job.slug}" class="px-8 py-4 bg-white text-[#002D62] font-black text-xs uppercase tracking-widest rounded-full hover:bg-gray-100 transition-colors shrink-0">View Details</a>
+             </div>
+          `).join('');
+        } else {
+          grid.innerHTML = '<div class="text-center text-white/70 py-10">We currently have no open positions. Please check back later!</div>';
+        }
+      } catch (err) {
+        console.error("Failed to load careers:", err);
+        document.getElementById("dynamic-careers-grid").innerHTML = '<div class="text-center text-white/70 py-10">Unable to load jobs at this time. Please try again later.</div>';
+      }
+
+      // Fetch FAQs
+      try {
+        const fRes = await fetch("http://localhost:5000/api/vybtek/faqs?category=Careers");
+        const fData = await fRes.json();
+        const faqList = document.getElementById("dynamic-faq-list");
+        
+        if (fData.data && fData.data.length > 0) {
+          faqList.innerHTML = fData.data.map((faq, i) => `
+            <div class="glass-card !bg-white/50 border border-slate-100 rounded-3xl overflow-hidden">
+               <button onclick="toggleFaq(${i})" class="w-full p-8 flex justify-between items-center text-left hover:bg-slate-50 transition-colors">
+                  <span class="text-lg font-bold text-slate-800">${faq.question}</span>
+                  <i id="faq-icon-${i}" class="fas fa-plus text-slate-400 transition-transform"></i>
+               </button>
+               <div id="faq-ans-${i}" class="max-h-0 overflow-hidden transition-all duration-500">
+                  <div class="p-8 pt-0 text-gray-500 leading-relaxed border-t border-slate-50 mt-4 pt-4">
+                     ${faq.answer}
+                  </div>
+               </div>
+            </div>
+          `).join('');
+        } else {
+          faqList.innerHTML = '<div class="text-center text-gray-400 py-10">No FAQs available at the moment.</div>';
+        }
+      } catch (err) { console.error(err); }
+    });
+
+    function toggleFaq(i) {
+      const ans = document.getElementById(`faq-ans-${i}`);
+      const icon = document.getElementById(`faq-icon-${i}`);
+      if (ans.style.maxHeight) {
+        ans.style.maxHeight = null;
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        ans.style.maxHeight = ans.scrollHeight + "px";
+        icon.style.transform = 'rotate(45deg)';
+      }
+    }
+  </script>
+</body>
 </html>

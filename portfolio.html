@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Our Portfolio | Vybtek IT Solutions</title>
+  <meta name="description" content="Explore our portfolio of enterprise applications, Next.js websites, AI integrations, and mobile apps built by Vybtek.">
+  <link rel="canonical" href="https://vybtek.com/portfolio" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vybtek.com/portfolio" />
+  <meta property="og:title" content="Our Portfolio | Vybtek IT Solutions" />
+  <meta property="og:description" content="Explore our portfolio of enterprise applications, AI integrations, and mobile apps built by Vybtek." />
+  <meta property="og:image" content="https://vybtek.com/images/og-image-portfolio.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vybtek.com/portfolio" />
+  <meta property="twitter:title" content="Our Portfolio | Vybtek IT Solutions" />
+  <meta property="twitter:description" content="Explore our portfolio of enterprise applications, AI integrations, and mobile apps built by Vybtek." />
+  <meta property="twitter:image" content="https://vybtek.com/images/og-image-portfolio.png" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <script defer src="headerFooter.js"></script>
+  </head>
+<body class="bg-mesh overflow-x-hidden">
+  <header><special-header></special-header></header>
+
+  <main id="main-content" class="pt-32">
+    <!-- HERO -->
+    <section class="vt-section min-h-[50vh] flex items-center">
+      <div class="vt-container text-center max-w-4xl mx-auto">
+        <div class="vt-section-label reveal-up !pl-0 !before:hidden">Our Work</div>
+        <h1 class="text-6xl md:text-8xl font-black text-[#002D62] reveal-up">Case <span class="text-[#007CC3]">Studies</span>.</h1>
+        <p class="text-xl text-gray-500 mt-8 reveal-up">A showcase of enterprise software, AI integrations, and award-winning digital experiences we've engineered for our global partners.</p>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO GRID -->
+    <section class="vt-section pt-0">
+      <div class="vt-container">
+        <!-- Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16 reveal-up">
+           <button class="px-6 py-2 rounded-full bg-[#002D62] text-white text-xs font-bold uppercase tracking-widest">All</button>
+           <button class="px-6 py-2 rounded-full bg-white text-gray-500 hover:text-[#002D62] border border-gray-200 text-xs font-bold uppercase tracking-widest transition-all">AI / Automation</button>
+           <button class="px-6 py-2 rounded-full bg-white text-gray-500 hover:text-[#002D62] border border-gray-200 text-xs font-bold uppercase tracking-widest transition-all">Web & Next.js</button>
+           <button class="px-6 py-2 rounded-full bg-white text-gray-500 hover:text-[#002D62] border border-gray-200 text-xs font-bold uppercase tracking-widest transition-all">Enterprise CRM</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+           <!-- Item 1 -->
+           <div class="group relative reveal-up">
+              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
+                 <!-- Image Placeholder -->
+                 <div class="absolute inset-0 bg-gradient-to-br from-indigo-100 to-purple-50 flex items-center justify-center">
+                    <i class="fas fa-chart-network text-6xl text-indigo-200"></i>
+                 </div>
+                 <!-- Overlay -->
+                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                    <div class="flex gap-2 mb-4">
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">AI Analytics</span>
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Python</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-2">PatientXpress</h3>
+                    <p class="text-white/70 text-sm mb-6">High-fidelity dental and healthcare management platform, optimizing patient intake and clinical operations.</p>
+                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+              </div>
+           </div>
+
+           <!-- Item 2 -->
+           <div class="group relative reveal-up">
+              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
+                 <div class="absolute inset-0 bg-gradient-to-br from-blue-100 to-cyan-50 flex items-center justify-center">
+                    <i class="fas fa-hospital text-6xl text-blue-200"></i>
+                 </div>
+                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                    <div class="flex gap-2 mb-4">
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">ERP System</span>
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Next.js</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-2">Addins Education</h3>
+                    <p class="text-white/70 text-sm mb-6">Modern educational platform built with Next.js, scaling digital learning experiences globally.</p>
+                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+              </div>
+           </div>
+
+           <!-- Item 3 -->
+           <div class="group relative reveal-up">
+              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
+                 <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-50 flex items-center justify-center">
+                    <i class="fas fa-box-open text-6xl text-emerald-200"></i>
+                 </div>
+                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                    <div class="flex gap-2 mb-4">
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">E-Commerce</span>
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">React Native</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-2">List IT Now</h3>
+                    <p class="text-white/70 text-sm mb-6">Comprehensive web application deployed on scalable, high-performance cloud infrastructure.</p>
+                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+              </div>
+           </div>
+
+           <!-- Item 4 -->
+           <div class="group relative reveal-up">
+              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
+                 <div class="absolute inset-0 bg-gradient-to-br from-orange-100 to-yellow-50 flex items-center justify-center">
+                    <i class="fas fa-robot text-6xl text-orange-200"></i>
+                 </div>
+                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                    <div class="flex gap-2 mb-4">
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Generative AI</span>
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">OpenAI</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-2">Manuplast</h3>
+                    <p class="text-white/70 text-sm mb-6">Enterprise resource planning (ERP) systems tailored for industrial manufacturing and supply chain operations.</p>
+                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+              </div>
+           </div>
+
+           <!-- Item 5 -->
+           <div class="group relative reveal-up">
+              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
+                 <div class="absolute inset-0 bg-gradient-to-br from-red-100 to-rose-50 flex items-center justify-center">
+                    <i class="fas fa-industry text-6xl text-red-200"></i>
+                 </div>
+                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                    <div class="flex gap-2 mb-4">
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Digital Transformation</span>
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Strategy</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-2">Tashmeh Industries</h3>
+                    <p class="text-white/70 text-sm mb-6">Comprehensive digital transformation and technical roadmapping for complex industrial operations.</p>
+                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+              </div>
+           </div>
+
+           <!-- Item 6 -->
+           <div class="group relative reveal-up">
+              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
+                 <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-emerald-50 flex items-center justify-center">
+                    <i class="fas fa-chart-line text-6xl text-green-200"></i>
+                 </div>
+                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                    <div class="flex gap-2 mb-4">
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">FinTech</span>
+                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Cloud Infrastructure</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-2">Catalyst Financial</h3>
+                    <p class="text-white/70 text-sm mb-6">Highly secure, SOC2 compliant cloud infrastructure and analytics for institutional finance.</p>
+                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vt-section vt-cta">
+      <div class="vt-container relative z-10">
+        <h2 class="vt-cta-heading">Ready to be our next <br><span class="text-[#007CC3]">Success Story?</span></h2>
+        <div class="flex justify-center gap-8 mt-10">
+          <a href="contact.html" class="vt-btn-primary !bg-white !text-[#002D62]">Start a Project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><special-footer></special-footer></footer>
+  <script src="animations.js"></script>
+</body>
+</html>
+

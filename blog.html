@@ -1,122 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog - Insights on Branding, Tech, and Growth | Vybtek</title>
-  <link rel="icon" type="image/png" href="./images/logo.png" />
-  <link href="style.css" rel="stylesheet" />
-  <link href="whatsapp.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Insights & Blog | Vybtek IT Solutions</title>
+  <meta name="description" content="Technical insights, AI research, and software engineering best practices from the Vybtek team.">
+  <link rel="canonical" href="https://vybtek.com/insights" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vybtek.com/insights" />
+  <meta property="og:title" content="Insights & Blog | Vybtek IT Solutions" />
+  <meta property="og:description" content="Technical insights, AI research, and software engineering best practices from the Vybtek team." />
+  <meta property="og:image" content="https://vybtek.com/images/og-image-blog.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vybtek.com/insights" />
+  <meta property="twitter:title" content="Insights & Blog | Vybtek IT Solutions" />
+  <meta property="twitter:description" content="Technical insights, AI research, and software engineering best practices from the Vybtek team." />
+  <meta property="twitter:image" content="https://vybtek.com/images/og-image-blog.png" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <meta name="description"
-    content="Read the latest insights from Vybtek on strategic branding, custom CRM solutions, and digital transformation trends." />
+  <link href="style.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="script.js"></script>
-  <script src="whatsapp.js"></script>
-</head>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <script defer src="headerFooter.js"></script>
+  </head>
+<body class="bg-mesh overflow-x-hidden">
+  <header><special-header></special-header></header>
 
-<body class="bg-gray-50 text-gray-800">
-  <!-- Header -->
-  <header>
-    <special-header></special-header>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-blue-900 py-16 px-6 text-center text-white">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
-        Insights & Resources
-      </h1>
-      <p class="text-xl text-blue-100 max-w-2xl mx-auto">
-        Expert advice on building your brand and scaling your business with technology.
-      </p>
+  <main id="main-content" class="pt-32">
+    <!-- HERO -->
+    <section class="vt-section min-h-[50vh] flex items-center">
+      <div class="vt-container text-center max-w-4xl mx-auto">
+        <div class="vt-section-label reveal-up !pl-0 !before:hidden">Engineering Journal</div>
+        <h1 class="text-6xl md:text-8xl font-black text-[#002D62] reveal-up">Vybtek <span class="text-[#007CC3]">Insights</span>.</h1>
+        <p class="text-xl text-gray-500 mt-8 reveal-up">Thoughts on AI integration, Next.js performance, enterprise scaling, and digital brand architecture.</p>
+      </div>
     </section>
 
-    <!-- Blog Grid -->
-    <section class="max-w-7xl mx-auto px-6 py-16">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- BLOG GRID -->
+    <section class="vt-section pt-0">
+      <div class="vt-container">
+        
+        <!-- Featured Post -->
+        <div class="glass-card rounded-[40px] overflow-hidden mb-16 reveal-up">
+           <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="aspect-video md:aspect-auto bg-gray-200 relative overflow-hidden">
+                 <div class="absolute inset-0 bg-gradient-to-tr from-[#002D62] to-[#007CC3] opacity-80 mix-blend-multiply"></div>
+                 <i class="fas fa-brain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-9xl text-white opacity-20"></i>
+              </div>
+              <div class="p-12 md:p-16 flex flex-col justify-center">
+                 <div class="text-[10px] font-bold uppercase tracking-widest text-[#007CC3] mb-4">Featured • AI Strategy</div>
+                 <h2 class="text-3xl md:text-4xl font-black text-[#002D62] mb-6">Why Generative AI Needs Enterprise Guardrails</h2>
+                 <p class="text-gray-500 leading-relaxed mb-8">Deploying an LLM is easy. Making it safe, hallucination-free, and compliant with enterprise data policies is the real engineering challenge.</p>
+                 <a href="#" class="inline-block text-[#002D62] font-black text-sm uppercase tracking-widest hover:text-[#007CC3] transition-colors">Read Full Article <i class="fas fa-arrow-right ml-2"></i></a>
+              </div>
+           </div>
+        </div>
 
-        <!-- Blog Post 1 -->
-        <article
-          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
-          <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fa-solid fa-bullhorn text-4xl text-gray-400"></i>
-            <!-- Placeholder for image: <img src="images/blog/branding.jpg" alt="Branding" class="w-full h-full object-cover"> -->
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <span class="text-blue-600 font-bold text-sm uppercase mb-2">Branding</span>
-            <h2 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition">
-              <a href="blog-branding-strategy">Why Strategic Branding is Critical in 2026</a>
-            </h2>
-            <p class="text-gray-600 mb-4 flex-grow">
-              It's not just a logo anymore. Discover how a cohesive brand identity builds trust and drives long-term
-              growth.
-            </p>
-            <a href="blog-branding-strategy"
-              class="text-blue-600 font-semibold hover:text-blue-800 self-start mt-auto">
-              Read More <i class="fa-solid fa-arrow-right ml-1"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- Blog Post 2 (Placeholder) -->
-        <article
-          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
-          <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fa-solid fa-users-gear text-4xl text-gray-400"></i>
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <span class="text-blue-600 font-bold text-sm uppercase mb-2">CRM Solutions</span>
-            <h2 class="text-xl font-bold text-gray-900 mb-3">
-              <a href="#" class="cursor-not-allowed">Off-the-Shelf vs. Custom CRM: What do you need?</a>
-            </h2>
-            <p class="text-gray-600 mb-4 flex-grow">
-              Stop forcing your business into rigid software. Learn when it's time to build a system that fits your
-              workflow.
-            </p>
-            <span class="text-gray-400 text-sm italic mt-auto">Coming Soon</span>
-          </div>
-        </article>
-
-        <!-- Blog Post 3 (Placeholder) -->
-        <article
-          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
-          <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fa-solid fa-chart-line text-4xl text-gray-400"></i>
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <span class="text-blue-600 font-bold text-sm uppercase mb-2">Growth</span>
-            <h2 class="text-xl font-bold text-gray-900 mb-3">
-              <a href="#" class="cursor-not-allowed">The Future of Digital Manufacturing</a>
-            </h2>
-            <p class="text-gray-600 mb-4 flex-grow">
-              How traditional manufacturers are using digital tools to compete in a global market.
-            </p>
-            <span class="text-gray-400 text-sm italic mt-auto">Coming Soon</span>
-          </div>
-        </article>
+        <!-- Standard Grid -->
+        <div id="dynamic-blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+           <!-- Dynamic Content Injected via JS -->
+           <div class="col-span-1 md:col-span-3 text-center text-gray-500 py-10"><i class="fas fa-spinner fa-spin text-2xl mb-4"></i><p>Loading latest articles...</p></div>
+        </div>
 
       </div>
     </section>
 
-    <!-- Floating Buttons -->
-    <div class="floating-whatsapp">
-      <div class="notification">1</div>
-      <div class="whatsapp-button">
-        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path
-            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
-        </svg>
+    <!-- FAQ SECTION -->
+    <section class="vt-section pb-32">
+      <div class="vt-container max-w-4xl">
+        <div class="text-center mb-16">
+          <div class="vt-section-label !pl-0 !before:hidden">Reader Q&A</div>
+          <h2 class="vt-section-heading">Blog <span class="text-[#007CC3]">FAQs</span></h2>
+        </div>
+        
+        <div id="dynamic-faq-list" class="space-y-4">
+           <!-- Dynamic FAQs -->
+           <div class="text-center text-gray-400 py-10"><i class="fas fa-spinner fa-spin mr-2"></i> Loading FAQs...</div>
+        </div>
       </div>
-    </div>
+    </section>
+
   </main>
 
-  <footer>
-    <special-footer></special-footer>
-  </footer>
+  <footer><special-footer></special-footer></footer>
+  <script src="animations.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/vybtek/blogs");
+        const json = await response.json();
+        
+        const grid = document.getElementById("dynamic-blog-grid");
+        
+        if (json.data && json.data.length > 0) {
+          // Filter out only published blogs
+          const publishedBlogs = json.data.filter(blog => blog.status === 'Published');
+          
+          if (publishedBlogs.length === 0) {
+             grid.innerHTML = '<div class="col-span-1 md:col-span-3 text-center text-gray-500 py-10">More articles coming soon!</div>';
+             return;
+          }
 
-  <script src="headerFooter.js"></script>
+          // SEO: Inject Blog Schema
+          const schemaData = publishedBlogs.map(blog => ({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": blog.title,
+            "image": [blog.image || "https://vybtek.com/images/default-blog.png"],
+            "datePublished": blog.created_at,
+            "author": [{
+              "@type": "Person",
+              "name": blog.author_name,
+              "url": "https://vybtek.com/team"
+            }]
+          }));
+
+          const script = document.createElement('script');
+          script.type = 'application/ld+json';
+          script.text = JSON.stringify(schemaData);
+          document.head.appendChild(script);
+
+          grid.innerHTML = publishedBlogs.map(blog => {
+             // Use image if provided, otherwise generic pattern
+             const mediaContent = blog.image 
+                ? `<img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />`
+                : `<i class="fas fa-newspaper text-5xl text-blue-200 group-hover:scale-110 transition-transform duration-500"></i>`;
+
+             // Create a simple snippet from HTML content
+             const tempDiv = document.createElement("div");
+             tempDiv.innerHTML = blog.content;
+             const plainTextSnippet = tempDiv.textContent || tempDiv.innerText || "";
+
+             return `
+               <a href="blog-detail.html?s=${blog.slug}" class="glass-card !bg-white rounded-3xl overflow-hidden group hover:-translate-y-2 transition-all shadow-sm hover:shadow-xl reveal-up">
+                  <div class="aspect-video bg-blue-50 flex items-center justify-center relative overflow-hidden">
+                     ${mediaContent}
+                  </div>
+                  <div class="p-8">
+                     <div class="text-[10px] font-bold uppercase tracking-widest text-[#007CC3] mb-3">${blog.author_name} • ${new Date(blog.created_at).toLocaleDateString()}</div>
+                     <h3 class="text-xl font-bold text-[#002D62] mb-4">${blog.title}</h3>
+                     <p class="text-sm text-gray-500 line-clamp-3">${plainTextSnippet}</p>
+                  </div>
+               </a>
+             `;
+          }).join('');
+        } else {
+          grid.innerHTML = '<div class="col-span-1 md:col-span-3 text-center text-gray-500 py-10">More articles coming soon!</div>';
+        }
+      } catch (err) {
+        console.error("Failed to load blogs:", err);
+        document.getElementById("dynamic-blog-grid").innerHTML = '<div class="col-span-1 md:col-span-3 text-center text-gray-500 py-10">Unable to load articles. Please try again later.</div>';
+      }
+
+      // Fetch FAQs
+      try {
+        const fRes = await fetch("http://localhost:5000/api/vybtek/faqs?category=Blogs");
+        const fData = await fRes.json();
+        const faqList = document.getElementById("dynamic-faq-list");
+        
+        if (fData.data && fData.data.length > 0) {
+          faqList.innerHTML = fData.data.map((faq, i) => `
+            <div class="glass-card !bg-white/50 border border-slate-100 rounded-3xl overflow-hidden">
+               <button onclick="toggleFaq(${i})" class="w-full p-8 flex justify-between items-center text-left hover:bg-slate-50 transition-colors">
+                  <span class="text-lg font-bold text-slate-800">${faq.question}</span>
+                  <i id="faq-icon-${i}" class="fas fa-plus text-slate-400 transition-transform"></i>
+               </button>
+               <div id="faq-ans-${i}" class="max-h-0 overflow-hidden transition-all duration-500">
+                  <div class="p-8 pt-0 text-gray-500 leading-relaxed border-t border-slate-50 mt-4 pt-4">
+                     ${faq.answer}
+                  </div>
+               </div>
+            </div>
+          `).join('');
+        } else {
+          faqList.innerHTML = '<div class="text-center text-gray-400 py-10">No FAQs available at the moment.</div>';
+        }
+      } catch (err) { console.error(err); }
+    });
+
+    function toggleFaq(i) {
+      const ans = document.getElementById(`faq-ans-${i}`);
+      const icon = document.getElementById(`faq-icon-${i}`);
+      if (ans.style.maxHeight) {
+        ans.style.maxHeight = null;
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        ans.style.maxHeight = ans.scrollHeight + "px";
+        icon.style.transform = 'rotate(45deg)';
+      }
+    }
+  </script>
 </body>
-
 </html>

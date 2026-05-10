@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Details - Vybtek IT Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="headerFooter.js" defer></script>
+</head>
+<body class="bg-[#0A0B10] text-white selection:bg-[#007CC3]/30">
+  <header><special-header></special-header></header>
+
+  <main class="pt-32 pb-20">
+    <div class="vt-container max-w-5xl">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12" id="job-detail-container">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+           <div class="animate-pulse space-y-6">
+              <div class="h-12 bg-white/5 rounded-xl w-3/4"></div>
+              <div class="h-4 bg-white/5 rounded-xl w-1/2"></div>
+              <div class="h-64 bg-white/5 rounded-3xl w-full"></div>
+           </div>
+        </div>
+        <!-- Sidebar Form -->
+        <div class="lg:col-span-1">
+           <div class="bg-white/5 border border-white/10 rounded-3xl p-8 sticky top-32">
+              <h3 class="text-xl font-bold mb-6">Quick Apply</h3>
+              <div class="h-64 bg-white/5 rounded-xl animate-pulse"></div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer><special-footer></special-footer></footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('s');
+      if (!slug) { window.location.href = 'careers.html'; return; }
+
+      try {
+        const res = await fetch(`http://localhost:5000/api/vybtek/careers/slug/${slug}`);
+        const data = await res.json();
+        const job = data.data;
+
+        if (!job) {
+          document.getElementById('job-detail-container').innerHTML = '<div class="col-span-full text-center py-20 text-white/50 text-xl">Job posting not found.</div>';
+          return;
+        }
+
+        document.title = `${job.title} - Careers at Vybtek`;
+
+        // Inject Content
+        document.getElementById('job-detail-container').innerHTML = `
+          <div class="lg:col-span-2">
+             <div class="mb-10">
+                <a href="careers.html" class="text-[#007CC3] hover:underline mb-6 inline-block"><i class="fas fa-arrow-left mr-2"></i> Back to Careers</a>
+                <h1 class="text-4xl md:text-5xl font-black mb-4 leading-tight">${job.title}</h1>
+                <div class="flex flex-wrap gap-4 text-white/50">
+                   <span><i class="fas fa-building mr-2"></i>${job.department}</span>
+                   <span><i class="fas fa-map-marker-alt mr-2"></i>${job.location}</span>
+                   <span><i class="fas fa-clock mr-2"></i>${job.type}</span>
+                </div>
+             </div>
+             
+             <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 mb-12">
+                <h2 class="text-2xl font-bold mb-6">Job Description</h2>
+                <div class="prose prose-invert prose-lg max-w-none text-white/70 leading-relaxed whitespace-pre-line">
+                   ${job.description}
+                </div>
+             </div>
+          </div>
+
+          <div class="lg:col-span-1">
+             <div class="bg-white rounded-3xl p-8 sticky top-32 text-slate-800 shadow-2xl">
+                <h3 class="text-2xl font-black mb-2 text-[#002D62]">Apply Now</h3>
+                <p class="text-sm text-slate-500 mb-8 font-medium">Interested in this role? Fill the form below.</p>
+                
+                <form id="applyForm" onsubmit="event.preventDefault(); submitApplication(${job.id});" class="space-y-4" enctype="multipart/form-data">
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                         <label class="text-[10px] font-bold uppercase text-slate-400 mb-1 block">Full Name *</label>
+                         <input type="text" id="candName" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:border-[#007CC3] outline-none" placeholder="Enter name">
+                      </div>
+                      <div>
+                         <label class="text-[10px] font-bold uppercase text-slate-400 mb-1 block">Contact Number *</label>
+                         <input type="tel" id="candPhone" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:border-[#007CC3] outline-none" placeholder="+1 234 567 890">
+                      </div>
+                   </div>
+                   <div>
+                      <label class="text-[10px] font-bold uppercase text-slate-400 mb-1 block">Email Address *</label>
+                      <input type="email" id="candEmail" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:border-[#007CC3] outline-none" placeholder="name@email.com">
+                   </div>
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                         <label class="text-[10px] font-bold uppercase text-slate-400 mb-1 block">Highest Qualification</label>
+                         <input type="text" id="candQual" class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:border-[#007CC3] outline-none" placeholder="e.g. Master's in CS">
+                      </div>
+                      <div>
+                         <label class="text-[10px] font-bold uppercase text-slate-400 mb-1 block">Years of Experience</label>
+                         <input type="text" id="candExp" class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:border-[#007CC3] outline-none" placeholder="e.g. 5+ Years">
+                      </div>
+                   </div>
+                   <div>
+                      <label class="text-[10px] font-bold uppercase text-slate-400 mb-1 block">Upload Resume (PDF/DOC) *</label>
+                      <div class="relative">
+                         <input type="file" id="resumeFile" required accept=".pdf,.doc,.docx" class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:border-[#007CC3] outline-none file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-[#007CC3]/10 file:text-[#007CC3] hover:file:bg-[#007CC3]/20">
+                      </div>
+                   </div>
+                   <div>
+                      <label class="text-[10px] font-bold uppercase text-slate-400 mb-1 block">Brief Introduction</label>
+                      <textarea id="coverLetter" class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm h-32 resize-none focus:border-[#007CC3] outline-none" placeholder="Tell us why you are a good fit..."></textarea>
+                   </div>
+                   <button type="submit" class="w-full bg-[#007CC3] text-white py-4 rounded-xl font-bold hover:bg-[#002D62] transition-all shadow-lg flex items-center justify-center gap-2">
+                      Submit Application <i class="fas fa-paper-plane"></i>
+                   </button>
+                </form>
+             </div>
+          </div>
+        `;
+      } catch (err) {
+        console.error(err);
+        document.getElementById('job-detail-container').innerHTML = '<div class="col-span-full text-center py-20 text-red-400">Failed to load job details.</div>';
+      }
+    });
+
+    async function submitApplication(jobId) {
+      const btn = document.querySelector("#applyForm button");
+      const fileInput = document.getElementById('resumeFile');
+      
+      if (!fileInput.files[0]) {
+        alert("Please upload your resume.");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+      const formData = new FormData();
+      formData.append('job_id', jobId);
+      formData.append('candidate_name', document.getElementById('candName').value);
+      formData.append('candidate_email', document.getElementById('candEmail').value);
+      formData.append('candidate_phone', document.getElementById('candPhone').value);
+      formData.append('qualification', document.getElementById('candQual').value);
+      formData.append('experience', document.getElementById('candExp').value);
+      formData.append('cover_letter', document.getElementById('coverLetter').value);
+      formData.append('resume', fileInput.files[0]);
+
+      try {
+        const res = await fetch("http://localhost:5000/api/vybtek/applications", {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (res.ok) {
+          document.getElementById('applyForm').innerHTML = `
+            <div class="text-center py-10">
+               <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+                  <i class="fas fa-check"></i>
+               </div>
+               <h3 class="text-xl font-bold text-slate-800 mb-2">Application Received!</h3>
+               <p class="text-sm text-slate-500">Thank you for applying. Our team will review your profile and get back to you soon.</p>
+            </div>
+          `;
+        } else {
+          const errData = await res.json();
+          alert("Error: " + (errData.error || "Failed to submit."));
+          btn.disabled = false;
+          btn.innerHTML = 'Submit Application <i class="fas fa-paper-plane"></i>';
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Network error.");
+        btn.disabled = false;
+        btn.innerHTML = 'Submit Application <i class="fas fa-paper-plane"></i>';
+      }
+    }
+  </script>
+</body>
+</html>

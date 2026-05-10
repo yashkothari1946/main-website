@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Vybtek IT Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="headerFooter.js" defer></script>
+</head>
+<body class="bg-[#0A0B10] text-white selection:bg-[#007CC3]/30">
+  <header><special-header></special-header></header>
+
+  <main class="pt-32 pb-20">
+    <div class="vt-container max-w-4xl" id="blog-content">
+      <!-- Dynamic Content -->
+      <div class="animate-pulse space-y-8">
+        <div class="h-96 bg-white/5 rounded-3xl w-full"></div>
+        <div class="h-10 bg-white/5 rounded-xl w-3/4"></div>
+        <div class="h-4 bg-white/5 rounded-xl w-full"></div>
+        <div class="h-4 bg-white/5 rounded-xl w-full"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer><special-footer></special-footer></footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('s');
+      if (!slug) {
+        window.location.href = 'blog.html';
+        return;
+      }
+
+      try {
+        const res = await fetch(`http://localhost:5000/api/vybtek/blogs/slug/${slug}`);
+        const data = await res.json();
+        const blog = data.data;
+
+        if (!blog) {
+          document.getElementById('blog-content').innerHTML = '<div class="text-center py-20">Article not found.</div>';
+          return;
+        }
+
+        // Update Title & Meta
+        document.title = `${blog.title} - Vybtek Blog`;
+        
+        // SEO: Inject JSON-LD
+        const schema = {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": blog.title,
+          "image": [blog.image],
+          "datePublished": blog.created_at,
+          "author": [{
+            "@type": "Person",
+            "name": blog.author_name
+          }]
+        };
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(schema);
+        document.head.appendChild(script);
+
+        document.getElementById('blog-content').innerHTML = `
+          <div class="mb-12">
+            <a href="blog.html" class="text-[#007CC3] hover:underline mb-8 inline-block"><i class="fas fa-arrow-left mr-2"></i> Back to Blogs</a>
+            <img src="${blog.image || 'https://via.placeholder.com/1200x600'}" class="w-full h-[400px] object-cover rounded-3xl shadow-2xl mb-12 border border-white/10" alt="${blog.title}">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="bg-[#007CC3]/20 text-[#007CC3] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">${blog.category || 'Insights'}</span>
+              <span class="text-white/40 text-sm">${new Date(blog.created_at).toLocaleDateString()}</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight">${blog.title}</h1>
+            <div class="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 mb-12">
+              <div class="w-12 h-12 bg-gradient-to-br from-[#007CC3] to-blue-400 rounded-full flex items-center justify-center text-xl font-bold">
+                ${blog.author_name.charAt(0)}
+              </div>
+              <div>
+                <p class="text-sm text-white/50">Written by</p>
+                <p class="font-bold">${blog.author_name}</p>
+              </div>
+            </div>
+          </div>
+          <div class="prose prose-invert prose-lg max-w-none text-white/80 leading-relaxed space-y-6">
+            ${blog.content.replace(/\n/g, '<br>')}
+          </div>
+          <div class="mt-16 pt-16 border-t border-white/10">
+             <div class="flex flex-wrap gap-2">
+               ${(blog.tags || '').split(',').map(tag => `<span class="bg-white/5 px-4 py-2 rounded-xl text-sm text-white/60">#${tag.trim()}</span>`).join('')}
+             </div>
+          </div>
+        `;
+      } catch (err) {
+        console.error(err);
+        document.getElementById('blog-content').innerHTML = '<div class="text-center py-20">Error loading article.</div>';
+      }
+    });
+  </script>
+</body>
+</html>

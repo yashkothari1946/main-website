@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Admin Dashboard | Vybtek</title>
+  <meta name="robots" content="noindex, nofollow" /> <!-- Important for admin pages -->
+  
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Admin specific styles */
+    .admin-sidebar {
+      width: 280px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: #002D62;
+      color: white;
+      padding: 2rem;
+      z-index: 50;
+    }
+    .admin-main {
+      margin-left: 280px;
+      min-height: 100vh;
+      background-color: #f8fafc;
+      padding: 2rem;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      color: rgba(255,255,255,0.7);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .nav-item:hover, .nav-item.active {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .admin-table th {
+      text-align: left;
+      padding: 16px;
+      border-bottom: 2px solid #e2e8f0;
+      color: #64748b;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .admin-table td {
+      padding: 16px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-top: 8px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .form-input:focus {
+      border-color: #007CC3;
+      box-shadow: 0 0 0 3px rgba(0, 124, 195, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN OVERLAY -->
+  <div id="loginOverlay" class="fixed inset-0 bg-[#002D62] z-[100] flex items-center justify-center">
+    <div class="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md text-center">
+      <img src="images/logo.png" alt="Vybtek Logo" class="h-10 mx-auto mb-8">
+      <h2 class="text-2xl font-black text-slate-800 mb-2">Admin Portal</h2>
+      <p class="text-slate-500 mb-8 text-sm">Enter your credentials to manage content.</p>
+      <input type="password" id="adminPass" placeholder="Admin Password (Hint: admin123)" class="form-input mb-6 text-center tracking-widest">
+      <button onclick="login()" class="vt-btn-primary w-full justify-center">Secure Login</button>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar">
+    <img src="images/logo.png" alt="Vybtek Logo" class="h-8 mb-16 brightness-0 invert">
+    <nav>
+      <div class="nav-item active" onclick="switchTab('dashboard')"><i class="fas fa-chart-pie w-6"></i> Dashboard</div>
+      <div class="nav-item" onclick="switchTab('careers')"><i class="fas fa-briefcase w-6"></i> Careers</div>
+      <div class="nav-item" onclick="switchTab('blogs')"><i class="fas fa-pen-nib w-6"></i> Blog Posts</div>
+      <div class="nav-item" onclick="switchTab('faqs')"><i class="fas fa-question-circle w-6"></i> FAQs</div>
+      <div class="nav-item" onclick="switchTab('applications')"><i class="fas fa-users w-6"></i> Applications</div>
+      <div class="nav-item mt-10 text-red-400 hover:bg-red-500/10 hover:text-red-300" onclick="logout()"><i class="fas fa-sign-out-alt w-6"></i> Logout</div>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-main">
+    
+    <!-- HEADER -->
+    <header class="flex justify-between items-center mb-10 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <div>
+        <h1 class="text-2xl font-black text-slate-800" id="pageTitle">Overview</h1>
+        <p class="text-slate-500 text-sm">Manage your enterprise platform content.</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="w-10 h-10 rounded-full bg-[#007CC3] text-white flex items-center justify-center font-bold shadow-lg">A</div>
+        <span class="font-bold text-slate-700">Admin User</span>
+      </div>
+    </header>
+
+    <!-- DASHBOARD TAB -->
+    <div id="tab-dashboard" class="tab-content active">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-6">
+          <div class="w-14 h-14 rounded-xl bg-blue-50 text-[#007CC3] flex items-center justify-center text-2xl"><i class="fas fa-briefcase"></i></div>
+          <div>
+            <div id="metric-jobs" class="text-3xl font-black text-slate-800">-</div>
+            <div class="text-xs uppercase font-bold text-slate-400">Total Jobs</div>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-6">
+          <div class="w-14 h-14 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl"><i class="fas fa-pen-nib"></i></div>
+          <div>
+            <div id="metric-blogs" class="text-3xl font-black text-slate-800">-</div>
+            <div class="text-xs uppercase font-bold text-slate-400">Total Blogs</div>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-6">
+          <div class="w-14 h-14 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-2xl"><i class="fas fa-users"></i></div>
+          <div>
+            <div id="metric-apps" class="text-3xl font-black text-slate-800">-</div>
+            <div class="text-xs uppercase font-bold text-slate-400">Applications</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAREERS TAB -->
+    <div id="tab-careers" class="tab-content">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-slate-800">Job Postings</h2>
+        <button onclick="openModal('careerModal')" class="vt-btn-primary !px-6 !py-2 !text-sm"><i class="fas fa-plus mr-2"></i> Add Job</button>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <table class="w-full admin-table">
+          <thead>
+            <tr>
+              <th>Role / Title</th>
+              <th>Department</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="careerList">
+            <!-- Data will be injected here via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- BLOGS TAB -->
+    <div id="tab-blogs" class="tab-content">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-slate-800">Published Articles</h2>
+        <button onclick="openModal('blogModal')" class="vt-btn-primary !px-6 !py-2 !text-sm"><i class="fas fa-plus mr-2"></i> Create Post</button>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <table class="w-full admin-table">
+          <thead>
+            <tr>
+              <th>Article Title</th>
+              <th>Author</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="blogList">
+            <!-- Data will be injected here via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQS TAB -->
+    <div id="tab-faqs" class="tab-content">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-slate-800">Frequently Asked Questions</h2>
+        <button onclick="openModal('faqModal')" class="vt-btn-primary !px-6 !py-2 !text-sm"><i class="fas fa-plus mr-2"></i> Add FAQ</button>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <table class="w-full admin-table">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Category</th>
+              <th>Order</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="faqList">
+            <!-- Data will be injected here via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- APPLICATIONS TAB -->
+    <div id="tab-applications" class="tab-content">
+      <h2 class="text-xl font-bold text-slate-800 mb-6">Recent Job Applications</h2>
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <table class="w-full admin-table">
+          <thead>
+            <tr>
+              <th>Candidate</th>
+              <th>Contact</th>
+              <th>Position</th>
+              <th>Qual / Exp</th>
+              <th>Date</th>
+              <th>Resume</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="applicationList">
+            <!-- Data will be injected here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODALS -->
+  <!-- Career Modal -->
+  <div id="careerModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[200] hidden items-center justify-center">
+    <div class="bg-white w-full max-w-2xl p-8 rounded-3xl shadow-2xl relative">
+      <button onclick="closeModal('careerModal')" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 text-xl"><i class="fas fa-times"></i></button>
+      <h2 class="text-2xl font-black text-slate-800 mb-6">Create Job Posting</h2>
+      <form id="careerForm" onsubmit="event.preventDefault(); submitCareerForm();">
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Job Title</label>
+            <input type="text" id="jobTitle" class="form-input" required placeholder="e.g. Senior Backend Engineer">
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Department</label>
+            <select id="jobDept" class="form-input">
+              <option>Engineering</option>
+              <option>Design</option>
+              <option>Data & AI</option>
+              <option>Marketing</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Location</label>
+            <input type="text" id="jobLoc" class="form-input" required placeholder="e.g. Remote / New York">
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Type</label>
+            <select id="jobType" class="form-input">
+              <option>Full-Time</option>
+              <option>Part-Time</option>
+              <option>Contract</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-6">
+          <label class="text-xs font-bold uppercase text-slate-500">Description / Requirements</label>
+          <textarea id="jobDesc" class="form-input h-32 resize-none" required placeholder="Paste job description here..."></textarea>
+        </div>
+        <button type="submit" class="vt-btn-primary w-full justify-center">Publish Job</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Blog Modal -->
+  <div id="blogModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[200] hidden items-center justify-center">
+    <div class="bg-white w-full max-w-3xl p-8 rounded-3xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal('blogModal')" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 text-xl"><i class="fas fa-times"></i></button>
+      <h2 class="text-2xl font-black text-slate-800 mb-6">Write Blog Post</h2>
+      <form id="blogForm" onsubmit="event.preventDefault(); submitBlogForm();">
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="col-span-2">
+            <label class="text-xs font-bold uppercase text-slate-500">Article Title</label>
+            <input type="text" id="blogTitle" class="form-input" required placeholder="Enter compelling title...">
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Author Name</label>
+            <input type="text" id="blogAuthor" class="form-input" required placeholder="e.g. Yash Kothari">
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Cover Image URL</label>
+            <input type="text" id="blogImage" class="form-input" placeholder="https://...">
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Category</label>
+            <input type="text" id="blogCategory" class="form-input" placeholder="e.g. AI Strategy">
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Tags (Comma separated)</label>
+            <input type="text" id="blogTags" class="form-input" placeholder="e.g. AI, Next.js, Cloud">
+          </div>
+        </div>
+        <div class="mb-6">
+          <label class="text-xs font-bold uppercase text-slate-500">Article Content (HTML/Markdown)</label>
+          <textarea id="blogContent" class="form-input h-64 resize-none" required placeholder="Start writing your amazing article..."></textarea>
+        </div>
+        <div class="flex gap-4">
+          <button type="button" class="vt-btn-primary !bg-slate-200 !text-slate-800 flex-1 justify-center hover:!bg-slate-300">Save as Draft</button>
+          <button type="submit" class="vt-btn-primary flex-1 justify-center">Publish Article</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FAQ Modal -->
+  <div id="faqModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[200] hidden items-center justify-center">
+    <div class="bg-white w-full max-w-2xl p-8 rounded-3xl shadow-2xl relative">
+      <button onclick="closeModal('faqModal')" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 text-xl"><i class="fas fa-times"></i></button>
+      <h2 class="text-2xl font-black text-slate-800 mb-6">Manage FAQ</h2>
+      <form id="faqForm" onsubmit="event.preventDefault(); submitFaqForm();">
+        <div class="mb-4">
+          <label class="text-xs font-bold uppercase text-slate-500">Question</label>
+          <input type="text" id="faqQuestion" class="form-input" required placeholder="e.g. What is the interview process?">
+        </div>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Category</label>
+            <select id="faqCategory" class="form-input">
+              <option value="Careers">Careers</option>
+              <option value="Blogs">Blogs</option>
+              <option value="General">General</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Display Order</label>
+            <input type="number" id="faqOrder" class="form-input" value="0">
+          </div>
+        </div>
+        <div class="mb-6">
+          <label class="text-xs font-bold uppercase text-slate-500">Answer</label>
+          <textarea id="faqAnswer" class="form-input h-32 resize-none" required placeholder="Enter the detailed answer..."></textarea>
+        </div>
+        <button type="submit" class="vt-btn-primary w-full justify-center">Save FAQ</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = "http://localhost:5000/api/vybtek";
+
+    // 1. Login System
+    function login() {
+      const pass = document.getElementById('adminPass').value;
+      if(pass === 'admin123') {
+        document.getElementById('loginOverlay').style.display = 'none';
+        fetchData(); // Load data once logged in
+      } else {
+        alert('Invalid credentials!');
+      }
+    }
+
+    function logout() {
+      document.getElementById('adminPass').value = '';
+      document.getElementById('loginOverlay').style.display = 'flex';
+      switchTab('dashboard');
+    }
+
+    // 2. Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      // Find the element with matching onclick if event is not from click
+      if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('active');
+      }
+
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+
+      const titles = { 
+        'dashboard': 'Overview', 
+        'careers': 'Careers Management', 
+        'blogs': 'Content Management', 
+        'faqs': 'FAQ Management',
+        'applications': 'Job Applications' 
+      };
+      document.getElementById('pageTitle').innerText = titles[tabId];
+      fetchData(); 
+    }
+
+    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
+    // 3. API Integrations
+    async function fetchData() {
+      try {
+        // Fetch Careers
+        const cRes = await fetch(`${API_BASE}/careers`);
+        const cData = await cRes.json();
+        const careersArr = cData.data || [];
+        renderCareers(careersArr);
+        document.getElementById('metric-jobs').innerText = careersArr.length;
+
+        // Fetch Blogs
+        const bRes = await fetch(`${API_BASE}/blogs`);
+        const bData = await bRes.json();
+        const blogsArr = bData.data || [];
+        renderBlogs(blogsArr);
+        document.getElementById('metric-blogs').innerText = blogsArr.length;
+
+        // Fetch FAQs
+        const fRes = await fetch(`${API_BASE}/faqs`);
+        const fData = await fRes.json();
+        renderFaqs(fData.data || []);
+
+        // Fetch Applications
+        const aRes = await fetch(`${API_BASE}/applications`);
+        const aData = await aRes.json();
+        const appsArr = aData.data || [];
+        document.getElementById('metric-apps').innerText = appsArr.length;
+        fetchApplications();
+      } catch (err) {
+        console.error("Error fetching data:", err);
+      }
+    }
+
+    function renderCareers(careers) {
+      const tbody = document.getElementById('careerList');
+      tbody.innerHTML = careers.map(c => `
+        <tr>
+          <td class="font-bold">${c.title}</td>
+          <td>${c.department}</td>
+          <td>${c.location}</td>
+          <td><span class="${c.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-700'} px-3 py-1 rounded-full text-xs font-bold">${c.status}</span></td>
+          <td>
+            <div class="flex gap-3">
+              <button onclick="toggleJobStatus(${c.id}, '${c.status}')" class="text-slate-400 hover:text-[#007CC3]" title="${c.status === 'Active' ? 'Close Job' : 'Reopen Job'}">
+                <i class="fas ${c.status === 'Active' ? 'fa-eye-slash' : 'fa-eye'}"></i>
+              </button>
+              <button onclick="deleteRecord('careers', ${c.id})" class="text-slate-400 hover:text-red-500" title="Delete Job">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function renderBlogs(blogs) {
+      const tbody = document.getElementById('blogList');
+      tbody.innerHTML = blogs.map(b => `
+        <tr>
+          <td class="font-bold">${b.title}</td>
+          <td>${b.author_name}</td>
+          <td>${new Date(b.created_at).toLocaleDateString()}</td>
+          <td><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">${b.status}</span></td>
+          <td>
+            <button onclick="deleteRecord('blogs', ${b.id})" class="text-slate-400 hover:text-red-500"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function renderFaqs(faqs) {
+      const tbody = document.getElementById('faqList');
+      tbody.innerHTML = faqs.map(f => `
+        <tr>
+          <td class="font-bold">${f.question}</td>
+          <td>${f.category}</td>
+          <td>${f.display_order}</td>
+          <td><span class="${f.is_active ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'} px-3 py-1 rounded-full text-xs font-bold">${f.is_active ? 'Active' : 'Inactive'}</span></td>
+          <td>
+            <button onclick="deleteRecord('faqs', ${f.id})" class="text-slate-400 hover:text-red-500"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function fetchApplications() {
+      try {
+        const res = await fetch(`${API_BASE}/applications`);
+        const data = await res.json();
+        const tbody = document.getElementById('applicationList');
+        if (data.data && data.data.length > 0) {
+          tbody.innerHTML = data.data.map(a => `
+            <tr>
+              <td>
+                <div class="font-bold text-slate-800">${a.candidate_name}</div>
+                <div class="text-[10px] text-slate-400 font-medium">${a.candidate_email}</div>
+              </td>
+              <td class="text-xs font-medium text-slate-600">${a.candidate_phone || 'N/A'}</td>
+              <td><span class="bg-blue-50 text-[#007CC3] px-3 py-1 rounded-full text-[10px] font-bold">${a.job_title}</span></td>
+              <td>
+                <div class="text-xs font-bold text-slate-700">${a.qualification || 'N/A'}</div>
+                <div class="text-[10px] text-slate-400">${a.experience || 'N/A'} exp</div>
+              </td>
+              <td class="text-sm text-slate-500">${new Date(a.applied_at).toLocaleDateString()}</td>
+              <td>
+                <a href="${a.resume_url}" target="_blank" class="text-[#007CC3] hover:underline font-bold text-xs">
+                  <i class="fas fa-file-pdf mr-1"></i> View CV
+                </a>
+              </td>
+              <td>
+                <button onclick="deleteRecord('applications', ${a.id})" class="text-slate-400 hover:text-red-500 transition-colors">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          `).join('');
+        } else {
+          tbody.innerHTML = '<tr><td colspan="5" class="text-center py-10 text-slate-400">No applications received.</td></tr>';
+        }
+      } catch (err) { console.error(err); }
+    }
+
+    // Submit Forms
+    async function submitCareerForm() {
+      const payload = {
+        title: document.getElementById('jobTitle').value,
+        department: document.getElementById('jobDept').value,
+        location: document.getElementById('jobLoc').value,
+        type: document.getElementById('jobType').value,
+        description: document.getElementById('jobDesc').value,
+        status: 'Active'
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/careers`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if(res.ok) {
+          closeModal('careerModal');
+          document.getElementById('careerForm').reset();
+          fetchData();
+        } else {
+          const errData = await res.json();
+          alert("Error: " + (errData.error || errData.message || "Failed to save career posting."));
+        }
+      } catch (err) { console.error(err); alert("Network error. Is the backend running?"); }
+    }
+
+    async function submitBlogForm() {
+      const payload = {
+        title: document.getElementById('blogTitle').value,
+        author_name: document.getElementById('blogAuthor').value,
+        image: document.getElementById('blogImage').value,
+        category: document.getElementById('blogCategory').value,
+        tags: document.getElementById('blogTags').value,
+        content: document.getElementById('blogContent').value,
+        status: 'Published'
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/blogs`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if(res.ok) {
+          closeModal('blogModal');
+          document.getElementById('blogForm').reset();
+          fetchData();
+        } else {
+          const errData = await res.json();
+          alert("Error: " + (errData.error || errData.message || "Failed to publish blog."));
+        }
+      } catch (err) { console.error(err); alert("Network error. Is the backend running?"); }
+    }
+
+    async function submitFaqForm() {
+      const payload = {
+        question: document.getElementById('faqQuestion').value,
+        answer: document.getElementById('faqAnswer').value,
+        category: document.getElementById('faqCategory').value,
+        display_order: document.getElementById('faqOrder').value,
+        is_active: 1
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/faqs/upsert`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if(res.ok) {
+          closeModal('faqModal');
+          document.getElementById('faqForm').reset();
+          fetchData();
+        } else {
+          const errData = await res.json();
+          alert("Error: " + (errData.error || errData.message || "Failed to save FAQ."));
+        }
+      } catch (err) { console.error(err); alert("Network error. Is the backend running?"); }
+    }
+
+    // Toggle Job Status (Open/Close)
+    async function toggleJobStatus(id, currentStatus) {
+      const newStatus = currentStatus === 'Active' ? 'Closed' : 'Active';
+      if (!confirm(`Are you sure you want to set this job to ${newStatus}?`)) return;
+
+      try {
+        const res = await fetch(`${API_BASE}/careers/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: newStatus })
+        });
+        if (res.ok) fetchData();
+        else alert("Failed to update job status.");
+      } catch (err) { console.error(err); }
+    }
+
+    // Delete Record
+    async function deleteRecord(type, id) {
+      if(!confirm(`Are you sure you want to delete this ${type.slice(0, -1)}?`)) return;
+      try {
+        const res = await fetch(`${API_BASE}/${type}/${id}`, { method: 'DELETE' });
+        if(res.ok) fetchData();
+        else alert("Failed to delete record.");
+      } catch (err) { console.error(err); }
+    }
+  </script>
+</body>
+</html>

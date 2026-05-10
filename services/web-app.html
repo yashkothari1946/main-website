@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO -->
+  <title>Enterprise Web & App Development | Vybtek IT Solutions</title>
+  <meta name="description" content="High-performance web and mobile application development. We build scalable Next.js platforms, interactive 3D websites, and native mobile apps for modern enterprises.">
+  <meta name="keywords" content="Next.js Development, Custom Web App, Mobile App Development India, 3D Websites, High Performance Software, React Native">
+  
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="../style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  
+  <script defer src="../headerFooter.js"></script>
+
+  </head>
+
+<body class="bg-mesh overflow-x-hidden">
+  <header><special-header></special-header></header>
+
+  <main id="main-content">
+    
+    <!-- 1. HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center pt-20">
+      <div class="absolute inset-0 overflow-hidden -z-10">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-100 rounded-full blur-[120px] opacity-40 animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-100 rounded-full blur-[120px] opacity-30 animate-pulse [animation-delay:1s]"></div>
+      </div>
+      
+      <div class="vt-container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div class="reveal-left">
+            <div class="vt-section-label" id="hero-label">Software Engineering</div>
+            <h1 class="text-6xl md:text-8xl font-black text-[#002D62] leading-[1.05]" id="hero-title">
+              Architecting <br><span class="web-gradient-text">Digital Scale</span>.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-500 mt-8 max-w-xl leading-relaxed" id="hero-sub">
+              From high-performance Next.js web applications to immersive 3D experiences and native mobile apps. We build the interfaces of tomorrow.
+            </p>
+            <div class="flex gap-6 mt-12" id="hero-btns">
+              <a href="../contact.html" class="vt-btn-primary">Start Your Build</a>
+              <a href="#services" class="w-16 h-16 rounded-full border border-gray-200 flex items-center justify-center text-[#007CC3] hover:bg-[#007CC3] hover:text-white transition-all"><i class="fas fa-arrow-down"></i></a>
+            </div>
+          </div>
+          
+          <div class="relative reveal-right hidden lg:block">
+            <!-- Visual Representation of Code/UI -->
+            <div class="relative w-full aspect-square flex items-center justify-center perspective-[1000px]">
+               <!-- Floating UI Windows -->
+               <div class="absolute w-64 h-40 bg-white rounded-xl shadow-2xl border border-gray-100 z-30 transform -rotate-6 -translate-y-10 animate-bounce [animation-duration:4s]">
+                  <div class="h-6 border-b border-gray-100 flex items-center px-3 gap-1.5">
+                     <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                     <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                     <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                  </div>
+                  <div class="p-4 space-y-2">
+                     <div class="h-2 bg-gray-100 rounded w-3/4"></div>
+                     <div class="h-2 bg-gray-100 rounded w-1/2"></div>
+                     <div class="h-8 bg-blue-50 rounded mt-4"></div>
+                  </div>
+               </div>
+               
+               <div class="absolute w-40 h-64 bg-[#002D62] rounded-3xl shadow-2xl z-20 transform rotate-12 translate-x-20 translate-y-10 border-4 border-gray-900 animate-bounce [animation-duration:5s] [animation-delay:1s]">
+                  <div class="h-full w-full flex flex-col items-center pt-8">
+                     <i class="fas fa-mobile-alt text-white/50 text-6xl"></i>
+                  </div>
+               </div>
+               
+               <div class="absolute w-80 h-80 border border-blue-200 rounded-full opacity-30 animate-[spin_20s_linear_infinite] z-10"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CORE SERVICES -->
+    <section id="services" class="vt-section bg-white/50 backdrop-blur-sm">
+      <div class="vt-container">
+        <div class="vt-section-header text-center mb-20">
+           <div class="vt-section-label !pl-0 !before:hidden">Expertise</div>
+           <h2 class="vt-section-heading">Cross-Platform <span class="vt-accent">Excellence</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+           <!-- Next.js Apps -->
+           <div class="glass-card p-12 rounded-[40px] reveal-up hover:-translate-y-2 transition-transform shadow-sm">
+              <i class="fas fa-laptop-code text-4xl text-[#007CC3] mb-8"></i>
+              <h3 class="text-2xl font-black text-[#002D62] mb-4">Web Applications</h3>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6">Building lightning-fast, SEO-optimized web applications using Next.js and React. Designed to handle millions of requests with zero downtime.</p>
+              <div class="flex flex-wrap gap-2">
+                 <span class="tech-pill">Next.js</span>
+                 <span class="tech-pill">React</span>
+              </div>
+           </div>
+           
+           <!-- Mobile Apps -->
+           <div class="glass-card p-12 rounded-[40px] reveal-up hover:-translate-y-2 transition-transform shadow-sm">
+              <i class="fas fa-mobile text-4xl text-[#007CC3] mb-8"></i>
+              <h3 class="text-2xl font-black text-[#002D62] mb-4">Mobile Applications</h3>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6">Native iOS and Android application development using React Native and Flutter. Delivering smooth, native-like experiences across all devices.</p>
+              <div class="flex flex-wrap gap-2">
+                 <span class="tech-pill">React Native</span>
+                 <span class="tech-pill">Flutter</span>
+              </div>
+           </div>
+           
+           <!-- 3D / WebGL -->
+           <div class="glass-card p-12 rounded-[40px] reveal-up hover:-translate-y-2 transition-transform shadow-sm">
+              <i class="fas fa-cube text-4xl text-[#007CC3] mb-8"></i>
+              <h3 class="text-2xl font-black text-[#002D62] mb-4">Immersive 3D UI</h3>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6">Elevating brand perception with interactive 3D elements, Three.js canvases, and complex scroll-triggered GSAP animations.</p>
+              <div class="flex flex-wrap gap-2">
+                 <span class="tech-pill">Three.js</span>
+                 <span class="tech-pill">GSAP</span>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    </section>
+
+    <!-- 2.5 HIGH-VELOCITY ENGINEERING (Next.js Deep Dive) -->
+    <section class="vt-section bg-white overflow-hidden">
+       <div class="vt-container">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+             <div class="reveal-left">
+                <div class="vt-section-label">Engineering Focus</div>
+                <h2 class="vt-section-heading">High-Velocity <br><span class="vt-accent text-[#3B82F6]">Engineering</span></h2>
+                <p class="text-slate-500 mt-8 leading-relaxed text-lg">We leverage the most advanced web technologies to deliver applications that are not just beautiful, but architecturally superior. Our focus on Next.js 14 ensures your platform is edge-ready and globally scalable.</p>
+                
+                <div class="mt-12 space-y-12">
+                   <div class="group">
+                      <div class="flex items-center gap-4 mb-4">
+                         <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-[#3B82F6] group-hover:bg-[#3B82F6] group-hover:text-white transition-all"><i class="fas fa-server"></i></div>
+                         <h4 class="text-xl font-black text-slate-900">Server-Side Authority</h4>
+                      </div>
+                      <p class="text-sm text-slate-500 leading-relaxed pl-14">Utilizing Server Actions and React Server Components (RSC) to minimize client-side JavaScript, resulting in instantaneous page transitions and superior SEO.</p>
+                   </div>
+                   <div class="group">
+                      <div class="flex items-center gap-4 mb-4">
+                         <div class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all"><i class="fas fa-layer-group"></i></div>
+                         <h4 class="text-xl font-black text-slate-900">Edge-Ready Deployment</h4>
+                      </div>
+                      <p class="text-sm text-slate-500 leading-relaxed pl-14">Deploying your application to a global edge network, ensuring sub-second response times for users regardless of their physical location.</p>
+                   </div>
+                   <div class="group">
+                      <div class="flex items-center gap-4 mb-4">
+                         <div class="w-10 h-10 bg-cyan-50 rounded-full flex items-center justify-center text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all"><i class="fas fa-microchip"></i></div>
+                         <h4 class="text-xl font-black text-slate-900">Type-Safe Architecture</h4>
+                         </div>
+                      <p class="text-sm text-slate-500 leading-relaxed pl-14">Strict TypeScript implementation across the entire stack to eliminate runtime errors and ensure long-term maintainability for enterprise teams.</p>
+                   </div>
+                </div>
+             </div>
+             
+             <div class="reveal-right">
+                <div class="relative glass-card p-2 rounded-[40px] border-slate-100 shadow-2xl overflow-hidden bg-slate-50">
+                   <div class="bg-slate-900 p-10 rounded-[38px] text-white">
+                      <div class="flex items-center gap-2 mb-10">
+                         <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                         <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                         <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                      </div>
+                      <div class="font-mono text-[11px] space-y-4 opacity-70">
+                         <p class="text-blue-400">npm run build</p>
+                         <p>> Initializing Next.js 14.2.3...</p>
+                         <p>> Optimized for production</p>
+                         <p>> Generating static pages (68/68)...</p>
+                         <div class="flex gap-2 items-center">
+                            <span class="text-green-400">λ</span>
+                            <span class="text-white/40">/dashboard</span>
+                            <span class="text-green-400">128kb</span>
+                         </div>
+                         <div class="flex gap-2 items-center">
+                            <span class="text-green-400">○</span>
+                            <span class="text-white/40">/solutions</span>
+                            <span class="text-green-400">45kb</span>
+                         </div>
+                         <p class="text-indigo-400">Successfully deployed to Edge Network.</p>
+                         <div class="h-1 w-full bg-white/10 rounded-full mt-4">
+                            <div class="h-full bg-[#3B82F6] w-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- 3. DEVELOPMENT APPROACH (Dark Section) -->
+    <section class="vt-section bg-[#002D62] text-white">
+       <div class="vt-container">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+             <div class="reveal-left">
+                <div class="vt-section-label !text-white !before:bg-white">Engineering Standard</div>
+                <h2 class="vt-section-heading !text-white">Performance <br><span class="text-[#3B82F6]">By Default</span></h2>
+                <p class="text-white/60 mt-8 leading-relaxed text-lg">We do not tolerate slow code. Every application we build is audited for Core Web Vitals, accessibility, and strict security compliance before it ever sees production.</p>
+                <ul class="space-y-6 mt-10">
+                   <li class="flex items-center gap-4 text-white font-bold">
+                      <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-[#3B82F6]"><i class="fas fa-bolt"></i></div>
+                      Sub-second Page Loads
+                   </li>
+                   <li class="flex items-center gap-4 text-white font-bold">
+                      <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-[#3B82F6]"><i class="fas fa-lock"></i></div>
+                      Enterprise-Grade Security
+                   </li>
+                   <li class="flex items-center gap-4 text-white font-bold">
+                      <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-[#3B82F6]"><i class="fas fa-universal-access"></i></div>
+                      AAA Accessibility Standards
+                   </li>
+                </ul>
+             </div>
+             
+             <!-- Tech Grid -->
+             <div class="reveal-right bg-white/5 border border-white/10 p-10 rounded-[40px] backdrop-blur-md">
+                <h4 class="text-xs font-black uppercase tracking-[0.3em] text-[#3B82F6] mb-8 text-center">Development Stack</h4>
+                <div class="flex flex-wrap gap-4 justify-center">
+                   <span class="tech-pill !bg-white/10 !border-white/20 !text-white">Next.js 14</span>
+                   <span class="tech-pill !bg-white/10 !border-white/20 !text-white">TypeScript</span>
+                   <span class="tech-pill !bg-white/10 !border-white/20 !text-white">Tailwind CSS</span>
+                   <span class="tech-pill !bg-white/10 !border-white/20 !text-white">React Native</span>
+                   <span class="tech-pill !bg-white/10 !border-white/20 !text-white">Node.js</span>
+                   <span class="tech-pill !bg-white/10 !border-white/20 !text-white">GraphQL</span>
+                   <span class="tech-pill !bg-white/10 !border-white/20 !text-white">Docker</span>
+                   <span class="tech-pill !bg-white/10 !border-white/20 !text-white">AWS</span>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- 4. FAQ SECTION - AEO Optimized -->
+    <section class="vt-section bg-slate-50 relative overflow-hidden">
+      <div class="vt-container">
+        <div class="vt-section-header text-center mb-24">
+          <div class="vt-section-label">Engineering FAQ</div>
+          <h2 class="vt-section-heading">Strategic <span class="vt-accent">Software</span> Insights</h2>
+          <p class="vt-section-sub mx-auto">Addressing technical queries on high-performance web and mobile builds.</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-4 reveal-up">
+          <div class="faq-item">
+            <button class="faq-question">
+              What are the benefits of building with Next.js for enterprise?
+              <i class="fas fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              Next.js provides superior performance through server-side rendering (SSR) and static site generation (SSG). This results in sub-second page loads, excellent SEO rankings, and a highly scalable architecture that can handle enterprise-level traffic.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you develop native mobile apps or cross-platform solutions?
+              <i class="fas fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              We specialize in cross-platform development using React Native and Flutter. This allows us to deliver native-like performance and a single codebase for both iOS and Android, reducing development time and maintenance costs.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How do you ensure web application performance and speed?
+              <i class="fas fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              We follow a performance-first approach, auditing every build for Core Web Vitals. We implement advanced caching strategies, image optimization, and code-splitting to ensure sub-second interaction times globally.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Can you integrate 3D elements like Three.js into my website?
+              <i class="fas fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              Yes, we specialize in high-fidelity 3D integrations using Three.js and WebGL. We can build immersive, interactive components that elevate your brand's digital presence while maintaining performance standards.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FINAL CTA -->
+    <section class="vt-section vt-cta">
+      <div class="vt-container relative z-10">
+        <h2 class="vt-cta-heading">Let's Build Something <br><span class="text-[#3B82F6]">Extraordinary</span></h2>
+        <p class="vt-cta-sub">From concept to deployment, we build software that scales with your ambition.</p>
+        <div class="flex justify-center gap-8">
+          <a href="../contact.html" class="vt-btn-primary !bg-white !text-[#002D62]">Start a Project</a>
+          <a href="../portfolio.html" class="vt-btn-primary">View Our Work</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><special-footer></special-footer></footer>
+
+  <script src="../animations.js"></script>
+</body>
+</html>
+
