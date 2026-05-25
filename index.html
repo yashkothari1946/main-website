@@ -55,17 +55,21 @@
   <link href="style.css" rel="stylesheet" />
 
   <!-- ═══════════════════════════════════════════════════
-       Tailwind CDN: load async after page paint
-       Prevents the ~400ms render block it caused before
+       FOUC PREVENTION
+       Hide page BEFORE Tailwind CDN loads, reveal AFTER it processes.
+       Tailwind CDN is a JS-based CSS generator — it scans the DOM and
+       injects <style> tags. There's always a gap between first paint
+       and when those styles appear, causing the flash. This fixes it.
   ════════════════════════════════════════════════════ -->
-  <script>
-    // Load Tailwind CDN non-blocking after first paint
-    window.addEventListener('load', function() {
-      var s = document.createElement('script');
-      s.src = 'https://cdn.tailwindcss.com';
-      document.head.appendChild(s);
-    });
-  </script>
+  <style>
+    html { opacity: 0; }
+    html.tw-ready { opacity: 1; transition: opacity 0.25s ease; }
+  </style>
+
+  <!-- Tailwind CDN: synchronous — must block to process classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Runs immediately after Tailwind finishes (synchronous) → page reveals styled -->
+  <script>document.documentElement.classList.add('tw-ready');</script>
 
   <!-- ═══════════════════════════════════════════════════
        Font Awesome: async non-blocking load
@@ -228,7 +232,7 @@
         <p class="text-center text-xs font-black uppercase tracking-[0.4em] text-gray-400">Trusted by Global Enterprise Leaders</p>
       </div>
       <!-- Interactive Marquee Wrapper (GPU-composited) -->
-      <div class="flex w-max animate-[marquee-scroll_30s_linear_infinite] hover:[animation-play-state:paused]" style="will-change:transform">
+      <div class="flex w-max animate-[marquee-scroll_30s_linear_infinite] hover:[animation-play-state:paused] vt-brand-marquee">
          <!-- Group 1 -->
          <div class="flex gap-16 md:gap-32 items-center shrink-0 pr-16 md:pr-32">
             <img loading="lazy" src="images/patientxpress_logo_latest.png" alt="PatientXpress" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">

@@ -668,6 +668,9 @@ body.theme-dark, body.theme-dark .bg-mesh, body.theme-dark.bg-mesh {
   padding: 16px 0;
   overflow: hidden;
 }
+.vt-brand-marquee {
+  will-change: transform;
+}
 .vt-marquee-track {
   display: flex;
   align-items: center;
