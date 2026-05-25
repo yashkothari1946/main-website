@@ -1,12 +1,14 @@
 // 1. LENIS SMOOTH SCROLL INITIALIZATION
+const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 768;
+
 const lenis = new Lenis({
-    duration: 1.2,
+    duration: isMobile ? 0.8 : 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
+    smoothWheel: !isMobile,           // Disable on mobile — use native scroll
     wheelMultiplier: 1,
     orientation: 'vertical',
     gestureOrientation: 'vertical',
-    smoothTouch: false,
+    smoothTouch: false,               // Always off — causes lag on touch devices
 });
 
 function raf(time) {
@@ -68,45 +70,47 @@ const initHero = () => {
     }, "-=1.5");
 };
 
-// Cinematic Hero Scroll Effects
-gsap.to(".vt-hero > .vt-container", {
-    y: 100,
-    opacity: 0,
-    scale: 0.9,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".vt-hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-    }
-});
+// Cinematic Hero Scroll Effects — desktop only (scrub parallax kills mobile perf)
+if (!isMobile) {
+    gsap.to(".vt-hero > .vt-container", {
+        y: 100,
+        opacity: 0,
+        scale: 0.9,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".vt-hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        }
+    });
 
-gsap.to("#three-canvas-container", {
-    scale: 1.2,
-    yPercent: 20,
-    opacity: 0.2,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".vt-hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-    }
-});
+    gsap.to("#three-canvas-container", {
+        scale: 1.2,
+        yPercent: 20,
+        opacity: 0.2,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".vt-hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        }
+    });
 
-gsap.to(".hero-tech-card", {
-    y: -200,
-    rotate: -15,
-    opacity: 0,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".vt-hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-    }
-});
+    gsap.to(".hero-tech-card", {
+        y: -200,
+        rotate: -15,
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".vt-hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        }
+    });
+}
 
 // 4. ROTATING TEXT
 const words = [
@@ -139,8 +143,9 @@ const rotateText = () => {
 };
 setInterval(rotateText, 3500);
 
-// 5. MAGNETIC BUTTONS HELPER
+// 5. MAGNETIC BUTTONS — desktop only (touch devices don't need this)
 const initMagneticButtons = () => {
+    if (isMobile) return; // Skip entirely on mobile
     const buttons = document.querySelectorAll('.vt-btn-primary, .vt-btn-ghost, .vt-card');
     buttons.forEach(btn => {
         btn.addEventListener('mousemove', (e) => {
@@ -329,13 +334,14 @@ gsap.to("body", {
 });
 
 // 8. MOBILE OPTIMIZATION
-const isMobile = window.innerWidth < 768;
-
 if (isMobile) {
-    // Disable heavy parallax for mobile performance
-    gsap.set("#three-canvas-container", { y: 0 });
-    // Reduce stagger durations
-    gsap.defaults({ duration: 0.8 });
+    // Kill Three.js canvas
+    const canvas = document.getElementById('three-canvas-container');
+    if (canvas) canvas.style.display = 'none';
+    // Reduce default animation cost
+    gsap.defaults({ duration: 0.6, ease: 'power2.out' });
+    // Reduce stagger on reveal animations
+    gsap.globalTimeline.timeScale(1.3);
 }
 
 // 9. REFRESH ON RESIZE

@@ -1,21 +1,28 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.132.2';
 
 const container = document.getElementById('three-canvas-container');
-if (container) {
+
+// ─── MOBILE: completely skip Three.js to avoid GPU lag ───
+const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 768;
+if (isMobileDevice && container) {
+    container.style.display = 'none';
+}
+
+if (container && !isMobileDevice) {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ 
         alpha: true, 
-        antialias: true,
+        antialias: false,                  // Disabled for better perf
         powerPreference: "high-performance"
     });
     
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Cap at 1.5×
     container.appendChild(renderer.domElement);
 
-    // 1. NEURAL CORE (Glass Orb)
-    const orbGeometry = new THREE.IcosahedronGeometry(2, 64);
+    // 1. NEURAL CORE (Glass Orb) — reduced subdivision for perf
+    const orbGeometry = new THREE.IcosahedronGeometry(2, 10); // was 64
     const orbMaterial = new THREE.MeshPhysicalMaterial({
         color: 0xffffff,
         emissive: 0xebf8ff,
@@ -34,7 +41,7 @@ if (container) {
     scene.add(orb);
 
     // 2. PARTICLE NEURAL NETWORK
-    const particlesCount = 2000;
+    const particlesCount = 800; // Reduced from 2000 for smooth 60fps
     const positions = new Float32Array(particlesCount * 3);
     const colors = new Float32Array(particlesCount * 3);
 
@@ -81,16 +88,23 @@ if (container) {
 
     camera.position.z = 6;
 
-    // 4. INTERACTION & MOUSE TRACKING
+    // 4. INTERACTION & MOUSE TRACKING (throttled via rAF)
     let mouseX = 0;
     let mouseY = 0;
     let targetX = 0;
     let targetY = 0;
+    let mousePending = false;
 
     window.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX / window.innerWidth - 0.5);
-        mouseY = (e.clientY / window.innerHeight - 0.5);
-    });
+        if (!mousePending) {
+            mousePending = true;
+            requestAnimationFrame(() => {
+                mouseX = (e.clientX / window.innerWidth - 0.5);
+                mouseY = (e.clientY / window.innerHeight - 0.5);
+                mousePending = false;
+            });
+        }
+    }, { passive: true });
 
     // 5. ANIMATION LOOP
     const animate = () => {
