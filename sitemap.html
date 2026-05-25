@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sitemap</title>
+    <title>Sitemap | Vybtek IT Solutions</title>
     <link rel="icon" type="image/png" href="./images/favicon.png" />
     <link href="style.css" rel="stylesheet" />
     <link href="whatsapp.css" rel="stylesheet" />
@@ -12,94 +12,145 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
     <script src="whatsapp.js"></script>
   </head>
 
-  <body class="bg-gradient-to-b from-blue-50 to-white text-gray-800">
-    <special-header></special-header>
+  <body class="bg-mesh overflow-x-hidden min-h-screen flex flex-col">
+    <!-- Texture Overlay -->
+    <div class="grain-overlay"></div>
 
-    <main class="max-w-7xl mx-auto px-4 py-14">
-      <h1
-        class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-600"
-      >
-        Sitemap
-      </h1>
+    <header>
+      <special-header></special-header>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-24 flex-1">
+      <div class="text-center mb-16">
+        <span class="text-[10px] font-black uppercase tracking-[0.2em] text-[#007CC3] bg-blue-50 px-3 py-1.5 rounded-full">Navigation Directory</span>
+        <h1 class="text-5xl md:text-6xl font-black mt-6 text-[#0F172A] leading-tight">
+          Vybtek <span class="brand-gradient-text">Sitemap</span>
+        </h1>
+        <p class="text-slate-500 mt-4 text-base max-w-xl mx-auto">
+          Explore our complete directory of corporate solutions, services, products, and insights.
+        </p>
+      </div>
+
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Main Pages -->
-        <div class="bg-white p-8">
-          <h2 class="text-2xl font-semibold mb-4">Main Pages</h2>
-          <ul class="space-y-3">
-            <li><a href="/" class="text-blue-600 hover:underline">Home</a></li>
+        <div class="glass-card rounded-[32px] p-8 border border-slate-100/50 shadow-lg hover:border-[#007CC3]/20 hover:bg-white/95 transition-all">
+          <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-[#007CC3] text-xl mb-6"><i class="fas fa-compass"></i></div>
+          <h2 class="text-2xl font-black text-[#0F172A] mb-6">Main Portal</h2>
+          <ul class="space-y-4 text-sm font-semibold">
             <li>
-              <a href="about" class="text-blue-600 hover:underline">About Us</a>
+              <a href="index.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Home Page
+              </a>
             </li>
             <li>
-              <a href="projects" class="text-blue-600 hover:underline"
-                >Projects</a
-              >
+              <a href="about.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> About Us
+              </a>
             </li>
             <li>
-              <a href="contact" class="text-blue-600 hover:underline"
-                >Contact Us</a
-              >
+              <a href="portfolio.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Corporate Portfolio
+              </a>
+            </li>
+            <li>
+              <a href="projects.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Key Case Studies
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Contact Specialist
+              </a>
             </li>
           </ul>
         </div>
 
         <!-- Services -->
-        <div class="bg-white p-8">
-          <h2 class="text-2xl font-semibold mb-4">Services</h2>
-          <ul class="space-y-3">
+        <div class="glass-card rounded-[32px] p-8 border border-slate-100/50 shadow-lg hover:border-[#007CC3]/20 hover:bg-white/95 transition-all">
+          <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-500 text-xl mb-6"><i class="fas fa-server"></i></div>
+          <h2 class="text-2xl font-black text-[#0F172A] mb-6">Services</h2>
+          <ul class="space-y-4 text-sm font-semibold">
             <li>
-              <a href="software" class="text-blue-600 hover:underline"
-                >Software Development</a
-              >
+              <a href="services.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> All Solutions
+              </a>
             </li>
             <li>
-              <a href="design" class="text-blue-600 hover:underline"
-                >Web Design</a
-              >
+              <a href="services/branding.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> SEO & Digital Branding
+              </a>
             </li>
             <li>
-              <a href="marketing" class="text-blue-600 hover:underline"
-                >Digital Marketing</a
-              >
+              <a href="services/ai-solutions.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Applied AI & LLMs
+              </a>
             </li>
             <li>
-              <a href="techsupport" class="text-blue-600 hover:underline"
-                >IT Tech Support</a
-              >
+              <a href="services/web-app.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Software & Web Apps
+              </a>
             </li>
             <li>
-              <a href="consultation" class="text-blue-600 hover:underline"
-                >Tech Consultation</a
-              >
+              <a href="services/cloud-infrastructure.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Cloud & Infrastructure
+              </a>
             </li>
             <li>
-              <a href="outsourcing" class="text-blue-600 hover:underline"
-                >Tech Outsourcing</a
-              >
+              <a href="services/erp-crm.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Enterprise ERP & CRM
+              </a>
+            </li>
+            <li>
+              <a href="services/it-consulting.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> IT & Tech Consulting
+              </a>
             </li>
           </ul>
         </div>
 
-        <!-- Other Pages -->
-        <div class="bg-white p-8">
-          <h2 class="text-2xl font-semibold mb-4">Pages</h2>
-          <ul class="space-y-3">
+        <!-- Products & Resources -->
+        <div class="glass-card rounded-[32px] p-8 border border-slate-100/50 shadow-lg hover:border-[#007CC3]/20 hover:bg-white/95 transition-all">
+          <div class="w-12 h-12 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-500 text-xl mb-6"><i class="fas fa-box-open"></i></div>
+          <h2 class="text-2xl font-black text-[#0F172A] mb-6">Products & Support</h2>
+          <ul class="space-y-4 text-sm font-semibold">
             <li>
-              <a href="faq" class="text-blue-600 hover:underline">FAQs</a>
+              <a href="products.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Product Catalog
+              </a>
             </li>
             <li>
-              <a href="careers" class="text-blue-600 hover:underline"
-                >Careers</a
-              >
+              <a href="products/ai-chatbot.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> AI Agent Chatbot
+              </a>
+            </li>
+            <li>
+              <a href="products/crm.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Enterprise CRM Tool
+              </a>
+            </li>
+            <li>
+              <a href="consultation.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> System Audits
+              </a>
+            </li>
+            <li>
+              <a href="faq.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Knowledge FAQs
+              </a>
+            </li>
+            <li>
+              <a href="careers.html" class="text-slate-600 hover:text-[#007CC3] transition-colors flex items-center gap-2">
+                <i class="fas fa-chevron-right text-xs text-slate-300"></i> Vybtek Careers
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </main>
+
     <!-- Floating WhatsApp Button -->
     <div class="floating-whatsapp">
       <div class="notification">1</div>
@@ -119,7 +170,7 @@
       <div class="chat-box">
         <div class="chat-header">
           <div class="header-info">
-            <p class="account-name">Patient Xpress</p>
+            <p class="account-name">VybTek Support Specialist</p>
             <p class="status-message">Typically replies within 30 min</p>
           </div>
           <button class="close-button">&times;</button>
@@ -152,14 +203,13 @@
         </div>
       </div>
     </div>
-    <special-footer></special-footer>
 
-    <!-- Scroll Up Button -->
-    <!-- <button id="scrollUpBtn" onclick="scrollToTop()" title="Scroll to top">
-      <i class="fas fa-arrow-up text-xl"></i>
-    </button> -->
+    <footer>
+      <special-footer></special-footer>
+    </footer>
 
     <script src="headerFooter.js"></script>
   </body>
 </html>
+
 

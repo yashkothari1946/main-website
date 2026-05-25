@@ -1,162 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Find answers to common questions about Vybtek IT Solutions' services, including tech outsourcing, IT consultation, and business solutions." />
-    <meta name="keywords" content="FAQs, IT solutions FAQs, tech outsourcing questions, IT consultation, business solutions, Vybtek IT Solutions" />
-    <meta name="author" content="Vybtek IT Solutions" />
-    <meta name="robots" content="index, follow" />
-    <title>FAQs – Vybtek IT Solutions</title>
-    <link rel="canonical" href="https://vybtek.com/faq" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO -->
+  <title>Frequently Asked Questions | Vybtek</title>
+  <meta name="description" content="Find comprehensive answers to common questions about VybTek's AI integration architectures, global time overlap delivery, enterprise security, and branding schemas." />
+  <meta name="keywords" content="FAQs, VybTek support, tech outsourcing questions, AEO schemas, IT consultation Udaipur" />
+  <link rel="canonical" href="https://vybtek.com/faq.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vybtek.com/faq.html" />
+  <meta property="og:title" content="Frequently Asked Questions | Vybtek" />
+  <meta property="og:description" content="Find comprehensive answers to common questions about VybTek's AI integration architectures, global time overlap delivery, enterprise security, and branding schemas." />
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:url" content="https://vybtek.com/faq.html" />
+  <meta property="twitter:title" content="Frequently Asked Questions | Vybtek" />
+  <meta property="twitter:description" content="Find comprehensive answers to common questions about VybTek's AI integration architectures, global time overlap delivery, enterprise security, and branding schemas." />
+  <meta name="author" content="VybTek IT Solutions" />
+  <meta name="robots" content="index, follow" />
+  
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="whatsapp.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  
+  <script defer src="headerFooter.js"></script>
+  <script src="whatsapp.js"></script>
+</head>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://vybtek.com/faq" />
-    <meta property="og:title" content="FAQs – Vybtek IT Solutions" />
-    <meta property="og:description" content="Find answers to common questions about Vybtek IT Solutions' services, including tech outsourcing and AI consultation." />
-    <meta property="og:image" content="https://vybtek.com/images/og-image-faq.png" />
+<body class="bg-mesh overflow-x-hidden min-h-screen flex flex-col text-slate-800 selection:bg-[#007CC3]/30">
+  <!-- Texture Overlay -->
+  <div class="grain-overlay"></div>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://vybtek.com/faq" />
-    <meta property="twitter:title" content="FAQs – Vybtek IT Solutions" />
-    <meta property="twitter:description" content="Find answers to common questions about Vybtek IT Solutions' services." />
-    <meta property="twitter:image" content="https://vybtek.com/images/og-image-faq.png" />
-    <link rel="icon" type="image/png" href="./images/favicon.png" />
-    <link href="style.css" rel="stylesheet" />
-    <link href="whatsapp.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
-    <script src="whatsapp.js"></script>
-  </head>
-  <body>
+  <header>
     <special-header></special-header>
-    <div class="bg-gray-100">
-      <!-- faq page content -->
-      <div class="container mx-auto p-6 flex flex-col md:flex-row items-center">
-        <!-- Image Section -->
-        <div class="md:w-1/3 flex justify-center md:mr-16 md:ml-4">
-          <img src="images/fajq.png" alt="Team" class="rounded-full" />
-        </div>
+  </header>
 
-        <!-- FAQ Section -->
-        <div class="md:w-1/2 mt-6 md:mt-0">
-          <span class="text-blue-500 font-semibold uppercase tracking-widest text-xs">Help Center</span>
-          <h1 class="text-4xl font-black mt-2 text-[#002D62]">Common Questions</h1>
-          <h2 class="text-xl font-bold mt-2 text-gray-500">Do You Have Any Questions?</h2>
-          <div class="mt-8 faq-grid">
-            <!-- Question 1 -->
-            <div class="faq-item reveal-up active">
-              <button class="faq-question">
-                <span>What are Vybtek's technology specializations?</span>
-                <div class="faq-icon"><i class="fas fa-plus"></i></div>
-              </button>
-              <div class="faq-answer">
-                <p>We specialize in high-performance enterprise software, including custom AI/LLM orchestration, scalable CRM/ERP architectures, and advanced cloud-native web applications built with Next.js and Node.js.</p>
-              </div>
-            </div>
-
-            <!-- Question 2 -->
-            <div class="faq-item reveal-up">
-              <button class="faq-question">
-                <span>How do you handle data security?</span>
-                <div class="faq-icon"><i class="fas fa-plus"></i></div>
-              </button>
-              <div class="faq-answer">
-                <p>Security is integrated into every phase. We implement SOC2 and GDPR compliant workflows, utilizing private VPC architectures, AES-256 encryption, and rigorous penetration testing to protect your data.</p>
-              </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="faq-item reveal-up">
-              <button class="faq-question">
-                <span>Does Vybtek support US/UK timezones?</span>
-                <div class="faq-icon"><i class="fas fa-plus"></i></div>
-              </button>
-              <div class="faq-answer">
-                <p>Yes, we operate on a global delivery model with dedicated overlapping hours for US (EST/PST) and UK (GMT) partners, ensuring real-time daily standups and rapid response cycles.</p>
-              </div>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="faq-item reveal-up">
-              <button class="faq-question">
-                <span>What is the typical MVP timeline?</span>
-                <div class="faq-icon"><i class="fas fa-plus"></i></div>
-              </button>
-              <div class="faq-answer">
-                <p>A high-fidelity Minimum Viable Product (MVP) typically takes 8 to 12 weeks from initial architecture design to final deployment, depending on system complexity.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <main class="max-w-7xl mx-auto px-6 py-24 flex-1 w-full">
+    <!-- HERO HEADER -->
+    <div class="text-center mb-20 relative">
+      <div class="absolute inset-0 overflow-hidden -z-10">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100/50 rounded-full blur-[100px] opacity-60"></div>
       </div>
-      <!-- Floating WhatsApp Button -->
-      <div class="floating-whatsapp">
-        <div class="notification">1</div>
-        <div class="whatsapp-button">
-          <svg
-            class="whatsapp-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-          >
-            <path
-              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
-            />
-          </svg>
-        </div>
-
-        <!-- Chat Box -->
-        <div class="chat-box">
-          <div class="chat-header">
-            <div class="header-info">
-              <p class="account-name">Patient Xpress</p>
-              <p class="status-message">Typically replies within 30 min</p>
-            </div>
-            <button class="close-button">&times;</button>
-          </div>
-          <div class="chat-body">
-            <div class="message">Hello! How can we assist you today?</div>
-          </div>
-          <div class="chat-footer">
-            <input
-              type="text"
-              class="chat-input"
-              placeholder="Type a message..."
-            />
-            <button class="send-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <special-footer></special-footer>
-
-      <!-- scroll up button -->
-      <!-- <button id="scrollUpBtn" onclick="scrollToTop()">
-        <i class="fas fa-long-arrow-alt-up"></i>
-      </button> -->
+      
+      <span class="text-[10px] font-black uppercase tracking-[0.2em] text-[#007CC3] bg-blue-50 px-3 py-1.5 rounded-full">Help & Knowledge Center</span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mt-6 text-[#0F172A] leading-tight">
+        Vybtek FAQ: Common <br><span class="brand-gradient-text">Questions</span>
+      </h1>
+      <p class="text-slate-500 mt-4 text-base max-w-xl mx-auto leading-relaxed">
+        Everything you need to know about our high-performance AI engines, scalable CRM/ERP systems, and visual branding solutions.
+      </p>
     </div>
 
-    <script src="headerFooter.js"></script>
-  </body>
+    <!-- MAIN GRID CONTAINER -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Side Visual Card (Column 1) -->
+      <div class="lg:col-span-4 sticky top-36">
+        <div class="glass-card rounded-[40px] p-6 md:p-8 border border-slate-100/50 shadow-2xl relative overflow-hidden bg-gradient-to-br from-white/80 to-transparent">
+          <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-100 rounded-full blur-[60px] opacity-40"></div>
+          
+          <h2 class="text-2xl font-black text-[#0F172A] mb-4">Direct Support</h2>
+          <p class="text-sm text-slate-500 leading-relaxed mb-8">
+            Can't find the answers you are looking for? Our elite development architects and support specialists are always online to audit your requirements.
+          </p>
+          
+          <!-- Image with overlay -->
+          <div class="aspect-square rounded-[32px] overflow-hidden border border-slate-100 relative group mb-8">
+            <div class="absolute inset-0 bg-[#0D1B3E] opacity-20 mix-blend-multiply group-hover:opacity-10 transition-opacity duration-500"></div>
+            <img src="images/fajq.png" alt="VybTek Support Team" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          
+          <a href="contact.html" class="w-full py-4 bg-[#007CC3] text-white font-black text-xs uppercase tracking-widest rounded-2xl hover:bg-[#0D1B3E] transition-colors shadow-lg shadow-blue-500/10 flex items-center justify-center gap-2">
+            <i class="fas fa-envelope-open-text"></i> Send Inquiries
+          </a>
+        </div>
+      </div>
+
+      <!-- FAQ Accordions (Column 2) -->
+      <div class="lg:col-span-8 space-y-4">
+        
+        <!-- FAQ Item 1 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(1)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">What exactly does VybTek do?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-1">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-1">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              We are an elite technology and design agency. We engineer high-performance web applications, scalable enterprise software, native mobile apps, and advanced AI automation solutions. Alongside our tech stack, we offer premium branding and digital marketing to ensure your product looks as exceptional as it functions.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(2)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">Why should we choose VybTek over other agencies?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-2">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-2">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              We don't just write code; we engineer business solutions. We combine Silicon Valley-level engineering standards with stunning, award-winning visual design. Our strict adherence to clean architecture, SOC2 security compliance, and pixel-perfect UIs makes us the premium choice for ambitious brands.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(3)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">How do you optimize applications for performance?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-3">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-3">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              We utilize a modern tech stack (Next.js, React Native, Node.js) deployed globally on edge CDN networks. We aggressively optimize database queries, implement multi-layered caching, use lazy-loading for heavy assets, and write clean, modular code to ensure sub-second load times and 60fps mobile performance.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(4)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">What branding services do you offer?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-4">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-4">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              Our branding goes far beyond simple logos. We create comprehensive visual identities, cinematic brand guidelines, custom typography systems, and glassmorphic UI/UX designs that instantly elevate your market positioning and resonate with enterprise-level clients.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(5)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">Why do your customers love working with you?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-5">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-5">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              Transparency, speed, and uncompromising quality. We treat every project as our own, providing real-time communication, rapid agile iterations, and a final product that routinely exceeds expectations. We don't just deliver on time; we deliver excellence.
+            </div>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 6 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(6)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">How have you transformed businesses in the past?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-6">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-6">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              We have helped legacy manufacturing companies adopt Generative AI to automate floor reporting, scaled EdTech platforms to handle 3x concurrent users without crashing, and migrated financial institutions to zero-downtime, highly secure cloud architectures.
+            </div>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 7 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(7)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">What is your working methodology?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-7">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-7">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              We employ a transparent, Agile methodology. We begin with a deep-dive discovery phase to architect the system. From there, we work in rapid 2-week sprints, providing you with continuous staging links so you can interact with the product and provide feedback as it comes to life.
+            </div>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 8 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(8)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">Are there projects or services you DON'T do?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-8">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-8">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              Yes. We do not build low-quality WordPress templates, we do not outsource core engineering to unvetted contractors, and we never cut corners on security or performance. We focus exclusively on custom, high-performance, and scalable solutions for clients who demand the best.
+            </div>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 9 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(9)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">How do you handle enterprise data security?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-9">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-9">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              Security is foundational to our designs. All platforms utilize private virtual clouds (VPC), automated end-to-end credential audits, rigorous static analysis lints, and encrypted database networks complying strictly with SOC2 Type II benchmarks.
+            </div>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 10 -->
+        <div class="glass-card rounded-[28px] border-slate-100/50 shadow-md overflow-hidden bg-white/70 backdrop-blur-md transition-all duration-300">
+          <button class="w-full p-6 md:p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group faq-btn" onclick="toggleFaq(10)">
+            <span class="text-lg font-black text-[#0F172A] group-hover:text-[#007CC3] transition-colors">What is the typical MVP delivery timeline?</span>
+            <span class="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:border-[#007CC3]/20 group-hover:text-[#007CC3] transition-all faq-icon" id="faq-icon-10">
+              <i class="fas fa-plus text-xs"></i>
+            </span>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="faq-ans-10">
+            <div class="p-6 md:p-8 pt-0 md:pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-50/50 mt-2">
+              A high-fidelity Minimum Viable Product (MVP)—complete with glassmorphic dashboards, scalable database structures, and automated email/SMS workflows—is usually prototyped, tested, and fully deployed within 8 to 12 weeks.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-whatsapp">
+    <div class="notification">1</div>
+    <div class="whatsapp-button">
+      <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+      </svg>
+    </div>
+
+    <!-- Chat Box -->
+    <div class="chat-box">
+      <div class="chat-header">
+        <div class="header-info">
+          <p class="account-name">VybTek Support Specialist</p>
+          <p class="status-message">Typically replies within 30 min</p>
+        </div>
+        <button class="close-button">&times;</button>
+      </div>
+      <div class="chat-body">
+        <div class="message">Hello! How can we assist you today?</div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" class="chat-input" placeholder="Type a message..." />
+        <button class="send-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <special-footer></special-footer>
+  </footer>
+
+  <!-- Accordion Toggle Script -->
+  <script>
+    function toggleFaq(i) {
+      const ans = document.getElementById(`faq-ans-${i}`);
+      const icon = document.getElementById(`faq-icon-${i}`);
+      
+      // Check if open
+      if (ans.style.maxHeight && ans.style.maxHeight !== "0px") {
+        ans.style.maxHeight = "0px";
+        icon.style.transform = "rotate(0deg)";
+        icon.style.color = "slate-400";
+      } else {
+        // Close all others first for accordion behavior
+        const allAns = document.querySelectorAll('[id^="faq-ans-"]');
+        const allIcons = document.querySelectorAll('[id^="faq-icon-"]');
+        allAns.forEach(a => a.style.maxHeight = "0px");
+        allIcons.forEach(ic => {
+          ic.style.transform = "rotate(0deg)";
+          ic.style.color = "";
+        });
+
+        // Open selected
+        ans.style.maxHeight = ans.scrollHeight + "px";
+        icon.style.transform = "rotate(45deg)";
+        icon.style.color = "#007CC3";
+      }
+    }
+  </script>
+</body>
 </html>
+

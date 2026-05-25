@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AI Chatbot Platform | Vybtek IT Solutions</title>
-  <meta name="description" content="Vybtek AI Chatbot. 24/7 intelligent customer support trained on your proprietary enterprise data.">
+  <title>Custom AI Chatbots & Autonomous Support | Vybtek</title>
+  <meta name="description" content="Deploy autonomous custom AI chatbots trained on your company data. Resolve customer support tickets 24/7 with zero human intervention and seamless integration.">
+  <link rel="canonical" href="https://vybtek.com/products/ai-chatbot" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vybtek.com/products/ai-chatbot" />
+  <meta property="og:title" content="Custom AI Chatbots & Autonomous Support | Vybtek" />
+  <meta property="og:description" content="Deploy autonomous custom AI chatbots trained on your company data. Resolve customer support tickets 24/7 with zero human intervention and seamless integration." />
+  <meta property="og:image" content="https://vybtek.com/images/og-image-chatbot.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vybtek.com/products/ai-chatbot" />
+  <meta property="twitter:title" content="Custom AI Chatbots & Autonomous Support | Vybtek" />
+  <meta property="twitter:description" content="Deploy autonomous custom AI chatbots trained on your company data. Resolve customer support tickets 24/7 with zero human intervention and seamless integration." />
+  <meta property="twitter:image" content="https://vybtek.com/images/og-image-chatbot.png" />
   
   <link rel="icon" type="image/png" href="../images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -16,21 +31,105 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
   <script defer src="../headerFooter.js"></script>
+
+  <style>
+    /* CHAT ANIMATION */
+    .chat-bubble {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    @keyframes popIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .typing-dot {
+      animation: blink 1.4s infinite both;
+      width: 6px; height: 6px; border-radius: 50%; background: #9CA3AF; display: inline-block;
+    }
+    .typing-dot:nth-child(1) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(2) { animation-delay: 0.4s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.6s; }
+    @keyframes blink {
+      0% { opacity: 0.2; transform: scale(0.8); }
+      20% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.2; transform: scale(0.8); }
+    }
+  </style>
 </head>
-<body class="bg-white overflow-x-hidden">
+<body class="bg-mesh overflow-x-hidden">
   <header><special-header></special-header></header>
 
   <main id="main-content" class="pt-32">
-    <section class="vt-section min-h-[60vh] flex items-center">
-      <div class="vt-container text-center max-w-4xl mx-auto">
-        <div class="vt-section-label reveal-up !pl-0 !before:hidden">Vybtek Products</div>
-        <h1 class="text-6xl md:text-8xl font-black text-[#002D62] reveal-up">AI <span class="text-[#007CC3]">Chatbot</span></h1>
-        <p class="text-xl text-gray-500 mt-8 reveal-up">Deploy intelligent, context-aware AI agents that handle 80% of customer support inquiries instantly.</p>
-        <div class="mt-12 reveal-up">
-           <a href="../contact.html" class="vt-btn-primary">Try the AI Chatbot</a>
+    
+    <section class="vt-section min-h-[90vh] flex items-center">
+      <div class="vt-container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+           <div class="reveal-left">
+             <div class="vt-section-label !pl-0 !before:hidden">Autonomous Support</div>
+             <h1 class="text-4xl md:text-6xl lg:text-8xl font-black text-[#002D62] leading-[1.05]">
+               Custom AI <br><span class="ai-gradient-text">Chatbots</span>.
+             </h1>
+             <p class="text-xl text-gray-500 mt-8 max-w-xl">
+               Stop losing customers to wait times. Deploy context-aware AI agents that instantly resolve 80% of support queries by pulling answers directly from your internal knowledge base.
+             </p>
+             <div class="mt-12 flex gap-6">
+                <a href="../contact.html" class="vt-btn-primary">Build Your Bot</a>
+             </div>
+           </div>
+           
+           <div class="reveal-right">
+              <!-- Chat Interface Mockup -->
+              <div class="bg-white rounded-3xl border border-gray-200 shadow-[0_30px_60px_rgba(0,0,0,0.1)] overflow-hidden w-full max-w-md mx-auto">
+                 <!-- Header -->
+                 <div class="bg-[#002D62] text-white p-4 flex items-center gap-4">
+                    <div class="relative">
+                       <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center border-2 border-[#002D62]"><i class="fas fa-robot"></i></div>
+                       <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-[#002D62] rounded-full"></div>
+                    </div>
+                    <div>
+                       <div class="font-bold text-sm">VybBot Enterprise</div>
+                       <div class="text-[10px] text-blue-200">Typically replies instantly</div>
+                    </div>
+                 </div>
+                 
+                 <!-- Chat Window -->
+                 <div class="p-6 bg-gray-50 h-80 overflow-hidden flex flex-col justify-end gap-4 relative">
+                    <!-- User Message -->
+                    <div class="chat-bubble flex justify-end" style="animation-delay: 0.5s">
+                       <div class="bg-gray-200 text-gray-800 text-sm p-3 rounded-2xl rounded-br-sm max-w-[80%]">
+                          Hey, I need help resetting my API key for the dashboard.
+                       </div>
+                    </div>
+                    
+                    <!-- AI Typing (fades out) -->
+                    <div class="chat-bubble flex justify-start" style="animation-delay: 1.5s; animation-name: fadeOut; animation-duration: 0.1s; animation-fill-mode: forwards; animation-delay: 3s">
+                       <div class="bg-white border border-gray-200 text-sm p-3 rounded-2xl rounded-bl-sm max-w-[80%] shadow-sm">
+                          <div class="flex gap-1 py-1 px-2">
+                             <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
+                          </div>
+                       </div>
+                    </div>
+
+                    <!-- AI Response -->
+                    <div class="chat-bubble flex justify-start opacity-0" style="animation-delay: 3.1s">
+                       <div class="bg-white border border-gray-200 text-sm p-3 rounded-2xl rounded-bl-sm max-w-[90%] shadow-sm text-gray-700">
+                          <p class="mb-2">Hello! I can help with that. Since you are on the Enterprise plan, I have automatically generated a secure reset link for your workspace.</p>
+                          <a href="#" class="inline-block bg-blue-50 text-blue-600 font-bold px-3 py-1 rounded text-xs">Click here to Reset API Key</a>
+                       </div>
+                    </div>
+                 </div>
+                 
+                 <!-- Input -->
+                 <div class="p-4 bg-white border-t border-gray-100 flex items-center gap-3">
+                    <div class="flex-1 bg-gray-100 rounded-full h-10 px-4 flex items-center text-sm text-gray-400">Type your message...</div>
+                    <div class="w-10 h-10 rounded-full bg-[#007CC3] text-white flex items-center justify-center"><i class="fas fa-paper-plane"></i></div>
+                 </div>
+              </div>
+           </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer><special-footer></special-footer></footer>

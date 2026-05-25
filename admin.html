@@ -9,8 +9,10 @@
   
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
   
   <style>
     /* Admin specific styles */
@@ -91,7 +93,7 @@
   <!-- LOGIN OVERLAY -->
   <div id="loginOverlay" class="fixed inset-0 bg-[#002D62] z-[100] flex items-center justify-center">
     <div class="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md text-center">
-      <img src="images/logo.png" alt="Vybtek Logo" class="h-10 mx-auto mb-8">
+      <img src="images/logo.png" alt="Vybtek Logo" class="h-10 mx-auto mb-8 object-contain">
       <h2 class="text-2xl font-black text-slate-800 mb-2">Admin Portal</h2>
       <p class="text-slate-500 mb-8 text-sm">Enter your credentials to manage content.</p>
       <input type="password" id="adminPass" placeholder="Admin Password (Hint: admin123)" class="form-input mb-6 text-center tracking-widest">
@@ -101,13 +103,14 @@
 
   <!-- SIDEBAR -->
   <aside class="admin-sidebar">
-    <img src="images/logo.png" alt="Vybtek Logo" class="h-8 mb-16 brightness-0 invert">
+    <div class="inline-block bg-white/95 px-3 py-1.5 rounded-xl mb-12 shadow-sm"><img src="images/logo.png" alt="Vybtek Logo" class="h-6 w-auto object-contain"></div>
     <nav>
       <div class="nav-item active" onclick="switchTab('dashboard')"><i class="fas fa-chart-pie w-6"></i> Dashboard</div>
       <div class="nav-item" onclick="switchTab('careers')"><i class="fas fa-briefcase w-6"></i> Careers</div>
       <div class="nav-item" onclick="switchTab('blogs')"><i class="fas fa-pen-nib w-6"></i> Blog Posts</div>
       <div class="nav-item" onclick="switchTab('faqs')"><i class="fas fa-question-circle w-6"></i> FAQs</div>
       <div class="nav-item" onclick="switchTab('applications')"><i class="fas fa-users w-6"></i> Applications</div>
+      <div class="nav-item" onclick="switchTab('contacts')"><i class="fas fa-envelope w-6"></i> Inquiries</div>
       <div class="nav-item mt-10 text-red-400 hover:bg-red-500/10 hover:text-red-300" onclick="logout()"><i class="fas fa-sign-out-alt w-6"></i> Logout</div>
     </nav>
   </aside>
@@ -182,7 +185,7 @@
     <div id="tab-blogs" class="tab-content">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-xl font-bold text-slate-800">Published Articles</h2>
-        <button onclick="openModal('blogModal')" class="vt-btn-primary !px-6 !py-2 !text-sm"><i class="fas fa-plus mr-2"></i> Create Post</button>
+        <button onclick="openBlogModal()" class="vt-btn-primary !px-6 !py-2 !text-sm"><i class="fas fa-plus mr-2"></i> Create Post</button>
       </div>
       <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
         <table class="w-full admin-table">
@@ -206,7 +209,7 @@
     <div id="tab-faqs" class="tab-content">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-xl font-bold text-slate-800">Frequently Asked Questions</h2>
-        <button onclick="openModal('faqModal')" class="vt-btn-primary !px-6 !py-2 !text-sm"><i class="fas fa-plus mr-2"></i> Add FAQ</button>
+        <button onclick="openFaqModal()" class="vt-btn-primary !px-6 !py-2 !text-sm"><i class="fas fa-plus mr-2"></i> Add FAQ</button>
       </div>
       <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
         <table class="w-full admin-table">
@@ -239,6 +242,7 @@
               <th>Qual / Exp</th>
               <th>Date</th>
               <th>Resume</th>
+              <th>Status</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -248,9 +252,69 @@
         </table>
       </div>
     </div>
+
+    <!-- CONTACTS TAB -->
+    <div id="tab-contacts" class="tab-content">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-slate-800">Customer Inquiries</h2>
+        <button onclick="fetchContacts()" class="vt-btn-ghost !px-6 !py-2 !text-sm"><i class="fas fa-sync-alt mr-2"></i> Refresh</button>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <table class="w-full admin-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email & Phone</th>
+              <th>Subject</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="contactList">
+            <!-- Data will be injected here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
   </main>
 
   <!-- MODALS -->
+  <!-- Contact Modal -->
+  <div id="contactModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[200] hidden items-center justify-center">
+    <div class="bg-white w-full max-w-2xl p-8 rounded-3xl shadow-2xl relative">
+      <button onclick="closeModal('contactModal')" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 text-xl"><i class="fas fa-times"></i></button>
+      <h2 class="text-2xl font-black text-slate-800 mb-6">Inquiry Details</h2>
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Name</label>
+          <div id="viewContactName" class="font-bold text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+           <div>
+             <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Email</label>
+             <div id="viewContactEmail" class="font-bold text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-100 break-all"></div>
+           </div>
+           <div>
+             <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Phone</label>
+             <div id="viewContactPhone" class="font-bold text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-100"></div>
+           </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Subject</label>
+          <div id="viewContactSubject" class="font-bold text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-100"></div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Message</label>
+          <div id="viewContactMessage" class="text-slate-600 bg-slate-50 p-4 rounded-lg border border-slate-100 whitespace-pre-wrap max-h-48 overflow-y-auto"></div>
+        </div>
+      </div>
+      <div class="flex justify-end gap-4 mt-6">
+        <button onclick="closeModal('contactModal')" class="vt-btn-primary !bg-slate-200 !text-slate-800 hover:!bg-slate-300">Close</button>
+        <a id="replyContactBtn" href="#" class="vt-btn-primary"><i class="fas fa-reply mr-2"></i>Reply via Email</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Career Modal -->
   <div id="careerModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[200] hidden items-center justify-center">
     <div class="bg-white w-full max-w-2xl p-8 rounded-3xl shadow-2xl relative">
@@ -285,8 +349,8 @@
           </div>
         </div>
         <div class="mb-6">
-          <label class="text-xs font-bold uppercase text-slate-500">Description / Requirements</label>
-          <textarea id="jobDesc" class="form-input h-32 resize-none" required placeholder="Paste job description here..."></textarea>
+          <label class="text-xs font-bold uppercase text-slate-500 mb-2 block">Description / Requirements</label>
+          <div id="jobDescEditor" class="h-48 bg-white text-slate-700 !border-slate-300 rounded-b-md"></div>
         </div>
         <button type="submit" class="vt-btn-primary w-full justify-center">Publish Job</button>
       </form>
@@ -309,8 +373,16 @@
             <input type="text" id="blogAuthor" class="form-input" required placeholder="e.g. Yash Kothari">
           </div>
           <div>
-            <label class="text-xs font-bold uppercase text-slate-500">Cover Image URL</label>
-            <input type="text" id="blogImage" class="form-input" placeholder="https://...">
+            <label class="text-xs font-bold uppercase text-slate-500">Cover Image</label>
+            <div class="flex gap-2">
+              <input type="text" id="blogImage" class="form-input flex-1" placeholder="URL will appear here..." readonly>
+              <input type="file" id="blogImageUpload" accept="image/*" class="hidden" onchange="uploadBlogImage(this)">
+              <button type="button" onclick="document.getElementById('blogImageUpload').click()" class="vt-btn-primary !px-4 !py-2"><i class="fas fa-upload"></i></button>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase text-slate-500">Scheduled Date (Optional)</label>
+            <input type="datetime-local" id="blogScheduledAt" class="form-input">
           </div>
           <div>
             <label class="text-xs font-bold uppercase text-slate-500">Category</label>
@@ -322,11 +394,11 @@
           </div>
         </div>
         <div class="mb-6">
-          <label class="text-xs font-bold uppercase text-slate-500">Article Content (HTML/Markdown)</label>
-          <textarea id="blogContent" class="form-input h-64 resize-none" required placeholder="Start writing your amazing article..."></textarea>
+          <label class="text-xs font-bold uppercase text-slate-500 mb-2 block">Article Content</label>
+          <div id="blogContentEditor" class="h-64 bg-white text-slate-700 !border-slate-300 rounded-b-md"></div>
         </div>
         <div class="flex gap-4">
-          <button type="button" class="vt-btn-primary !bg-slate-200 !text-slate-800 flex-1 justify-center hover:!bg-slate-300">Save as Draft</button>
+          <button type="button" onclick="submitBlogForm('Draft')" class="vt-btn-primary !bg-slate-200 !text-slate-800 flex-1 justify-center hover:!bg-slate-300">Save as Draft</button>
           <button type="submit" class="vt-btn-primary flex-1 justify-center">Publish Article</button>
         </div>
       </form>
@@ -358,8 +430,8 @@
           </div>
         </div>
         <div class="mb-6">
-          <label class="text-xs font-bold uppercase text-slate-500">Answer</label>
-          <textarea id="faqAnswer" class="form-input h-32 resize-none" required placeholder="Enter the detailed answer..."></textarea>
+          <label class="text-xs font-bold uppercase text-slate-500 mb-2 block">Answer</label>
+          <div id="faqAnswerEditor" class="h-32 bg-white text-slate-700 !border-slate-300 rounded-b-md"></div>
         </div>
         <button type="submit" class="vt-btn-primary w-full justify-center">Save FAQ</button>
       </form>
@@ -368,11 +440,39 @@
 
   <script>
     const API_BASE = "http://localhost:5000/api/vybtek";
+    let quillJobDesc, quillBlogDesc, quillFaqAnswer;
+    let editingBlogId = null;
+    let editingFaqId = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const quillConfig = {
+        theme: 'snow',
+        modules: {
+          toolbar: [
+            [{ 'header': [1, 2, 3, false] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            ['link', 'clean']
+          ]
+        }
+      };
+
+      quillJobDesc = new Quill('#jobDescEditor', { ...quillConfig, placeholder: 'Write or paste job description here...' });
+      quillBlogDesc = new Quill('#blogContentEditor', { ...quillConfig, placeholder: 'Write your amazing article here...' });
+      quillFaqAnswer = new Quill('#faqAnswerEditor', { ...quillConfig, placeholder: 'Enter the detailed answer...' });
+
+      // Persist login state
+      if(localStorage.getItem('vybtek_admin_logged_in') === 'true') {
+        document.getElementById('loginOverlay').style.display = 'none';
+        fetchData();
+      }
+    });
 
     // 1. Login System
     function login() {
       const pass = document.getElementById('adminPass').value;
       if(pass === 'admin123') {
+        localStorage.setItem('vybtek_admin_logged_in', 'true');
         document.getElementById('loginOverlay').style.display = 'none';
         fetchData(); // Load data once logged in
       } else {
@@ -381,6 +481,7 @@
     }
 
     function logout() {
+      localStorage.removeItem('vybtek_admin_logged_in');
       document.getElementById('adminPass').value = '';
       document.getElementById('loginOverlay').style.display = 'flex';
       switchTab('dashboard');
@@ -402,7 +503,8 @@
         'careers': 'Careers Management', 
         'blogs': 'Content Management', 
         'faqs': 'FAQ Management',
-        'applications': 'Job Applications' 
+        'applications': 'Job Applications',
+        'contacts': 'Customer Inquiries'
       };
       document.getElementById('pageTitle').innerText = titles[tabId];
       fetchData(); 
@@ -410,6 +512,46 @@
 
     function openModal(id) { document.getElementById(id).style.display = 'flex'; }
     function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
+    // Blog Edit functions
+    function openBlogModal() {
+      editingBlogId = null;
+      document.getElementById('blogForm').reset();
+      quillBlogDesc.root.innerHTML = '';
+      document.getElementById('blogScheduledAt').value = '';
+      openModal('blogModal');
+    }
+    function editBlog(id) {
+      const blog = window.allBlogs.find(b => b.id === id);
+      if(!blog) return;
+      editingBlogId = id;
+      document.getElementById('blogTitle').value = blog.title;
+      document.getElementById('blogAuthor').value = blog.author_name;
+      document.getElementById('blogImage').value = blog.image || '';
+      document.getElementById('blogCategory').value = blog.category || '';
+      document.getElementById('blogTags').value = blog.tags || '';
+      quillBlogDesc.root.innerHTML = blog.content;
+      document.getElementById('blogScheduledAt').value = blog.scheduled_at ? new Date(blog.scheduled_at).toISOString().slice(0, 16) : '';
+      openModal('blogModal');
+    }
+
+    // FAQ Edit functions
+    function openFaqModal() {
+      editingFaqId = null;
+      document.getElementById('faqForm').reset();
+      quillFaqAnswer.root.innerHTML = '';
+      openModal('faqModal');
+    }
+    function editFaq(id) {
+      const faq = window.allFaqs.find(f => f.id === id);
+      if(!faq) return;
+      editingFaqId = id;
+      document.getElementById('faqQuestion').value = faq.question;
+      document.getElementById('faqCategory').value = faq.category;
+      document.getElementById('faqOrder').value = faq.display_order;
+      quillFaqAnswer.root.innerHTML = faq.answer;
+      openModal('faqModal');
+    }
 
     // 3. API Integrations
     async function fetchData() {
@@ -425,13 +567,16 @@
         const bRes = await fetch(`${API_BASE}/blogs`);
         const bData = await bRes.json();
         const blogsArr = bData.data || [];
+        window.allBlogs = blogsArr;
         renderBlogs(blogsArr);
         document.getElementById('metric-blogs').innerText = blogsArr.length;
 
         // Fetch FAQs
         const fRes = await fetch(`${API_BASE}/faqs`);
         const fData = await fRes.json();
-        renderFaqs(fData.data || []);
+        const faqsArr = fData.data || [];
+        window.allFaqs = faqsArr;
+        renderFaqs(faqsArr);
 
         // Fetch Applications
         const aRes = await fetch(`${API_BASE}/applications`);
@@ -439,6 +584,9 @@
         const appsArr = aData.data || [];
         document.getElementById('metric-apps').innerText = appsArr.length;
         fetchApplications();
+
+        // Fetch Contacts
+        fetchContacts();
       } catch (err) {
         console.error("Error fetching data:", err);
       }
@@ -475,7 +623,10 @@
           <td>${new Date(b.created_at).toLocaleDateString()}</td>
           <td><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">${b.status}</span></td>
           <td>
-            <button onclick="deleteRecord('blogs', ${b.id})" class="text-slate-400 hover:text-red-500"><i class="fas fa-trash"></i></button>
+            <div class="flex gap-3">
+              <button onclick="editBlog(${b.id})" class="text-slate-400 hover:text-[#007CC3]" title="Edit Blog"><i class="fas fa-edit"></i></button>
+              <button onclick="deleteRecord('blogs', ${b.id})" class="text-slate-400 hover:text-red-500" title="Delete Blog"><i class="fas fa-trash"></i></button>
+            </div>
           </td>
         </tr>
       `).join('');
@@ -490,10 +641,57 @@
           <td>${f.display_order}</td>
           <td><span class="${f.is_active ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'} px-3 py-1 rounded-full text-xs font-bold">${f.is_active ? 'Active' : 'Inactive'}</span></td>
           <td>
-            <button onclick="deleteRecord('faqs', ${f.id})" class="text-slate-400 hover:text-red-500"><i class="fas fa-trash"></i></button>
+            <div class="flex gap-3">
+              <button onclick="editFaq(${f.id})" class="text-slate-400 hover:text-[#007CC3]" title="Edit FAQ"><i class="fas fa-edit"></i></button>
+              <button onclick="deleteRecord('faqs', ${f.id})" class="text-slate-400 hover:text-red-500" title="Delete FAQ"><i class="fas fa-trash"></i></button>
+            </div>
           </td>
         </tr>
       `).join('');
+    }
+
+    async function fetchContacts() {
+      try {
+        const res = await fetch(`${API_BASE}/contact`);
+        const data = await res.json();
+        const contactsArr = data.data || [];
+        window.allContacts = contactsArr;
+        const tbody = document.getElementById('contactList');
+        if (contactsArr.length > 0) {
+          tbody.innerHTML = contactsArr.map(c => `
+            <tr>
+              <td class="font-bold text-slate-800">${c.name}</td>
+              <td>
+                <div class="text-xs font-bold text-slate-700">${c.email}</div>
+                <div class="text-[10px] text-slate-400">${c.phone || 'No phone'}</div>
+              </td>
+              <td class="text-sm">${c.subject || 'N/A'}</td>
+              <td class="text-xs text-slate-500">${new Date(c.created_at).toLocaleDateString()}</td>
+              <td>
+                <button onclick="viewContact(${c.id})" class="text-[#007CC3] hover:text-blue-700 bg-blue-50 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors">
+                  View Message
+                </button>
+              </td>
+            </tr>
+          `).join('');
+        } else {
+          tbody.innerHTML = `<tr><td colspan="5" class="text-center text-slate-400 py-8">No inquiries found.</td></tr>`;
+        }
+      } catch (err) {
+        console.error("Error fetching contacts:", err);
+      }
+    }
+
+    function viewContact(id) {
+      const contact = window.allContacts.find(c => c.id === id);
+      if(!contact) return;
+      document.getElementById('viewContactName').innerText = contact.name;
+      document.getElementById('viewContactEmail').innerText = contact.email;
+      document.getElementById('viewContactPhone').innerText = contact.phone || 'Not provided';
+      document.getElementById('viewContactSubject').innerText = contact.subject || 'No subject';
+      document.getElementById('viewContactMessage').innerText = contact.message;
+      document.getElementById('replyContactBtn').href = `mailto:${contact.email}?subject=Re: ${encodeURIComponent(contact.subject || 'Your Inquiry to Vybtek')}`;
+      openModal('contactModal');
     }
 
     async function fetchApplications() {
@@ -521,6 +719,21 @@
                 </a>
               </td>
               <td>
+                <select onchange="updateApplicationStatus(${a.id}, this)" class="form-input !py-1 !text-xs !pr-6 cursor-pointer font-bold ${
+                  a.status === 'Hired' ? 'bg-green-50 text-green-700 border-green-200' :
+                  a.status === 'Rejected' ? 'bg-red-50 text-red-700 border-red-200' :
+                  a.status === 'Interviewing' ? 'bg-blue-50 text-blue-700 border-blue-200' :
+                  a.status === 'Reviewed' ? 'bg-purple-50 text-purple-700 border-purple-200' :
+                  'bg-slate-50 text-slate-700 border-slate-200'
+                }">
+                  <option value="Pending" ${a.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                  <option value="Reviewed" ${a.status === 'Reviewed' ? 'selected' : ''}>Reviewed</option>
+                  <option value="Interviewing" ${a.status === 'Interviewing' ? 'selected' : ''}>Interviewing</option>
+                  <option value="Rejected" ${a.status === 'Rejected' ? 'selected' : ''}>Rejected</option>
+                  <option value="Hired" ${a.status === 'Hired' ? 'selected' : ''}>Hired</option>
+                </select>
+              </td>
+              <td>
                 <button onclick="deleteRecord('applications', ${a.id})" class="text-slate-400 hover:text-red-500 transition-colors">
                   <i class="fas fa-trash"></i>
                 </button>
@@ -533,6 +746,36 @@
       } catch (err) { console.error(err); }
     }
 
+    async function updateApplicationStatus(id, selectElement) {
+      const newStatus = selectElement.value;
+      
+      // Update styling based on new status
+      selectElement.className = `form-input !py-1 !text-xs !pr-6 cursor-pointer font-bold ${
+        newStatus === 'Hired' ? 'bg-green-50 text-green-700 border-green-200' :
+        newStatus === 'Rejected' ? 'bg-red-50 text-red-700 border-red-200' :
+        newStatus === 'Interviewing' ? 'bg-blue-50 text-blue-700 border-blue-200' :
+        newStatus === 'Reviewed' ? 'bg-purple-50 text-purple-700 border-purple-200' :
+        'bg-slate-50 text-slate-700 border-slate-200'
+      }`;
+
+      try {
+        const res = await fetch(`${API_BASE}/applications/${id}/status`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: newStatus })
+        });
+        if(!res.ok) {
+          const errData = await res.json();
+          alert("Error: " + (errData.error || errData.message || "Failed to update status."));
+          fetchApplications(); // Revert on failure
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Network error. Is the backend running?");
+        fetchApplications(); // Revert on failure
+      }
+    }
+
     // Submit Forms
     async function submitCareerForm() {
       const payload = {
@@ -540,7 +783,7 @@
         department: document.getElementById('jobDept').value,
         location: document.getElementById('jobLoc').value,
         type: document.getElementById('jobType').value,
-        description: document.getElementById('jobDesc').value,
+        description: quillJobDesc.root.innerHTML,
         status: 'Active'
       };
 
@@ -553,6 +796,7 @@
         if(res.ok) {
           closeModal('careerModal');
           document.getElementById('careerForm').reset();
+          quillJobDesc.root.innerHTML = '';
           fetchData();
         } else {
           const errData = await res.json();
@@ -561,26 +805,65 @@
       } catch (err) { console.error(err); alert("Network error. Is the backend running?"); }
     }
 
-    async function submitBlogForm() {
+    async function uploadBlogImage(input) {
+      if (!input.files || !input.files[0]) return;
+      const file = input.files[0];
+      const formData = new FormData();
+      formData.append('image', file);
+
+      const btn = input.nextElementSibling;
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(`${API_BASE}/upload`, {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (res.ok) {
+          document.getElementById('blogImage').value = data.url;
+        } else {
+          alert('Upload failed: ' + (data.error || 'Unknown error'));
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Upload failed. Check console.');
+      } finally {
+        btn.innerHTML = originalHtml;
+        btn.disabled = false;
+        input.value = '';
+      }
+    }
+
+    async function submitBlogForm(statusOverride) {
+      const scheduledAt = document.getElementById('blogScheduledAt').value;
+      const status = statusOverride || (scheduledAt ? 'Scheduled' : 'Published');
       const payload = {
         title: document.getElementById('blogTitle').value,
         author_name: document.getElementById('blogAuthor').value,
         image: document.getElementById('blogImage').value,
         category: document.getElementById('blogCategory').value,
         tags: document.getElementById('blogTags').value,
-        content: document.getElementById('blogContent').value,
-        status: 'Published'
+        content: quillBlogDesc.root.innerHTML,
+        scheduled_at: scheduledAt || null,
+        status: status
       };
 
+      const url = editingBlogId ? `${API_BASE}/blogs/${editingBlogId}` : `${API_BASE}/blogs`;
+      const method = editingBlogId ? 'PUT' : 'POST';
+
       try {
-        const res = await fetch(`${API_BASE}/blogs`, {
-          method: 'POST',
+        const res = await fetch(url, {
+          method: method,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
         if(res.ok) {
           closeModal('blogModal');
           document.getElementById('blogForm').reset();
+          editingBlogId = null;
           fetchData();
         } else {
           const errData = await res.json();
@@ -591,8 +874,9 @@
 
     async function submitFaqForm() {
       const payload = {
+        id: editingFaqId,
         question: document.getElementById('faqQuestion').value,
-        answer: document.getElementById('faqAnswer').value,
+        answer: quillFaqAnswer.root.innerHTML,
         category: document.getElementById('faqCategory').value,
         display_order: document.getElementById('faqOrder').value,
         is_active: 1
@@ -643,3 +927,4 @@
   </script>
 </body>
 </html>
+

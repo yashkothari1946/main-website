@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AI Transcription & Voice Intelligence Services | Vybtek</title>
+  <meta name="description" content="Convert speech to text with 99% accuracy using our AI transcription services. Live AI transcription for enterprise meetings, legal calls, and medical dictation.">
+  <link rel="canonical" href="https://vybtek.com/products/ai-transcription" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vybtek.com/products/ai-transcription" />
+  <meta property="og:title" content="AI Transcription & Voice Intelligence Services | Vybtek" />
+  <meta property="og:description" content="Convert speech to text with 99% accuracy using our AI transcription services. Live AI transcription for enterprise meetings, legal calls, and medical dictation." />
+  <meta property="og:image" content="https://vybtek.com/images/og-image-transcription.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vybtek.com/products/ai-transcription" />
+  <meta property="twitter:title" content="AI Transcription & Voice Intelligence Services | Vybtek" />
+  <meta property="twitter:description" content="Convert speech to text with 99% accuracy using our AI transcription services. Live AI transcription for enterprise meetings, legal calls, and medical dictation." />
+  <meta property="twitter:image" content="https://vybtek.com/images/og-image-transcription.png" />
+  
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="../style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <script defer src="../headerFooter.js"></script>
+
+  <style>
+    /* WAVEFORM ANIMATION */
+    .waveform-container {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 100px;
+    }
+    .wave-bar {
+      width: 6px;
+      background: #007CC3;
+      border-radius: 3px;
+      animation: wave 1.2s ease-in-out infinite alternate;
+    }
+    @keyframes wave {
+      0% { height: 10%; }
+      100% { height: 100%; }
+    }
+    
+    /* TYPING EFFECT */
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #002D62;
+      width: 0;
+      animation: typing 4s steps(40, end) infinite alternate, blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+      0%, 20% { width: 0; }
+      80%, 100% { width: 100%; }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #002D62; }
+    }
+  </style>
+</head>
+<body class="bg-mesh overflow-x-hidden">
+  <header><special-header></special-header></header>
+
+  <main id="main-content" class="pt-32">
+    
+    <section class="vt-section min-h-[90vh] flex items-center">
+      <div class="vt-container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+           <div class="reveal-left">
+             <div class="vt-section-label !pl-0 !before:hidden">Voice Intelligence</div>
+             <h1 class="text-4xl md:text-6xl lg:text-8xl font-black text-[#002D62] leading-[1.05]">
+               AI <br><span class="text-[#6366F1]">Transcription</span>.
+             </h1>
+             <p class="text-xl text-gray-500 mt-8 max-w-xl">
+               Enterprise-grade speech-to-text models. Accurately transcribe meetings, medical dictations, and customer support calls in real-time with multi-speaker diarization.
+             </p>
+             <div class="mt-12 flex gap-6">
+                <a href="../contact.html" class="vt-btn-primary !bg-[#6366F1]">Start Transcribing</a>
+             </div>
+           </div>
+           
+           <div class="reveal-right">
+              <!-- Waveform UI Simulation -->
+              <div class="bg-white p-6 md:p-8 rounded-3xl border border-gray-200 shadow-2xl relative overflow-hidden">
+                 
+                 <!-- Audio Waveform -->
+                 <div class="mb-8">
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                       <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div> Live Recording
+                    </div>
+                    <div class="waveform-container justify-center">
+                       <div class="wave-bar" style="animation-delay: 0.1s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.4s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.2s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.7s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.3s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.6s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.9s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.2s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.5s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.1s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.8s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.3s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.6s"></div>
+                       <div class="wave-bar" style="animation-delay: 0.2s"></div>
+                    </div>
+                 </div>
+                 
+                 <!-- Live Text -->
+                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                    <div class="flex items-center gap-3 mb-2">
+                       <div class="w-6 h-6 rounded-full bg-[#002D62] text-white flex items-center justify-center text-[10px] font-bold">S1</div>
+                       <span class="text-xs font-bold text-gray-500">Speaker 1</span>
+                    </div>
+                    <div class="text-xl font-bold text-[#002D62] h-8">
+                       <div class="typewriter">"So, if we implement the new AI API..."</div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><special-footer></special-footer></footer>
+  <script src="../animations.js"></script>
+</body>
+</html>
+

@@ -44,7 +44,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
 
-  <script defer src="headerFooter.js"></script>
+  <script defer src="headerFooter.js?v=3"></script>
   <script type="module" src="hero-three.js"></script>
 
   <!-- JSON-LD SCHEMAS -->
@@ -102,50 +102,60 @@
       
       <!-- Background Decorative Elements -->
       <div class="absolute top-1/4 -right-20 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px] animate-pulse"></div>
-      <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-indigo-400/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px]"></div>
 
       <div class="vt-container !max-w-[1400px] relative z-20 flex flex-col lg:flex-row items-center pt-20 lg:pt-40">
         <!-- Content Layer -->
         <div class="lg:w-full text-left lg:pr-[450px]">
           
           <!-- Animated Badge -->
-          <div class="vt-innovation-badge mb-8 reveal-up">
+          <div class="vt-innovation-badge mb-8 reveal-up max-w-[95vw] md:max-w-full">
             <span class="vt-badge-glow"></span>
-            <span class="vt-badge-text">AI Engineering & Global Marketing Dominance</span>
+            <span class="vt-badge-text !text-[8px] sm:!text-[10px] md:!text-xs !tracking-wider md:!tracking-[0.3em] whitespace-normal text-center leading-relaxed block w-full px-2">Complete 360° Corporate Brand Architecture & Marketing Automations</span>
           </div>
           
-          <!-- Cinematic Headline (Strict 3-Line Structure) -->
-          <h1 class="text-5xl md:text-7xl font-black text-white leading-[0.95] tracking-tighter mb-10 reveal-up" id="hero-title">
-            <span class="block opacity-60 whitespace-nowrap">Architecting Future</span>
-            <span class="ai-gradient-text block whitespace-nowrap" id="rotating-text">Next-Gen AI Systems</span>
-            <span class="block whitespace-nowrap">For Global Enterprise</span>
+          <!-- Cinematic Headline -->
+          <h1 class="text-[2.5rem] sm:text-5xl md:text-7xl font-black text-slate-900 leading-[1.15] tracking-tighter mb-8 md:mb-10 reveal-up break-words" id="hero-title">
+            <span class="block opacity-60 whitespace-normal lg:whitespace-nowrap">We Architect Legendary</span>
+            <span class="ai-gradient-text block whitespace-normal lg:whitespace-nowrap py-1 md:py-2" id="rotating-text">360° Brand Authority</span>
+            <span class="block whitespace-normal lg:whitespace-nowrap">For Global Enterprises</span>
           </h1>
           
-          <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed reveal-up" id="hero-sub">
-            We architect the engines of digital dominance, transforming brands from total obscurity to global market leadership through AI-driven engineering and ruthless strategic branding.
+          <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mb-8 leading-relaxed reveal-up" id="hero-sub">
+            We don't just market products—we build legendary brands. We help companies establish elite visual identity systems, bespoke web designs, multi-channel search authority, and marketing automations.
           </p>
-          
+
+          <!-- Interactive Brand Capabilities Ribbon -->
+          <div class="flex flex-wrap gap-2 md:gap-3 mb-10 md:mb-12 max-w-2xl reveal-up">
+            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-laptop-code text-accent-blue"></i> Web Designing</span>
+            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-bullhorn text-accent-blue"></i> Digital Marketing</span>
+            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-search text-accent-cyan"></i> SEO Optimization</span>
+            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-share-alt text-accent-cyan"></i> Social Media (SMM)</span>
+            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-robot text-accent-blue"></i> AEO & GEO Search</span>
+            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-magic text-accent-blue"></i> Marketing Automations</span>
+          </div>
+
           <!-- Cinematic CTAs -->
-          <div class="flex flex-wrap items-center gap-8 reveal-up" id="hero-btns">
-            <a href="contact.html" class="vt-btn-primary !py-5 !px-12 group relative overflow-hidden">
-              <span class="relative z-10">Start Your Project</span>
+          <div class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 md:gap-8 reveal-up w-full" id="hero-btns">
+            <a href="contact.html" class="vt-btn-primary !py-4 md:!py-5 !px-8 md:!px-12 group relative overflow-hidden w-full sm:w-auto text-center flex justify-center items-center">
+              <span class="relative z-10 text-[11px] md:text-sm">Start Your Project</span>
               <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
               <i class="fas fa-rocket ml-3 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
             </a>
-            <a href="portfolio.html" class="vt-btn-ghost !border-white/10 !text-white hover:!bg-white/5 transition-all group">
-              Explore Portfolio
+            <a href="portfolio.html" class="vt-btn-ghost !border-slate-200 !text-slate-800 hover:!bg-slate-50 transition-all group w-full sm:w-auto text-center flex justify-center items-center py-4 px-8 rounded-full border">
+              <span class="text-[11px] md:text-sm font-extrabold tracking-widest uppercase">Explore Portfolio</span>
               <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
             </a>
           </div>
 
           <!-- Trust Indicators -->
-          <div class="mt-20 flex flex-wrap gap-12 border-t border-white/5 pt-12 reveal-up">
+          <div class="mt-20 flex flex-wrap gap-12 border-t border-slate-100 pt-12 reveal-up">
             <div class="flex items-center gap-3">
               <div class="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></div>
               <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">AI Powered</span>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-2 h-2 rounded-full bg-accent-purple animate-pulse"></div>
+              <div class="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></div>
               <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Enterprise Ready</span>
             </div>
             <div class="flex items-center gap-3">
@@ -157,20 +167,20 @@
 
         <!-- Interactive Tech Card Layer -->
         <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] hidden lg:block reveal-right z-30">
-           <div class="hero-tech-card glass-card p-10 rounded-[40px] border border-white/10 backdrop-blur-3xl animate-float">
-              <div class="flex justify-between items-start mb-8">
-                 <div class="w-12 h-12 bg-accent-blue/20 rounded-2xl flex items-center justify-center text-accent-blue">
-                    <i class="fas fa-microchip text-2xl"></i>
-                 </div>
-                 <div class="text-[10px] font-black text-slate-500 uppercase tracking-widest">System Status: Active</div>
-              </div>
-              <h4 class="text-2xl font-black text-white mb-4">Neural Architecture</h4>
-              <p class="text-slate-400 text-sm mb-8 leading-relaxed">Processing advanced data models to deliver sub-second latency and predictive enterprise logic.</p>
-              <div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                 <div class="h-full bg-accent-blue w-2/3 animate-pulse"></div>
-              </div>
-           </div>
-        </div>
+            <div class="hero-tech-card glass-card p-10 rounded-[40px] border border-slate-200/50 backdrop-blur-3xl animate-float">
+               <div class="flex justify-between items-start mb-8">
+                  <div class="w-12 h-12 bg-accent-blue/10 rounded-2xl flex items-center justify-center text-accent-blue">
+                     <i class="fas fa-fingerprint text-2xl"></i>
+                  </div>
+                  <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Brand Authority: Peak</div>
+               </div>
+               <h4 class="text-2xl font-black text-slate-900 mb-4">360° Brand Engine</h4>
+               <p class="text-slate-600 text-sm mb-8 leading-relaxed">Synchronizing Web Designing, SEO, AEO, GEO, and automated marketing pipelines to scale global brand authority.</p>
+               <div class="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-accent-blue w-11/12 animate-pulse"></div>
+               </div>
+            </div>
+         </div>
       </div>
     </section>
 
@@ -178,24 +188,214 @@
       <div class="vt-container mb-10">
         <p class="text-center text-xs font-black uppercase tracking-[0.4em] text-gray-400">Trusted by Global Enterprise Leaders</p>
       </div>
-      <div class="marquee-wrapper flex gap-20">
-         <div class="marquee-content flex gap-32 items-center grayscale opacity-60">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\patientxpress_logo_1778408182722.png" alt="PatientXpress" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\addins_education_logo_1778408205356.png" alt="Addins Education" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\listitnow_logo_1778408224301.png" alt="ListItNow" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\manuplast_logo_1778408244198.png" alt="Manuplast" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\tashmeh_logo_1778408286681.png" alt="Tashmeh" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\catalyst_financial_logo_1778408262925.png" alt="Catalyst Financial" class="h-12 w-auto object-contain">
+      <!-- Interactive Marquee Wrapper -->
+      <div class="flex w-max animate-[marquee-scroll_30s_linear_infinite] hover:[animation-play-state:paused]">
+         <!-- Group 1 -->
+         <div class="flex gap-16 md:gap-32 items-center shrink-0 pr-16 md:pr-32">
+            <img src="images/patientxpress_logo_latest.png" alt="PatientXpress" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/addins_education_logo_latest.png" alt="Addins Education" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/listitnow_logo_latest.png" alt="ListItNow" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/manuplast_logo_latest.png" alt="Manuplast" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/tashmeh_logo_latest.png" alt="Tashmeh" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/catalyst_financial_logo_latest.png" alt="Catalyst Financial" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
          </div>
-         <!-- Duplicate for smooth loop -->
-         <div class="marquee-content flex gap-32 items-center grayscale opacity-60">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\patientxpress_logo_1778408182722.png" alt="PatientXpress" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\addins_education_logo_1778408205356.png" alt="Addins Education" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\listitnow_logo_1778408224301.png" alt="ListItNow" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\manuplast_logo_1778408244198.png" alt="Manuplast" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\tashmeh_logo_1778408286681.png" alt="Tashmeh" class="h-12 w-auto object-contain">
-            <img src="C:\Users\rahul\.gemini\antigravity\brain\243e0f97-d1ad-4eb2-a700-4699d794c261\catalyst_financial_logo_1778408262925.png" alt="Catalyst Financial" class="h-12 w-auto object-contain">
+         <!-- Group 2 (Duplicate for smooth loop) -->
+         <div class="flex gap-16 md:gap-32 items-center shrink-0 pr-16 md:pr-32">
+            <img src="images/patientxpress_logo_latest.png" alt="PatientXpress" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/addins_education_logo_latest.png" alt="Addins Education" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/listitnow_logo_latest.png" alt="ListItNow" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/manuplast_logo_latest.png" alt="Manuplast" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/tashmeh_logo_latest.png" alt="Tashmeh" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
+            <img src="images/catalyst_financial_logo_latest.png" alt="Catalyst Financial" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
          </div>
+      </div>
+    </section>
+
+    <!-- 2.5 PARTNERS & CERTIFICATIONS SECTION -->
+    <section class="py-24 relative overflow-hidden bg-white border-b border-gray-100">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,#F0F7FF_0%,transparent_50%)]"></div>
+      
+      <div class="vt-container relative z-10">
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center mb-20 reveal-up">
+          <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-black text-[#007CC3] mb-6 uppercase tracking-[0.2em]">
+            <i class="fas fa-certificate mr-2"></i> Certified Ecosystem
+          </div>
+          <h2 class="text-4xl md:text-5xl font-black text-[#0D1B3E] tracking-tight leading-[1.1]">
+            Official Partnerships & <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#007CC3] to-[#1044C8]">Certified Tech Stack</span>
+          </h2>
+          <p class="text-slate-500 mt-6 text-sm md:text-base font-medium max-w-xl mx-auto leading-relaxed">
+            We work with and are certified experts in deploying systems across global infrastructure leaders, conversational platforms, and advanced generative AI models.
+          </p>
+        </div>
+
+        <!-- Partners Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up">
+          
+          <!-- Card 1: AWS -->
+          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(255,153,0,0.08)]">
+            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#FF9900]/40 to-[#FF9900]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
+              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#FF9900]/10 group-hover:text-[#FF9900] group-hover:border-[#FF9900]/20 transition-all duration-500 shadow-sm mb-6">
+                <i class="fab fa-aws"></i>
+              </div>
+              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">AWS Cloud</h3>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#FF9900]/5 border border-[#FF9900]/10 text-[9px] font-black text-[#FF9900] uppercase tracking-wider w-max mb-4">
+                Certified Solutions Architects
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                Highly scalable serverless architectures, multi-region failover, secure VPC configurations, and cost-optimized EC2/RDS deployment strategies.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Azure -->
+          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,120,215,0.08)]">
+            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#0078D7]/40 to-[#0078D7]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
+              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#0078D7]/10 group-hover:text-[#0078D7] group-hover:border-[#0078D7]/20 transition-all duration-500 shadow-sm mb-6">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M1.6 17.5L11.6 3.5h.8L22 17.5h-5.6l-4.8-9.3-4.5 9.3H1.6z"/>
+                </svg>
+              </div>
+              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">Microsoft Azure</h3>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0078D7]/5 border border-[#0078D7]/10 text-[9px] font-black text-[#0078D7] uppercase tracking-wider w-max mb-4">
+                Certified Cloud Partner
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                Enterprise Active Directory integration, hybrid cloud architectures, Azure Synapse analytics, and secure Kubernetes (AKS) workloads.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: DigitalOcean -->
+          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,143,255,0.08)]">
+            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#008FFF]/40 to-[#008FFF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
+              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#008FFF]/10 group-hover:text-[#008FFF] group-hover:border-[#008FFF]/20 transition-all duration-500 shadow-sm mb-6">
+                <i class="fab fa-digital-ocean"></i>
+              </div>
+              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">DigitalOcean</h3>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#008FFF]/5 border border-[#008FFF]/10 text-[9px] font-black text-[#008FFF] uppercase tracking-wider w-max mb-4">
+                Solutions Partner
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                Rapid VM deployment, scalable App Platform configurations, managed PostgreSQL/Redis databases, and high-performance CDN assets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: WhatsApp -->
+          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(37,211,102,0.08)]">
+            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#25D366]/40 to-[#25D366]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
+              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#25D366]/10 group-hover:text-[#25D366] group-hover:border-[#25D366]/20 transition-all duration-500 shadow-sm mb-6">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">WhatsApp</h3>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#25D366]/5 border border-[#25D366]/10 text-[9px] font-black text-[#25D366] uppercase tracking-wider w-max mb-4">
+                Official API Experts
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                Direct Cloud API automation, complex interactive conversational flow development, message templates, and automated support pipelines.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5: Meta -->
+          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(6,149,240,0.08)]">
+            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#0695F0]/40 to-[#0695F0]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
+              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#0695F0]/10 group-hover:text-[#0695F0] group-hover:border-[#0695F0]/20 transition-all duration-500 shadow-sm mb-6">
+                <i class="fab fa-meta"></i>
+              </div>
+              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">Meta</h3>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0695F0]/5 border border-[#0695F0]/10 text-[9px] font-black text-[#0695F0] uppercase tracking-wider w-max mb-4">
+                Certified Business Partner
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                Meta Conversational Commerce setup, Advanced Conversion API (CAPI) tracking, Messenger API automation, and Business Suite scaling.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6: OpenAI -->
+          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(16,163,127,0.08)]">
+            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#10A37F]/40 to-[#10A37F]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
+              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#10A37F]/10 group-hover:text-[#10A37F] group-hover:border-[#10A37F]/20 transition-all duration-500 shadow-sm mb-6">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M21.3 10.3c.1-.5.1-1.1-.1-1.6-.2-.5-.6-1-1-1.3-.1-.1-.2-.1-.4-.2C19.7 5 18 3.9 16 4c-.5 0-1 .2-1.5.4-.1.1-.3.1-.4 0C13.2 3.3 11.5 2.9 9.8 3.6c-1.5.6-2.6 1.9-3 3.5-.1.1-.2.2-.3.2-1.8.7-3 2.4-3.1 4.3 0 .5.1 1.1.3 1.6.2.5.6 1 1 1.3.1.1.2.1.4.2.1 2.2 1.8 3.3 3.8 3.2.5 0 1-.2 1.5-.4.1-.1.3-.1.4 0 .9 1.1 2.6 1.5 4.3.8 1.5-.6 2.6-1.9 3-3.5.1-.1.2-.2.3-.2 1.8-.7 3-2.4 3.1-4.3-.1-.6-.1-1.2-.2-1.7zm-4.6 8.1c-.1.2-.2.4-.4.5-.9.5-2 .4-2.8-.2l-4.5-2.6v-2.2l3.8 2.2c.5.3 1.1.3 1.6 0 .5-.3.8-.8.8-1.4v-5.2l1.5.9c1.4.8 1.9 2.3 1.6 3.8-.1 1.7-.5 3.2-1 4.4zm1.2-8l-1.5-.9V7.4c0-.6-.3-1.1-.8-1.4-.5-.3-1.1-.3-1.6 0l-4.5 2.6 1.5-2.6c.8-1.4 2.5-2.1 4-1.6 1.5.5 2.4 2 2.3 3.6v2.4zm-7.5-4c.2 0 .4.1.5.2.9.5 1.4 1.5 1.4 2.6v5.2L8.5 12c-.5-.3-1.1-.3-1.6 0-.5.3-.8.8-.8 1.4v5.2l-1.5-.9c-1.4-.8-2-2.5-1.5-4 .5-1.5 1.8-2.6 3.4-2.6.4 0 .7.1 1.1.3zm-1.6 8.2l1.5.9v2.1c0 .6.3 1.1.8 1.4.5.3 1.1.3 1.6 0l4.5-2.6-1.5 2.6c-.8 1.4-2.5 2.1-4 1.6-1.5-.5-2.4-2-2.3-3.6v-3.2zm7.5 4v-5.2l3.8 2.2c.5.3 1.1.3 1.6 0 .5-.3.8-.8.8-1.4V8c1.4.8 2 2.5 1.5 4-.5 1.5-1.8 2.6-3.4 2.6-.4 0-.7-.1-1.1-.3z"/>
+                </svg>
+              </div>
+              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">OpenAI</h3>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#10A37F]/5 border border-[#10A37F]/10 text-[9px] font-black text-[#10A37F] uppercase tracking-wider w-max mb-4">
+                API Integration Experts
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                Advanced GPT-4o integration, custom assistants with secure RAG data pipelines, functional API calling, and specialized model fine-tuning.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 7: Google Gemini -->
+          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(26,115,232,0.08)]">
+            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#1044C8]/40 to-[#00C8E6]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
+              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#1A73E8]/10 group-hover:text-[#1A73E8] group-hover:border-[#1A73E8]/20 transition-all duration-500 shadow-sm mb-6">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C12 2 12.5 7.5 18 8C12.5 8.5 12 14 12 14C12 14 11.5 8.5 6 8C11.5 7.5 12 2 12 2Z" fill="url(#gemini-grad-home-1)"/>
+                  <path d="M18 14C18 14 18.25 16.75 21 17C18.25 17.25 18 20 18 20C18 20 17.75 17.25 15 17C17.75 16.75 18 14 18 14Z" fill="url(#gemini-grad-home-2)"/>
+                  <defs>
+                    <linearGradient id="gemini-grad-home-1" x1="6" y1="2" x2="18" y2="14" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#00C8E6" />
+                      <stop offset="100%" stop-color="#1044C8" />
+                    </linearGradient>
+                    <linearGradient id="gemini-grad-home-2" x1="15" y1="14" x2="21" y2="20" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#00C8E6" />
+                      <stop offset="100%" stop-color="#1044C8" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">Google Gemini</h3>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#1044C8]/5 border border-[#1044C8]/10 text-[9px] font-black text-[#1044C8] uppercase tracking-wider w-max mb-4">
+                Gemini Pro Integrations
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                Multimodal application engineering, high-volume token parsing via Gemini Flash, and robust Vertex AI pipeline architecture integrations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 8: Claude AI -->
+          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(217,119,87,0.08)]">
+            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#D97757]/40 to-[#D97757]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
+              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#D97757]/10 group-hover:text-[#D97757] group-hover:border-[#D97757]/20 transition-all duration-500 shadow-sm mb-6">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 3L3.5 19.5h3.8l2-4.2h5.4l2 4.2h3.8L12 3zm1.4 9.5H10.6l1.4-3.1 1.4 3.1z"/>
+                </svg>
+              </div>
+              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">Anthropic Claude</h3>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#D97757]/5 border border-[#D97757]/10 text-[9px] font-black text-[#D97757] uppercase tracking-wider w-max mb-4">
+                Claude AI Integration
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                High-context window processing using Claude 3.5 Sonnet, structured JSON output setups, and robust agentic workflow orchestration.
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -244,9 +444,9 @@
           </a>
 
           <a href="services/branding.html" class="vt-card group reveal-up">
-            <div class="vt-card-icon"><i class="fas fa-chart-line"></i></div>
-            <h3 class="vt-card-title">Digital Dominance</h3>
-            <p class="vt-card-desc">Advanced SEO, AEO, and GEO strategies that propel your brand from nowhere to the top of the digital food chain.</p>
+            <div class="vt-card-icon"><i class="fas fa-fingerprint"></i></div>
+            <h3 class="vt-card-title">360° Brand Building</h3>
+            <p class="vt-card-desc">Corporate visual identity, narrative AI Cinematography (commercial shoots, video generation, pre-weddings), and deep AEO & GEO search domination.</p>
             <span class="vt-card-link">Learn More <i class="fas fa-arrow-right"></i></span>
           </a>
         </div>
@@ -269,14 +469,14 @@
                 <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-accent-blue mb-6">
                    <i class="fas fa-chess-knight"></i>
                 </div>
-                <h4 class="font-black text-[#002D62] mb-3 uppercase text-xs tracking-widest">Philosophy</h4>
+                <h4 class="font-black text-[#0D1B3E] mb-3 uppercase text-xs tracking-widest">Philosophy</h4>
                 <p class="text-sm text-slate-500 leading-relaxed">A business-first technical approach that prioritizes ROI and long-term scalability over hype.</p>
               </div>
               <div class="p-8 bg-white border border-slate-100 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-accent-purple mb-6">
+                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-accent-blue mb-6">
                    <i class="fas fa-microscope"></i>
                 </div>
-                <h4 class="font-black text-[#002D62] mb-3 uppercase text-xs tracking-widest">R&D Culture</h4>
+                <h4 class="font-black text-[#0D1B3E] mb-3 uppercase text-xs tracking-widest">R&D Culture</h4>
                 <p class="text-sm text-slate-500 leading-relaxed">Continuous experimentation with emerging AI models ensures your stack remains future-proof.</p>
               </div>
             </div>
@@ -285,7 +485,7 @@
           <div class="flex-1 w-full reveal-right">
             <div class="relative">
                <!-- Decorative Backdrop -->
-               <div class="absolute -inset-10 bg-gradient-to-tr from-accent-blue/10 to-accent-purple/10 blur-[80px] rounded-full opacity-50"></div>
+               <div class="absolute -inset-10 bg-gradient-to-tr from-accent-blue/10 to-accent-cyan/10 blur-[80px] rounded-full opacity-50"></div>
                
                <div class="relative grid grid-cols-2 gap-6">
                  <div class="glass-card p-10 flex flex-col justify-between h-64 hover:-translate-y-2 transition-transform">
@@ -296,7 +496,7 @@
                     </div>
                  </div>
                  <div class="glass-card p-10 flex flex-col justify-between h-64 mt-12 hover:-translate-y-2 transition-transform">
-                    <div class="vt-stat-num text-5xl font-black text-accent-purple"><span class="counter" data-target="150">0</span>+</div>
+                    <div class="vt-stat-num text-5xl font-black text-[#007CC3]"><span class="counter" data-target="150">0</span>+</div>
                     <div>
                       <div class="vt-stat-label font-black text-[10px] tracking-widest">Experts</div>
                       <p class="text-[10px] text-slate-400 mt-2">Specialized in AI, Cloud, and Fintech.</p>
@@ -310,7 +510,7 @@
                     </div>
                  </div>
                  <div class="glass-card p-10 flex flex-col justify-between h-64 hover:-translate-y-2 transition-transform">
-                    <div class="vt-stat-num text-5xl font-black text-[#002D62]">24/7</div>
+                    <div class="vt-stat-num text-5xl font-black text-[#0D1B3E]">24/7</div>
                     <div>
                       <div class="vt-stat-label font-black text-[10px] tracking-widest">Support</div>
                       <p class="text-[10px] text-slate-400 mt-2">Enterprise-grade monitoring and response.</p>
@@ -338,7 +538,7 @@
                 <div class="font-bold text-slate-800">Strategic Ideation</div>
               </div>
               <div class="flex items-center gap-4 p-4 glass-card">
-                <div class="w-10 h-10 rounded-full bg-accent-purple/10 flex items-center justify-center text-accent-purple font-bold">2</div>
+                <div class="w-10 h-10 rounded-full bg-accent-blue/10 flex items-center justify-center text-accent-blue font-bold">2</div>
                 <div class="font-bold text-slate-800">Agile Engineering</div>
               </div>
               <div class="flex items-center gap-4 p-4 glass-card">
@@ -378,13 +578,13 @@
       </div>
     </section>
 
-    <!-- 6. DIGITAL DOMINANCE - From Nowhere to Top -->
+    <!-- 6. DIGITAL DOMINANCE - 360° Brand Building Blueprint -->
     <section class="vt-section relative overflow-hidden">
       <div class="vt-container">
         <div class="max-w-4xl mb-24 reveal-up">
-          <div class="vt-section-label">The Growth Blueprint</div>
-          <h2 class="vt-section-heading">Strategic <span class="vt-accent">Branding & Marketing</span> for Absolute Authority</h2>
-          <p class="vt-section-sub">We don't just build software; we architect the digital engines that propel your brand from obscurity to global market leadership.</p>
+          <div class="vt-section-label">The 360° Brand Blueprint</div>
+          <h2 class="vt-section-heading">We Don't Just Market. <span class="vt-accent">We Architect Brands.</span></h2>
+          <p class="vt-section-sub">A premium brand is your ultimate unfair advantage. We execute full-spectrum 360° brand architecture, visual systems, and AI-enabled authority channels to move you from obscurity to market dominance.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
@@ -394,33 +594,34 @@
           <!-- Phase 1 -->
           <div class="relative z-10 group reveal-up">
             <div class="w-16 h-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center font-black text-xl text-accent-blue mb-8 group-hover:bg-accent-blue group-hover:text-white transition-all duration-500">01</div>
-            <h3 class="text-2xl font-black text-slate-900 mb-4">Strategic Ideation</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">We distill your brand essence into a comprehensive marketing plan and execution roadmap designed for high-impact entry into saturated markets.</p>
+            <h3 class="text-2xl font-black text-slate-900 mb-4">360° Identity Architecture</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">We distill your business vision into comprehensive visual systems, custom voice guidelines, and competitive brand positioning designed for absolute authority.</p>
             <ul class="mt-6 space-y-3 text-[10px] font-black uppercase tracking-widest text-slate-400">
-              <li><i class="fas fa-check text-accent-blue mr-2"></i> Market Intelligence</li>
               <li><i class="fas fa-check text-accent-blue mr-2"></i> Brand Architecture</li>
+              <li><i class="fas fa-check text-accent-blue mr-2"></i> Visual Identity Design</li>
+              <li><i class="fas fa-check text-accent-blue mr-2"></i> AI Cinematography</li>
             </ul>
           </div>
 
           <!-- Phase 2 -->
           <div class="relative z-10 group reveal-up" data-delay="200">
-            <div class="w-16 h-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center font-black text-xl text-accent-purple mb-8 group-hover:bg-accent-purple group-hover:text-white transition-all duration-500">02</div>
-            <h3 class="text-2xl font-black text-slate-900 mb-4">Multi-Engine Optimization</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">Dominating search isn't enough. We optimize for SEO, AEO (Answers), and GEO (Generative) to ensure your brand is the definitive answer everywhere.</p>
+            <div class="w-16 h-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center font-black text-xl text-[#007CC3] mb-8 group-hover:bg-[#007CC3] group-hover:text-white transition-all duration-500">02</div>
+            <h3 class="text-2xl font-black text-slate-900 mb-4">Omnipresent Brand Trust</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">We build semantic authority across standard search (SEO), AI Answer Engines (AEO), and Generative Search (GEO) so your brand is the definitive answer everywhere.</p>
             <ul class="mt-6 space-y-3 text-[10px] font-black uppercase tracking-widest text-slate-400">
-              <li><i class="fas fa-check text-accent-purple mr-2"></i> GEO/AEO Integration</li>
-              <li><i class="fas fa-check text-accent-purple mr-2"></i> Semantic Authority</li>
+              <li><i class="fas fa-check text-[#007CC3] mr-2"></i> GEO/AEO Domination</li>
+              <li><i class="fas fa-check text-[#007CC3] mr-2"></i> Semantic Brand Trust</li>
             </ul>
           </div>
 
           <!-- Phase 3 -->
           <div class="relative z-10 group reveal-up" data-delay="400">
             <div class="w-16 h-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center font-black text-xl text-accent-cyan mb-8 group-hover:bg-accent-cyan group-hover:text-white transition-all duration-500">03</div>
-            <h3 class="text-2xl font-black text-slate-900 mb-4">Global Brand Ranking</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">The final transformation. We execute aggressive brand ranking strategies that position you at the zenith of your industry across the global web.</p>
+            <h3 class="text-2xl font-black text-slate-900 mb-4">Global Market Dominance</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">We execute highly focused digital PR, brand equity campaigns, and authoritative ranking systems to scale your brand presence across global markets.</p>
             <ul class="mt-6 space-y-3 text-[10px] font-black uppercase tracking-widest text-slate-400">
-              <li><i class="fas fa-check text-accent-cyan mr-2"></i> Tier-1 Brand Ranking</li>
-              <li><i class="fas fa-check text-accent-cyan mr-2"></i> Market Transformation</li>
+              <li><i class="fas fa-check text-accent-cyan mr-2"></i> Tier-1 Brand Equity</li>
+              <li><i class="fas fa-check text-accent-cyan mr-2"></i> Global Scaled Leadership</li>
             </ul>
           </div>
         </div>
@@ -428,83 +629,195 @@
     </section>
 
     <!-- 7. FEATURED PROJECTS - Pinned Horizontal Showcase -->
-    <section class="horizontal-scroll-container">
-      <div class="horizontal-scroll-wrapper">
+    <section class="horizontal-scroll-container bg-[#0D1B3E] relative overflow-hidden text-white border-y border-[#1044C8]/30">
+      <!-- Dark Theme Glow Effects -->
+      <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-[#00C8E6]/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#1044C8]/10 rounded-full blur-[120px] pointer-events-none"></div>
+      
+      <div class="horizontal-scroll-wrapper relative z-10">
         <!-- Title Slide -->
-        <div class="flex-none w-[60vw] flex flex-col justify-center px-12">
-          <div class="vt-section-label !p-0 !before:hidden">Elite Portfolio</div>
-          <h2 class="text-7xl font-black text-white leading-tight">Global <span class="ai-gradient-text">Success Stories</span></h2>
-          <p class="text-slate-400 mt-6 text-xl max-w-lg">We architect digital dominance. Explore how our AI-first methodology transforms enterprise operations.</p>
+        <div class="flex-none w-[80vw] md:w-[60vw] flex flex-col justify-center px-8 md:px-16">
+          <div class="inline-flex items-center gap-3 mb-6">
+            <span class="w-8 h-px bg-[#00C8E6]"></span>
+            <span class="text-[10px] font-black uppercase tracking-widest text-[#00C8E6]">Elite Portfolio</span>
+          </div>
+          <h2 class="text-5xl md:text-7xl font-black text-white leading-[1.1]">Global <br><span class="brand-gradient-text drop-shadow-xl">Success Stories.</span></h2>
+          <p class="text-blue-100/70 mt-8 text-lg md:text-xl max-w-lg leading-relaxed">We architect digital dominance. Explore how our AI-first methodology transforms enterprise operations across the globe.</p>
         </div>
 
-        <!-- Project 1 -->
-        <div class="apple-scroll-item group">
-          <div class="success-pill"><i class="fas fa-chart-line"></i> 40% Efficiency</div>
+        <!-- Project 1: PatientXpress -->
+        <div class="apple-scroll-item group bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-[#00C8E6]/20 blur-[50px] group-hover:bg-[#00C8E6]/40 transition-colors duration-500"></div>
+          
+          <div class="flex items-center gap-3 mb-8">
+            <span class="px-4 py-2 rounded-full bg-[#1044C8]/20 border border-[#1044C8]/30 text-[#00C8E6] font-black text-[10px] uppercase tracking-widest"><i class="fas fa-chart-line mr-2"></i> +150% Leads</span>
+            <span class="text-white/40 font-black text-[10px] uppercase tracking-widest">Healthcare | AI</span>
+          </div>
+          
           <div>
-            <span class="text-accent-blue font-black text-[10px] uppercase tracking-widest">Enterprise | ERP</span>
-            <h3 class="text-4xl font-black text-white mt-4 mb-4">Nexus Industrial</h3>
-            <p class="text-slate-400 text-sm">Unifying 14 global manufacturing plants into a single AI-powered production dashboard.</p>
+            <h3 class="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#00C8E6] transition-colors">PatientXpress</h3>
+            <p class="text-blue-100/60 text-sm leading-relaxed">Complete marketing transformation (Website, SEO, AEO, SMM) integrated with automated AI workflows.</p>
           </div>
-          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-slate-800 relative my-6">
-             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" alt="Nexus">
+          
+          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-white relative my-8 shadow-2xl border border-white/5 flex items-center justify-center p-8">
+             <img src="images/patientxpress_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain scale-100 group-hover:scale-110 transition-transform duration-1000" alt="PatientXpress Logo">
           </div>
-          <a href="#" class="text-white font-bold flex items-center gap-2 group/link">Read Case Study <i class="fas fa-arrow-right group-hover/link:translate-x-2 transition-transform"></i></a>
+          
+          <a href="project-patientxpress.html" class="text-white font-bold flex items-center gap-3 group/link hover:text-[#00C8E6] transition-colors uppercase text-[11px] tracking-widest">Read Case Study <i class="fas fa-arrow-right w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-[#00C8E6] group-hover/link:border-[#00C8E6] group-hover/link:text-[#0D1B3E] transition-all"></i></a>
         </div>
 
-        <!-- Project 2 -->
-        <div class="apple-scroll-item group">
-          <div class="success-pill"><i class="fas fa-shield-check"></i> 99% Accuracy</div>
+        <!-- Project 2: Addins Education -->
+        <div class="apple-scroll-item group bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-[#1044C8]/20 blur-[50px] group-hover:bg-[#1044C8]/40 transition-colors duration-500"></div>
+          
+          <div class="flex items-center gap-3 mb-8">
+            <span class="px-4 py-2 rounded-full bg-[#1044C8]/20 border border-[#1044C8]/30 text-[#00C8E6] font-black text-[10px] uppercase tracking-widest"><i class="fas fa-users mr-2"></i> 50k+ Users</span>
+            <span class="text-white/40 font-black text-[10px] uppercase tracking-widest">EdTech | ERP</span>
+          </div>
+          
           <div>
-            <span class="text-accent-purple font-black text-[10px] uppercase tracking-widest">Fintech | AI</span>
-            <h3 class="text-4xl font-black text-white mt-4 mb-4">Aura Banking</h3>
-            <p class="text-slate-400 text-sm">Implementing predictive fraud detection models processing $2B+ in annual transactions.</p>
+            <h3 class="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#00C8E6] transition-colors">Addins Education</h3>
+            <p class="text-blue-100/60 text-sm leading-relaxed">National level platform for tutor hiring and 1-on-1 class management with deep ERP & CRM AI integration.</p>
           </div>
-          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-slate-800 relative my-6">
-             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" alt="Aura">
+          
+          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-white relative my-8 shadow-2xl border border-white/5 flex items-center justify-center p-8">
+             <img src="images/addins_education_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain scale-100 group-hover:scale-110 transition-transform duration-1000" alt="Addins Education Logo">
           </div>
-          <a href="#" class="text-white font-bold flex items-center gap-2 group/link">Read Case Study <i class="fas fa-arrow-right group-hover/link:translate-x-2 transition-transform"></i></a>
+          
+          <a href="project-addins.html" class="text-white font-bold flex items-center gap-3 group/link hover:text-[#00C8E6] transition-colors uppercase text-[11px] tracking-widest">Read Case Study <i class="fas fa-arrow-right w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-[#00C8E6] group-hover/link:border-[#00C8E6] group-hover/link:text-[#0D1B3E] transition-all"></i></a>
         </div>
 
-        <!-- Project 3 -->
-        <div class="apple-scroll-item group">
-          <div class="success-pill"><i class="fas fa-clock"></i> -30% Setup Time</div>
+        <!-- Project 3: List IT Now -->
+        <div class="apple-scroll-item group bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-[#007CC3]/20 blur-[50px] group-hover:bg-[#007CC3]/40 transition-colors duration-500"></div>
+          
+          <div class="flex items-center gap-3 mb-8">
+            <span class="px-4 py-2 rounded-full bg-[#1044C8]/20 border border-[#1044C8]/30 text-[#00C8E6] font-black text-[10px] uppercase tracking-widest"><i class="fas fa-map-marker-alt mr-2"></i> 107 Cities</span>
+            <span class="text-white/40 font-black text-[10px] uppercase tracking-widest">PropTech | AI</span>
+          </div>
+          
           <div>
-            <span class="text-accent-cyan font-black text-[10px] uppercase tracking-widest">Healthcare | Apps</span>
-            <h3 class="text-4xl font-black text-white mt-4 mb-4">Patient Xpress</h3>
-            <p class="text-slate-400 text-sm">Next-gen dental CRM with real-time patient analytics and automated scheduling.</p>
+            <h3 class="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#00C8E6] transition-colors">List IT Now</h3>
+            <p class="text-blue-100/60 text-sm leading-relaxed">Built from scratch, this AI-powered property management platform scaled from zero to 107 cities seamlessly.</p>
           </div>
-          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-slate-800 relative my-6">
-             <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" alt="PX">
+          
+          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-white relative my-8 shadow-2xl border border-white/5 flex items-center justify-center p-8">
+             <img src="images/listitnow_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain scale-100 group-hover:scale-110 transition-transform duration-1000" alt="List IT Now Logo">
           </div>
-          <a href="#" class="text-white font-bold flex items-center gap-2 group/link">Read Case Study <i class="fas fa-arrow-right group-hover/link:translate-x-2 transition-transform"></i></a>
+          
+          <a href="project-listitnow.html" class="text-white font-bold flex items-center gap-3 group/link hover:text-[#00C8E6] transition-colors uppercase text-[11px] tracking-widest">Read Case Study <i class="fas fa-arrow-right w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-[#00C8E6] group-hover/link:border-[#00C8E6] group-hover/link:text-[#0D1B3E] transition-all"></i></a>
+        </div>
+
+        <!-- Project 4: Manuplast -->
+        <div class="apple-scroll-item group bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-[#1044C8]/20 blur-[50px] group-hover:bg-[#1044C8]/40 transition-colors duration-500"></div>
+          
+          <div class="flex items-center gap-3 mb-8">
+            <span class="px-4 py-2 rounded-full bg-[#1044C8]/20 border border-[#1044C8]/30 text-[#00C8E6] font-black text-[10px] uppercase tracking-widest"><i class="fas fa-industry mr-2"></i> Digital Trans.</span>
+            <span class="text-white/40 font-black text-[10px] uppercase tracking-widest">Industrial | Strategy</span>
+          </div>
+          
+          <div>
+            <h3 class="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#00C8E6] transition-colors">Manuplast</h3>
+            <p class="text-blue-100/60 text-sm leading-relaxed">Complete digital transformation and rebranding for a legacy industrial manufacturing operator.</p>
+          </div>
+          
+          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-white relative my-8 shadow-2xl border border-white/5 flex items-center justify-center p-8">
+             <img src="images/manuplast_logo_latest.png" class="max-w-[80%] max-h-[80%] object-contain scale-100 group-hover:scale-110 transition-transform duration-1000" alt="Manuplast Logo">
+          </div>
+          
+          <a href="project-manuplast.html" class="text-white font-bold flex items-center gap-3 group/link hover:text-[#00C8E6] transition-colors uppercase text-[11px] tracking-widest">Read Case Study <i class="fas fa-arrow-right w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-[#00C8E6] group-hover/link:border-[#00C8E6] group-hover/link:text-[#0D1B3E] transition-all"></i></a>
         </div>
 
         <!-- Final Slide -->
-        <div class="flex-none w-[60vw] flex flex-col justify-center px-12 items-center text-center">
-          <h2 class="text-5xl font-black text-white mb-8">Ready to Scale?</h2>
-          <a href="portfolio.html" class="vt-btn-primary">Explore All 500+ Projects</a>
+        <div class="flex-none w-[80vw] md:w-[60vw] flex flex-col justify-center px-8 md:px-16 items-center text-center">
+          <div class="w-24 h-24 rounded-full bg-[#1044C8]/20 flex items-center justify-center text-[#00C8E6] text-3xl mb-8 border border-[#1044C8]/50 shadow-[0_0_50px_rgba(0,124,195,0.3)]">
+             <i class="fas fa-rocket"></i>
+          </div>
+          <h2 class="text-4xl md:text-6xl font-black text-white mb-8">Ready to Scale?</h2>
+          <a href="portfolio.html" class="inline-flex items-center justify-center px-10 py-5 rounded-full bg-white text-[#0D1B3E] font-black text-sm uppercase tracking-widest hover:bg-[#00C8E6] hover:scale-105 transition-all duration-300 shadow-xl group">Explore All 500+ Projects <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i></a>
         </div>
       </div>
     </section>
 
     <!-- 7. TECHNOLOGY STACK -->
-    <section class="vt-section vt-section-dark">
-      <div class="vt-container">
-        <div class="text-center mb-20">
-          <h2 class="vt-section-heading !text-white">Built with the <span class="vt-accent">Best</span></h2>
+    <!-- 7. TECHNOLOGY STACK -->
+    <section class="vt-section bg-slate-50 relative overflow-hidden text-slate-900 border-b border-slate-200 py-32">
+      <!-- Ambient Lights -->
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#00C8E6]/5 rounded-full blur-[150px] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#1044C8]/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+      <div class="vt-container relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-24 reveal-up">
+          <div class="inline-flex items-center gap-3 mb-6">
+            <span class="w-8 h-px bg-[#00C8E6]"></span>
+            <span class="text-[10px] font-black uppercase tracking-widest text-[#007CC3]">Enterprise Architecture</span>
+            <span class="w-8 h-px bg-[#00C8E6]"></span>
+          </div>
+          <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] mb-8">Built with the <br><span class="brand-gradient-text drop-shadow-sm">World's Best.</span></h2>
+          <p class="text-slate-600 text-lg md:text-xl leading-relaxed">Our enterprise systems run on the exact same high-performance infrastructure and tech stacks utilized by Fortune 500 companies.</p>
         </div>
         
-        <div class="tech-orbit">
-          <div class="tech-center">
-            <img src="./images/logo.png" class="w-16 h-16" alt="Vybtek">
+        <!-- Premium Tech Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 reveal-up">
+          
+          <!-- Box 1: Frontend & UI -->
+          <div class="bg-white border border-slate-200 rounded-[40px] p-10 hover:shadow-2xl hover:border-[#00C8E6]/30 transition-all duration-500 relative overflow-hidden group shadow-lg shadow-slate-200/50">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#00C8E6]/5 blur-[40px] group-hover:bg-[#00C8E6]/10 transition-colors duration-500"></div>
+            
+            <div class="w-16 h-16 rounded-2xl bg-[#00C8E6]/10 border border-[#00C8E6]/20 flex items-center justify-center text-[#00C8E6] text-2xl mb-8 group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-[#0D1B3E] mb-4">Frontend & Interface</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-10">Pixel-perfect, hyper-responsive, and accessible interfaces built for massive scale.</p>
+            
+            <div class="flex flex-wrap gap-4">
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#61DAFB] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="React.js"><i class="fab fa-react"></i></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-900 text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Next.js"><b>N</b></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#38B2AC] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Tailwind CSS"><i class="fas fa-wind"></i></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#E34F26] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="HTML5"><i class="fab fa-html5"></i></div>
+            </div>
           </div>
-          <!-- Orbit Nodes -->
-          <div class="tech-node [--rot:0deg]"><i class="fab fa-react"></i></div>
-          <div class="tech-node [--rot:60deg]"><i class="fab fa-node-js"></i></div>
-          <div class="tech-node [--rot:120deg]"><i class="fab fa-python"></i></div>
-          <div class="tech-node [--rot:180deg]"><i class="fab fa-aws"></i></div>
-          <div class="tech-node [--rot:240deg]"><i class="fas fa-bolt"></i></div>
-          <div class="tech-node [--rot:300deg]"><i class="fab fa-js"></i></div>
+
+          <!-- Box 2: Core Backend -->
+          <div class="bg-white border border-slate-200 rounded-[40px] p-10 hover:shadow-2xl hover:border-[#1044C8]/30 transition-all duration-500 relative overflow-hidden group shadow-lg shadow-slate-200/50">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#1044C8]/5 blur-[40px] group-hover:bg-[#1044C8]/10 transition-colors duration-500"></div>
+            
+            <div class="w-16 h-16 rounded-2xl bg-[#1044C8]/10 border border-[#1044C8]/20 flex items-center justify-center text-[#1044C8] text-2xl mb-8 group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-server"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-[#0D1B3E] mb-4">Core Backend APIs</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-10">High-throughput microservices designed for zero-downtime data processing.</p>
+            
+            <div class="flex flex-wrap gap-4">
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#339933] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Node.js"><i class="fab fa-node-js"></i></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#3776AB] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Python"><i class="fab fa-python"></i></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#4479A1] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="MySQL"><i class="fas fa-database"></i></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#D22128] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Redis"><i class="fas fa-bolt"></i></div>
+            </div>
+          </div>
+
+          <!-- Box 3: Cloud & AI -->
+          <div class="bg-white border border-slate-200 rounded-[40px] p-10 hover:shadow-2xl hover:border-[#007CC3]/30 transition-all duration-500 relative overflow-hidden group shadow-lg shadow-slate-200/50">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#007CC3]/5 blur-[40px] group-hover:bg-[#007CC3]/10 transition-colors duration-500"></div>
+            
+            <div class="w-16 h-16 rounded-2xl bg-[#007CC3]/10 border border-[#007CC3]/20 flex items-center justify-center text-[#007CC3] text-2xl mb-8 group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-brain"></i>
+            </div>
+            
+            <h3 class="text-2xl font-black text-[#0D1B3E] mb-4">Cloud & AI Native</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-10">Autoscaling infrastructure heavily integrated with custom LLMs and machine learning.</p>
+            
+            <div class="flex flex-wrap gap-4">
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#FF9900] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="AWS"><i class="fab fa-aws"></i></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#0088CC] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="DigitalOcean"><i class="fab fa-digital-ocean"></i></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#10A37F] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="OpenAI"><i class="fas fa-robot"></i></div>
+              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#0078D4] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Azure"><i class="fab fa-windows"></i></div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -614,11 +927,11 @@
     </section>
 
     <!-- 11. FINAL CTA -->
-    <section class="vt-section bg-[#002D62] text-white text-center py-40">
+    <section class="vt-section bg-[#0D1B3E] text-white text-center py-40">
       <div class="vt-container relative z-10">
         <h2 class="text-6xl font-black mb-10">Let’s Build Your <span class="vt-accent">Digital Future</span></h2>
         <div class="flex justify-center gap-8">
-          <a href="#" class="vt-btn-primary !bg-white !text-[#002D62]">Schedule Strategy Call</a>
+          <a href="#" class="vt-btn-primary !bg-white !text-[#0D1B3E]">Schedule Strategy Call</a>
           <a href="#" class="vt-btn-primary">Start Your Project</a>
         </div>
       </div>
@@ -634,3 +947,4 @@
 </body>
 
 </html>
+

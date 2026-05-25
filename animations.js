@@ -109,7 +109,14 @@ gsap.to(".hero-tech-card", {
 });
 
 // 4. ROTATING TEXT
-const words = ["Digital Dominance", "Next-Gen AI Systems", "Market Leadership", "Strategic Branding"];
+const words = [
+    "360° Brand Authority", 
+    "High-Fidelity Web Design", 
+    "Omnipresent SEO & GEO", 
+    "Strategic SMM Campaigns", 
+    "Marketing Automations",
+    "Legendary Brand Identity"
+];
 let i = 0;
 const rotateText = () => {
     const el = document.getElementById("rotating-text");
@@ -299,9 +306,9 @@ gsap.to("body", {
         start: "top center",
         end: "bottom center",
         onEnter: () => {
-            gsap.to("body", { backgroundColor: "#0A0A0A", duration: 1 });
-            document.body.classList.add("theme-dark");
-            document.body.classList.remove("theme-light");
+            gsap.to("body", { backgroundColor: "#F1F5F9", duration: 1 });
+            document.body.classList.add("theme-light");
+            document.body.classList.remove("theme-dark");
         },
         onLeaveBack: () => {
             gsap.to("body", { backgroundColor: "#FFFFFF", duration: 1 });
@@ -314,9 +321,9 @@ gsap.to("body", {
             document.body.classList.remove("theme-dark");
         },
         onEnterBack: () => {
-            gsap.to("body", { backgroundColor: "#0A0A0A", duration: 1 });
-            document.body.classList.add("theme-dark");
-            document.body.classList.remove("theme-light");
+            gsap.to("body", { backgroundColor: "#F1F5F9", duration: 1 });
+            document.body.classList.add("theme-light");
+            document.body.classList.remove("theme-dark");
         },
     }
 });

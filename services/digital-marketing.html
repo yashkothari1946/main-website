@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enterprise Digital Marketing & SEO Agency | Vybtek</title>
+  <meta name="description" content="Data-driven enterprise digital marketing and SEO services. We use AI, programmatic advertising, and behavioral analytics to scale customer acquisition and ROI.">
+  <meta name="keywords" content="digital marketing agency, enterprise SEO services, B2B marketing, PPC management, programmatic advertising, conversion rate optimization, Vybtek marketing">
+  <link rel="canonical" href="https://vybtek.com/services/digital-marketing">
+  
+  <meta property="og:title" content="Enterprise Digital Marketing & SEO Agency | Vybtek">
+  <meta property="og:description" content="Data-driven digital marketing and SEO services. We use AI and behavioral analytics to scale customer acquisition and maximize ROI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vybtek.com/services/digital-marketing">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enterprise Digital Marketing & SEO Agency | Vybtek">
+  <meta name="twitter:description" content="Data-driven digital marketing and SEO services. We use AI and behavioral analytics to scale customer acquisition and maximize ROI.">
+  
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="../style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <script defer src="../headerFooter.js"></script>
+
+  <!-- SEO Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Digital Marketing and SEO",
+    "provider": {
+      "@type": "Organization",
+      "name": "Vybtek"
+    },
+    "description": "Data-driven enterprise digital marketing, search engine optimization (SEO), and PPC management services.",
+    "areaServed": "Worldwide"
+  }
+  </script>
+
+  <style>
+    /* GRAPH ANIMATION */
+    .graph-bar {
+      transform-origin: bottom;
+      transform: scaleY(0);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-[#007CC3] selection:text-white">
+  <header><special-header></special-header></header>
+
+  <main id="main-content" class="pt-32">
+    
+    <!-- 1. HERO -->
+    <section class="vt-section min-h-[90vh] flex items-center bg-white relative overflow-hidden">
+      <!-- Ambient Glows -->
+      <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#00C8E6]/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#007CC3]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="vt-container relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+           <div class="reveal-left">
+             <div class="inline-flex items-center gap-3 mb-6">
+                <span class="w-8 h-px bg-[#00C8E6]"></span>
+                <span class="text-[10px] font-black uppercase tracking-widest text-[#007CC3]">Performance Marketing</span>
+             </div>
+             <h1 class="text-5xl md:text-6xl lg:text-8xl font-black text-[#0D1B3E] leading-[1.05]">
+               The <span class="brand-gradient-text drop-shadow-sm">Growth</span> <br>Engine.
+             </h1>
+             <p class="text-xl md:text-2xl text-slate-600 mt-8 max-w-xl">
+               We replace vanity metrics with pipeline revenue. Utilizing AI-driven SEO, programmatic advertising, and A/B tested funnels to scale your customer acquisition.
+             </p>
+             <div class="mt-12 flex gap-6">
+                <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Audit My Marketing</a>
+             </div>
+           </div>
+           
+           <div class="reveal-right">
+              <!-- Animated Dashboard Graphic -->
+              <div class="bg-white p-6 md:p-8 rounded-3xl relative overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,124,195,0.1)] border border-slate-200">
+                 <!-- Background Grid -->
+                 <div class="absolute inset-0 bg-[linear-gradient(rgba(0,124,195,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,124,195,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                 
+                 <div class="relative z-10">
+                    <div class="flex justify-between items-end mb-8">
+                       <div>
+                          <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Monthly ROI</div>
+                          <div class="text-4xl font-black text-[#0D1B3E]">+342.8%</div>
+                       </div>
+                       <div class="text-[#00C8E6] font-bold text-xl"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+                    
+                    <!-- Graph -->
+                    <div class="flex items-end justify-between h-48 gap-3" id="roi-graph">
+                       <div class="w-full bg-slate-100 rounded-t-lg relative group"><div class="absolute inset-x-0 bottom-0 bg-[#00C8E6] rounded-t-lg graph-bar opacity-40" style="height: 30%"></div></div>
+                       <div class="w-full bg-slate-100 rounded-t-lg relative group"><div class="absolute inset-x-0 bottom-0 bg-[#00C8E6] rounded-t-lg graph-bar opacity-50" style="height: 45%"></div></div>
+                       <div class="w-full bg-slate-100 rounded-t-lg relative group"><div class="absolute inset-x-0 bottom-0 bg-[#00C8E6] rounded-t-lg graph-bar opacity-60" style="height: 40%"></div></div>
+                       <div class="w-full bg-slate-100 rounded-t-lg relative group"><div class="absolute inset-x-0 bottom-0 bg-[#007CC3] rounded-t-lg graph-bar opacity-80" style="height: 60%"></div></div>
+                       <div class="w-full bg-slate-100 rounded-t-lg relative group"><div class="absolute inset-x-0 bottom-0 bg-[#1044C8] rounded-t-lg graph-bar opacity-90" style="height: 85%"></div></div>
+                       <div class="w-full bg-slate-100 rounded-t-lg relative group"><div class="absolute inset-x-0 bottom-0 bg-[#0D1B3E] rounded-t-lg graph-bar shadow-[0_0_20px_rgba(13,27,62,0.3)]" style="height: 100%"></div></div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CORE SERVICES -->
+    <section class="vt-section bg-slate-50 border-t border-slate-200 py-32">
+       <div class="vt-container">
+          <div class="text-center mb-20 reveal-up">
+             <div class="inline-flex items-center gap-3 mb-4">
+                <span class="w-8 h-px bg-[#00C8E6]"></span>
+                <span class="text-[10px] font-black uppercase tracking-widest text-[#007CC3]">Strategy</span>
+                <span class="w-8 h-px bg-[#00C8E6]"></span>
+             </div>
+             <h2 class="text-4xl md:text-5xl font-black text-[#0D1B3E]">Multi-Channel <span class="text-[#00C8E6]">Domination</span></h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+             <!-- SEO -->
+             <div class="bg-white border border-slate-200 p-8 md:p-12 rounded-[40px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up">
+                <div class="flex items-center gap-4 mb-6">
+                   <div class="w-16 h-16 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-2xl"><i class="fas fa-search"></i></div>
+                   <h3 class="text-2xl font-bold text-[#0D1B3E]">Enterprise SEO</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-lg">Technical audits, automated schema generation, programmatic landing pages, and high-authority link building. We dominate search results through engineering, not just content.</p>
+             </div>
+             
+             <!-- PPC -->
+             <div class="bg-white border border-slate-200 p-8 md:p-12 rounded-[40px] shadow-sm hover:shadow-xl hover:border-[#007CC3]/30 transition-all duration-300 reveal-up" style="--d:100ms">
+                <div class="flex items-center gap-4 mb-6">
+                   <div class="w-16 h-16 bg-[#007CC3]/10 rounded-2xl flex items-center justify-center text-[#007CC3] text-2xl"><i class="fas fa-mouse-pointer"></i></div>
+                   <h3 class="text-2xl font-bold text-[#0D1B3E]">Paid Advertising (PPC)</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-lg">Precision-targeted campaigns on Google Ads, LinkedIn, and Meta. We utilize automated bidding scripts and strict negative keyword lists to eliminate wasted ad spend.</p>
+             </div>
+             
+             <!-- Content -->
+             <div class="bg-white border border-slate-200 p-8 md:p-12 rounded-[40px] shadow-sm hover:shadow-xl hover:border-[#1044C8]/30 transition-all duration-300 reveal-up">
+                <div class="flex items-center gap-4 mb-6">
+                   <div class="w-16 h-16 bg-[#1044C8]/10 rounded-2xl flex items-center justify-center text-[#1044C8] text-2xl"><i class="fas fa-pen-nib"></i></div>
+                   <h3 class="text-2xl font-bold text-[#0D1B3E]">Content & Brand</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-lg">High-fidelity thought leadership content, case studies, and premium video production that builds trust and drastically shortens the B2B sales cycle.</p>
+             </div>
+             
+             <!-- CRO -->
+             <div class="bg-white border border-slate-200 p-8 md:p-12 rounded-[40px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up" style="--d:100ms">
+                <div class="flex items-center gap-4 mb-6">
+                   <div class="w-16 h-16 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-2xl"><i class="fas fa-chart-pie"></i></div>
+                   <h3 class="text-2xl font-bold text-[#0D1B3E]">Conversion Optimization</h3>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-lg">Continuous A/B testing of headlines, CTAs, and layout structures based on live user session recordings and heatmap data to maximize conversion rates.</p>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- 3. OUR DATA-DRIVEN METHODOLOGY -->
+    <section class="vt-section py-32 bg-white">
+      <div class="vt-container">
+        <div class="text-center max-w-3xl mx-auto mb-20 reveal-up">
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-6">Our 4-Step <span class="text-[#007CC3]">Growth Methodology</span></h2>
+          <p class="text-slate-600 text-lg">We don't guess. Every campaign is meticulously planned, executed, and optimized based on hard data and behavioral analytics.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center reveal-up">
+            <div class="w-20 h-20 mx-auto bg-slate-50 border border-slate-200 rounded-full flex items-center justify-center text-3xl text-[#00C8E6] mb-6 font-black shadow-sm">1</div>
+            <h4 class="text-xl font-bold text-[#0D1B3E] mb-3">Audit & Discover</h4>
+            <p class="text-slate-500 text-sm">Deep-dive analysis of your current analytics, competitor gaps, and technical SEO architecture.</p>
+          </div>
+          <div class="text-center reveal-up" style="--d:100ms">
+            <div class="w-20 h-20 mx-auto bg-slate-50 border border-slate-200 rounded-full flex items-center justify-center text-3xl text-[#007CC3] mb-6 font-black shadow-sm">2</div>
+            <h4 class="text-xl font-bold text-[#0D1B3E] mb-3">Strategy Blueprint</h4>
+            <p class="text-slate-500 text-sm">Mapping out keyword targets, ad budgets, and funnel architectures to guarantee a positive ROI.</p>
+          </div>
+          <div class="text-center reveal-up" style="--d:200ms">
+            <div class="w-20 h-20 mx-auto bg-slate-50 border border-slate-200 rounded-full flex items-center justify-center text-3xl text-[#1044C8] mb-6 font-black shadow-sm">3</div>
+            <h4 class="text-xl font-bold text-[#0D1B3E] mb-3">Agile Execution</h4>
+            <p class="text-slate-500 text-sm">Deploying campaigns, publishing authority content, and configuring tracking pixels.</p>
+          </div>
+          <div class="text-center reveal-up" style="--d:300ms">
+            <div class="w-20 h-20 mx-auto bg-[#0D1B3E] rounded-full flex items-center justify-center text-3xl text-[#00C8E6] mb-6 font-black shadow-xl shadow-[#0D1B3E]/20">4</div>
+            <h4 class="text-xl font-bold text-[#0D1B3E] mb-3">Scale & Optimize</h4>
+            <p class="text-slate-500 text-sm">A/B testing, reallocating budgets to winning channels, and scaling up the growth engine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FINAL CTA -->
+    <section class="vt-section vt-cta py-32 bg-slate-50 border-t border-slate-200">
+      <div class="vt-container relative z-10 text-center">
+        <h2 class="text-5xl md:text-7xl font-black text-[#0D1B3E] mb-8 reveal-up">Ready to <span class="text-[#00C8E6]">Scale?</span></h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 reveal-up">Stop wasting budget on ineffective campaigns. Let's build a predictable revenue engine for your enterprise.</p>
+        <div class="flex justify-center reveal-up">
+          <a href="../contact.html" class="vt-btn-primary shadow-xl shadow-[#007CC3]/20">Get Your Growth Plan</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200"><special-footer></special-footer></footer>
+  <script src="../animations.js"></script>
+  <script>
+    // Custom Graph Animation
+    document.addEventListener('DOMContentLoaded', () => {
+       gsap.to(".graph-bar", {
+          scaleY: 1,
+          duration: 1.5,
+          stagger: 0.2,
+          ease: "elastic.out(1, 0.7)",
+          scrollTrigger: {
+             trigger: "#roi-graph",
+             start: "top 80%"
+          }
+       });
+    });
+  </script>
+</body>
+</html>

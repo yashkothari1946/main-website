@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Our Portfolio | Vybtek IT Solutions</title>
+  <title>Our Portfolio | Vybtek</title>
   <meta name="description" content="Explore our portfolio of enterprise applications, Next.js websites, AI integrations, and mobile apps built by Vybtek.">
-  <link rel="canonical" href="https://vybtek.com/portfolio" />
+  <link rel="canonical" href="https://vybtek.com/portfolio.html" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vybtek.com/portfolio" />
-  <meta property="og:title" content="Our Portfolio | Vybtek IT Solutions" />
+  <meta property="og:url" content="https://vybtek.com/portfolio.html" />
+  <meta property="og:title" content="Our Portfolio | Vybtek" />
   <meta property="og:description" content="Explore our portfolio of enterprise applications, AI integrations, and mobile apps built by Vybtek." />
   <meta property="og:image" content="https://vybtek.com/images/og-image-portfolio.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://vybtek.com/portfolio" />
-  <meta property="twitter:title" content="Our Portfolio | Vybtek IT Solutions" />
+  <meta property="twitter:url" content="https://vybtek.com/portfolio.html" />
+  <meta property="twitter:title" content="Our Portfolio | Vybtek" />
   <meta property="twitter:description" content="Explore our portfolio of enterprise applications, AI integrations, and mobile apps built by Vybtek." />
   <meta property="twitter:image" content="https://vybtek.com/images/og-image-portfolio.png" />
 
@@ -31,151 +31,309 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
   <script defer src="headerFooter.js"></script>
-  </head>
-<body class="bg-mesh overflow-x-hidden">
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F8FAFC;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #007CC3;
+    }
+
+    /* Grid backdrop styling */
+    .grid-lines {
+      background-size: 60px 60px;
+      background-image: 
+        linear-gradient(to right, rgba(16, 68, 200, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(16, 68, 200, 0.02) 1px, transparent 1px);
+    }
+
+    /* 3D Glass Card styling */
+    .portfolio-card {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(16, 68, 200, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 15px 30px rgba(13, 27, 62, 0.04);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .portfolio-card:hover {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(16, 68, 200, 0.2);
+      box-shadow: 0 30px 60px rgba(16, 68, 200, 0.1), 0 0 0 1px rgba(16, 68, 200, 0.05);
+    }
+
+    /* Custom tracking glow effect */
+    .card-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(16, 68, 200, 0.06), transparent 40%);
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .portfolio-card:hover .card-glow {
+      opacity: 1;
+    }
+
+    /* Card Content Inner 3D Translate */
+    .card-3d-content {
+      transform: translateZ(30px);
+    }
+    .card-3d-image {
+      transform: translateZ(50px) scale(0.95);
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .portfolio-card:hover .card-3d-image {
+      transform: translateZ(60px) scale(1.03) rotate(1deg);
+    }
+
+    /* Custom active filter transition */
+    .filter-btn-glass {
+      background: rgba(13, 27, 62, 0.03);
+      border: 1px solid rgba(13, 27, 62, 0.08);
+      color: rgba(13, 27, 62, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .filter-btn-glass:hover {
+      background: rgba(13, 27, 62, 0.08);
+      color: #0D1B3E;
+      border-color: rgba(13, 27, 62, 0.15);
+    }
+    
+    .filter-btn-glass.active {
+      background: linear-gradient(135deg, #1044C8 0%, #007CC3 100%);
+      color: #FFFFFF;
+      border-color: rgba(16, 68, 200, 0.2);
+      box-shadow: 0 10px 20px rgba(16, 68, 200, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-mesh overflow-x-hidden font-sans text-slate-800 relative">
+  <!-- Grain Texture for Premium Feel -->
+  <div class="grain-overlay"></div>
+
   <header><special-header></special-header></header>
 
-  <main id="main-content" class="pt-32">
+  <main id="main-content" class="pt-32 relative z-10 grid-lines">
     <!-- HERO -->
-    <section class="vt-section min-h-[50vh] flex items-center">
-      <div class="vt-container text-center max-w-4xl mx-auto">
-        <div class="vt-section-label reveal-up !pl-0 !before:hidden">Our Work</div>
-        <h1 class="text-6xl md:text-8xl font-black text-[#002D62] reveal-up">Case <span class="text-[#007CC3]">Studies</span>.</h1>
-        <p class="text-xl text-gray-500 mt-8 reveal-up">A showcase of enterprise software, AI integrations, and award-winning digital experiences we've engineered for our global partners.</p>
+    <section class="relative min-h-[50vh] flex items-center pt-24 pb-12 overflow-hidden">
+      <div class="vt-container text-center max-w-4xl mx-auto relative z-10">
+        <div class="vt-innovation-badge mb-8 reveal-up">
+            <span class="vt-badge-glow"></span>
+            <span class="vt-badge-text">Our Work Showcase</span>
+        </div>
+        <h1 class="text-6xl md:text-8xl font-black text-[#0D1B3E] reveal-up mb-6 tracking-tight">
+            Case <span class="ai-gradient-text">Studies.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 reveal-up max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
+            An immersive showcase of high-performance enterprise systems, custom AI integrations, and award-winning digital experiences engineered by VybTek.
+        </p>
       </div>
     </section>
 
     <!-- PORTFOLIO GRID -->
-    <section class="vt-section pt-0">
+    <section class="vt-section pt-0 relative z-10">
       <div class="vt-container">
-        <!-- Filters -->
-        <div class="flex flex-wrap justify-center gap-4 mb-16 reveal-up">
-           <button class="px-6 py-2 rounded-full bg-[#002D62] text-white text-xs font-bold uppercase tracking-widest">All</button>
-           <button class="px-6 py-2 rounded-full bg-white text-gray-500 hover:text-[#002D62] border border-gray-200 text-xs font-bold uppercase tracking-widest transition-all">AI / Automation</button>
-           <button class="px-6 py-2 rounded-full bg-white text-gray-500 hover:text-[#002D62] border border-gray-200 text-xs font-bold uppercase tracking-widest transition-all">Web & Next.js</button>
-           <button class="px-6 py-2 rounded-full bg-white text-gray-500 hover:text-[#002D62] border border-gray-200 text-xs font-bold uppercase tracking-widest transition-all">Enterprise CRM</button>
+        <!-- Filters Capsule -->
+        <div class="flex flex-wrap items-center justify-center gap-2 p-2 bg-white/80 backdrop-blur-xl border border-slate-200/60 rounded-3xl md:rounded-full max-w-2xl mx-auto mb-16 reveal-up shadow-[0_8px_32px_rgba(13,27,62,0.04)]" id="portfolio-filters">
+           <button data-filter="all" class="filter-btn filter-btn-glass active px-6 py-2.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest transition-all duration-300">All</button>
+           <button data-filter="ai" class="filter-btn filter-btn-glass px-6 py-2.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest transition-all duration-300">AI / Automation</button>
+           <button data-filter="marketing" class="filter-btn filter-btn-glass px-6 py-2.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest transition-all duration-300">Branding & SEO</button>
+           <button data-filter="enterprise" class="filter-btn filter-btn-glass px-6 py-2.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest transition-all duration-300">Enterprise Apps</button>
         </div>
 
         <!-- Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-           <!-- Item 1 -->
-           <div class="group relative reveal-up">
-              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
-                 <!-- Image Placeholder -->
-                 <div class="absolute inset-0 bg-gradient-to-br from-indigo-100 to-purple-50 flex items-center justify-center">
-                    <i class="fas fa-chart-network text-6xl text-indigo-200"></i>
-                 </div>
-                 <!-- Overlay -->
-                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
-                    <div class="flex gap-2 mb-4">
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">AI Analytics</span>
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Python</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+           <!-- Item 1: PatientXpress -->
+           <div class="group relative reveal-up portfolio-item" data-category="marketing ai">
+              <a href="project-patientxpress.html" class="block w-full h-full portfolio-card rounded-[32px] overflow-hidden transition-all duration-500 relative">
+                 <!-- Spotlight Glow overlay -->
+                 <div class="card-glow"></div>
+                 
+                 <!-- Top Visual Half -->
+                 <div class="w-full aspect-[16/10] bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden flex items-center justify-center p-6 md:p-8 border-b border-slate-200/50">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#00C8E6]/10 rounded-full blur-[50px] group-hover:bg-[#00C8E6]/20 transition-all duration-500"></div>
+                    
+                    <div class="w-24 h-24 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/50 flex items-center justify-center shadow-lg relative z-10 card-3d-image">
+                        <img src="images/patientxpress_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain" alt="PatientXpress Logo">
                     </div>
-                    <h3 class="text-3xl font-black text-white mb-2">PatientXpress</h3>
-                    <p class="text-white/70 text-sm mb-6">High-fidelity dental and healthcare management platform, optimizing patient intake and clinical operations.</p>
-                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
                  </div>
-              </div>
+                 <!-- Bottom Content Half -->
+                 <div class="p-6 md:p-8 relative z-10 card-3d-content">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                       <span class="text-[9px] uppercase font-black tracking-widest text-[#007CC3] bg-[#007CC3]/5 border border-[#007CC3]/10 px-3 py-1 rounded-full">360° Branding</span>
+                       <span class="text-[9px] uppercase font-black tracking-widest text-slate-500 bg-slate-50 border border-slate-200/60 px-3 py-1 rounded-full">AI Enabled</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-[#0D1B3E] mb-3 group-hover:text-[#007CC3] transition-colors">PatientXpress</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Complete marketing transformation (Website, SEO, AEO, SMM) integrated with automated AI workflows.</p>
+                    <div class="flex items-center text-[#007CC3] group-hover:text-[#1044C8] font-extrabold text-[11px] uppercase tracking-wider transition-colors">
+                        Read Case Study <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                 </div>
+              </a>
            </div>
 
-           <!-- Item 2 -->
-           <div class="group relative reveal-up">
-              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
-                 <div class="absolute inset-0 bg-gradient-to-br from-blue-100 to-cyan-50 flex items-center justify-center">
-                    <i class="fas fa-hospital text-6xl text-blue-200"></i>
-                 </div>
-                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
-                    <div class="flex gap-2 mb-4">
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">ERP System</span>
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Next.js</span>
+           <!-- Item 2: Addins Education -->
+           <div class="group relative reveal-up portfolio-item" data-category="enterprise ai">
+              <a href="project-addins.html" class="block w-full h-full portfolio-card rounded-[32px] overflow-hidden transition-all duration-500 relative">
+                 <!-- Spotlight Glow overlay -->
+                 <div class="card-glow"></div>
+                 
+                 <!-- Top Visual Half -->
+                 <div class="w-full aspect-[16/10] bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden flex items-center justify-center p-6 md:p-8 border-b border-slate-200/50">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#007CC3]/10 rounded-full blur-[50px] group-hover:bg-[#007CC3]/20 transition-all duration-500"></div>
+                    
+                    <div class="w-24 h-24 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/50 flex items-center justify-center shadow-lg relative z-10 card-3d-image">
+                        <img src="images/addins_education_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain" alt="Addins Education Logo">
                     </div>
-                    <h3 class="text-3xl font-black text-white mb-2">Addins Education</h3>
-                    <p class="text-white/70 text-sm mb-6">Modern educational platform built with Next.js, scaling digital learning experiences globally.</p>
-                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
                  </div>
-              </div>
+                 <!-- Bottom Content Half -->
+                 <div class="p-6 md:p-8 relative z-10 card-3d-content">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                       <span class="text-[9px] uppercase font-black tracking-widest text-[#007CC3] bg-[#007CC3]/5 border border-[#007CC3]/10 px-3 py-1 rounded-full">National ERP</span>
+                       <span class="text-[9px] uppercase font-black tracking-widest text-slate-500 bg-slate-50 border border-slate-200/60 px-3 py-1 rounded-full">AI CRM</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-[#0D1B3E] mb-3 group-hover:text-[#007CC3] transition-colors">Addins Education</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">National level platform for tutor hiring and 1-on-1 class management with deep ERP & CRM AI integration.</p>
+                    <div class="flex items-center text-[#007CC3] group-hover:text-[#1044C8] font-extrabold text-[11px] uppercase tracking-wider transition-colors">
+                        Read Case Study <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                 </div>
+              </a>
            </div>
 
-           <!-- Item 3 -->
-           <div class="group relative reveal-up">
-              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
-                 <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-50 flex items-center justify-center">
-                    <i class="fas fa-box-open text-6xl text-emerald-200"></i>
-                 </div>
-                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
-                    <div class="flex gap-2 mb-4">
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">E-Commerce</span>
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">React Native</span>
+           <!-- Item 3: List IT Now -->
+           <div class="group relative reveal-up portfolio-item" data-category="enterprise ai">
+              <a href="project-listitnow.html" class="block w-full h-full portfolio-card rounded-[32px] overflow-hidden transition-all duration-500 relative">
+                 <!-- Spotlight Glow overlay -->
+                 <div class="card-glow"></div>
+                 
+                 <!-- Top Visual Half -->
+                 <div class="w-full aspect-[16/10] bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden flex items-center justify-center p-6 md:p-8 border-b border-slate-200/50">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#00C8E6]/10 rounded-full blur-[50px] group-hover:bg-[#00C8E6]/20 transition-all duration-500"></div>
+                    
+                    <div class="w-24 h-24 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/50 flex items-center justify-center shadow-lg relative z-10 card-3d-image">
+                        <img src="images/listitnow_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain" alt="ListItNow Logo">
                     </div>
-                    <h3 class="text-3xl font-black text-white mb-2">List IT Now</h3>
-                    <p class="text-white/70 text-sm mb-6">Comprehensive web application deployed on scalable, high-performance cloud infrastructure.</p>
-                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
                  </div>
-              </div>
+                 <!-- Bottom Content Half -->
+                 <div class="p-6 md:p-8 relative z-10 card-3d-content">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                       <span class="text-[9px] uppercase font-black tracking-widest text-[#007CC3] bg-[#007CC3]/5 border border-[#007CC3]/10 px-3 py-1 rounded-full">Nationwide App</span>
+                       <span class="text-[9px] uppercase font-black tracking-widest text-slate-500 bg-slate-50 border border-slate-200/60 px-3 py-1 rounded-full">VybTek Subsidiary</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-[#0D1B3E] mb-3 group-hover:text-[#007CC3] transition-colors">List IT Now</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Built from scratch, this AI-powered property management platform scaled from zero to 107 cities.</p>
+                    <div class="flex items-center text-[#007CC3] group-hover:text-[#1044C8] font-extrabold text-[11px] uppercase tracking-wider transition-colors">
+                        Read Case Study <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                 </div>
+              </a>
            </div>
 
-           <!-- Item 4 -->
-           <div class="group relative reveal-up">
-              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
-                 <div class="absolute inset-0 bg-gradient-to-br from-orange-100 to-yellow-50 flex items-center justify-center">
-                    <i class="fas fa-robot text-6xl text-orange-200"></i>
-                 </div>
-                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
-                    <div class="flex gap-2 mb-4">
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Generative AI</span>
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">OpenAI</span>
+           <!-- Item 4: Manuplast -->
+           <div class="group relative reveal-up portfolio-item" data-category="enterprise marketing">
+              <a href="project-manuplast.html" class="block w-full h-full portfolio-card rounded-[32px] overflow-hidden transition-all duration-500 relative">
+                 <!-- Spotlight Glow overlay -->
+                 <div class="card-glow"></div>
+                 
+                 <!-- Top Visual Half -->
+                 <div class="w-full aspect-[16/10] bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden flex items-center justify-center p-6 md:p-8 border-b border-slate-200/50">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#1044C8]/10 rounded-full blur-[50px] group-hover:bg-[#1044C8]/20 transition-all duration-500"></div>
+                    
+                    <div class="w-24 h-24 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/50 flex items-center justify-center shadow-lg relative z-10 card-3d-image">
+                        <img src="images/manuplast_logo_latest.png" class="max-w-[80%] max-h-[80%] object-contain" alt="Manuplast Logo">
                     </div>
-                    <h3 class="text-3xl font-black text-white mb-2">Manuplast</h3>
-                    <p class="text-white/70 text-sm mb-6">Enterprise resource planning (ERP) systems tailored for industrial manufacturing and supply chain operations.</p>
-                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
                  </div>
-              </div>
+                 <!-- Bottom Content Half -->
+                 <div class="p-6 md:p-8 relative z-10 card-3d-content">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                       <span class="text-[9px] uppercase font-black tracking-widest text-[#007CC3] bg-[#007CC3]/5 border border-[#007CC3]/10 px-3 py-1 rounded-full">Digital Trans.</span>
+                       <span class="text-[9px] uppercase font-black tracking-widest text-slate-500 bg-slate-50 border border-slate-200/60 px-3 py-1 rounded-full">Rebranding</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-[#0D1B3E] mb-3 group-hover:text-[#007CC3] transition-colors">Manuplast</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Complete digital transformation and rebranding for a legacy industrial manufacturing operator.</p>
+                    <div class="flex items-center text-[#007CC3] group-hover:text-[#1044C8] font-extrabold text-[11px] uppercase tracking-wider transition-colors">
+                        Read Case Study <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                 </div>
+              </a>
            </div>
 
-           <!-- Item 5 -->
-           <div class="group relative reveal-up">
-              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
-                 <div class="absolute inset-0 bg-gradient-to-br from-red-100 to-rose-50 flex items-center justify-center">
-                    <i class="fas fa-industry text-6xl text-red-200"></i>
-                 </div>
-                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
-                    <div class="flex gap-2 mb-4">
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Digital Transformation</span>
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Strategy</span>
+           <!-- Item 5: Tashmeh -->
+           <div class="group relative reveal-up portfolio-item" data-category="enterprise marketing">
+              <a href="project-tashmeh.html" class="block w-full h-full portfolio-card rounded-[32px] overflow-hidden transition-all duration-500 relative">
+                 <!-- Spotlight Glow overlay -->
+                 <div class="card-glow"></div>
+                 
+                 <!-- Top Visual Half -->
+                 <div class="w-full aspect-[16/10] bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden flex items-center justify-center p-6 md:p-8 border-b border-slate-200/50">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#00C8E6]/10 rounded-full blur-[50px] group-hover:bg-[#00C8E6]/20 transition-all duration-500"></div>
+                    
+                    <div class="w-24 h-24 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/50 flex items-center justify-center shadow-lg relative z-10 card-3d-image">
+                        <img src="images/tashmeh_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain" alt="Tashmeh Logo">
                     </div>
-                    <h3 class="text-3xl font-black text-white mb-2">Tashmeh Industries</h3>
-                    <p class="text-white/70 text-sm mb-6">Comprehensive digital transformation and technical roadmapping for complex industrial operations.</p>
-                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
                  </div>
-              </div>
+                 <!-- Bottom Content Half -->
+                 <div class="p-6 md:p-8 relative z-10 card-3d-content">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                       <span class="text-[9px] uppercase font-black tracking-widest text-[#007CC3] bg-[#007CC3]/5 border border-[#007CC3]/10 px-3 py-1 rounded-full">Digital Trans.</span>
+                       <span class="text-[9px] uppercase font-black tracking-widest text-slate-500 bg-slate-50 border border-slate-200/60 px-3 py-1 rounded-full">Strategy</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-[#0D1B3E] mb-3 group-hover:text-[#007CC3] transition-colors">Tashmeh Industries</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Technical roadmapping and strategic digitization for complex industrial operations.</p>
+                    <div class="flex items-center text-[#007CC3] group-hover:text-[#1044C8] font-extrabold text-[11px] uppercase tracking-wider transition-colors">
+                        Read Case Study <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                 </div>
+              </a>
            </div>
 
-           <!-- Item 6 -->
-           <div class="group relative reveal-up">
-              <div class="w-full aspect-[4/3] bg-gray-100 rounded-[32px] overflow-hidden relative border border-gray-200">
-                 <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-emerald-50 flex items-center justify-center">
-                    <i class="fas fa-chart-line text-6xl text-green-200"></i>
-                 </div>
-                 <div class="absolute inset-0 bg-[#002D62]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
-                    <div class="flex gap-2 mb-4">
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">FinTech</span>
-                       <span class="text-[10px] uppercase font-bold text-white bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Cloud Infrastructure</span>
+           <!-- Item 6: Catalyst -->
+           <div class="group relative reveal-up portfolio-item" data-category="enterprise">
+              <a href="project-catalyst.html" class="block w-full h-full portfolio-card rounded-[32px] overflow-hidden transition-all duration-500 relative">
+                 <!-- Spotlight Glow overlay -->
+                 <div class="card-glow"></div>
+                 
+                 <!-- Top Visual Half -->
+                 <div class="w-full aspect-[16/10] bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden flex items-center justify-center p-6 md:p-8 border-b border-slate-200/50">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#0D1B3E]/10 rounded-full blur-[50px] group-hover:bg-[#0D1B3E]/20 transition-all duration-500"></div>
+                    
+                    <div class="w-24 h-24 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/50 flex items-center justify-center shadow-lg relative z-10 card-3d-image">
+                        <img src="images/catalyst_financial_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain" alt="Catalyst Financial Logo">
                     </div>
-                    <h3 class="text-3xl font-black text-white mb-2">Catalyst Financial</h3>
-                    <p class="text-white/70 text-sm mb-6">Highly secure, SOC2 compliant cloud infrastructure and analytics for institutional finance.</p>
-                    <a href="#" class="inline-block text-white font-bold text-sm hover:underline">Read Case Study <i class="fas fa-arrow-right ml-2"></i></a>
                  </div>
-              </div>
+                 <!-- Bottom Content Half -->
+                 <div class="p-6 md:p-8 relative z-10 card-3d-content">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                       <span class="text-[9px] uppercase font-black tracking-widest text-[#007CC3] bg-[#007CC3]/5 border border-[#007CC3]/10 px-3 py-1 rounded-full">FinTech</span>
+                       <span class="text-[9px] uppercase font-black tracking-widest text-slate-500 bg-slate-50 border border-slate-200/60 px-3 py-1 rounded-full">Paper to Cloud</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-[#0D1B3E] mb-3 group-hover:text-[#007CC3] transition-colors">Catalyst Financial</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">From paper to complete digital transformation. Highly secure cloud infrastructure for institutional finance.</p>
+                    <div class="flex items-center text-[#007CC3] group-hover:text-[#1044C8] font-extrabold text-[11px] uppercase tracking-wider transition-colors">
+                        Read Case Study <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                 </div>
+              </a>
            </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="vt-section vt-cta">
-      <div class="vt-container relative z-10">
-        <h2 class="vt-cta-heading">Ready to be our next <br><span class="text-[#007CC3]">Success Story?</span></h2>
-        <div class="flex justify-center gap-8 mt-10">
-          <a href="contact.html" class="vt-btn-primary !bg-white !text-[#002D62]">Start a Project</a>
         </div>
       </div>
     </section>
@@ -183,6 +341,76 @@
 
   <footer><special-footer></special-footer></footer>
   <script src="animations.js"></script>
+  
+  <!-- Portfolio Filtering & Interactivity Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        // Filtering Logic
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    const categories = item.getAttribute('data-category').split(' ');
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
+                        item.style.display = 'block';
+                        gsap.fromTo(item, {opacity: 0, scale: 0.95}, {opacity: 1, scale: 1, duration: 0.4});
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Refresh scroll trigger after layout shift
+                setTimeout(() => {
+                    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+                }, 100);
+            });
+        });
+
+        // 3D Tilt & Spotlight Tracking Glow Effect
+        const cards = document.querySelectorAll('.portfolio-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                if (window.innerWidth < 768) return;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+                
+                // 3D Tilt calculation
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = -((y - centerY) / centerY) * 10; // Max 10 deg tilt
+                const rotateY = ((x - centerX) / centerX) * 10;
+                gsap.to(card, {
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    transformPerspective: 1000,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                if (window.innerWidth < 768) return;
+                gsap.to(card, {
+                    rotateX: 0,
+                    rotateY: 0,
+                    duration: 0.8,
+                    ease: "elastic.out(1, 0.3)"
+                });
+            });
+        });
+    });
+  </script>
 </body>
 </html>
+
 

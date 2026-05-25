@@ -3,294 +3,941 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO -->
-  <title>SEO & Digital Branding Services | Vybtek IT Solutions</title>
-  <meta name="description" content="Strategic digital branding, GEO, AEO, and SEO services. We help modern brands dominate AI-driven search engines and build high-fidelity global identities.">
-  <meta name="keywords" content="Digital Branding, Enterprise SEO, GEO Generative Engine Optimization, AEO, Corporate Identity Design, Video Production">
-  
+  <title>Branding & Creative Identity | Vybtek</title>
+  <meta name="description" content="Strategic brand architecture, visual identity systems, GEO/AEO search authority, and cinematic media — Vybtek builds brands that command markets.">
+  <link rel="canonical" href="https://vybtek.com/services/branding" />
+  <meta property="og:title" content="Branding & Creative Identity | Vybtek" />
+  <meta property="og:description" content="Strategic brand architecture, visual identity systems, GEO/AEO search authority, and cinematic media — Vybtek builds brands that command markets." />
+  <meta name="twitter:title" content="Branding & Creative Identity | Vybtek" />
+  <meta name="twitter:description" content="Strategic brand architecture, visual identity systems, GEO/AEO search authority, and cinematic media — Vybtek builds brands that command markets." />
   <link rel="icon" type="image/png" href="../images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="../style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Animation Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-  
   <script defer src="../headerFooter.js"></script>
 
-  </head>
+  <style>
+    /* ─────────────────────────────────────────
+       DESIGN TOKENS — MATURE EDITORIAL
+    ───────────────────────────────────────── */
+    :root {
+      --cream:    #F4F7FA;
+      --parchment:#F4F7FA;
+      --ink:      #0D1B3E;
+      --charcoal: #1E293B;
+      --sienna:   #1044C8;      /* royal blue — single bold accent */
+      --gold:     #007CC3;
+      --slate:    #64748B;
+      --forest:   #0D1B3E;
+      --fog:      #64748B;
+      --white:    #FFFFFF;
+    }
 
-<body class="bg-mesh overflow-x-hidden">
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── PAPER GRAIN ── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='0.055'/%3E%3C/svg%3E");
+      background-size: 240px 240px;
+      opacity: 0.9;
+      mix-blend-mode: multiply;
+    }
+
+    /* ── CURSOR ── */
+    #c-dot {
+      position: fixed; width: 10px; height: 10px; background: var(--sienna);
+      border-radius: 50%; pointer-events: none; z-index: 99999;
+      top: 0; left: 0; transform: translate(-50%,-50%);
+      transition: transform 0.15s ease, background 0.2s;
+    }
+    #c-ring {
+      position: fixed; width: 38px; height: 38px;
+      border: 1.5px solid var(--sienna); border-radius: 50%;
+      pointer-events: none; z-index: 99998; opacity: 0.45;
+      top: 0; left: 0; transform: translate(-50%,-50%);
+      transition: width 0.25s, height 0.25s;
+    }
+    a, button { cursor: none; }
+
+    /* ── TYPE ── */
+    .serif         { font-family: 'DM Serif Display', serif; }
+    .serif-italic  { font-family: 'DM Serif Display', serif; font-style: italic; }
+    .mono          { font-family: 'Space Mono', monospace; }
+    .grotesk       { font-family: 'Space Grotesk', sans-serif; }
+
+    /* ── RULED LINES (notebook paper) ── */
+    .ruled {
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        rgba(13,27,62,0.07) 31px,
+        rgba(13,27,62,0.07) 32px
+      );
+    }
+
+    /* ── SECTION ── */
+    .s-cream  { background: var(--cream); }
+    .s-parch  { background: var(--parchment); }
+    .s-dark   { background: var(--ink); color: var(--cream); }
+    .s-forest { background: var(--forest); color: var(--cream); }
+    .s-white  { background: var(--white); }
+
+    /* ── MARQUEE ── */
+    .mq-wrap { overflow: hidden; white-space: nowrap; }
+    .mq-track { display: inline-flex; animation: mq 22s linear infinite; }
+    @keyframes mq { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+    /* ── EDITORIAL CARD ── */
+    .ed-card {
+      background: var(--white);
+      box-shadow: 1px 2px 0 rgba(13,27,62,0.08), 3px 5px 18px rgba(13,27,62,0.07);
+      position: relative; overflow: hidden;
+      transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), box-shadow 0.4s ease;
+    }
+    .ed-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 2px 8px 32px rgba(13,27,62,0.14);
+      z-index: 4;
+    }
+    /* Offset shadow (letterpress feel) */
+    .offset-shadow { box-shadow: 4px 4px 0 var(--sienna); }
+    .offset-shadow-ink { box-shadow: 4px 4px 0 var(--ink); }
+
+    /* ── STAMP ── */
+    .stamp {
+      display: inline-block; border: 2px solid currentColor; padding: 0.3em 0.8em;
+      font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em;
+      text-transform: uppercase; opacity: 0.75;
+      filter: url(#roughen);
+    }
+    .stamp-sienna { color: var(--sienna); transform: rotate(-3deg); display: inline-block; }
+    .stamp-ink    { color: var(--ink);    transform: rotate(2deg);  display: inline-block; }
+    .stamp-forest { color: var(--forest); transform: rotate(-1.5deg); display: inline-block; }
+
+    /* ── TORN PAPER EDGES (SVG-based) ── */
+    .torn-bottom { position: relative; }
+    .torn-bottom::after {
+      content: '';
+      display: block;
+      position: absolute; bottom: -24px; left: 0; width: 100%; height: 28px;
+      background: inherit;
+      clip-path: polygon(
+        0% 0%,2% 60%,4% 20%,6% 80%,8% 30%,10% 90%,12% 20%,14% 70%,
+        16% 15%,18% 85%,20% 25%,22% 75%,24% 10%,26% 65%,28% 30%,30% 85%,
+        32% 20%,34% 70%,36% 15%,38% 80%,40% 25%,42% 72%,44% 18%,46% 82%,
+        48% 28%,50% 78%,52% 22%,54% 68%,56% 12%,58% 74%,60% 30%,62% 88%,
+        64% 20%,66% 76%,68% 18%,70% 82%,72% 24%,74% 72%,76% 16%,78% 84%,
+        80% 26%,82% 78%,84% 22%,86% 70%,88% 14%,90% 80%,92% 32%,94% 88%,
+        96% 18%,98% 74%,100% 30%,100% 100%,0% 100%
+      );
+      z-index: 5;
+    }
+
+    /* ── PROCESS ROW ── */
+    .process-row {
+      border-top: 1px solid rgba(13,27,62,0.1);
+      padding: 2.25rem 0;
+      display: grid; grid-template-columns: 80px 1fr 1fr 60px;
+      align-items: center; gap: 2rem;
+      transition: background 0.3s ease;
+    }
+    .process-row:hover { background: rgba(16,68,200,0.03); }
+    .process-row:last-of-type { border-bottom: 1px solid rgba(13,27,62,0.1); }
+
+    .proc-num {
+      font-family: 'DM Serif Display', serif; font-style: italic;
+      font-size: 2.8rem; color: rgba(13,27,62,0.12); line-height: 1;
+      transition: color 0.3s ease;
+    }
+    .process-row:hover .proc-num { color: var(--sienna); opacity: 0.4; }
+
+    /* ── STAT ── */
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: clamp(3rem,6vw,5rem); line-height: 1; color: var(--ink); }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      background: var(--ink); color: var(--cream);
+      padding: 1rem 2.2rem; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1.5px solid var(--ink);
+      transition: all 0.25s ease;
+      box-shadow: 3px 3px 0 var(--sienna);
+    }
+    .btn-primary:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--sienna); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      background: transparent; color: var(--ink);
+      padding: 1rem 2.2rem; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1.5px solid rgba(13,27,62,0.3);
+      transition: all 0.25s ease;
+    }
+    .btn-ghost:hover { border-color: var(--sienna); color: var(--sienna); }
+
+    .btn-cream {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      background: var(--cream); color: var(--ink);
+      padding: 1rem 2.2rem; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1.5px solid var(--cream);
+      transition: all 0.25s ease;
+      box-shadow: 3px 3px 0 var(--sienna);
+    }
+    .btn-cream:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 rgba(255,255,255,0.4); }
+
+    /* ── FAQ ── */
+    .faq-row { border-bottom: 1px solid rgba(13,27,62,0.1); }
+    .faq-btn {
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 1.6rem 0; background: none; border: none; cursor: none;
+      font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 500;
+      color: var(--ink); text-align: left; transition: color 0.2s;
+    }
+    .faq-btn:hover { color: var(--sienna); }
+    .faq-toggle { width: 28px; height: 28px; border: 1.5px solid var(--fog); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0; transition: all 0.25s; }
+    .faq-btn:hover .faq-toggle { border-color: var(--sienna); color: var(--sienna); }
+    .faq-ans { max-height: 0; overflow: hidden; transition: max-height 0.45s ease, padding 0.3s ease; color: var(--fog); font-size: 0.9rem; line-height: 1.8; }
+    .faq-ans.open { max-height: 300px; padding-bottom: 1.5rem; }
+
+    /* ── SCAN INPUT ── */
+    .scan-inp {
+      width: 100%;
+      background: rgba(244,247,250,0.06);
+      border: 1px solid rgba(244,247,250,0.15);
+      color: var(--cream); padding: 0.9rem 1.25rem;
+      font-family: 'Space Mono', monospace; font-size: 0.8rem;
+      outline: none; transition: border-color 0.2s;
+    }
+    .scan-inp:focus { border-color: var(--sienna); }
+    .scan-inp::placeholder { color: rgba(244,247,250,0.3); }
+
+    /* ── REVEAL ── */
+    .rev-up    { opacity: 0; transform: translateY(28px); }
+    .rev-left  { opacity: 0; transform: translateX(-28px); }
+    .rev-right { opacity: 0; transform: translateX(28px); }
+
+    /* ── LABEL TAG ── */
+    .label-tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 0.3rem 0.85rem; border: 1px solid rgba(13,27,62,0.2);
+      color: var(--fog);
+    }
+    .label-tag-sienna {
+      border-color: var(--sienna); color: var(--sienna);
+    }
+
+    /* ── OVERLAPPING IMAGE COLLAGE ── */
+    .collage-wrap { position: relative; }
+    .collage-img {
+      position: absolute;
+      box-shadow: 3px 5px 20px rgba(13,27,62,0.2);
+      transition: transform 0.4s ease;
+    }
+    .collage-img:hover { transform: scale(1.03) rotate(0deg) !important; z-index: 6; }
+
+    /* ── DIVIDER ── */
+    .divider-art {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(13,27,62,0.15) 30%, rgba(13,27,62,0.15) 70%, transparent);
+    }
+
+    /* ── SIENNA LINE ACCENT ── */
+    .accent-line {
+      width: 40px; height: 2px; background: var(--sienna); display: block; margin-bottom: 1.5rem;
+    }
+
+    /* ── ROTATED LABEL (print-register effect) ── */
+    .reg-label {
+      writing-mode: vertical-rl; text-orientation: mixed;
+      font-family: 'Space Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(13,27,62,0.25); transform: rotate(180deg);
+    }
+
+    /* ── HOVER ARROW ── */
+    .arr { display: inline-block; transition: transform 0.25s ease; }
+    a:hover .arr, button:hover .arr { transform: translateX(5px); }
+
+    @media (max-width: 768px) {
+      .process-row { grid-template-columns: 56px 1fr; }
+      .process-row .proc-sub, .process-row .proc-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cursor -->
+  <div id="c-dot"></div>
+  <div id="c-ring"></div>
+
+  <!-- SVG filter for stamp roughen -->
+  <svg width="0" height="0" style="position:absolute;overflow:hidden">
+    <defs>
+      <filter id="roughen" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
   <header><special-header></special-header></header>
 
   <main id="main-content">
-    
-    <!-- 1. HERO SECTION -->
-    <section class="relative min-h-[90vh] flex items-center pt-20">
-      <div class="absolute inset-0 overflow-hidden -z-10">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-100 rounded-full blur-[120px] opacity-40 animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-100 rounded-full blur-[120px] opacity-30 animate-pulse [animation-delay:1s]"></div>
+
+    <!-- ═══════════════════════════════════════════
+         01. HERO
+    ═══════════════════════════════════════════ -->
+    <section class="s-cream relative overflow-hidden pt-36 pb-0" style="min-height:100vh">
+
+      <!-- Faint grid lines -->
+      <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(13,27,62,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(13,27,62,0.04) 1px,transparent 1px);background-size:72px 72px;"></div>
+
+      <div class="max-w-[1480px] mx-auto px-8 md:px-16 relative z-10">
+
+        <!-- Top meta row -->
+        <div class="flex items-center justify-between mb-14 rev-up">
+          <span class="label-tag">Branding & Creative Identity</span>
+          <span class="mono text-[0.6rem] text-[var(--fog)] tracking-widest">VBT-BD-2025</span>
+        </div>
+
+        <!-- HERO GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-16 items-end">
+
+          <!-- LEFT — Typography -->
+          <div class="lg:col-span-7">
+            <h1 class="serif leading-[0.92] text-[var(--ink)] rev-up" style="font-size:clamp(5.5rem,13vw,11.5rem);">
+              Where<br>
+              <em class="text-[var(--sienna)]">Brands</em><br>
+              Are&nbsp;Born.
+            </h1>
+            <div class="mt-10 flex items-start gap-8 rev-up">
+              <span class="accent-line mt-2 flex-shrink-0"></span>
+              <p class="text-[var(--charcoal)] text-lg leading-relaxed max-w-md" style="opacity:0.75">
+                We architect brand universes — visual identity systems, search authority engines, and cinematic media — that make your competition irrelevant before you even speak.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-4 mt-10 rev-up">
+              <a href="../contact.html" class="btn-primary" id="hero-cta">
+                <span>Begin Your Brand Audit</span>
+                <i class="fas fa-arrow-right arr"></i>
+              </a>
+              <a href="#services" class="btn-ghost">
+                <span>Explore Services</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT — Collage -->
+          <div class="lg:col-span-5 relative rev-right" style="min-height:520px; padding-bottom: 40px;">
+
+            <!-- Rotated side label -->
+            <div class="reg-label absolute left-0 top-1/2 -translate-y-1/2" style="left:-24px">Editorial Creative · Vybtek Studio</div>
+
+            <!-- BG ruled card -->
+            <div class="absolute inset-6 ruled opacity-40 border border-[rgba(13,27,62,0.08)]"></div>
+
+            <!-- Main workspace image -->
+            <div class="collage-img" style="top:0;right:0;width:75%;transform:rotate(1.5deg);z-index:2">
+              <img src="../images/creative_workspace.png" alt="Creative design studio" class="w-full object-cover" style="height:280px;filter:contrast(1.05) saturate(0.85);">
+            </div>
+
+            <!-- Editorial collage layered below -->
+            <div class="collage-img" style="bottom:30px;left:0;width:62%;transform:rotate(-2deg);z-index:3;background:var(--white);padding:8px">
+              <img src="../images/editorial_collage.png" alt="Editorial brand design" class="w-full object-cover" style="height:200px;filter:contrast(1.1) saturate(0.75);">
+              <div class="mono text-[0.55rem] text-[var(--fog)] tracking-widest mt-2 px-1">Brand Collateral Study — 2025</div>
+            </div>
+
+            <!-- Stamp overlay -->
+            <div class="absolute bottom-8 right-4 z-5 stamp stamp-sienna" style="z-index:5">
+              Brand Authority
+            </div>
+
+            <!-- Registration marks (print design nod) -->
+            <div class="absolute top-2 right-2 w-5 h-5 z-10 opacity-20">
+              <div class="absolute top-1/2 left-0 right-0 h-[1px] bg-[var(--sienna)]"></div>
+              <div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-[var(--sienna)]"></div>
+              <div class="absolute inset-1 rounded-full border border-[var(--sienna)]"></div>
+            </div>
+            <div class="absolute bottom-40 left-2 w-5 h-5 z-10 opacity-20">
+              <div class="absolute top-1/2 left-0 right-0 h-[1px] bg-[var(--ink)]"></div>
+              <div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-[var(--ink)]"></div>
+              <div class="absolute inset-1 rounded-full border border-[var(--ink)]"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="vt-container">
-        <div class="max-w-5xl text-center mx-auto">
-          <div class="vt-section-label !pl-0 !before:hidden reveal-up" id="hero-label">Growth Architecture</div>
-          <h1 class="text-6xl md:text-8xl font-black text-[#0F172A] leading-[1.05] reveal-up" id="hero-title">
-            From Digital Obscurity to <span class="brand-gradient-text">Absolute Authority</span>.
-          </h1>
-          <p class="text-xl md:text-2xl text-slate-500 mt-8 leading-relaxed reveal-up" id="hero-sub">
-            We transform brands from "nowhere on the web" to the top of global rankings. Specialized in AEO, GEO, and strategic marketing execution for the AI era.
-          </p>
-          <div class="flex gap-6 mt-12 justify-center reveal-up" id="hero-btns">
-            <a href="../contact.html" class="vt-btn-primary">Get a Strategy Session</a>
-            <a href="#branding" class="w-16 h-16 rounded-full border border-gray-200 flex items-center justify-center text-[#007CC3] hover:bg-[#007CC3] hover:text-white transition-all"><i class="fas fa-arrow-down"></i></a>
+
+      <!-- TICKER -->
+      <div class="mt-20 border-t border-b border-[rgba(13,27,62,0.12)] py-3 mq-wrap overflow-hidden" style="background:var(--parchment)">
+        <div class="mq-track">
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">VISUAL IDENTITY</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">BRAND SYSTEMS</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">GEO AUTHORITY</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">CINEMATIC MEDIA</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">AEO SEARCH</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">LOGO DESIGN</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">REBRANDING</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">VISUAL IDENTITY</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">BRAND SYSTEMS</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">GEO AUTHORITY</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">CINEMATIC MEDIA</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">AEO SEARCH</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">LOGO DESIGN</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+          <span class="mono text-[0.65rem] tracking-[0.2em] text-[var(--fog)] px-8">REBRANDING</span>
+          <span class="text-[var(--sienna)] px-4">◆</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         02. IMPACT STATS
+    ═══════════════════════════════════════════ -->
+    <section class="s-white py-20 border-b border-[rgba(13,27,62,0.08)]">
+      <div class="max-w-[1480px] mx-auto px-8 md:px-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-[rgba(13,27,62,0.1)]">
+          <div class="px-8 py-6 rev-up">
+            <div class="stat-num" data-count="200">200+</div>
+            <div class="mono text-[0.62rem] tracking-[0.2em] text-[var(--fog)] mt-2">Brands Transformed</div>
+          </div>
+          <div class="px-8 py-6 rev-up">
+            <div class="stat-num" style="color:var(--sienna)">98%</div>
+            <div class="mono text-[0.62rem] tracking-[0.2em] text-[var(--fog)] mt-2">Client Retention</div>
+          </div>
+          <div class="px-8 py-6 rev-up">
+            <div class="stat-num">12×</div>
+            <div class="mono text-[0.62rem] tracking-[0.2em] text-[var(--fog)] mt-2">Average Visibility Lift</div>
+          </div>
+          <div class="px-8 py-6 rev-up">
+            <div class="stat-num" style="color:var(--gold)">6yr</div>
+            <div class="mono text-[0.62rem] tracking-[0.2em] text-[var(--fog)] mt-2">Creative Mastery</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. SEO / AEO / GEO (The New Search Paradigm) -->
-    <section id="branding" class="vt-section bg-[#002D62] text-white overflow-hidden">
-       <div class="vt-container relative">
-          <!-- Decorative Background Elements -->
-          <div class="absolute -top-40 -right-40 w-[600px] h-[600px] border border-white/5 rounded-full opacity-50 animate-[spin_40s_linear_infinite]"></div>
-          <div class="absolute -bottom-40 -left-40 w-[400px] h-[400px] border border-white/5 rounded-full opacity-50 animate-[spin_30s_linear_infinite_reverse]"></div>
-          
-          <div class="vt-section-header text-center mb-20 relative z-10">
-             <div class="vt-section-label !text-white !before:bg-white !pl-0 !before:hidden">Market Dominance</div>
-             <h2 class="text-5xl font-black !text-white">The <span class="text-[#007CC3]">Transformation</span> Blueprint</h2>
-             <p class="mt-6 text-white/60 max-w-2xl mx-auto text-lg">We don't just optimize; we execute a total digital takeover. Our end-to-end marketing philosophy covers ideation, strategic planning, and aggressive execution to secure your #1 spot.</p>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
-             <div class="p-10 bg-white/5 border border-white/10 rounded-3xl reveal-up hover:bg-white/10 transition-colors backdrop-blur-md">
-                <div class="w-16 h-16 bg-[#007CC3]/20 rounded-2xl flex items-center justify-center text-[#007CC3] text-2xl mb-8"><i class="fas fa-robot"></i></div>
-                <h3 class="text-2xl font-bold mb-4">GEO (Generative Engine)</h3>
-                <p class="text-sm text-white/60 leading-relaxed">Ensuring your brand appears and is cited favorably in AI-generated summaries like ChatGPT, Claude, and Google Search Generative Experience.</p>
-             </div>
-             <div class="p-10 bg-white/5 border border-white/10 rounded-3xl reveal-up hover:bg-white/10 transition-colors backdrop-blur-md">
-                <div class="w-16 h-16 bg-[#007CC3]/20 rounded-2xl flex items-center justify-center text-[#007CC3] text-2xl mb-8"><i class="fas fa-microphone-alt"></i></div>
-                <h3 class="text-2xl font-bold mb-4">AEO (Answer Engine)</h3>
-                <p class="text-sm text-white/60 leading-relaxed">Structuring your technical data and content for voice search devices and answer-based platforms like Alexa, Siri, and Perplexity AI.</p>
-             </div>
-             <div class="p-10 bg-white/5 border border-white/10 rounded-3xl reveal-up hover:bg-white/10 transition-colors backdrop-blur-md">
-                <div class="w-16 h-16 bg-[#007CC3]/20 rounded-2xl flex items-center justify-center text-[#007CC3] text-2xl mb-8"><i class="fas fa-search"></i></div>
-                <h3 class="text-2xl font-bold mb-4">Core Enterprise SEO</h3>
-                <p class="text-sm text-white/60 leading-relaxed">Deep technical and architectural optimization to dominate traditional SERPs. We focus on Core Web Vitals, schema markup, and programmatic SEO.</p>
-             </div>
-          </div>
-       </div>
-    </section>
 
-    <!-- 3. STRATEGIC EXECUTION - Idea, Plan, Execution -->
-    <section class="vt-section bg-white/50 backdrop-blur-sm">
-      <div class="vt-container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div class="reveal-left">
-             <div class="vt-section-label">Strategic Engine</div>
-             <h2 class="vt-section-heading">Idea. Plan. <span class="vt-accent text-[#6366F1]">Execution.</span></h2>
-             <p class="text-slate-500 mt-8 leading-relaxed text-lg">We provide the high-octane marketing ideas and technical firepower to take you from a digital ghost to a global authority. Our process is a relentless pursuit of the #1 spot, combining creative storytelling with ruthless technical execution.</p>
-             
-             <div class="mt-12 space-y-10">
-                <div class="flex gap-6">
-                   <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 shrink-0 shadow-sm"><i class="fas fa-lightbulb"></i></div>
-                   <div>
-                      <h4 class="text-xl font-black text-slate-900 mb-2">The Marketing Idea</h4>
-                      <p class="text-sm text-slate-500 leading-relaxed">We develop the disruptive concepts that cut through the noise and position your brand as the definitive leader in your category.</p>
-                   </div>
-                </div>
-                <div class="flex gap-6">
-                   <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shrink-0 shadow-sm"><i class="fas fa-map-marked-alt"></i></div>
-                   <div>
-                      <h4 class="text-xl font-black text-slate-900 mb-2">Strategic Planning</h4>
-                      <p class="text-sm text-slate-500 leading-relaxed">A data-driven roadmap for global dominance, covering SEO, AEO, and multi-channel brand ranking strategies.</p>
-                   </div>
-                </div>
-                <div class="flex gap-6">
-                   <div class="w-12 h-12 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-600 shrink-0 shadow-sm"><i class="fas fa-rocket"></i></div>
-                   <div>
-                      <h4 class="text-xl font-black text-slate-900 mb-2">Aggressive Execution</h4>
-                      <p class="text-sm text-slate-500 leading-relaxed">24/7 execution of your growth plan. We don't just plan; we build the presence and ranking that commands the web.</p>
-                   </div>
-                </div>
-             </div>
-          </div>
-          
-          <div class="reveal-right">
-             <div class="relative glass-card p-12 overflow-hidden border-slate-100 shadow-xl">
-                <div class="absolute -top-20 -right-20 w-64 h-64 bg-indigo-100 rounded-full blur-[80px] opacity-30"></div>
-                <h4 class="text-xs font-black uppercase tracking-[0.3em] text-indigo-500 mb-10">The Result of Dominance</h4>
-                
-                <div class="space-y-8">
-                   <div class="p-6 bg-white border border-slate-50 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-                      <div class="flex items-center justify-between mb-4">
-                         <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Search Visibility</span>
-                         <span class="text-xs font-bold text-green-500">Exponential Growth</span>
-                      </div>
-                      <div class="w-full h-2 bg-slate-50 rounded-full overflow-hidden">
-                         <div class="h-full bg-indigo-500 rounded-full" style="width: 92%"></div>
-                      </div>
-                   </div>
-                   <div class="p-6 bg-white border border-slate-50 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-                      <div class="flex items-center justify-between mb-4">
-                         <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">AI Citation Rate</span>
-                         <span class="text-xs font-bold text-blue-500">Industry Leader</span>
-                      </div>
-                      <div class="w-full h-2 bg-slate-50 rounded-full overflow-hidden">
-                         <div class="h-full bg-blue-500 rounded-full" style="width: 88%"></div>
-                      </div>
-                   </div>
-                   <div class="p-6 bg-white border border-slate-50 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-                      <div class="flex items-center justify-between mb-4">
-                         <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Global Brand Rank</span>
-                         <span class="text-xs font-bold text-cyan-500">#1 Top Tier</span>
-                      </div>
-                      <div class="w-full h-2 bg-slate-50 rounded-full overflow-hidden">
-                         <div class="h-full bg-cyan-500 rounded-full" style="width: 95%"></div>
-                      </div>
-                   </div>
-                </div>
+    <!-- ═══════════════════════════════════════════
+         03. SERVICES — EDITORIAL GRID
+    ═══════════════════════════════════════════ -->
+    <section id="services" class="s-cream py-32 relative overflow-hidden">
+      <!-- Risograph texture overlay -->
+      <div class="absolute inset-0 pointer-events-none opacity-[0.035]" style="background:url('../images/riso_texture.png') center/cover"></div>
 
-                <div class="mt-12 p-8 bg-indigo-900 rounded-[32px] text-white">
-                   <p class="text-sm font-medium italic opacity-80">"VybTek took us from being invisible on the web to the definitive industry answer in 6 months."</p>
-                   <div class="mt-6 flex items-center gap-4">
-                      <div class="w-10 h-10 rounded-full bg-white/10"></div>
-                      <div>
-                         <div class="text-xs font-black">Marcus Chen</div>
-                         <div class="text-[8px] uppercase tracking-widest opacity-50">CEO, Catalyst Financial</div>
-                      </div>
-                   </div>
-                </div>
-             </div>
+      <div class="max-w-[1480px] mx-auto px-8 md:px-16">
+
+        <!-- Header -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-20">
+          <div class="md:col-span-5 rev-up">
+            <span class="label-tag mb-6 block">What We Build</span>
+            <h2 class="serif text-[var(--ink)] leading-[1.0]" style="font-size:clamp(2.8rem,5vw,4.5rem)">
+              The Creative<br><em class="text-[var(--sienna)]">Arsenal</em>
+            </h2>
           </div>
+          <div class="md:col-span-7 flex items-end rev-right">
+            <p class="text-[var(--charcoal)] leading-relaxed" style="opacity:0.65;max-width:480px">
+              Every service we offer is a precision instrument in your brand's war chest. Not templates. Not shortcuts. Deliberate, obsessive creative work built to compound over time.
+            </p>
+          </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+          <!-- 01 Visual Identity — LARGE -->
+          <div class="md:col-span-7 ed-card rev-up" style="transform:rotate(-0.4deg)">
+            <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+              <!-- Image panel -->
+              <div class="relative overflow-hidden" style="min-height:280px">
+                <img src="../images/letterpress.png" alt="Visual Identity" class="w-full h-full object-cover" style="filter:contrast(1.1) saturate(0.7)">
+                <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(13,27,62,0.3),transparent 60%)"></div>
+                <div class="absolute top-5 left-5">
+                  <span class="stamp stamp-sienna" style="background:var(--white);padding:0.3rem 0.7rem">Foundation</span>
+                </div>
+              </div>
+              <!-- Content panel -->
+              <div class="p-6 md:p-8 flex flex-col justify-between ruled">
+                <div>
+                  <div class="mono text-[0.6rem] text-[var(--fog)] tracking-widest mb-4">01 / Visual Identity</div>
+                  <h3 class="serif text-[2rem] text-[var(--ink)] leading-tight mb-4">Visual Identity<br>Systems</h3>
+                  <p class="text-sm text-[var(--charcoal)] leading-relaxed" style="opacity:0.7">
+                    Complete vector logo suites, curated color palettes, premium type scales, icon systems, and a digital stylebook ensuring your brand never drifts from its DNA.
+                  </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-[rgba(13,27,62,0.08)]">
+                  <!-- Color chips -->
+                  <div class="flex gap-1.5 mb-4">
+                    <div class="w-6 h-6" style="background:#0D1B3E" title="Ink"></div>
+                    <div class="w-6 h-6" style="background:#1044C8" title="Sienna"></div>
+                    <div class="w-6 h-6" style="background:#0D1B3E" title="Forest"></div>
+                    <div class="w-6 h-6" style="background:#007CC3" title="Gold"></div>
+                    <div class="w-6 h-6" style="background:#64748B" title="Slate"></div>
+                    <div class="w-6 h-6 border border-[rgba(13,27,62,0.1)]" style="background:#F4F7FA" title="Cream"></div>
+                  </div>
+                  <a href="../contact.html" class="mono text-[0.65rem] text-[var(--sienna)] tracking-widest flex items-center gap-2 hover:gap-3 transition-all">VIEW PROCESS <i class="fas fa-arrow-right arr"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 Brand Stylebook — NARROW -->
+          <div class="md:col-span-5 ed-card p-6 md:p-8 flex flex-col justify-between rev-up" style="transform:rotate(0.5deg)">
+            <div>
+              <div class="mono text-[0.6rem] text-[var(--fog)] tracking-widest mb-5">02 / Brand Systems</div>
+              <h3 class="serif text-[2rem] text-[var(--ink)] leading-tight mb-4">Digital<br>Stylebooks</h3>
+              <p class="text-sm text-[var(--charcoal)] leading-relaxed" style="opacity:0.7">
+                One immutable source of truth. Every color token, type weight, spacing rule, grid system, and motion principle — delivered as a living digital specification.
+              </p>
+              <!-- Risograph texture accent -->
+              <div class="mt-6 overflow-hidden" style="height:100px">
+                <img src="../images/riso_texture.png" alt="" class="w-full h-full object-cover" style="filter:saturate(0.6) contrast(1.1);opacity:0.5">
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[rgba(13,27,62,0.08)] flex items-center justify-between">
+              <span class="mono text-[0.6rem] text-[var(--fog)]">02 / BRAND SYSTEMS</span>
+              <div class="w-8 h-8 border border-[rgba(13,27,62,0.15)] flex items-center justify-center text-[var(--ink)] text-xs">
+                <i class="fas fa-book-open"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 Cinematic Media -->
+          <div class="md:col-span-5 ed-card rev-up" style="transform:rotate(-0.6deg)">
+            <div class="relative overflow-hidden" style="height:200px">
+              <img src="../images/ink_brushwork.png" alt="Cinematic Media" class="w-full h-full object-cover" style="filter:contrast(1.15) saturate(0.6)">
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(13,27,62,0.6),transparent 50%)"></div>
+              <div class="absolute bottom-4 left-5">
+                <span class="mono text-[0.55rem] text-[var(--cream)] tracking-widest opacity-70">03 / Cinematic Media</span>
+              </div>
+            </div>
+            <div class="p-6 md:p-8">
+              <h3 class="serif text-[1.9rem] text-[var(--ink)] leading-tight mb-3">Cinematic<br>Media Studio</h3>
+              <p class="text-sm text-[var(--charcoal)] leading-relaxed" style="opacity:0.7">
+                4K commercial films, brand documentaries, product reveals. From scriptwriting through color grading — your story told at the highest level of craft.
+              </p>
+              <ul class="mt-5 space-y-2">
+                <li class="flex items-center gap-3 mono text-[0.62rem] text-[var(--fog)] tracking-wider">
+                  <span class="w-1 h-1 rounded-full bg-[var(--sienna)] flex-shrink-0"></span> 4K Commercial Productions
+                </li>
+                <li class="flex items-center gap-3 mono text-[0.62rem] text-[var(--fog)] tracking-wider">
+                  <span class="w-1 h-1 rounded-full bg-[var(--sienna)] flex-shrink-0"></span> Brand Documentary Films
+                </li>
+                <li class="flex items-center gap-3 mono text-[0.62rem] text-[var(--fog)] tracking-wider">
+                  <span class="w-1 h-1 rounded-full bg-[var(--sienna)] flex-shrink-0"></span> Executive Reels & Motion Graphics
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 04 GEO/AEO — DARK -->
+          <div class="md:col-span-7 rev-up p-6 md:p-10" style="background:var(--forest);color:var(--cream);transform:rotate(0.3deg);box-shadow:3px 5px 20px rgba(13,27,62,0.18)">
+            <div class="mono text-[0.6rem] tracking-widest mb-5" style="color:rgba(244,247,250,0.4)">04 / Search Dominance</div>
+            <h3 class="serif text-[2rem] leading-tight mb-4" style="color:var(--cream)">GEO + AEO<br>Authority Engine</h3>
+            <p class="text-sm leading-relaxed mb-8" style="color:rgba(244,247,250,0.6)">
+              When ChatGPT, Gemini, and Perplexity formulate answers, they draw from semantic authority graphs. We architect your brand's position within those graphs — ensuring AI cites you as the definitive answer, not your competitor.
+            </p>
+            <!-- Terminal mockup -->
+            <div class="border border-[rgba(244,247,250,0.1)] p-5 font-mono text-xs" style="background:rgba(13,27,62,0.25);color:rgba(244,247,250,0.55);line-height:1.9">
+              <div style="color:var(--sienna)">&gt;&gt; scanning entity knowledge graph...</div>
+              <div>FOUND: schema compliance verified ✓</div>
+              <div>INJECTING: JSON-LD structured data [v4]</div>
+              <div style="color:#00C8E6">SUCCESS: entity node established</div>
+              <div>AI recommendation score: <span style="color:#1044C8;font-weight:700">96%</span></div>
+            </div>
+            <div class="mt-6 pt-5 border-t border-[rgba(244,247,250,0.1)] flex items-center justify-between">
+              <span class="mono text-[0.6rem] tracking-widest" style="color:rgba(244,247,250,0.3)">04 / GEO ARCHITECTURE</span>
+              <a href="../contact.html" class="mono text-[0.65rem] tracking-widest flex items-center gap-2 hover:gap-3 transition-all" style="color:var(--sienna)">REQUEST AUDIT <i class="fas fa-arrow-right arr"></i></a>
+            </div>
+          </div>
+
+          <!-- 05 Rebranding -->
+          <div class="md:col-span-6 ed-card p-6 md:p-8 rev-up" style="transform:rotate(0.4deg)">
+            <div class="mono text-[0.6rem] text-[var(--fog)] tracking-widest mb-5">05 / Corporate Rebranding</div>
+            <h3 class="serif text-[1.9rem] text-[var(--ink)] leading-tight mb-4">Corporate<br>Rebranding</h3>
+            <p class="text-sm text-[var(--charcoal)] leading-relaxed" style="opacity:0.7">
+              Evolving legacy brands for the modern era. Strategic repositioning, identity overhaul, seamless transition plans that preserve brand equity while building a more powerful future.
+            </p>
+            <div class="mt-6 pt-5 border-t border-[rgba(13,27,62,0.08)]">
+              <div class="stamp stamp-forest" style="font-size:0.6rem">Transformation Ready</div>
+            </div>
+          </div>
+
+          <!-- 06 Brand Collateral -->
+          <div class="md:col-span-6 ed-card rev-up" style="transform:rotate(-0.5deg)">
+            <div class="relative overflow-hidden" style="height:160px">
+              <img src="../images/editorial_collage.png" alt="Brand Collateral" class="w-full h-full object-cover" style="filter:grayscale(40%) contrast(1.1)">
+            </div>
+            <div class="p-6 md:p-8">
+              <div class="mono text-[0.6rem] text-[var(--fog)] tracking-widest mb-4">06 / Brand Collateral</div>
+              <h3 class="serif text-[1.9rem] text-[var(--ink)] leading-tight mb-3">Print & Digital<br>Collateral</h3>
+              <p class="text-sm text-[var(--charcoal)] leading-relaxed" style="opacity:0.7">
+                Business cards, stationery, packaging, presentations — every brand touchpoint designed with precision and cohesion.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 3.5 TECHNICAL MASTERY - THE AEO/GEO STACK -->
-    <section class="vt-section bg-slate-900 text-white overflow-hidden">
-       <div class="vt-container">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-             <div class="reveal-left">
-                <div class="vt-section-label !text-[#6366F1] !before:bg-[#6366F1]">Deep Tech</div>
-                <h2 class="vt-section-heading !text-white">Technical <br><span class="text-[#6366F1]">Mastery</span> Stack</h2>
-                <p class="text-white/50 mt-8 leading-relaxed">Dominating the new digital frontier requires more than creative copy. We implement a rigorous technical stack designed to make your brand the definitive choice for both humans and AI models.</p>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
-                   <div class="group">
-                      <h4 class="text-lg font-black text-white mb-3 flex items-center gap-2">
-                         <i class="fas fa-code text-[#6366F1]"></i> Schema Injection
-                      </h4>
-                      <p class="text-xs text-white/40 leading-relaxed">Advanced JSON-LD structuring that provides clear, machine-readable context to AI crawlers, ensuring your brand is understood as a high-authority entity.</p>
-                   </div>
-                   <div class="group">
-                      <h4 class="text-lg font-black text-white mb-3 flex items-center gap-2">
-                         <i class="fas fa-network-wired text-[#6366F1]"></i> Semantic Clustering
-                      </h4>
-                      <p class="text-xs text-white/40 leading-relaxed">Mapping your content into interconnected semantic nodes that mirror how LLMs and search engines process topical authority.</p>
-                   </div>
-                   <div class="group">
-                      <h4 class="text-lg font-black text-white mb-3 flex items-center gap-2">
-                         <i class="fas fa-terminal text-[#6366F1]"></i> Prompt Engineering
-                      </h4>
-                      <p class="text-xs text-white/40 leading-relaxed">Optimizing brand mentions and technical citations to increase the probability of your brand being recommended in conversational AI outputs.</p>
-                   </div>
-                   <div class="group">
-                      <h4 class="text-lg font-black text-white mb-3 flex items-center gap-2">
-                         <i class="fas fa-chart-line text-[#6366F1]"></i> Citation Mapping
-                      </h4>
-                      <p class="text-xs text-white/40 leading-relaxed">Tracking and optimizing how your brand is cited across the digital ecosystem to improve credibility and trust scores in AI summaries.</p>
-                   </div>
-                </div>
-             </div>
-             
-             <div class="reveal-right">
-                <div class="relative p-10 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-xl">
-                   <div class="flex items-center gap-4 mb-8">
-                      <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                      <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                      <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                   </div>
-                   <div class="font-mono text-[10px] space-y-3 opacity-60">
-                      <p class="text-[#6366F1]">>> Scanning Search Topology...</p>
-                      <p>FOUND: 1.2M Unlinked Citations</p>
-                      <p>INJECTING: Advanced Schema Markup [v4.2]</p>
-                      <p class="text-green-400">SUCCESS: Semantic Cluster Established</p>
-                      <p>OPTIMIZING: LLM Recommendation Probability...</p>
-                      <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
-                         <div class="h-full bg-[#6366F1] w-3/4 animate-pulse"></div>
-                      </div>
-                      <p class="text-cyan-400">RESULT: BRAND DOMINANCE ACHIEVED</p>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
 
-    <!-- 4. FAQ SECTION - AEO Optimized -->
-    <section class="vt-section bg-slate-50 relative overflow-hidden">
-      <div class="vt-container">
-        <div class="vt-section-header text-center mb-24">
-          <div class="vt-section-label">Dominance FAQ</div>
-          <h2 class="vt-section-heading">Strategic <span class="vt-accent">Marketing</span> Insights</h2>
-          <p class="vt-section-sub mx-auto">Addressing your questions on AI-driven brand dominance.</p>
-        </div>
+    <!-- ═══════════════════════════════════════════
+         04. MANIFESTO — DARK EDITORIAL
+    ═══════════════════════════════════════════ -->
+    <section class="s-dark py-32 relative overflow-hidden">
+      <!-- Ink brushwork bg -->
+      <div class="absolute inset-0 pointer-events-none opacity-[0.07]" style="background:url('../images/ink_brushwork.png') center/cover"></div>
 
-        <div class="max-w-4xl mx-auto space-y-4 reveal-up">
-          <div class="faq-item">
-            <button class="faq-question">
-              What is AEO and why is it important for branding?
-              <i class="fas fa-plus faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              AEO (Answer Engine Optimization) structures your brand's digital presence to be the primary answer provided by voice assistants and answer engines like Alexa, Siri, and Perplexity AI. It is critical for maintaining authority in conversational search.
+      <div class="max-w-[1480px] mx-auto px-8 md:px-16 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+          <!-- Left: image -->
+          <div class="lg:col-span-5 rev-left">
+            <div class="relative" style="transform:rotate(-1deg)">
+              <img src="../images/ink_brushwork.png" alt="Brand craft" class="w-full object-cover" style="height:440px;filter:contrast(1.05) brightness(0.85) saturate(0.5)">
+              <!-- Offset border -->
+              <div class="absolute -bottom-3 -right-3 inset-0 border border-[var(--sienna)] pointer-events-none"></div>
             </div>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              How does Vybtek handle branding for companies "nowhere" on the web?
-              <i class="fas fa-plus faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              We execute an aggressive transformation plan that combines rapid SEO infrastructure, authoritative content creation, and GEO-first optimization to move your brand from invisibility to industry-leading rankings in record time.
-            </div>
-          </div>
+          <!-- Right: Quote + copy -->
+          <div class="lg:col-span-7 rev-right">
+            <span class="label-tag" style="border-color:rgba(244,247,250,0.2);color:rgba(244,247,250,0.4)">Brand Philosophy</span>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              What is the difference between SEO and GEO?
-              <i class="fas fa-plus faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              While traditional SEO focuses on ranking in Google search results, GEO (Generative Engine Optimization) focuses on ensuring your brand is cited and recommended by AI models like ChatGPT and Google Gemini.
-            </div>
-          </div>
+            <blockquote class="serif mt-8 leading-[1.1]" style="font-size:clamp(2rem,4.5vw,3.8rem);color:var(--cream)">
+              "A brand is not what<br>you say it is.<br>
+              <em style="color:var(--sienna)">It is what they feel</em><br>
+              when they see you."
+            </blockquote>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              Do you provide a full marketing execution plan?
-              <i class="fas fa-plus faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              Yes, our services cover the entire lifecycle: initial ideation, strategic planning, and ruthless execution across all digital channels to secure your brand's dominance.
+            <div class="divider-art mt-10 mb-10" style="background:linear-gradient(90deg,transparent,rgba(244,247,250,0.12) 30%,rgba(244,247,250,0.12) 70%,transparent)"></div>
+
+            <p class="leading-relaxed" style="color:rgba(244,247,250,0.55);max-width:480px;font-size:0.95rem">
+              Every color, every letterform, every negative space is a deliberate decision about perception. We make those decisions with obsessive intention — so your brand becomes unreasonably memorable before a single word is spoken.
+            </p>
+
+            <!-- Stats row -->
+            <div class="flex gap-12 mt-10">
+              <div>
+                <div class="serif text-[2.5rem] leading-none" style="color:var(--cream)">6</div>
+                <div class="mono text-[0.6rem] tracking-widest mt-1" style="color:rgba(244,247,250,0.35)">YEARS BUILDING</div>
+              </div>
+              <div style="width:1px;background:rgba(244,247,250,0.1)"></div>
+              <div>
+                <div class="serif text-[2.5rem] leading-none" style="color:var(--cream)">200<span style="color:var(--sienna)">+</span></div>
+                <div class="mono text-[0.6rem] tracking-widest mt-1" style="color:rgba(244,247,250,0.35)">BRANDS BUILT</div>
+              </div>
+              <div style="width:1px;background:rgba(244,247,250,0.1)"></div>
+              <div>
+                <div class="serif text-[2.5rem] leading-none" style="color:var(--cream)">98<span style="color:var(--sienna)">%</span></div>
+                <div class="mono text-[0.6rem] tracking-widest mt-1" style="color:rgba(244,247,250,0.35)">RETENTION</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. FINAL CTA -->
-    <section class="vt-section vt-cta">
-      <div class="vt-container relative z-10">
-        <h2 class="vt-cta-heading">Capture the <br><span class="text-indigo-400">Market</span></h2>
-        <p class="vt-cta-sub">Outrank your competitors on traditional search, answer engines, and generative AI. Build a brand that commands authority.</p>
-        <div class="flex justify-center gap-8">
-          <a href="../contact.html" class="vt-btn-primary !bg-white !text-[#002D62]">Start Your Brand Audit</a>
+
+    <!-- ═══════════════════════════════════════════
+         05. THE PROCESS
+    ═══════════════════════════════════════════ -->
+    <section class="s-parch py-32">
+      <div class="max-w-[1480px] mx-auto px-8 md:px-16">
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+          <div class="md:col-span-5 rev-up">
+            <span class="label-tag mb-6 block">Methodology</span>
+            <h2 class="serif leading-[1.0]" style="font-size:clamp(2.8rem,5vw,4.5rem);color:var(--ink)">
+              The Creative<br><em style="color:var(--sienna)">Process</em>
+            </h2>
+          </div>
+          <div class="md:col-span-7 flex items-end rev-right">
+            <p style="color:var(--charcoal);opacity:0.65;max-width:440px;line-height:1.8;font-size:0.95rem">
+              Four stages. No shortcuts. A rigorous creative methodology that turns brand confusion into market clarity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Process Table -->
+        <div>
+          <div class="process-row rev-up">
+            <div class="proc-num">01</div>
+            <div>
+              <h3 class="serif text-[1.5rem] text-[var(--ink)] leading-tight">Brand Excavation</h3>
+            </div>
+            <div class="proc-sub">
+              <p class="text-sm leading-relaxed" style="color:var(--fog)">Stripping everything down. Auditing your brand DNA, competitive landscape, audience psychographics, and untapped positioning — however uncomfortable the findings.</p>
+            </div>
+            <div class="proc-arrow flex justify-end">
+              <div class="w-9 h-9 border border-[rgba(13,27,62,0.15)] flex items-center justify-center text-[var(--fog)] text-xs group-hover:border-[var(--sienna)]">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-row rev-up">
+            <div class="proc-num">02</div>
+            <div>
+              <h3 class="serif text-[1.5rem] text-[var(--ink)] leading-tight">Strategic Architecture</h3>
+            </div>
+            <div class="proc-sub">
+              <p class="text-sm leading-relaxed" style="color:var(--fog)">Building the blueprint. Brand positioning framework, messaging hierarchy, visual moodboards, and a creative brief that becomes the north star for every design decision.</p>
+            </div>
+            <div class="proc-arrow flex justify-end">
+              <div class="w-9 h-9 border border-[rgba(13,27,62,0.15)] flex items-center justify-center text-[var(--fog)] text-xs">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-row rev-up">
+            <div class="proc-num">03</div>
+            <div>
+              <h3 class="serif text-[1.5rem] text-[var(--ink)] leading-tight">Raw Creative Output</h3>
+            </div>
+            <div class="proc-sub">
+              <p class="text-sm leading-relaxed" style="color:var(--fog)">Where craft meets obsession. Logo systems, typography, color theory, motion principles, icon libraries — built pixel-by-pixel with purpose and precision.</p>
+            </div>
+            <div class="proc-arrow flex justify-end">
+              <div class="w-9 h-9 border border-[rgba(13,27,62,0.15)] flex items-center justify-center text-[var(--fog)] text-xs">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-row rev-up">
+            <div class="proc-num">04</div>
+            <div>
+              <h3 class="serif text-[1.5rem] text-[var(--ink)] leading-tight">Market Activation</h3>
+            </div>
+            <div class="proc-sub">
+              <p class="text-sm leading-relaxed" style="color:var(--fog)">Deployment across every surface — digital, print, and AI search semantic graphs. GEO/AEO schema injection ensures your brand becomes the AI-recommended authority in your category.</p>
+            </div>
+            <div class="proc-arrow flex justify-end">
+              <div class="w-9 h-9 border border-[rgba(13,27,62,0.15)] flex items-center justify-center text-[var(--fog)] text-xs">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         06. BRAND SCANNER
+    ═══════════════════════════════════════════ -->
+    <section class="s-dark py-28 relative overflow-hidden">
+      <!-- Riso overlay -->
+      <div class="absolute inset-0 pointer-events-none opacity-[0.05]" style="background:url('../images/riso_texture.png') center/cover;mix-blend-mode:screen"></div>
+
+      <div class="max-w-[1480px] mx-auto px-8 md:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+          <div class="rev-left">
+            <span class="label-tag" style="border-color:rgba(244,247,250,0.2);color:rgba(244,247,250,0.35)">AI Diagnostic</span>
+            <h2 class="serif mt-6 leading-[1.0]" style="font-size:clamp(2.5rem,5vw,4.5rem);color:var(--cream)">
+              Scan Your<br><em style="color:var(--sienna)">Brand Authority</em>
+            </h2>
+            <p class="mt-6 leading-relaxed text-[0.95rem]" style="color:rgba(244,247,250,0.5);max-width:400px">
+              Simulate how generative AI engines — Gemini, Perplexity, ChatGPT — analyze and score your brand's semantic authority right now.
+            </p>
+            <!-- Workspace image accent -->
+            <div class="mt-10 w-64 relative rev-up" style="transform:rotate(-1deg)">
+              <img src="../images/creative_workspace.png" alt="Design studio" class="w-full" style="height:160px;object-fit:cover;filter:contrast(1.05) saturate(0.5) brightness(0.7)">
+              <div class="absolute inset-0 border border-[var(--sienna)] pointer-events-none"></div>
+            </div>
+          </div>
+
+          <div class="rev-right">
+            <div class="border border-[rgba(244,247,250,0.1)] p-6 md:p-8" style="background:rgba(13,27,62,0.3)">
+              <div class="flex items-center justify-between mb-6 pb-5 border-b border-[rgba(244,247,250,0.08)]">
+                <div>
+                  <div class="mono text-[0.6rem] tracking-[0.2em]" style="color:var(--sienna)">AI BRAND SCANNER</div>
+                  <div class="serif mt-1 text-lg" style="color:var(--cream)">Authority Diagnostic Tool</div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                  <span class="mono text-[0.6rem] tracking-widest" style="color:rgba(244,247,250,0.35)">ONLINE</span>
+                </div>
+              </div>
+
+              <div class="flex gap-3 mb-4">
+                <input type="text" id="brand-input" placeholder="Enter your brand name..."
+                  class="scan-inp flex-1">
+                <button onclick="runScan()" class="btn-cream" style="padding:0.9rem 1.25rem;font-size:0.75rem;white-space:nowrap">
+                  <i class="fas fa-satellite-dish"></i> Scan
+                </button>
+              </div>
+
+              <div id="scan-console" class="hidden font-mono text-xs p-5 border border-[rgba(244,247,250,0.07)]"
+                style="background:#0D1B3E;min-height:180px;color:rgba(244,247,250,0.55);line-height:2">
+                <div class="mono text-[0.55rem] tracking-[0.3em] mb-4" style="color:rgba(244,247,250,0.18)">ENGINE: GEMINI-PRO-CUSTOM v3.1</div>
+                <div id="console-out"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         07. FAQ
+    ═══════════════════════════════════════════ -->
+    <section class="s-white py-28">
+      <div class="max-w-[1480px] mx-auto px-8 md:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+
+          <div class="lg:col-span-4 rev-left">
+            <span class="label-tag mb-6 block">Questions & Answers</span>
+            <h2 class="serif leading-tight" style="font-size:clamp(2.5rem,4vw,3.8rem);color:var(--ink)">
+              Frequently<br>Asked
+            </h2>
+            <div class="mt-6 w-64 rev-up" style="transform:rotate(0.5deg)">
+              <img src="../images/editorial_collage.png" alt="" class="w-full" style="height:180px;object-fit:cover;filter:saturate(0.65) contrast(1.1)">
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 rev-right">
+            <div class="border-t border-[rgba(13,27,62,0.1)]">
+
+              <div class="faq-row">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                  <span>What is AEO and why does it matter for branding?</span>
+                  <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">AEO (Answer Engine Optimization) ensures that when voice assistants or conversational AI engines parse the web, your brand is selected as the primary response. It's not just search ranking — it's about becoming the definitive answer in the age of AI-driven discovery.</div>
+              </div>
+
+              <div class="faq-row">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                  <span>How long does a full brand identity project take?</span>
+                  <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">A comprehensive visual identity system typically takes 4–6 weeks from brand excavation to final delivery. A full system including stylebooks, motion guidelines, and video assets typically runs 8–12 weeks.</div>
+              </div>
+
+              <div class="faq-row">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                  <span>What makes Vybtek different from a typical design agency?</span>
+                  <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">We bridge creative craft and technical strategy. We don't just build things that look exceptional — we engineer them to perform inside AI search systems, across every device and surface. Our brand systems include GEO/AEO schema architecture alongside the visual design work, giving clients a compounding competitive advantage.</div>
+              </div>
+
+              <div class="faq-row">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                  <span>What is the difference between traditional SEO and GEO?</span>
+                  <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">Traditional SEO targets keyword positions on search result pages. GEO (Generative Engine Optimization) targets how AI models — GPT-4, Gemini, Perplexity — construct their answers. We optimize your semantic entity graphs and schema structures so that AI systems cite your brand as the authoritative source.</div>
+              </div>
+
+              <div class="faq-row">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                  <span>Do you offer brand strategy consulting before design?</span>
+                  <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">Absolutely — and we insist on it. Brand strategy is the foundation everything else is built on. Our Brand Excavation process digs into market positioning, competitive landscape, and audience psychology before a single pixel is placed. You cannot build a powerful visual identity on a weak strategic foundation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         08. FINAL CTA
+    ═══════════════════════════════════════════ -->
+    <section class="s-cream py-32 relative overflow-hidden">
+      <!-- Riso texture -->
+      <div class="absolute inset-0 pointer-events-none opacity-[0.04]" style="background:url('../images/riso_texture.png') center/cover"></div>
+
+      <!-- Faint grid -->
+      <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(13,27,62,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(13,27,62,0.05) 1px,transparent 1px);background-size:60px 60px;"></div>
+
+      <div class="max-w-[1480px] mx-auto px-8 md:px-16 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+
+          <div class="lg:col-span-7 rev-up">
+            <span class="label-tag mb-8 block">Begin The Transformation</span>
+            <h2 class="serif leading-[0.95]" style="font-size:clamp(4rem,10vw,9rem);color:var(--ink)">
+              Your<br>
+              <em style="color:var(--sienna)">Turn.</em>
+            </h2>
+          </div>
+
+          <div class="lg:col-span-5 rev-right">
+            <p class="leading-relaxed mb-8" style="color:var(--charcoal);opacity:0.65;font-size:1rem">
+              Your brand transformation starts with a direct conversation — no pitch decks, no templates. A real dialogue about where you are and where your brand deserves to stand.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-12">
+              <a href="../contact.html" class="btn-primary">
+                <span>Book a Strategy Session</span>
+                <i class="fas fa-arrow-right arr"></i>
+              </a>
+              <a href="../services.html" class="btn-ghost">
+                <span>All Services</span>
+              </a>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="p-6 border-l-2 border-[var(--sienna)]" style="background:var(--white)">
+              <p class="text-sm italic leading-relaxed" style="color:var(--charcoal);opacity:0.75">
+                "VybTek shifted our brand from total digital obscurity to being the prominent recommendation inside Perplexity and Gemini in less than six months."
+              </p>
+              <div class="mt-4 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center mono text-[0.65rem] font-bold" style="background:var(--sienna);color:var(--cream)">MC</div>
+                <div>
+                  <div class="mono text-[0.6rem] text-[var(--ink)] font-bold tracking-wider">Marcus Chen</div>
+                  <div class="mono text-[0.55rem] text-[var(--fog)] tracking-wider">CEO, Catalyst Financial</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom footer-line -->
+        <div class="mt-20 pt-8 border-t border-[rgba(13,27,62,0.1)] flex flex-col md:flex-row justify-between items-start gap-4">
+          <div class="mono text-[0.6rem] text-[var(--fog)] tracking-[0.2em]">VYBTEK CREATIVE STUDIO — UDAIPUR, INDIA</div>
+          <div class="mono text-[0.6rem] text-[var(--fog)] tracking-[0.2em]">BRAND ARCHITECTURE SINCE 2019</div>
+          <div class="stamp stamp-sienna" style="font-size:0.55rem;transform:rotate(-2deg)">Est. 2019</div>
         </div>
       </div>
     </section>
@@ -299,6 +946,122 @@
 
   <footer><special-footer></special-footer></footer>
 
+  <script>
+    // ── CURSOR ──
+    const dot = document.getElementById('c-dot');
+    const ring = document.getElementById('c-ring');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+    (function loop(){ rx+=(mx-rx)*0.13; ry+=(my-ry)*0.13; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a,button,.ed-card,.process-row').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ dot.style.transform='translate(-50%,-50%) scale(2.2)'; ring.style.width='60px'; ring.style.height='60px'; ring.style.opacity='0.3'; });
+      el.addEventListener('mouseleave',()=>{ dot.style.transform='translate(-50%,-50%) scale(1)'; ring.style.width='38px'; ring.style.height='38px'; ring.style.opacity='0.45'; });
+    });
+
+    // ── LENIS ──
+    const lenis = new Lenis({ lerp: 0.08 });
+    (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(0);
+
+    // ── GSAP SCROLL ──
+    gsap.registerPlugin(ScrollTrigger);
+    const mkReveal = (sel, props) => gsap.utils.toArray(sel).forEach(el=>{
+      gsap.fromTo(el, { opacity:0, ...props.from }, {
+        opacity:1, ...props.to, duration:0.85, ease:'power3.out',
+        scrollTrigger:{ trigger:el, start:'top 90%', toggleActions:'play none none none' }
+      });
+    });
+    mkReveal('.rev-up',    { from:{ y:32  }, to:{ y:0  } });
+    mkReveal('.rev-left',  { from:{ x:-32 }, to:{ x:0  } });
+    mkReveal('.rev-right', { from:{ x:32  }, to:{ x:0  } });
+
+    // Hero stagger
+    window.addEventListener('load',()=>{
+      gsap.fromTo('h1 > *', { opacity:0, y:50 }, { opacity:1, y:0, stagger:0.12, duration:1.1, ease:'power4.out', delay:0.2 });
+    });
+
+    // Collage parallax tilt on mousemove
+    document.addEventListener('mousemove', e=>{
+      const px = (e.clientX/window.innerWidth - 0.5)*10;
+      const py = (e.clientY/window.innerHeight - 0.5)*7;
+      document.querySelectorAll('.collage-img').forEach((img,i)=>{
+        const dir = i%2===0 ? 1 : -1;
+        const base = img.dataset.baseRot || (parseFloat(img.style.transform?.match(/rotate\((-?[\d.]+)/)?.[1])||0);
+        img.dataset.baseRot = base;
+        img.style.transform = `rotate(${parseFloat(base)+px*0.15*dir}deg) translateY(${py*0.5}px)`;
+      });
+    });
+
+    // Counter
+    function animateCounters(){
+      document.querySelectorAll('[data-count]').forEach(el=>{
+        const t=parseInt(el.dataset.count); let c=0;
+        const timer=setInterval(()=>{ c+=t/50; if(c>=t){c=t;clearInterval(timer);} el.textContent=Math.floor(c)+'+'; },28);
+      });
+    }
+    const firstStat=document.querySelector('[data-count]');
+    if(firstStat) ScrollTrigger.create({ trigger:firstStat, start:'top 85%', onEnter:animateCounters, once:true });
+
+    // ── FAQ ──
+    function toggleFaq(btn){
+      const ans=btn.nextElementSibling;
+      const icon=btn.querySelector('.faq-toggle i');
+      const open=ans.classList.contains('open');
+      document.querySelectorAll('.faq-ans.open').forEach(a=>a.classList.remove('open'));
+      document.querySelectorAll('.faq-toggle i').forEach(ic=>{ ic.classList.remove('fa-minus'); ic.classList.add('fa-plus'); ic.closest('.faq-btn').style.color=''; });
+      if(!open){ ans.classList.add('open'); icon.classList.replace('fa-plus','fa-minus'); btn.style.color='var(--sienna)'; }
+    }
+
+    // ── BRAND SCAN ──
+    function runScan(){
+      const brand=document.getElementById('brand-input').value.trim()||'Your Brand';
+      const cEl=document.getElementById('scan-console');
+      const oEl=document.getElementById('console-out');
+      cEl.classList.remove('hidden'); oEl.innerHTML='';
+
+      const steps=[
+        { t:`Initialising entity scan: <span style="color:var(--sienna)">"${brand}"</span>`, d:0 },
+        { t:'Querying Google Knowledge Graph...', d:500 },
+        { t:'Analysing semantic authority index...', d:1050 },
+        { t:'Measuring AI recommendation probability...', d:1600 },
+        { t:'<span style="color:#00C8E6">✓ Schema topology validated</span>', d:2100 },
+        { t:'<span style="color:#00C8E6">✓ Entity node confirmed</span>', d:2550 },
+      ];
+
+      steps.forEach(({t,d})=>{
+        setTimeout(()=>{
+          const p=document.createElement('p');
+          p.innerHTML=`<span style="color:var(--sienna);margin-right:10px">&gt;&gt;</span>${t}`;
+          oEl.appendChild(p);
+          cEl.scrollTop=cEl.scrollHeight;
+        },d);
+      });
+
+      setTimeout(()=>{
+        const r=document.createElement('div');
+        r.style.cssText='margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(244,247,250,0.08)';
+        r.innerHTML=`
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px">
+            <div style="padding:8px;border:1px solid rgba(244,247,250,0.07);background:rgba(255,255,255,0.02)">
+              <div style="font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(244,247,250,0.28);margin-bottom:4px">AI Position</div>
+              <div style="font-weight:700;color:#1044C8">#1 Cited</div>
+            </div>
+            <div style="padding:8px;border:1px solid rgba(244,247,250,0.07);background:rgba(255,255,255,0.02)">
+              <div style="font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(244,247,250,0.28);margin-bottom:4px">GEO Score</div>
+              <div style="font-weight:700;color:#007CC3">High</div>
+            </div>
+            <div style="padding:8px;border:1px solid rgba(244,247,250,0.07);background:rgba(255,255,255,0.02)">
+              <div style="font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(244,247,250,0.28);margin-bottom:4px">Match Rate</div>
+              <div style="font-weight:700;color:#00C8E6">96%</div>
+            </div>
+          </div>
+          <div style="padding:10px;border:1px solid rgba(16,68,200,0.2);background:rgba(16,68,200,0.05);color:rgba(244,247,250,0.55);font-size:11px;line-height:1.8">
+            <span style="color:var(--sienna);font-weight:600">AI SUMMARY</span> — <em>"${brand} demonstrates strong entity authority with measurable recommendation probability across generative search systems. Brand architecture is clean and citation-worthy."</em>
+          </div>`;
+        oEl.appendChild(r);
+        cEl.scrollTop=cEl.scrollHeight;
+      },3000);
+    }
+  </script>
   <script src="../animations.js"></script>
 </body>
 </html>

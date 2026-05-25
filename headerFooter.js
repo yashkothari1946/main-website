@@ -1,16 +1,21 @@
+const scriptTag = document.querySelector('script[src*="headerFooter.js"]');
+let globalRel = './';
+if (scriptTag) {
+  const src = scriptTag.getAttribute('src');
+  globalRel = src.split('headerFooter.js')[0];
+  if (globalRel === '') globalRel = './';
+}
+
 class SpecialHeader extends HTMLElement {
   connectedCallback() {
-    // Determine relative path to root
-    const path = window.location.pathname;
-    const isInsideSubdir = path.includes('/services/') || path.includes('/products/') || path.includes('/legal/');
-    const rel = isInsideSubdir ? '../' : './';
+    const rel = globalRel;
 
     this.innerHTML = `
     <header class="fixed top-0 left-0 w-full z-[100] backdrop-blur-md border-b border-gray-100 bg-white/80 transition-all duration-300 header-main">
       <div class="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
         <!-- Logo -->
         <a href="${rel}index.html" class="flex items-center group">
-          <img src="${rel}images/logo.png" alt="VybTek Logo" class="h-10 md:h-14 w-auto object-contain" />
+          <img src="${rel}images/logo.png" alt="VybTek Logo" class="h-6 md:h-8 w-auto object-contain" />
         </a>
 
         <!-- Mobile Menu Toggle -->
@@ -21,103 +26,45 @@ class SpecialHeader extends HTMLElement {
         <!-- Navigation -->
         <div class="hidden md:flex items-center gap-8">
           <ul class="flex gap-6 items-center text-[11px] font-bold uppercase tracking-widest text-[#475569] nav-list">
-            <li><a href="${rel}index.html" class="nav-link hover:text-[#007CC3] transition-colors">Home</a></li>
-            <li><a href="${rel}about.html" class="nav-link hover:text-[#007CC3] transition-colors">About</a></li>
             
-            <!-- Services Dropdown -->
+            <!-- What We Do Dropdown -->
             <li class="relative group">
-              <a href="${rel}services.html" class="flex items-center gap-1 hover:text-[#007CC3] transition-colors uppercase cursor-pointer nav-link">Services <i class="fas fa-chevron-down text-[10px]"></i></a>
-              <div class="absolute left-0 top-[calc(100%+10px)] w-64 bg-white border border-gray-100 shadow-2xl rounded-xl p-5 hidden group-hover:block animate-in fade-in slide-in-from-top-2 duration-200 before:content-[''] before:absolute before:-top-[15px] before:left-0 before:w-full before:h-[20px]">
-                <div class="grid grid-cols-1 gap-4">
-                  <a href="${rel}services.html" class="flex items-center gap-3 p-2 rounded-lg bg-blue-50 text-[#007CC3] hover:bg-[#007CC3] hover:text-white transition-all">
-                    <div class="w-8 h-8 rounded flex items-center justify-center"><i class="fas fa-th-large text-xs"></i></div>
-                    <div class="text-[10px] font-black uppercase">View All Services</div>
-                  </a>
-                  <div class="h-[1px] bg-gray-100 my-1"></div>
-                  <a href="${rel}services/ai-solutions.html" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-[#007CC3] group-hover/item:bg-[#007CC3] group-hover/item:text-white transition-all"><i class="fas fa-brain text-xs"></i></div>
-                    <div>
-                      <div class="text-[10px] font-black text-[#002D62]">AI Solutions</div>
-                      <div class="text-[9px] text-gray-400 normal-case font-medium">Custom AI & LLMs</div>
-                    </div>
-                  </a>
-                  <a href="${rel}services/erp-crm.html" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-[#007CC3] group-hover/item:bg-[#007CC3] group-hover/item:text-white transition-all"><i class="fas fa-database text-xs"></i></div>
-                    <div>
-                      <div class="text-[10px] font-black text-[#002D62]">ERP & CRM</div>
-                      <div class="text-[9px] text-gray-400 normal-case font-medium">Enterprise Management</div>
-                    </div>
-                  </a>
-                  <a href="${rel}services/web-app.html" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-[#007CC3] group-hover/item:bg-[#007CC3] group-hover/item:text-white transition-all"><i class="fas fa-code text-xs"></i></div>
-                    <div>
-                      <div class="text-[10px] font-black text-[#002D62]">Web & Apps</div>
-                      <div class="text-[9px] text-gray-400 normal-case font-medium">Next.js & Mobile</div>
-                    </div>
-                  </a>
-                  <a href="${rel}services/branding.html" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-[#007CC3] group-hover/item:bg-[#007CC3] group-hover/item:text-white transition-all"><i class="fas fa-bullhorn text-xs"></i></div>
-                    <div>
-                      <div class="text-[10px] font-black text-[#002D62]">SEO & Branding</div>
-                      <div class="text-[9px] text-gray-400 normal-case font-medium">Market Domination</div>
-                    </div>
-                  </a>
-                </div>
+              <a href="${rel}services.html" class="flex items-center gap-1 hover:text-[#007CC3] transition-colors cursor-pointer nav-link">What We Do <i class="fas fa-chevron-down text-[10px]"></i></a>
+              <div class="absolute left-0 top-[calc(100%+10px)] w-60 bg-white border border-gray-100 shadow-2xl rounded-xl p-3 hidden group-hover:block animate-in fade-in slide-in-from-top-2 duration-200 before:content-[''] before:absolute before:-top-[15px] before:left-0 before:w-full before:h-[20px]">
+                <a href="${rel}services.html#digital-branding" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Digital Branding</a>
+                <a href="${rel}services.html#it-services" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">IT & Tech Solutions</a>
               </div>
             </li>
 
-            <!-- Products Dropdown -->
+            <!-- Who We Help -->
+            <li><a href="${rel}industries.html" class="nav-link hover:text-[#007CC3] transition-colors">Who We Help</a></li>
+
+            <!-- Who We Are Dropdown -->
             <li class="relative group">
-              <a href="${rel}products.html" class="flex items-center gap-1 hover:text-[#007CC3] transition-colors uppercase cursor-pointer nav-link">Products <i class="fas fa-chevron-down text-[10px]"></i></a>
-              <div class="absolute left-0 top-[calc(100%+10px)] w-80 bg-white border border-gray-100 shadow-2xl rounded-xl p-5 hidden group-hover:block animate-in fade-in slide-in-from-top-2 duration-200 before:content-[''] before:absolute before:-top-[15px] before:left-0 before:w-full before:h-[20px]">
-                <div class="grid grid-cols-1 gap-3">
-                  <a href="${rel}products.html" class="flex items-center gap-3 p-2 rounded-lg bg-indigo-50 text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all">
-                    <div class="w-8 h-8 rounded flex items-center justify-center"><i class="fas fa-layer-group text-xs"></i></div>
-                    <div class="text-[10px] font-black uppercase">View All Products</div>
-                  </a>
-                  <div class="h-[1px] bg-gray-100 my-1"></div>
-                  <a href="${rel}products/crm.html" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover/item:bg-indigo-600 group-hover/item:text-white transition-all"><i class="fas fa-users-gear text-xs"></i></div>
-                    <div>
-                      <div class="text-[10px] font-black text-[#002D62]">Enterprise CRM</div>
-                      <div class="text-[9px] text-gray-400 normal-case font-medium">VybCore Revenue Engine</div>
-                    </div>
-                  </a>
-                  <a href="${rel}products/ai-chatbot.html" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-[#007CC3] group-hover/item:bg-[#007CC3] group-hover/item:text-white transition-all"><i class="fas fa-comment-dots text-xs"></i></div>
-                    <div>
-                      <div class="text-[10px] font-black text-[#002D62]">AI Chatbot</div>
-                      <div class="text-[9px] text-gray-400 normal-case font-medium">VybChat Orchestration</div>
-                    </div>
-                  </a>
-                  <div class="h-[1px] bg-gray-100 my-1"></div>
-                  <a href="${rel}products.html#catalog" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-orange-50 flex items-center justify-center text-orange-600"><i class="fas fa-building text-xs"></i></div>
-                    <div class="text-[10px] font-black text-[#002D62]">Property Management</div>
-                  </a>
-                  <a href="${rel}products.html#catalog" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-green-50 flex items-center justify-center text-green-600"><i class="fas fa-graduation-cap text-xs"></i></div>
-                    <div class="text-[10px] font-black text-[#002D62]">Education CRM</div>
-                  </a>
-                  <a href="${rel}products.html#catalog" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-purple-50 flex items-center justify-center text-purple-600"><i class="fas fa-share-nodes text-xs"></i></div>
-                    <div class="text-[10px] font-black text-[#002D62]">Social Platform</div>
-                  </a>
-                  <a href="${rel}products.html#catalog" class="group/item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all">
-                    <div class="w-8 h-8 rounded bg-cyan-50 flex items-center justify-center text-cyan-600"><i class="fas fa-microphone-lines text-xs"></i></div>
-                    <div class="text-[10px] font-black text-[#002D62]">Voice AI</div>
-                  </a>
-                </div>
+              <a href="#" class="flex items-center gap-1 hover:text-[#007CC3] transition-colors cursor-pointer nav-link">Who We Are <i class="fas fa-chevron-down text-[10px]"></i></a>
+              <div class="absolute left-0 top-[calc(100%+10px)] w-48 bg-white border border-gray-100 shadow-2xl rounded-xl p-3 hidden group-hover:block animate-in fade-in slide-in-from-top-2 duration-200 before:content-[''] before:absolute before:-top-[15px] before:left-0 before:w-full before:h-[20px]">
+                <a href="${rel}about.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">About Us</a>
+                <a href="${rel}careers.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Careers</a>
+                <a href="${rel}contact.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Contact Us</a>
               </div>
             </li>
 
-            <li><a href="${rel}portfolio.html" class="nav-link hover:text-[#007CC3] transition-colors">Portfolio</a></li>
-            <li><a href="${rel}industries.html" class="nav-link hover:text-[#007CC3] transition-colors">Industries</a></li>
-            <li><a href="${rel}blog.html" class="nav-link hover:text-[#007CC3] transition-colors">Insights</a></li>
-            <li><a href="${rel}careers.html" class="nav-link hover:text-[#007CC3] transition-colors">Careers</a></li>
-            <li><a href="${rel}contact.html" class="nav-link hover:text-[#007CC3] transition-colors">Contact</a></li>
+            <!-- Resources Dropdown -->
+            <li class="relative group">
+              <a href="#" class="flex items-center gap-1 hover:text-[#007CC3] transition-colors cursor-pointer nav-link">Resources <i class="fas fa-chevron-down text-[10px]"></i></a>
+              <div class="absolute left-0 top-[calc(100%+10px)] w-48 bg-white border border-gray-100 shadow-2xl rounded-xl p-3 hidden group-hover:block animate-in fade-in slide-in-from-top-2 duration-200 before:content-[''] before:absolute before:-top-[15px] before:left-0 before:w-full before:h-[20px]">
+                <a href="${rel}blog.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Blog</a>
+                <a href="${rel}portfolio.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Case Studies</a>
+                <a href="${rel}faq.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">FAQ</a>
+                <a href="${rel}resources.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Guides / Resources</a>
+              </div>
+            </li>
+
+            <!-- Secondary Optional Button -->
+            <li><a href="${rel}contact.html" class="nav-link hover:text-[#007CC3] transition-colors text-[#475569] font-bold ml-2 hidden lg:inline-block">Contact Us</a></li>
             
-            <li><a href="${rel}contact.html#consultation" class="bg-[#007CC3] text-white px-5 py-2.5 rounded-none font-black text-[10px] uppercase tracking-tighter hover:bg-[#002D62] transition-all shadow-lg hover:scale-105 active:scale-95">Book Consultation</a></li>
+            <!-- Primary Button -->
+            <li><a href="${rel}contact.html#consultation" class="bg-[#007CC3] text-white px-5 py-2.5 rounded-full font-black text-[10px] uppercase tracking-tighter hover:bg-[#0D1B3E] transition-all shadow-lg hover:scale-105 active:scale-95">Book a Free Consultation</a></li>
           </ul>
         </div>
       </div>
@@ -126,53 +73,60 @@ class SpecialHeader extends HTMLElement {
       <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[190] opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
       <div id="mobile-menu" class="fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-white/80 backdrop-blur-xl border-l border-white/20 shadow-2xl z-[200] transform translate-x-full transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) flex flex-col">
         <div class="flex items-center justify-between p-6 border-b border-gray-100/50">
-           <span class="text-xl font-extrabold tracking-tight text-[#002D62] uppercase">Menu</span>
+           <span class="text-xl font-extrabold tracking-tight text-[#0D1B3E] uppercase">Menu</span>
            <button id="menu-close" class="text-2xl text-gray-500 hover:text-[#007CC3] transition-colors"><i class="fas fa-times"></i></button>
         </div>
         
         <div class="flex-1 overflow-y-auto p-6">
-          <nav class="space-y-6 text-lg font-bold uppercase tracking-tighter text-[#002D62]">
-            <a href="${rel}index.html" class="block hover:text-[#007CC3] transition-colors">Home</a>
-            <a href="${rel}about.html" class="block hover:text-[#007CC3] transition-colors">About</a>
+          <nav class="space-y-6 text-lg font-bold uppercase tracking-tighter text-[#0D1B3E]">
             
-            <!-- Services Accordion -->
+            <!-- What We Do Accordion -->
             <div class="mobile-accordion">
               <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn">
-                <span>Services</span>
+                <span>What We Do</span>
                 <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
               </button>
-              <div class="mobile-accordion-content hidden pl-4 pt-4 space-y-4 text-sm font-medium normal-case text-gray-600">
-                <a href="${rel}services.html" class="block text-[#007CC3] font-bold">View All Services</a>
-                <a href="${rel}services/ai-solutions.html" class="block hover:text-[#007CC3]">AI Solutions</a>
-                <a href="${rel}services/erp-crm.html" class="block hover:text-[#007CC3]">ERP & CRM</a>
-                <a href="${rel}services/web-app.html" class="block hover:text-[#007CC3]">Web & Apps</a>
-                <a href="${rel}services/branding.html" class="block hover:text-[#007CC3]">SEO & Branding</a>
+              <div class="mobile-accordion-content hidden pl-8 pt-4 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
+                <a href="${rel}services.html" class="block hover:text-[#007CC3] font-bold">All Services</a>
+                <a href="${rel}services.html#digital-branding" class="block hover:text-[#007CC3]">Digital Branding</a>
+                <a href="${rel}services.html#it-services" class="block hover:text-[#007CC3]">IT & Tech Solutions</a>
               </div>
             </div>
 
-            <!-- Products Accordion -->
+            <a href="${rel}industries.html" class="block hover:text-[#007CC3] transition-colors">Who We Help</a>
+
+            <!-- Who We Are Accordion -->
             <div class="mobile-accordion">
               <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn">
-                <span>Products</span>
+                <span>Who We Are</span>
                 <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
               </button>
-              <div class="mobile-accordion-content hidden pl-4 pt-4 space-y-4 text-sm font-medium normal-case text-gray-600">
-                <a href="${rel}products.html" class="block text-[#007CC3] font-bold">View All Products</a>
-                <a href="${rel}products/crm.html" class="block hover:text-[#007CC3]">Enterprise CRM</a>
-                <a href="${rel}products/ai-chatbot.html" class="block hover:text-[#007CC3]">AI Chatbot</a>
+              <div class="mobile-accordion-content hidden pl-8 pt-4 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
+                <a href="${rel}about.html" class="block hover:text-[#007CC3]">About Us</a>
+                <a href="${rel}careers.html" class="block hover:text-[#007CC3]">Careers</a>
+                <a href="${rel}contact.html" class="block hover:text-[#007CC3]">Contact Us</a>
               </div>
             </div>
 
-            <a href="${rel}portfolio.html" class="block hover:text-[#007CC3] transition-colors">Portfolio</a>
-            <a href="${rel}industries.html" class="block hover:text-[#007CC3] transition-colors">Industries</a>
-            <a href="${rel}blog.html" class="block hover:text-[#007CC3] transition-colors">Insights</a>
-            <a href="${rel}careers.html" class="block hover:text-[#007CC3] transition-colors">Careers</a>
-            <a href="${rel}contact.html" class="block hover:text-[#007CC3] transition-colors">Contact</a>
+            <!-- Resources Accordion -->
+            <div class="mobile-accordion">
+              <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn">
+                <span>Resources</span>
+                <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+              </button>
+              <div class="mobile-accordion-content hidden pl-8 pt-4 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
+                <a href="${rel}blog.html" class="block hover:text-[#007CC3]">Blog</a>
+                <a href="${rel}portfolio.html" class="block hover:text-[#007CC3]">Case Studies</a>
+                <a href="${rel}faq.html" class="block hover:text-[#007CC3]">FAQ</a>
+                <a href="${rel}resources.html" class="block hover:text-[#007CC3]">Guides / Resources</a>
+              </div>
+            </div>
+
           </nav>
         </div>
         
         <div class="p-6 border-t border-gray-100/50">
-          <a href="${rel}contact.html#consultation" class="block w-full text-center bg-[#007CC3] text-white px-5 py-3 font-black text-xs uppercase tracking-tighter hover:bg-[#002D62] transition-colors shadow-lg">Book Consultation</a>
+          <a href="${rel}contact.html#consultation" class="block w-full text-center bg-[#007CC3] text-white px-5 py-3 font-black text-xs uppercase tracking-tighter hover:bg-[#0D1B3E] transition-colors shadow-lg">Book Consultation</a>
         </div>
       </div>
     </header>
@@ -246,109 +200,139 @@ class SpecialHeader extends HTMLElement {
 
 class SpecialFooter extends HTMLElement {
   connectedCallback() {
-    // Determine relative path to root
-    const path = window.location.pathname;
-    const isInsideSubdir = path.includes('/services/') || path.includes('/products/') || path.includes('/legal/');
-    const rel = isInsideSubdir ? '../' : './';
+    const rel = globalRel;
 
     this.innerHTML = `
-      <footer class="bg-[#05060A] text-white relative overflow-hidden border-t border-white/5 pt-20">
+      <footer class="bg-[#0D1B3E] text-white relative overflow-hidden border-t border-white/5 pt-20">
         <!-- Ambient Background Lights -->
         <div class="absolute -top-24 -left-24 w-[600px] h-[600px] bg-[#007CC3]/10 rounded-full blur-[150px] pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#1044C8]/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <!-- 1. PRE-FOOTER CTA -->
+        <!-- 1. PRE-FOOTER CTA (Requirement #9) -->
         <div class="max-w-7xl mx-auto px-6 md:px-10 mb-24">
           <div class="glass-card p-10 md:p-16 rounded-[40px] flex flex-col md:flex-row items-center justify-between gap-10 bg-gradient-to-br from-white/5 to-transparent border border-white/10 relative overflow-hidden group">
             <div class="absolute inset-0 bg-gradient-to-r from-[#007CC3]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div class="relative z-10 text-center md:text-left">
               <h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tighter">Ready to <span class="text-[#007CC3]">Innovate?</span></h2>
-              <p class="text-white/50 font-medium max-w-md">Join the elite group of US and UK enterprises scaling with Vybtek's AI-first engineering.</p>
+              <p class="text-white/50 font-medium max-w-md">Join the elite group of global enterprises scaling with Vybtek's engineering.</p>
             </div>
             <div class="relative z-10 flex flex-wrap justify-center gap-4">
-              <a href="${rel}contact.html" class="bg-[#007CC3] text-white px-10 py-5 rounded-full font-black uppercase text-[11px] tracking-widest hover:bg-white hover:text-[#05060A] transition-all shadow-[0_0_30px_rgba(0,124,195,0.3)] hover:scale-105 active:scale-95">Start Project</a>
-              <a href="${rel}portfolio.html" class="bg-white/5 border border-white/10 text-white px-10 py-5 rounded-full font-black uppercase text-[11px] tracking-widest hover:bg-white/10 transition-all">Case Studies</a>
+              <a href="${rel}contact.html#consultation" class="bg-[#007CC3] text-white px-8 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-[#0D1B3E] transition-all shadow-[0_0_30px_rgba(0,124,195,0.3)] hover:scale-105 active:scale-95">Book Free Consultation</a>
+              <a href="${rel}contact.html#quote" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-white/10 transition-all">Get a Quote</a>
+              <a href="${rel}contact.html" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-white/10 transition-all">Start Project</a>
             </div>
           </div>
         </div>
 
         <!-- 2. MAIN FOOTER CONTENT -->
-        <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-16 pb-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-y-16 gap-x-8 pb-20 relative z-10">
           
-          <!-- BRAND BLOCK -->
-          <div class="md:col-span-4">
-            <a href="${rel}index.html" class="inline-block mb-10">
-              <img src="${rel}images/logo.png" alt="VybTek" class="h-14 w-auto brightness-0 invert" />
+          <!-- BRAND & CONTACT (Req #7) -->
+          <div class="md:col-span-3">
+            <a href="${rel}index.html" class="inline-block bg-white/95 px-4 py-2 rounded-xl mb-6 shadow-sm hover:shadow-md transition-all duration-300">
+              <img src="${rel}images/logo.png" alt="VybTek" class="h-8 w-auto object-contain" />
             </a>
-            <p class="text-white/40 text-sm leading-loose font-medium mb-10 max-w-xs">
+            <p class="text-white/40 text-sm leading-loose font-medium mb-6 max-w-xs">
               Architecting digital dominance through custom AI ecosystems, high-fidelity branding, and strategic marketing execution.
             </p>
-            <div class="flex gap-4">
-              <a href="#" class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#007CC3] hover:border-[#007CC3] transition-all duration-500 hover:-translate-y-1"><i class="fab fa-linkedin-in text-sm"></i></a>
-              <a href="#" class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#007CC3] hover:border-[#007CC3] transition-all duration-500 hover:-translate-y-1"><i class="fab fa-x-twitter text-sm"></i></a>
-              <a href="#" class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#007CC3] hover:border-[#007CC3] transition-all duration-500 hover:-translate-y-1"><i class="fab fa-instagram text-sm"></i></a>
+            <div class="space-y-3 text-white/50 text-xs font-medium">
+              <p class="flex items-start gap-3"><i class="fas fa-envelope text-[#007CC3] mt-1"></i> <span>Support@vybtek.com</span></p>
+              <p class="flex items-start gap-3"><i class="fas fa-phone text-[#007CC3] mt-1"></i> <span>+91 900 1200 450</span></p>
+              <p class="flex items-start gap-3"><i class="fas fa-location-dot text-[#007CC3] mt-1"></i> <span>Innovation Park, Udaipur, RJ 313001</span></p>
+              <p class="flex items-start gap-3"><i class="fas fa-clock text-[#007CC3] mt-1"></i> <span>Mon - Fri: 9:00 AM - 6:00 PM (IST)</span></p>
             </div>
           </div>
 
           <!-- LINKS GRID -->
-          <div class="md:col-span-2">
-            <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#007CC3] mb-8">Navigation</h4>
-            <ul class="space-y-4">
-              <li><a href="${rel}about.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold flex items-center gap-2 group/link"><span class="w-1 h-1 bg-[#007CC3] rounded-full scale-0 group-hover/link:scale-100 transition-transform"></span> About Us</a></li>
-              <li><a href="${rel}portfolio.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold flex items-center gap-2 group/link"><span class="w-1 h-1 bg-[#007CC3] rounded-full scale-0 group-hover/link:scale-100 transition-transform"></span> Portfolio</a></li>
-              <li><a href="${rel}blog.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold flex items-center gap-2 group/link"><span class="w-1 h-1 bg-[#007CC3] rounded-full scale-0 group-hover/link:scale-100 transition-transform"></span> Insights</a></li>
-              <li><a href="${rel}careers.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold flex items-center gap-2 group/link"><span class="w-1 h-1 bg-[#007CC3] rounded-full scale-0 group-hover/link:scale-100 transition-transform"></span> Careers</a></li>
-            </ul>
-          </div>
-
-          <div class="md:col-span-2">
-            <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#007CC3] mb-8">Solutions</h4>
-            <ul class="space-y-4">
-              <li><a href="${rel}services/ai-solutions.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">AI Development</a></li>
-              <li><a href="${rel}services/branding.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">SEO & Digital Branding</a></li>
-              <li><a href="${rel}services/erp-crm.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">ERP & CRM</a></li>
-              <li><a href="${rel}products/ai-chatbot.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">AI Chatbots</a></li>
-            </ul>
-          </div>
-
-          <!-- NEWSLETTER BLOCK -->
-          <div class="md:col-span-4">
-            <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#007CC3] mb-8">Join the Vanguard</h4>
-            <p class="text-[11px] text-white/40 mb-8 leading-relaxed font-medium">Get exclusive insights on how AI is reshaping US and UK enterprise sectors.</p>
-            <div class="relative group">
-              <input type="email" placeholder="work email address" class="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-xs font-bold focus:outline-none focus:border-[#007CC3] transition-all placeholder:text-white/10">
-              <button class="absolute right-2 top-2 bottom-2 bg-[#007CC3] hover:bg-white hover:text-[#05060A] text-white px-6 rounded-xl text-[10px] font-black uppercase transition-all">Join</button>
+          <div class="md:col-span-9 grid grid-cols-2 md:grid-cols-5 gap-8">
+            
+            <!-- Company -->
+            <div>
+              <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#007CC3] mb-6">Company</h4>
+              <ul class="space-y-3">
+                <li><a href="${rel}about.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">About Us</a></li>
+                <li><a href="${rel}careers.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Careers</a></li>
+                <li><a href="${rel}portfolio.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Case Studies</a></li>
+                <li><a href="${rel}contact.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Contact Us</a></li>
+              </ul>
             </div>
-            <div class="mt-6 flex items-center gap-3">
-               <div class="flex -space-x-2">
-                  <div class="w-6 h-6 rounded-full border-2 border-[#05060A] bg-gray-600"></div>
-                  <div class="w-6 h-6 rounded-full border-2 border-[#05060A] bg-gray-500"></div>
-                  <div class="w-6 h-6 rounded-full border-2 border-[#05060A] bg-gray-400"></div>
-               </div>
-               <span class="text-[9px] font-bold text-white/30 uppercase tracking-widest">+500 industry leaders joined</span>
+
+            <!-- Services -->
+            <div>
+              <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#007CC3] mb-6">Services</h4>
+              <ul class="space-y-3">
+                <li><a href="${rel}services/website-development.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Website Dev</a></li>
+                <li><a href="${rel}services/ai-development.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">AI Development</a></li>
+                <li><a href="${rel}services/app-development.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">App Development</a></li>
+                <li><a href="${rel}services/software-development.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Software Dev</a></li>
+                <li><a href="${rel}services/ui-ux.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">UI/UX Design</a></li>
+                <li><a href="${rel}services/branding.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Branding</a></li>
+                <li><a href="${rel}services/digital-marketing.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Digital Marketing</a></li>
+              </ul>
             </div>
+
+            <!-- Products -->
+            <div>
+              <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#007CC3] mb-6">Products</h4>
+              <ul class="space-y-3">
+                <li><a href="${rel}products/erp.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">VybCore ERP</a></li>
+                <li><a href="${rel}products/crm.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Enterprise CRM</a></li>
+                <li><a href="${rel}products/ai-chatbot.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">AI Chatbots</a></li>
+                <li><a href="${rel}products/ai-transcription.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">AI Transcription</a></li>
+              </ul>
+            </div>
+
+            <!-- Industries -->
+            <div>
+              <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#007CC3] mb-6">Industries</h4>
+              <ul class="space-y-3">
+                <li><a href="${rel}industries.html#healthcare" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Healthcare</a></li>
+                <li><a href="${rel}industries.html#education" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Education</a></li>
+                <li><a href="${rel}industries.html#real-estate" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Real Estate</a></li>
+                <li><a href="${rel}industries.html#ecommerce" class="text-white/50 hover:text-white transition-colors text-xs font-bold">E-Commerce</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+              <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#007CC3] mb-6">Resources</h4>
+              <ul class="space-y-3">
+                <li><a href="${rel}blog.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Blog</a></li>
+                <li><a href="${rel}faq.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">FAQ</a></li>
+                <li><a href="${rel}portfolio.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Case Studies</a></li>
+                <li><a href="${rel}resources.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Guides & Resources</a></li>
+                <li><a href="${rel}contact.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Support</a></li>
+              </ul>
+            </div>
+
           </div>
         </div>
 
         <!-- 3. BOTTOM UTILITY BAR -->
         <div class="border-t border-white/5 py-10 bg-black/20">
           <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex flex-col md:flex-row items-center gap-8 text-[9px] font-black uppercase tracking-[0.3em] text-white/20">
+            
+            <div class="flex flex-col md:flex-row items-center gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-white/20">
               <p>&copy; 2025 VYBTEK SOLUTIONS. ALL RIGHTS RESERVED.</p>
-              <div class="flex gap-6">
+              
+              <!-- Legal Links (Req #6) -->
+              <div class="flex flex-wrap justify-center gap-4 border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6">
                 <a href="${rel}legal/privacy.html" class="hover:text-white transition-colors">Privacy</a>
                 <a href="${rel}legal/terms.html" class="hover:text-white transition-colors">Terms</a>
-                <a href="${rel}sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                <a href="${rel}legal/refund.html" class="hover:text-white transition-colors">Refund Policy</a>
+                <a href="${rel}legal/cookie.html" class="hover:text-white transition-colors">Cookie Policy</a>
+                <a href="${rel}legal/disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
               </div>
             </div>
-            <div class="flex items-center gap-6">
-               <span class="text-[9px] font-black text-white/20 uppercase tracking-[0.2em]">Based in Udaipur, Global Delivery</span>
-               <div class="w-[1px] h-4 bg-white/10"></div>
-               <div class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
-                  <span class="text-[9px] font-black text-white/40 uppercase tracking-widest">Global HQ Online</span>
-               </div>
+
+            <!-- Social Links (Req #8) -->
+            <div class="flex items-center gap-3">
+               <a href="https://www.linkedin.com/company/vybtek" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#007CC3] hover:border-[#007CC3] transition-all text-white/50 hover:text-white"><i class="fab fa-linkedin-in text-[10px]"></i></a>
+               <a href="https://www.instagram.com/vybtek_it/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#007CC3] hover:border-[#007CC3] transition-all text-white/50 hover:text-white"><i class="fab fa-instagram text-[10px]"></i></a>
+               <a href="https://www.facebook.com/p/VybTek-It-Solutions-61572940687826/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#007CC3] hover:border-[#007CC3] transition-all text-white/50 hover:text-white"><i class="fab fa-facebook-f text-[10px]"></i></a>
             </div>
+            </div>
+
           </div>
         </div>
       </footer>
@@ -384,9 +368,7 @@ customElements.define("special-footer", SpecialFooter);
 class SpecialBreadcrumb extends HTMLElement {
   connectedCallback() {
     const path = window.location.pathname;
-    // Determine relative path to root for breadcrumb home link
-    const isInsideSubdir = path.includes('/services/') || path.includes('/products/') || path.includes('/legal/');
-    const rel = isInsideSubdir ? '../' : './';
+    const rel = globalRel;
 
     // Don't render on home page
     if (path === "/" || path.endsWith("index.html") || path === "") return;

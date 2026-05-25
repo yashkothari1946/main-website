@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>UI/UX Design & Conversion Optimization | Vybtek</title>
+  <meta name="description" content="Data-driven UI/UX design. Learn how Vybtek uses heatmaps, user behavior tracking, and high-fidelity wireframes to maximize conversion rates.">
+  <link rel="canonical" href="https://vybtek.com/services/ui-ux">
+  <meta property="og:title" content="UI/UX Design & Conversion Optimization | Vybtek">
+  <meta property="og:description" content="Data-driven UI/UX design. Learn how Vybtek uses heatmaps, user behavior tracking, and high-fidelity wireframes to maximize conversion rates.">
+  <meta name="twitter:title" content="UI/UX Design & Conversion Optimization | Vybtek">
+  <meta name="twitter:description" content="Data-driven UI/UX design. Learn how Vybtek uses heatmaps, user behavior tracking, and high-fidelity wireframes to maximize conversion rates.">
+  
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="../style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <script defer src="../headerFooter.js"></script>
+
+  <style>
+    /* HEATMAP SPECIFIC STYLES */
+    .heatmap-overlay {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .heatmap-active .heatmap-overlay {
+      opacity: 0.85;
+    }
+    .hotspot {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(30px);
+      background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,165,0,0.8) 40%, rgba(255,255,0,0) 70%);
+      animation: pulse-hotspot 3s infinite alternate;
+    }
+    @keyframes pulse-hotspot {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      100% { transform: scale(1.1); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-mesh overflow-x-hidden">
+  <header><special-header></special-header></header>
+
+  <main id="main-content" class="pt-32">
+    
+    <!-- 1. HERO -->
+    <section class="vt-section min-h-[60vh] flex items-center">
+      <div class="vt-container text-center max-w-4xl mx-auto">
+        <div class="vt-section-label reveal-up !pl-0 !before:hidden">Data-Driven Design</div>
+        <h1 class="text-4xl md:text-6xl lg:text-8xl font-black text-[#002D62] reveal-up leading-[1.1]" style="--d:100ms">
+          UI/UX <span class="brand-gradient-text">Engineering</span>.
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-500 mt-8 max-w-3xl mx-auto reveal-up" style="--d:200ms">
+          We don't just make it look pretty. We architect user journeys based on behavioral psychology, eye-tracking data, and A/B testing to maximize conversion rates.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. WHAT IS UI/UX? -->
+    <section class="vt-section pt-0">
+      <div class="vt-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+           <div class="glass-card p-6 md:p-12 rounded-[40px] reveal-up shadow-sm">
+              <i class="fas fa-paint-brush text-4xl text-[#6366F1] mb-6"></i>
+              <h3 class="text-2xl font-black text-[#002D62] mb-4">User Interface (UI)</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">The visual language of your brand. UI encompasses the typography, color theory, spacing, and micro-interactions that make a product feel premium. We follow strict Atomic Design principles to ensure visual consistency across thousands of pages.</p>
+           </div>
+           <div class="glass-card p-6 md:p-12 rounded-[40px] reveal-up shadow-sm" style="--d:100ms">
+              <i class="fas fa-route text-4xl text-[#007CC3] mb-6"></i>
+              <h3 class="text-2xl font-black text-[#002D62] mb-4">User Experience (UX)</h3>
+              <p class="text-gray-500 leading-relaxed mb-6">The strategic foundation. UX is the structural blueprint of how a user navigates from point A to a conversion at point B. We remove friction, simplify complex forms, and anticipate user needs before they even click.</p>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HEATMAPS EXPLAINED -->
+    <section class="vt-section bg-[#002D62] text-white">
+       <div class="vt-container">
+          <div class="vt-section-header text-center mb-20">
+             <div class="vt-section-label !text-white !before:bg-white !pl-0 !before:hidden">Behavioral Analytics</div>
+             <h2 class="vt-section-heading !text-white">What is a <span class="text-[#06B6D4]">Heatmap?</span></h2>
+             <p class="text-white/60 mx-auto max-w-2xl mt-6">A visual representation of where users click, move, and scroll on your site. We use heatmaps to identify precisely where you are losing customers.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+             <!-- Text Explanation -->
+             <div class="lg:col-span-5 reveal-left space-y-8">
+                <div class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md">
+                   <h4 class="font-bold text-xl mb-3 flex items-center gap-3"><i class="fas fa-mouse-pointer text-[#06B6D4]"></i> Click Maps</h4>
+                   <p class="text-white/60 text-sm">Shows exactly which buttons or links are getting interaction. If a primary CTA isn't glowing red, the design needs to be changed.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md">
+                   <h4 class="font-bold text-xl mb-3 flex items-center gap-3"><i class="fas fa-arrows-alt-v text-[#06B6D4]"></i> Scroll Maps</h4>
+                   <p class="text-white/60 text-sm">Reveals how far down the page users are willing to scroll. This dictates where we place crucial trust markers and final conversion forms.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md">
+                   <h4 class="font-bold text-xl mb-3 flex items-center gap-3"><i class="fas fa-eye text-[#06B6D4]"></i> Why We Need It</h4>
+                   <p class="text-white/60 text-sm">Assumptions kill conversions. Heatmaps replace guessing with hard data, allowing us to restructure the UX to funnel attention directly to your checkout or contact forms.</p>
+                </div>
+             </div>
+
+             <!-- Interactive Graphic -->
+             <div class="lg:col-span-7 reveal-right">
+                <div class="bg-[#0A192F] p-2 rounded-3xl border border-white/10 shadow-2xl relative" id="heatmap-demo" onmouseenter="this.classList.add('heatmap-active')" onmouseleave="this.classList.remove('heatmap-active')">
+                   <!-- Browser Chrome -->
+                   <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+                      <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                      <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                      <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                      <div class="text-[10px] text-white/30 ml-4 font-mono uppercase tracking-widest">Hover to Activate Heatmap</div>
+                   </div>
+                   
+                   <!-- Mock UI Structure -->
+                   <div class="bg-white p-6 md:p-8 rounded-b-2xl relative overflow-hidden h-[400px]">
+                      <!-- Header -->
+                      <div class="flex justify-between items-center mb-12">
+                         <div class="w-24 h-6 bg-gray-200 rounded"></div>
+                         <div class="flex gap-4">
+                            <div class="w-16 h-4 bg-gray-100 rounded"></div>
+                            <div class="w-16 h-4 bg-gray-100 rounded"></div>
+                            <div class="w-24 h-8 bg-blue-600 rounded-full"></div> <!-- CTA -->
+                         </div>
+                      </div>
+                      
+                      <!-- Hero Content -->
+                      <div class="max-w-md">
+                         <div class="w-3/4 h-12 bg-gray-800 rounded-xl mb-4"></div>
+                         <div class="w-1/2 h-12 bg-gray-800 rounded-xl mb-6"></div>
+                         <div class="w-full h-4 bg-gray-200 rounded mb-2"></div>
+                         <div class="w-4/5 h-4 bg-gray-200 rounded mb-8"></div>
+                         
+                         <div class="flex gap-4">
+                            <div class="w-32 h-12 bg-blue-600 rounded-full"></div> <!-- Primary CTA -->
+                            <div class="w-32 h-12 bg-gray-100 rounded-full border border-gray-300"></div>
+                         </div>
+                      </div>
+                      
+                      <!-- Abstract image right -->
+                      <div class="absolute right-8 top-32 w-64 h-64 bg-gray-100 rounded-full border border-gray-200"></div>
+
+                      <!-- THE HEATMAP OVERLAY (Triggered on hover via JS class) -->
+                      <div class="heatmap-overlay">
+                         <div class="absolute inset-0 bg-blue-900/40 mix-blend-color"></div>
+                         <!-- Hotspot on Top Right CTA -->
+                         <div class="hotspot w-32 h-32 top-4 right-4"></div>
+                         <!-- Massive Hotspot on Main CTA -->
+                         <div class="hotspot w-48 h-48 top-[200px] left-8"></div>
+                         <!-- Medium Hotspot on Headline -->
+                         <div class="hotspot w-40 h-24 top-24 left-8 opacity-70" style="background: radial-gradient(circle, rgba(255,165,0,1) 0%, rgba(255,255,0,0.6) 50%, rgba(255,255,0,0) 80%);"></div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <section class="vt-section vt-cta">
+      <div class="vt-container relative z-10 text-center">
+        <h2 class="vt-cta-heading">Stop <span class="text-[#007CC3]">Guessing.</span></h2>
+        <p class="vt-cta-sub mx-auto">Start designing with data. Let our UI/UX engineers audit your current product.</p>
+        <div class="flex justify-center gap-8 mt-10">
+          <a href="../contact.html" class="vt-btn-primary !bg-white !text-[#002D62]">Request UX Audit</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><special-footer></special-footer></footer>
+  <script src="../animations.js"></script>
+</body>
+</html>

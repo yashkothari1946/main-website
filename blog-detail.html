@@ -3,101 +3,312 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Vybtek IT Solutions</title>
+  <title>Insights & Publications | Vybtek</title>
+  <meta name="description" content="Read the latest insights and expert articles from the Vybtek team.">
+  <link rel="canonical" href="https://vybtek.com/blog-detail.html">
+  <meta property="og:title" content="Insights & Publications | Vybtek">
+  <meta property="og:description" content="Read the latest insights and expert articles from the Vybtek team.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Insights & Publications | Vybtek">
+  <meta name="twitter:description" content="Read the latest insights and expert articles from the Vybtek team.">
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="style.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="headerFooter.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <script defer src="headerFooter.js"></script>
+
+  <style>
+    @keyframes subtleZoom {
+      from { transform: scale(1.05); }
+      to { transform: scale(1.12); }
+    }
+    .blog-prose p { margin-bottom: 1.75rem; color: #475569; line-height: 1.9; font-size: 1.0625rem; }
+    .blog-prose h2 { color: #0D1B3E; font-weight: 900; font-size: 1.75rem; margin-top: 3rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+    .blog-prose h2::before { content: ""; display: block; width: 0.4rem; height: 1.6rem; background: linear-gradient(to bottom, #007CC3, #1044C8); border-radius: 999px; flex-shrink: 0; }
+    .blog-prose h3 { color: #1e293b; font-weight: 800; font-size: 1.25rem; margin-top: 2rem; margin-bottom: 1rem; }
+    .blog-prose strong { color: #0D1B3E; font-weight: 800; }
+    .blog-prose blockquote { margin: 2.5rem 0; padding: 1.5rem 2rem; background: linear-gradient(135deg, #F4F7FA, #FFFFFF); border-left: 4px solid #007CC3; border-radius: 0 1.5rem 1.5rem 0; font-style: italic; font-weight: 600; color: #0D1B3E; box-shadow: 0 4px 24px rgba(0,124,195,0.08); }
+    .blog-prose ul, .blog-prose ol { padding-left: 1.5rem; margin-bottom: 1.75rem; }
+    .blog-prose li { color: #475569; margin-bottom: 0.6rem; line-height: 1.7; }
+    .blog-prose ul li::marker { color: #007CC3; }
+    .blog-prose a { color: #007CC3; text-decoration: underline; }
+    .share-bar a { transition: all 0.2s ease; }
+    .share-bar a:hover { transform: scale(1.15); }
+  </style>
 </head>
-<body class="bg-[#0A0B10] text-white selection:bg-[#007CC3]/30">
+<body class="bg-mesh overflow-x-hidden min-h-screen flex flex-col text-slate-800 selection:bg-[#007CC3]/30">
+  <div class="grain-overlay"></div>
   <header><special-header></special-header></header>
 
-  <main class="pt-32 pb-20">
-    <div class="vt-container max-w-4xl" id="blog-content">
-      <!-- Dynamic Content -->
-      <div class="animate-pulse space-y-8">
-        <div class="h-96 bg-white/5 rounded-3xl w-full"></div>
-        <div class="h-10 bg-white/5 rounded-xl w-3/4"></div>
-        <div class="h-4 bg-white/5 rounded-xl w-full"></div>
-        <div class="h-4 bg-white/5 rounded-xl w-full"></div>
+  <main class="pt-28 pb-24 flex-1">
+    <div class="vt-container max-w-7xl">
+      <div id="loading-skeleton" class="animate-pulse space-y-8 max-w-4xl mx-auto">
+        <div class="h-[480px] bg-slate-200 rounded-[40px] w-full"></div>
+        <div class="h-12 bg-slate-200 rounded-2xl w-3/4"></div>
+        <div class="h-5 bg-slate-200 rounded-xl w-full"></div>
+        <div class="h-5 bg-slate-200 rounded-xl w-5/6"></div>
+        <div class="h-5 bg-slate-200 rounded-xl w-full"></div>
       </div>
+
+      <div id="blog-content-wrapper" class="hidden">
+        <article class="bg-white rounded-[40px] shadow-2xl border border-slate-100 overflow-hidden reveal-up relative">
+          
+          <!-- Cinematic Hero -->
+          <div class="relative h-[500px] w-full bg-slate-900 overflow-hidden">
+            <img id="blog-hero-image" src="" class="w-full h-full object-cover opacity-60 scale-105" alt="Blog Image" style="transform-origin: center; animation: subtleZoom 20s infinite alternate;">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0D1B3E]/40 to-[#0A0F1C]"></div>
+            
+            <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-16 text-white z-10 flex flex-col justify-end">
+               <a href="blog.html" class="text-white/60 hover:text-white mb-6 inline-flex items-center text-[10px] uppercase font-black tracking-widest transition-colors"><i class="fas fa-arrow-left mr-2"></i> Back to Insights Hub</a>
+               
+               <div class="flex items-center gap-3 mb-6">
+                  <span id="blog-category" class="px-4 py-1.5 rounded-full bg-[#007CC3] text-white text-[10px] font-black uppercase tracking-widest shadow-lg"></span>
+                  <span id="blog-date" class="text-white/50 text-[10px] font-bold uppercase tracking-widest"><i class="far fa-calendar-alt mr-1"></i></span>
+               </div>
+               
+               <h1 id="blog-title" class="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] max-w-4xl tracking-tight text-white mb-8" style="text-shadow: 0 10px 30px rgba(0,0,0,0.5);"></h1>
+               
+               <div class="flex items-center gap-4">
+                  <div id="blog-author-initial" class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#0D1B3E] text-lg font-black shadow-lg"></div>
+                  <div>
+                    <p class="text-[9px] font-black text-white/50 uppercase tracking-widest mb-0.5">Author</p>
+                    <p id="blog-author-name" class="font-bold text-white text-sm"></p>
+                  </div>
+               </div>
+            </div>
+          </div>
+          
+          <!-- Content Area with Sticky Share Sidebar -->
+          <div class="p-6 md:p-12 lg:p-24 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 relative">
+             <!-- Sticky Share -->
+             <div class="hidden lg:block lg:col-span-2">
+                <div class="sticky top-40 flex flex-col items-center gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100">
+                   <span class="text-[9px] font-black uppercase tracking-widest text-slate-400 text-center">Share<br>Article</span>
+                   <div class="w-8 h-[1px] bg-slate-200"></div>
+                   <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-[#007CC3] hover:border-[#007CC3] transition-all hover:scale-110 shadow-sm"><i class="fab fa-linkedin-in"></i></a>
+                   <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-400 transition-all hover:scale-110 shadow-sm"><i class="fab fa-twitter"></i></a>
+                   <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-emerald-500 hover:border-emerald-500 transition-all hover:scale-110 shadow-sm"><i class="fas fa-link"></i></a>
+                </div>
+             </div>
+             
+             <!-- Main Content Body -->
+             <div class="lg:col-span-10 prose prose-lg prose-slate max-w-4xl blog-prose" id="blog-body">
+                <!-- Content injected here -->
+             </div>
+          </div>
+          
+          <!-- Newsletter Subscription Box -->
+          <div class="mx-6 md:mx-16 lg:mx-24 mb-16 p-8 md:p-10 bg-gradient-to-r from-[#0D1B3E] to-[#1044C8] rounded-[32px] text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+            <div class="relative z-10 max-w-md">
+              <h3 class="text-3xl font-black mb-3">Never Miss an Insight</h3>
+              <p class="text-blue-100 font-medium text-sm">Join our newsletter to get the latest strategies on AI, design, and engineering delivered straight to your inbox.</p>
+            </div>
+            <div class="relative z-10 w-full md:w-auto flex-1 max-w-sm">
+              <form id="newsletter-form" class="flex gap-2 bg-white/10 p-1.5 rounded-full backdrop-blur-md border border-white/20">
+                <input type="email" id="newsletter-email" required placeholder="Enter your email address" class="bg-transparent border-none text-white px-4 py-2 w-full focus:outline-none placeholder:text-blue-200 text-sm">
+                <button type="submit" id="newsletter-btn" class="bg-white text-[#0D1B3E] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-blue-50 transition-colors whitespace-nowrap">Subscribe</button>
+              </form>
+              <p id="newsletter-msg" class="text-xs mt-2 hidden"></p>
+            </div>
+          </div>
+          
+        </article>
+
+        <!-- Dynamic FAQ Section -->
+        <div class="mt-24 max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <div class="vt-section-label !pl-0 !before:hidden">Reader Q&A</div>
+            <h2 class="vt-section-heading">Article <span class="text-[#007CC3]">FAQs</span></h2>
+          </div>
+          <div id="dynamic-faq-list" class="space-y-4">
+             <div class="text-center text-gray-400 py-10"><i class="fas fa-spinner fa-spin mr-2"></i> Loading FAQs...</div>
+          </div>
+        </div>
+
+        <!-- Recent Blogs Section -->
+        <div class="mt-24">
+          <div class="flex justify-between items-end mb-10 border-b border-slate-200 pb-4">
+            <h2 class="text-3xl font-black text-[#0D1B3E]">Recent Insights</h2>
+            <a href="blog.html" class="text-sm font-bold text-[#007CC3] hover:underline uppercase tracking-wide">View All</a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="recent-blogs-grid">
+             <!-- Recent blogs injected here -->
+          </div>
+        </div>
+      </div>
+      
     </div>
   </main>
 
   <footer><special-footer></special-footer></footer>
+  <script src="animations.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const slug = urlParams.get('s');
+      
       if (!slug) {
-        window.location.href = 'blog.html';
+        window.location.href = "blog.html";
         return;
       }
 
       try {
-        const res = await fetch(`http://localhost:5000/api/vybtek/blogs/slug/${slug}`);
-        const data = await res.json();
-        const blog = data.data;
+        // Fetch specific blog details
+        const blogRes = await fetch(`http://localhost:5000/api/vybtek/blogs/slug/${slug}`);
+        if (!blogRes.ok) throw new Error("Blog not found");
+        const blogData = await blogRes.json();
+        const blog = blogData.data;
 
-        if (!blog) {
-          document.getElementById('blog-content').innerHTML = '<div class="text-center py-20">Article not found.</div>';
-          return;
-        }
-
-        // Update Title & Meta
-        document.title = `${blog.title} - Vybtek Blog`;
+        // Populate Article UI
+        document.title = `${blog.title} | VybTek Insights`;
+        document.getElementById("blog-hero-image").src = blog.image || 'images/favicon.png';
+        document.getElementById("blog-category").innerText = blog.category || 'Insights';
+        document.getElementById("blog-date").innerHTML = `<i class="far fa-calendar-alt mr-1"></i> ${new Date(blog.created_at).toLocaleDateString()}`;
+        document.getElementById("blog-title").innerText = blog.title;
+        document.getElementById("blog-author-initial").innerText = (blog.author_name || 'V').charAt(0);
+        document.getElementById("blog-author-name").innerText = blog.author_name || 'Vybtek Team';
         
-        // SEO: Inject JSON-LD
-        const schema = {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": blog.title,
-          "image": [blog.image],
-          "datePublished": blog.created_at,
-          "author": [{
-            "@type": "Person",
-            "name": blog.author_name
-          }]
-        };
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.text = JSON.stringify(schema);
-        document.head.appendChild(script);
+        // Handle Content - If Quill is used, HTML is saved. 
+        document.getElementById("blog-body").innerHTML = blog.content;
 
-        document.getElementById('blog-content').innerHTML = `
-          <div class="mb-12">
-            <a href="blog.html" class="text-[#007CC3] hover:underline mb-8 inline-block"><i class="fas fa-arrow-left mr-2"></i> Back to Blogs</a>
-            <img src="${blog.image || 'https://via.placeholder.com/1200x600'}" class="w-full h-[400px] object-cover rounded-3xl shadow-2xl mb-12 border border-white/10" alt="${blog.title}">
-            <div class="flex items-center gap-4 mb-6">
-              <span class="bg-[#007CC3]/20 text-[#007CC3] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">${blog.category || 'Insights'}</span>
-              <span class="text-white/40 text-sm">${new Date(blog.created_at).toLocaleDateString()}</span>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight">${blog.title}</h1>
-            <div class="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 mb-12">
-              <div class="w-12 h-12 bg-gradient-to-br from-[#007CC3] to-blue-400 rounded-full flex items-center justify-center text-xl font-bold">
-                ${blog.author_name.charAt(0)}
-              </div>
-              <div>
-                <p class="text-sm text-white/50">Written by</p>
-                <p class="font-bold">${blog.author_name}</p>
-              </div>
-            </div>
-          </div>
-          <div class="prose prose-invert prose-lg max-w-none text-white/80 leading-relaxed space-y-6">
-            ${blog.content.replace(/\n/g, '<br>')}
-          </div>
-          <div class="mt-16 pt-16 border-t border-white/10">
-             <div class="flex flex-wrap gap-2">
-               ${(blog.tags || '').split(',').map(tag => `<span class="bg-white/5 px-4 py-2 rounded-xl text-sm text-white/60">#${tag.trim()}</span>`).join('')}
-             </div>
-          </div>
-        `;
+        // Switch out skeleton
+        document.getElementById("loading-skeleton").style.display = "none";
+        document.getElementById("blog-content-wrapper").classList.remove("hidden");
+
+        // Fetch Recent Blogs
+        fetchRecentBlogs(slug);
+        
+        // Fetch FAQs
+        fetchFaqs();
+
       } catch (err) {
-        console.error(err);
-        document.getElementById('blog-content').innerHTML = '<div class="text-center py-20">Error loading article.</div>';
+        console.error("Error loading blog:", err);
+        document.getElementById("loading-skeleton").innerHTML = `<div class="text-center text-red-500 py-20 font-bold">Failed to load article. It may have been removed.</div>`;
+      }
+    });
+
+    async function fetchRecentBlogs(currentSlug) {
+      try {
+        const res = await fetch("http://localhost:5000/api/vybtek/blogs");
+        const data = await res.json();
+        
+        if (data.data) {
+          const recentBlogs = data.data
+            .filter(b => b.status === 'Published' && b.slug !== currentSlug)
+            .slice(0, 3);
+            
+          document.getElementById("recent-blogs-grid").innerHTML = recentBlogs.map(blog => `
+             <a href="blog-detail.html?s=${blog.slug}" class="glass-card rounded-[32px] overflow-hidden group hover:-translate-y-2 transition-all shadow-md hover:shadow-xl bg-white/70 border border-slate-100/50 flex flex-col justify-between min-h-[380px]">
+                <div class="aspect-video bg-blue-50/50 flex items-center justify-center relative overflow-hidden border-b border-slate-100/50">
+                   ${blog.image ? `<img src="${blog.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` : `<i class="fas fa-newspaper text-5xl text-blue-200"></i>`}
+                </div>
+                <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+                   <div>
+                      <div class="text-[9px] font-black uppercase tracking-widest text-[#007CC3] mb-3">${blog.category || 'Insights'} • ${new Date(blog.created_at).toLocaleDateString()}</div>
+                      <h3 class="text-lg font-black text-[#0D1B3E] mb-4 group-hover:text-[#007CC3] transition-colors line-clamp-2">${blog.title}</h3>
+                   </div>
+                   <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-black text-[#0D1B3E] group-hover:text-[#007CC3] transition-colors">
+                      <span>Read Publication</span>
+                      <i class="fas fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
+                   </div>
+                </div>
+             </a>
+          `).join('');
+        }
+      } catch (e) {
+        console.error("Failed to load recents", e);
+      }
+    }
+
+    async function fetchFaqs() {
+      try {
+        const res = await fetch("http://localhost:5000/api/vybtek/faqs?category=Blogs");
+        const data = await res.json();
+        
+        const faqList = document.getElementById("dynamic-faq-list");
+        
+        if (data.data && data.data.length > 0) {
+          faqList.innerHTML = data.data.map((faq, i) => `
+            <div class="glass-card !bg-white/70 border border-slate-100/50 rounded-3xl overflow-hidden shadow-sm">
+               <button onclick="toggleFaq(${i})" class="w-full p-8 flex justify-between items-center text-left hover:bg-slate-50/50 transition-colors group">
+                  <span class="text-base font-black text-slate-800 group-hover:text-[#007CC3] transition-colors">${faq.question}</span>
+                  <i id="faq-icon-${i}" class="fas fa-plus text-slate-400 group-hover:text-[#007CC3] transition-transform faq-icon w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-xs"></i>
+               </button>
+               <div id="faq-ans-${i}" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out blog-prose">
+                  <div class="p-6 md:p-8 pt-0 text-sm text-gray-500 leading-relaxed border-t border-slate-50/50 mt-2">
+                     ${faq.answer}
+                  </div>
+               </div>
+            </div>
+          `).join('');
+        } else {
+          faqList.innerHTML = '<div class="text-center text-gray-400 py-10">No FAQs available at the moment.</div>';
+        }
+      } catch (e) {
+        console.error("Failed to load FAQs", e);
+      }
+    }
+
+    function toggleFaq(i) {
+      const ans = document.getElementById(`faq-ans-${i}`);
+      const icon = document.getElementById(`faq-icon-${i}`);
+      if (ans.style.maxHeight && ans.style.maxHeight !== "0px") {
+        ans.style.maxHeight = "0px";
+        icon.style.transform = 'rotate(0deg)';
+        icon.style.color = '';
+      } else {
+        ans.style.maxHeight = ans.scrollHeight + "px";
+        icon.style.transform = 'rotate(45deg)';
+        icon.style.color = '#007CC3';
+      }
+    }
+
+    // Handle Newsletter Form Submission
+    document.getElementById("newsletter-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("newsletter-email").value;
+      const btn = document.getElementById("newsletter-btn");
+      const msg = document.getElementById("newsletter-msg");
+      
+      const originalText = btn.innerText;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+      btn.disabled = true;
+      msg.classList.add("hidden");
+
+      try {
+        const res = await fetch("http://localhost:5000/api/vybtek/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+        const data = await res.json();
+        
+        msg.classList.remove("hidden");
+        if (res.ok) {
+          msg.innerText = "Thanks for subscribing!";
+          msg.className = "text-xs mt-2 text-green-300 font-bold";
+          document.getElementById("newsletter-form").reset();
+        } else {
+          msg.innerText = data.error || "Subscription failed.";
+          msg.className = "text-xs mt-2 text-red-300 font-bold";
+        }
+      } catch (err) {
+        msg.classList.remove("hidden");
+        msg.innerText = "Network error. Try again later.";
+        msg.className = "text-xs mt-2 text-red-300 font-bold";
+      } finally {
+        btn.innerText = originalText;
+        btn.disabled = false;
       }
     });
   </script>
 </body>
 </html>
+

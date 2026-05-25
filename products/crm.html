@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Enterprise CRM Platform | Vybtek IT Solutions</title>
-  <meta name="description" content="Vybtek Enterprise CRM. A highly customizable, AI-powered sales and pipeline management platform for global teams.">
+  <title>Enterprise CRM System & Sales Automation | Vybtek</title>
+  <meta name="description" content="Optimize your sales pipeline with our Custom Enterprise CRM system. Automate lead scoring, visualize workflows, and close deals faster with AI-powered features.">
+  <link rel="canonical" href="https://vybtek.com/products/crm" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vybtek.com/products/crm" />
+  <meta property="og:title" content="Enterprise CRM System & Sales Automation | Vybtek" />
+  <meta property="og:description" content="Optimize your sales pipeline with our Custom Enterprise CRM system. Automate lead scoring, visualize workflows, and close deals faster with AI-powered features." />
+  <meta property="og:image" content="https://vybtek.com/images/og-image-crm.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vybtek.com/products/crm" />
+  <meta property="twitter:title" content="Enterprise CRM System & Sales Automation | Vybtek" />
+  <meta property="twitter:description" content="Optimize your sales pipeline with our Custom Enterprise CRM system. Automate lead scoring, visualize workflows, and close deals faster with AI-powered features." />
+  <meta property="twitter:image" content="https://vybtek.com/images/og-image-crm.png" />
   
   <link rel="icon" type="image/png" href="../images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -16,21 +31,147 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
   <script defer src="../headerFooter.js"></script>
+
+  <style>
+    /* KANBAN ANIMATION */
+    .kanban-card {
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      cursor: grab;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .kanban-card:hover {
+      transform: translateY(-2px) rotate(1deg);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-color: #007CC3;
+    }
+    .kanban-animate-drop {
+      animation: dropIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      opacity: 0;
+    }
+    @keyframes dropIn {
+      0% { transform: translateY(-30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
 </head>
-<body class="bg-white overflow-x-hidden">
+<body class="bg-mesh overflow-x-hidden">
   <header><special-header></special-header></header>
 
   <main id="main-content" class="pt-32">
-    <section class="vt-section min-h-[60vh] flex items-center">
-      <div class="vt-container text-center max-w-4xl mx-auto">
-        <div class="vt-section-label reveal-up !pl-0 !before:hidden">Vybtek Products</div>
-        <h1 class="text-6xl md:text-8xl font-black text-[#002D62] reveal-up">Enterprise <span class="text-[#007CC3]">CRM</span></h1>
-        <p class="text-xl text-gray-500 mt-8 reveal-up">A next-generation sales automation and pipeline management platform designed for speed, scale, and deep AI integration.</p>
-        <div class="mt-12 reveal-up">
-           <a href="../contact.html" class="vt-btn-primary">Request CRM Demo</a>
+    
+    <!-- 1. HERO & KANBAN MOCKUP -->
+    <section class="vt-section min-h-[90vh] flex items-center">
+      <div class="vt-container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+           <div class="reveal-left">
+             <div class="vt-section-label !pl-0 !before:hidden">Customer Management</div>
+             <h1 class="text-4xl md:text-6xl lg:text-8xl font-black text-[#002D62] leading-[1.05]">
+               Enterprise <br><span class="brand-gradient-text">CRM System</span>.
+             </h1>
+             <p class="text-xl text-gray-500 mt-8 max-w-xl">
+               A high-velocity CRM built for modern sales teams. Visualize pipelines, automate follow-ups, and leverage AI lead scoring to focus only on accounts that matter.
+             </p>
+             <div class="mt-12 flex gap-6">
+                <a href="../contact.html" class="vt-btn-primary">View Product</a>
+             </div>
+           </div>
+           
+           <div class="reveal-right">
+              <!-- Kanban Board UI Simulation -->
+              <div class="bg-gray-50/80 backdrop-blur-xl p-6 rounded-3xl border border-gray-200 shadow-2xl flex gap-4 overflow-x-auto md:overflow-hidden pb-6 md:pb-6 transform rotate-[-2deg]">
+                 
+                 <!-- Column 1 -->
+                 <div class="w-64 flex-shrink-0 bg-gray-100/50 rounded-2xl p-4">
+                    <div class="flex justify-between items-center mb-4">
+                       <span class="font-bold text-gray-600 text-sm">New Leads</span>
+                       <span class="bg-gray-200 text-gray-500 text-xs px-2 py-1 rounded-full">3</span>
+                    </div>
+                    <div class="kanban-card kanban-animate-drop" style="animation-delay: 0.1s">
+                       <div class="flex gap-2 mb-2"><span class="bg-blue-100 text-blue-700 text-[10px] px-2 py-0.5 rounded font-bold uppercase">Enterprise</span></div>
+                       <h4 class="font-bold text-[#002D62] text-sm">Acme Corp</h4>
+                       <p class="text-xs text-gray-500 mt-1">$120,000</p>
+                    </div>
+                    <div class="kanban-card kanban-animate-drop" style="animation-delay: 0.2s">
+                       <div class="flex gap-2 mb-2"><span class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded font-bold uppercase">SMB</span></div>
+                       <h4 class="font-bold text-[#002D62] text-sm">TechStart LLC</h4>
+                       <p class="text-xs text-gray-500 mt-1">$45,000</p>
+                    </div>
+                 </div>
+
+                 <!-- Column 2 -->
+                 <div class="w-64 flex-shrink-0 bg-blue-50/50 rounded-2xl p-4 border border-blue-100">
+                    <div class="flex justify-between items-center mb-4">
+                       <span class="font-bold text-blue-800 text-sm">Negotiation</span>
+                       <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">1</span>
+                    </div>
+                    <!-- Actively hovered card simulation -->
+                    <div class="kanban-card kanban-animate-drop transform -translate-y-2 rotate-2 shadow-xl border-blue-400" style="animation-delay: 0.5s">
+                       <div class="flex gap-2 mb-2"><span class="bg-purple-100 text-purple-700 text-[10px] px-2 py-0.5 rounded font-bold uppercase">Priority</span></div>
+                       <h4 class="font-bold text-[#002D62] text-sm">Global Dynamics</h4>
+                       <p class="text-xs text-gray-500 mt-1">$850,000</p>
+                       <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2">
+                          <img src="../images/logo.png" class="w-5 h-5 rounded-full bg-gray-200 p-1">
+                          <span class="text-[10px] text-gray-400">Assigned to Sarah</span>
+                       </div>
+                    </div>
+                 </div>
+                 
+                 <!-- Column 3 -->
+                 <div class="w-64 flex-shrink-0 bg-green-50/50 rounded-2xl p-4 border border-green-100">
+                    <div class="flex justify-between items-center mb-4">
+                       <span class="font-bold text-green-800 text-sm">Closed Won</span>
+                       <span class="bg-green-200 text-green-800 text-xs px-2 py-1 rounded-full">1</span>
+                    </div>
+                    <div class="kanban-card kanban-animate-drop" style="animation-delay: 0.8s">
+                       <h4 class="font-bold text-[#002D62] text-sm">Nexus Industries</h4>
+                       <p class="text-xs text-green-600 font-bold mt-1">Won: $320,000</p>
+                    </div>
+                 </div>
+
+              </div>
+           </div>
         </div>
       </div>
     </section>
+
+    <!-- 2. FEATURES -->
+    <section class="vt-section bg-white border-t border-gray-100 relative z-30">
+       <div class="vt-container">
+          <div class="vt-section-header text-center mb-20">
+             <div class="vt-section-label !pl-0 !before:hidden">Sales OS</div>
+             <h2 class="vt-section-heading">More Than A <span class="brand-gradient-text">Database</span></h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+             <div class="glass-card p-6 md:p-8 rounded-3xl reveal-up border-t border-blue-500">
+                <i class="fas fa-brain text-3xl text-blue-500 mb-6"></i>
+                <h3 class="font-bold text-lg text-[#002D62] mb-3">AI Lead Scoring</h3>
+                <p class="text-sm text-gray-500">Automatically rank incoming leads based on historical conversion data.</p>
+             </div>
+             <div class="glass-card p-6 md:p-8 rounded-3xl reveal-up border-t border-purple-500" style="--d:100ms">
+                <i class="fas fa-envelope-open-text text-3xl text-purple-500 mb-6"></i>
+                <h3 class="font-bold text-lg text-[#002D62] mb-3">Email Sequences</h3>
+                <p class="text-sm text-gray-500">Trigger personalized drip campaigns directly from the pipeline stages.</p>
+             </div>
+             <div class="glass-card p-6 md:p-8 rounded-3xl reveal-up border-t border-green-500" style="--d:200ms">
+                <i class="fas fa-phone-volume text-3xl text-green-500 mb-6"></i>
+                <h3 class="font-bold text-lg text-[#002D62] mb-3">VoIP Integration</h3>
+                <p class="text-sm text-gray-500">Make and record calls directly within the CRM. AI auto-transcribes notes.</p>
+             </div>
+             <div class="glass-card p-6 md:p-8 rounded-3xl reveal-up border-t border-orange-500" style="--d:300ms">
+                <i class="fas fa-file-contract text-3xl text-orange-500 mb-6"></i>
+                <h3 class="font-bold text-lg text-[#002D62] mb-3">Smart Contracts</h3>
+                <p class="text-sm text-gray-500">Generate, send, and securely e-sign proposals without leaving the platform.</p>
+             </div>
+          </div>
+       </div>
+    </section>
+
   </main>
 
   <footer><special-footer></special-footer></footer>

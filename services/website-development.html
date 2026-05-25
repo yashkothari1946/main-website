@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Modern Website Development | Pro Level UI Engineering | Vybtek</title>
+  <meta name="description" content="Next-generation website development. We build high-performance Next.js architectures with immersive 3D scroll-based UIs and web animations.">
+  <link rel="canonical" href="https://vybtek.com/services/website-development">
+  <meta property="og:title" content="Modern Website Development | Pro Level UI Engineering | Vybtek">
+  <meta property="og:description" content="Next-generation website development. We build high-performance Next.js architectures with immersive 3D scroll-based UIs and web animations.">
+  <meta name="twitter:title" content="Modern Website Development | Pro Level UI Engineering | Vybtek">
+  <meta name="twitter:description" content="Next-generation website development. We build high-performance Next.js architectures with immersive 3D scroll-based UIs and web animations.">
+  
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="../style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <script defer src="../headerFooter.js"></script>
+
+  <style>
+    /* PRO LEVEL UI SPECIFIC STYLES (Light Aesthetic) */
+    
+    body {
+       background-color: #F8FAFC !important; /* slate-50 */
+       color: #0F172A; /* slate-900 */
+    }
+
+    /* Massive Glow Effect */
+    .hero-glow {
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 124, 195, 0.15) 0%, rgba(0, 200, 230, 0.1) 40%, rgba(255,255,255,0) 70%);
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+      animation: pulse-glow 8s infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+       0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
+       100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    }
+
+    /* 3D Browser Mockup */
+    .pro-browser {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 124, 195, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 40px 100px -20px rgba(0, 124, 195, 0.15), inset 0 1px 0 rgba(255,255,255,1);
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      transform: perspective(2000px) rotateX(15deg) translateY(40px) scale(0.95);
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .pro-browser:hover {
+       transform: perspective(2000px) rotateX(5deg) translateY(20px) scale(1);
+    }
+
+    .browser-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-r { background: #FF5F56; }
+    .dot-y { background: #FFBD2E; }
+    .dot-g { background: #27C93F; }
+
+    /* Bento Box Grid Layout */
+    .bento-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 24px;
+       margin-top: 80px;
+    }
+    
+    @media (max-width: 768px) {
+       .bento-grid {
+          grid-template-columns: 1fr;
+       }
+       .bento-large {
+          grid-column: span 1 !important;
+       }
+       .bento-card {
+          padding: 24px !important;
+       }
+    }
+
+    .bento-card {
+       background: #ffffff;
+       border: 1px solid rgba(0, 0, 0, 0.05);
+       border-radius: 24px;
+       padding: 40px;
+       position: relative;
+       overflow: hidden;
+       box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+       transition: all 0.3s ease;
+    }
+
+    .bento-card:hover {
+       border-color: rgba(0, 124, 195, 0.2);
+       box-shadow: 0 20px 50px -10px rgba(0, 124, 195, 0.1);
+       transform: translateY(-5px);
+    }
+
+    .bento-card::before {
+       content: '';
+       position: absolute;
+       top: 0; left: 0; right: 0; height: 1px;
+       background: linear-gradient(90deg, transparent, rgba(0, 124, 195, 0.2), transparent);
+       opacity: 0;
+       transition: opacity 0.3s ease;
+    }
+    .bento-card:hover::before { opacity: 1; }
+
+    .bento-large {
+       grid-column: span 2;
+    }
+
+    /* Typographic updates */
+    .ultra-title {
+       font-size: clamp(4rem, 10vw, 8rem);
+       line-height: 0.9;
+       letter-spacing: -0.05em;
+       background: linear-gradient(to bottom, #0D1B3E 30%, #1044C8 100%);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+    }
+
+    .glass-pill {
+       display: inline-flex;
+       align-items: center;
+       gap: 8px;
+       padding: 8px 16px;
+       background: rgba(0, 124, 195, 0.05);
+       border: 1px solid rgba(0, 124, 195, 0.1);
+       border-radius: 999px;
+       font-size: 12px;
+       font-weight: 700;
+       letter-spacing: 1px;
+       text-transform: uppercase;
+       color: #007CC3;
+       backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden bg-slate-50 text-slate-900 selection:bg-[#007CC3] selection:text-white">
+  
+  <header>
+     <!-- Modifying header slightly to fit dark mode if needed, but SpecialHeader will inject. Assuming it supports dark backgrounds. -->
+     <special-header></special-header>
+  </header>
+
+  <main id="main-content" class="pt-40">
+    
+    <!-- 1. ULTRA HERO -->
+    <section class="relative min-h-screen flex flex-col items-center pt-10" id="hero-pro">
+      <div class="hero-glow"></div>
+      
+      <!-- Grid background -->
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(0,124,195,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,124,195,0.05)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10"></div>
+
+      <div class="vt-container text-center relative z-10 w-full flex flex-col items-center">
+        
+        <div class="glass-pill mb-8 reveal-up">
+           <span class="w-2 h-2 rounded-full bg-[#00C8E6] animate-pulse"></span>
+           Next.js 14 Enterprise Architecture
+        </div>
+
+        <h1 class="ultra-title font-black reveal-up" style="--d:100ms">
+          Uncompromised <br>
+          <span style="background: linear-gradient(135deg, #007CC3 0%, #00C8E6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Web Velocity.</span>
+        </h1>
+        
+        <p class="text-xl text-slate-600 mt-8 max-w-2xl reveal-up font-medium" style="--d:200ms">
+          We engineer award-winning, sub-second digital experiences. Utilizing Next.js, WebGL, and global edge networks to build the absolute pinnacle of modern web applications.
+        </p>
+        
+        <div class="mt-12 reveal-up flex justify-center gap-6" style="--d:300ms">
+           <a href="../contact.html" class="bg-[#1044C8] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-[0_10px_30px_rgba(16,68,200,0.3)]">Start Building</a>
+           <a href="#architecture" class="bg-white border border-slate-200 text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition-colors shadow-sm">Explore Stack</a>
+        </div>
+
+      </div>
+
+      <!-- 3D BROWSER MOCKUP -->
+      <div class="w-full px-4 mt-32 relative z-20 reveal-up" style="--d:500ms" id="browser-scroll-target">
+         <div class="pro-browser">
+            <div class="browser-header">
+               <div class="browser-dot dot-r"></div>
+               <div class="browser-dot dot-y"></div>
+               <div class="browser-dot dot-g"></div>
+               <div class="mx-auto w-64 h-6 bg-slate-100 rounded text-center flex items-center justify-center text-[10px] text-slate-400 font-mono"><i class="fas fa-lock mr-2 text-[8px]"></i> https://vybtek.com/engine</div>
+            </div>
+            
+            <!-- Mockup Content -->
+             <div class="p-6 md:p-8 h-[500px] bg-slate-50 rounded-b-xl overflow-hidden relative border-t border-slate-100">
+               <!-- Abstract Dashboard UI inside the browser -->
+               <div class="flex gap-8 h-full">
+                  <!-- Sidebar -->
+                  <div class="w-48 border-r border-slate-200 flex flex-col gap-4 pr-4">
+                     <div class="h-8 w-24 bg-slate-200 rounded mb-4"></div>
+                     <div class="h-4 w-full bg-[#007CC3]/20 rounded"></div>
+                     <div class="h-4 w-3/4 bg-slate-200 rounded"></div>
+                     <div class="h-4 w-5/6 bg-slate-200 rounded"></div>
+                  </div>
+                  <!-- Main -->
+                  <div class="flex-1 flex flex-col gap-6">
+                     <div class="flex justify-between items-center">
+                        <div class="h-10 w-48 bg-slate-200 rounded-lg"></div>
+                        <div class="h-10 w-10 bg-slate-200 rounded-full"></div>
+                     </div>
+                     <div class="flex-1 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 relative overflow-hidden">
+                        <!-- Code visual -->
+                        <div class="absolute inset-0 opacity-60 font-mono text-xs text-[#0D1B3E] p-6">
+                           import { Suspense } from 'react'<br><br>
+                           export default function Loading() {<br>
+                           &nbsp;&nbsp;return &lt;Skeleton /&gt;<br>
+                           }<br><br>
+                           // Edge Cache Status: <span class="text-[#00C8E6] font-bold">HIT</span>
+                        </div>
+                        
+                        <!-- Glowing element in mock -->
+                        <div class="absolute bottom-10 right-10 w-32 h-32 bg-[#00C8E6]/20 rounded-full blur-[40px] animate-pulse"></div>
+                     </div>
+                     <div class="h-32 grid grid-cols-3 gap-6">
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm"></div>
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm"></div>
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+    </section>
+
+    <!-- 2. BENTO BOX FEATURES (Pro Level Grid) -->
+    <section class="vt-section relative" id="architecture">
+       <div class="vt-container">
+          <div class="text-left mb-16 max-w-2xl reveal-up">
+             <h2 class="text-4xl md:text-5xl font-black mb-6 text-slate-900">Engineered for the <br><span class="text-[#007CC3]">Modern Web.</span></h2>
+             <p class="text-slate-600 text-lg">We abandoned legacy CMS platforms years ago. Our stack is purpose-built for global scale, absolute security, and zero-latency interactions.</p>
+          </div>
+
+          <div class="bento-grid">
+             
+             <!-- Box 1 -->
+             <div class="bento-card bento-large reveal-up">
+                <i class="fab fa-react text-4xl text-[#00C8E6] mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4 text-[#0D1B3E]">Next.js App Router</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-8 max-w-md">Server components and advanced routing patterns. We render your data on the server, drastically reducing client-side JavaScript and guaranteeing perfect 100/100 Lighthouse SEO scores.</p>
+                <!-- Mini visualization -->
+                <div class="h-24 rounded-lg bg-slate-50 border border-slate-200 flex items-center p-4 gap-2">
+                   <div class="w-1/3 h-full bg-[#007CC3]/5 border border-[#007CC3]/20 rounded-md flex items-center justify-center text-[10px] text-[#007CC3] font-mono font-bold shadow-sm">Server</div>
+                   <div class="w-8 h-px bg-slate-300"></div>
+                   <div class="w-2/3 h-full bg-[#1044C8]/5 border border-[#1044C8]/20 rounded-md flex items-center justify-center text-[10px] text-[#1044C8] font-mono font-bold shadow-sm">Client Boundary</div>
+                </div>
+             </div>
+
+             <!-- Box 2 -->
+             <div class="bento-card reveal-up" style="--d:100ms">
+                <i class="fas fa-bolt text-4xl text-[#00C8E6] mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4 text-[#0D1B3E]">Edge Caching</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Deploying your assets to 300+ global edge nodes. Your site loads in milliseconds, whether your customer is in New York, London, or Tokyo.</p>
+             </div>
+
+             <!-- Box 3 -->
+             <div class="bento-card reveal-up" style="--d:200ms">
+                <i class="fas fa-cube text-4xl text-[#1044C8] mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4 text-[#0D1B3E]">Headless CMS</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Decoupled content architecture using Sanity or Contentful. Your marketing team gets an intuitive dashboard, your dev team gets clean APIs.</p>
+             </div>
+
+             <!-- Box 4 -->
+             <div class="bento-card bento-large reveal-up" style="--d:300ms">
+                <i class="fas fa-magic text-4xl text-[#007CC3] mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4 text-[#0D1B3E]">WebGL & GSAP Motion</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-8 max-w-md">We don't just build static pages. We create cinematic scroll experiences using Three.js and custom math-based animations that run at a locked 60 frames per second.</p>
+                <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden shadow-inner">
+                   <div class="h-full bg-gradient-to-r from-[#007CC3] to-[#00C8E6] w-full animate-[pulse_2s_infinite]"></div>
+                </div>
+                <div class="text-[10px] text-slate-400 font-mono mt-2 text-right">60.0 FPS GUARANTEED</div>
+             </div>
+
+          </div>
+       </div>
+    </section>
+
+    <!-- 2.5 FEATURED 3D PROJECTS -->
+    <section class="vt-section relative border-t border-white/5 pt-32 mt-20" id="projects-showcase">
+       <div class="vt-container">
+          <div class="flex justify-between items-end mb-16 reveal-up">
+             <div>
+                <div class="glass-pill mb-4"><span class="w-2 h-2 rounded-full bg-green-500"></span> Live Deployments</div>
+                <h2 class="text-4xl md:text-5xl font-black text-white">Award-Winning <br><span class="text-purple-500">WebGL Experiences.</span></h2>
+             </div>
+             <a href="../portfolio.html" class="hidden md:inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors">View All Work <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+             
+             <!-- Project 1: Abstract 3D Architecture -->
+             <div class="group cursor-pointer perspective-[1000px] reveal-up">
+                <div class="relative h-[400px] rounded-3xl overflow-hidden bg-[#0A0A0A] border border-white/10 transition-transform duration-700 ease-out transform group-hover:rotate-x-[-5deg] group-hover:rotate-y-[5deg] group-hover:scale-[1.02]">
+                   <!-- Simulated 3D Environment -->
+                   <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent"></div>
+                   
+                   <!-- Floating 3D Elements Mockup -->
+                   <div class="absolute inset-0 flex items-center justify-center transform translate-z-[50px] transition-transform duration-700 group-hover:scale-110">
+                      <!-- Geometric shapes -->
+                      <div class="w-32 h-32 border-4 border-indigo-400/50 rounded-full absolute animate-[spin_10s_linear_infinite]"></div>
+                      <div class="w-20 h-20 bg-indigo-500/30 backdrop-blur-md rotate-45 absolute -top-10 -right-10 rounded-lg"></div>
+                      <div class="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">Nova.</div>
+                   </div>
+                </div>
+                <div class="mt-6 flex justify-between items-start">
+                   <div>
+                      <h3 class="text-2xl font-bold text-white mb-2">Nova Architecture</h3>
+                      <p class="text-gray-400 text-sm">Three.js / React Fiber / Next.js</p>
+                   </div>
+                   <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 group-hover:bg-white group-hover:text-black transition-all">
+                      <i class="fas fa-arrow-up rotate-45"></i>
+                   </div>
+                </div>
+             </div>
+
+             <!-- Project 2: E-Commerce immersive -->
+             <div class="group cursor-pointer perspective-[1000px] reveal-up" style="--d:100ms">
+                <div class="relative h-[400px] rounded-3xl overflow-hidden bg-[#0A0A0A] border border-white/10 transition-transform duration-700 ease-out transform group-hover:rotate-x-[5deg] group-hover:rotate-y-[-5deg] group-hover:scale-[1.02]">
+                   <!-- Simulated 3D Environment -->
+                   <div class="absolute inset-0 bg-gradient-to-bl from-orange-500/20 to-transparent"></div>
+                   
+                   <!-- Floating Product Mockup -->
+                   <div class="absolute inset-0 flex flex-col items-center justify-center transform translate-z-[80px] transition-transform duration-700 group-hover:-translate-y-4">
+                      <!-- Mock Product (Sneaker representation) -->
+                      <div class="w-48 h-24 bg-gradient-to-r from-orange-400 to-red-500 rounded-full blur-[2px] shadow-[0_20px_50px_rgba(249,115,22,0.4)] transform -rotate-12 mb-4"></div>
+                      <div class="text-center">
+                         <div class="text-xs uppercase tracking-[0.3em] text-orange-300 font-bold mb-1">Interactive Catalog</div>
+                         <div class="text-4xl font-black text-white">Aura Footwear</div>
+                      </div>
+                   </div>
+                </div>
+                <div class="mt-6 flex justify-between items-start">
+                   <div>
+                      <h3 class="text-2xl font-bold text-white mb-2">Aura 3D E-Commerce</h3>
+                      <p class="text-gray-400 text-sm">WebGL Configurator / Shopify Plus</p>
+                   </div>
+                   <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 group-hover:bg-white group-hover:text-black transition-all">
+                      <i class="fas fa-arrow-up rotate-45"></i>
+                   </div>
+                </div>
+             </div>
+
+          </div>
+          
+          <div class="mt-12 text-center md:hidden">
+             <a href="../portfolio.html" class="text-blue-400 hover:text-blue-300 font-bold">View All Projects <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+       </div>
+    </section>
+
+    <!-- 3. FINAL CTA -->
+    <section class="vt-section mt-20 border-t border-white/5">
+      <div class="vt-container relative z-10 text-center">
+        <h2 class="ultra-title text-5xl md:text-7xl !mb-10">Stop <br><span class="text-blue-500">Compromising.</span></h2>
+        <div class="flex justify-center gap-8 mt-10">
+          <a href="../contact.html" class="bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">Start Enterprise Project</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/10 mt-32"><special-footer></special-footer></footer>
+  <script src="../animations.js"></script>
+  <script>
+     // Pro Level GSAP Scroll Magic for the Browser
+     document.addEventListener('DOMContentLoaded', () => {
+        gsap.to(".pro-browser", {
+           rotateX: 0,
+           translateY: -20,
+           scale: 1,
+           scrollTrigger: {
+              trigger: "#browser-scroll-target",
+              start: "top 90%",
+              end: "top 30%",
+              scrub: 1
+           }
+        });
+     });
+  </script>
+</body>
+</html>
+

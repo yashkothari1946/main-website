@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contact Vybtek | Global Engineering Partner (US & UK)</title>
+  <title>Contact Vybtek | Global Engineering Partner (US & UK) | Vybtek</title>
   <meta name="description" content="Partner with Vybtek for custom AI, SaaS, and ERP development. We offer global timezone alignment (EST/GMT) and 24/7 SLA enterprise support.">
   
-  <link rel="canonical" href="https://vybtek.com/contact" />
-  <link rel="alternate" hreflang="en-US" href="https://vybtek.com/contact" />
-  <link rel="alternate" hreflang="en-GB" href="https://vybtek.com/uk/contact" />
-  <link rel="alternate" hreflang="x-default" href="https://vybtek.com/contact" />
+  <link rel="canonical" href="https://vybtek.com/contact.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vybtek.com/contact.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://vybtek.com/uk/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vybtek.com/contact.html" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vybtek.com/contact" />
-  <meta property="og:title" content="Contact Vybtek | Global Engineering Partner (US & UK)" />
+  <meta property="og:url" content="https://vybtek.com/contact.html" />
+  <meta property="og:title" content="Contact Vybtek | Global Engineering Partner (US & UK) | Vybtek" />
   <meta property="og:description" content="Partner with Vybtek for custom AI, SaaS, and ERP development. Global timezone alignment (EST/GMT) and 24/7 SLA enterprise support." />
   <meta property="og:image" content="https://vybtek.com/images/og-image-contact.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://vybtek.com/contact" />
-  <meta property="twitter:title" content="Contact Vybtek | Global Engineering Partner (US & UK)" />
+  <meta property="twitter:url" content="https://vybtek.com/contact.html" />
+  <meta property="twitter:title" content="Contact Vybtek | Global Engineering Partner (US & UK) | Vybtek" />
   <meta property="twitter:description" content="Partner with Vybtek for custom AI, SaaS, and ERP development. Global timezone alignment (EST/GMT) and 24/7 SLA enterprise support." />
   <meta property="twitter:image" content="https://vybtek.com/images/og-image-contact.png" />
   
@@ -35,119 +35,325 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
   <script defer src="headerFooter.js"></script>
-  </head>
-<body class="bg-mesh overflow-x-hidden">
+
+  <style>
+    /* Input focus ring */
+    .vt-input {
+      width: 100%;
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 15px;
+      color: #0F172A;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    .vt-input:focus {
+      border-color: #007CC3;
+      box-shadow: 0 0 0 4px rgba(0, 124, 195, 0.1);
+      background: #fff;
+    }
+    .vt-input::placeholder { color: #94A3B8; }
+    .vt-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #0D1B3E;
+      margin-bottom: 8px;
+    }
+    .vt-label span { color: #EF4444; }
+
+    /* Floating particles */
+    .contact-dot {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Process step connector */
+    .step-connector {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, #007CC3, #00C8E6);
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-[#007CC3] selection:text-white">
   <header><special-header></special-header></header>
 
   <main id="main-content" class="pt-32">
+
     <!-- HERO -->
-    <section class="vt-section pb-10">
-      <div class="vt-container text-center max-w-4xl mx-auto">
-        <div class="vt-section-label reveal-up !pl-0 !before:hidden">Get in Touch</div>
-        <h1 class="text-6xl md:text-8xl font-black text-[#002D62] reveal-up">Let's Build Your <span class="text-[#007CC3]">Future</span>.</h1>
-        <p class="text-xl text-gray-500 mt-8 reveal-up">Whether you need an enterprise CRM, a custom LLM, or a high-performance web application, our engineers are ready to execute.</p>
+    <section class="bg-white relative overflow-hidden pt-20 pb-10">
+      <!-- Decorative blobs -->
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00C8E6]/8 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#1044C8]/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+
+      <div class="vt-container text-center max-w-5xl mx-auto relative z-10">
+        <div class="inline-flex items-center gap-3 mb-6 reveal-up">
+          <span class="w-8 h-px bg-[#00C8E6]"></span>
+          <span class="text-[10px] font-black uppercase tracking-widest text-[#007CC3]">Get in Touch</span>
+          <span class="w-8 h-px bg-[#00C8E6]"></span>
+        </div>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-[#0D1B3E] reveal-up leading-[1.05] tracking-tight">
+          Contact Your Future <br><span class="brand-gradient-text">AI & Tech Partner</span>.
+        </h1>
+        <p class="text-xl text-slate-600 mt-8 reveal-up max-w-3xl mx-auto">
+          Whether you need an enterprise CRM, a custom LLM, or a high-performance web application — our engineers are ready to execute. Tell us what you need.
+        </p>
+
+        <!-- Trust Signal Bar -->
+        <div class="mt-14 flex flex-wrap justify-center gap-x-10 gap-y-4 reveal-up">
+          <div class="flex items-center gap-2 text-slate-500 text-sm font-semibold">
+            <i class="fas fa-clock text-[#00C8E6]"></i>
+            <span>Response within <strong class="text-slate-800">4 hours</strong></span>
+          </div>
+          <div class="w-px h-5 bg-slate-200 hidden md:block self-center"></div>
+          <div class="flex items-center gap-2 text-slate-500 text-sm font-semibold">
+            <i class="fas fa-globe text-[#00C8E6]"></i>
+            <span>EST / GMT / IST timezone alignment</span>
+          </div>
+          <div class="w-px h-5 bg-slate-200 hidden md:block self-center"></div>
+          <div class="flex items-center gap-2 text-slate-500 text-sm font-semibold">
+            <i class="fas fa-shield-alt text-[#00C8E6]"></i>
+            <span>SOC2 compliant. NDA available.</span>
+          </div>
+          <div class="w-px h-5 bg-slate-200 hidden md:block self-center"></div>
+          <div class="flex items-center gap-2 text-slate-500 text-sm font-semibold">
+            <i class="fas fa-headset text-[#00C8E6]"></i>
+            <span>24/7 Enterprise SLA support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS STRIP -->
+    <section class="py-10 bg-slate-50 border-y border-slate-100">
+      <div class="vt-container max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-4 reveal-up">
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center text-center flex-1 px-4">
+            <div class="w-12 h-12 rounded-full bg-[#007CC3]/10 text-[#007CC3] flex items-center justify-center text-xl mb-3 font-black">1</div>
+            <p class="text-sm font-bold text-[#0D1B3E]">Fill the Form</p>
+            <p class="text-xs text-slate-500 mt-1">Tell us about your project</p>
+          </div>
+          <div class="step-connector hidden md:block"></div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center text-center flex-1 px-4">
+            <div class="w-12 h-12 rounded-full bg-[#00C8E6]/10 text-[#00C8E6] flex items-center justify-center text-xl mb-3 font-black">2</div>
+            <p class="text-sm font-bold text-[#0D1B3E]">We Respond in 4 Hours</p>
+            <p class="text-xs text-slate-500 mt-1">A senior engineer reviews your brief</p>
+          </div>
+          <div class="step-connector hidden md:block"></div>
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center text-center flex-1 px-4">
+            <div class="w-12 h-12 rounded-full bg-[#1044C8]/10 text-[#1044C8] flex items-center justify-center text-xl mb-3 font-black">3</div>
+            <p class="text-sm font-bold text-[#0D1B3E]">Discovery Call</p>
+            <p class="text-xs text-slate-500 mt-1">30-min deep-dive with no obligation</p>
+          </div>
+          <div class="step-connector hidden md:block"></div>
+          <!-- Step 4 -->
+          <div class="flex flex-col items-center text-center flex-1 px-4">
+            <div class="w-12 h-12 rounded-full bg-[#0D1B3E] text-[#00C8E6] flex items-center justify-center text-xl mb-3 font-black shadow-lg shadow-[#0D1B3E]/20">4</div>
+            <p class="text-sm font-bold text-[#0D1B3E]">Project Kickoff</p>
+            <p class="text-xs text-slate-500 mt-1">Signed SOW, sprint setup, go live</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT FORM & INFO -->
-    <section id="consultation" class="vt-section pt-0">
+    <section id="consultation" class="vt-section py-24">
       <div class="vt-container">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16">
            
-           <!-- Form -->
-           <div class="lg:col-span-7 glass-card p-10 md:p-16 rounded-[40px] shadow-lg reveal-left relative overflow-hidden">
-              <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-100 rounded-full blur-[80px] opacity-50"></div>
-              <h3 class="text-3xl font-black text-[#002D62] mb-8 relative z-10">Request a Consultation</h3>
-              <form class="space-y-6 relative z-10" onsubmit="event.preventDefault(); alert('In a production environment, this would submit to the backend on port 5000.');">
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                       <label class="block text-xs font-bold text-[#002D62] uppercase tracking-widest mb-2">First Name</label>
-                       <input type="text" required class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-[#007CC3] focus:ring-1 focus:ring-[#007CC3] transition-all">
-                    </div>
-                    <div>
-                       <label class="block text-xs font-bold text-[#002D62] uppercase tracking-widest mb-2">Last Name</label>
-                       <input type="text" required class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-[#007CC3] focus:ring-1 focus:ring-[#007CC3] transition-all">
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                       <label class="block text-xs font-bold text-[#002D62] uppercase tracking-widest mb-2">Corporate Email</label>
-                       <input type="email" required class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-[#007CC3] focus:ring-1 focus:ring-[#007CC3] transition-all">
-                    </div>
-                    <div>
-                       <label class="block text-xs font-bold text-[#002D62] uppercase tracking-widest mb-2">Company Name</label>
-                       <input type="text" class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-[#007CC3] focus:ring-1 focus:ring-[#007CC3] transition-all">
-                    </div>
-                 </div>
-                 <div>
-                    <label class="block text-xs font-bold text-[#002D62] uppercase tracking-widest mb-2">Project Interest</label>
-                    <select class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-[#007CC3] focus:ring-1 focus:ring-[#007CC3] transition-all text-gray-500">
-                       <option>AI / Machine Learning</option>
-                       <option>Custom Software / ERP</option>
-                       <option>Web or Mobile Application</option>
-                       <option>SEO & Digital Branding</option>
-                       <option>Other</option>
-                    </select>
-                 </div>
-                 <div>
-                    <label class="block text-xs font-bold text-[#002D62] uppercase tracking-widest mb-2">Project Details</label>
-                    <textarea rows="4" required placeholder="Tell us about your goals, timeline, and current challenges..." class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-[#007CC3] focus:ring-1 focus:ring-[#007CC3] transition-all"></textarea>
-                 </div>
-                 <button type="submit" class="vt-btn-primary w-full justify-center mt-4 !text-sm">Submit Request <i class="fas fa-paper-plane ml-2"></i></button>
-              </form>
+           <!-- Form Panel -->
+           <div class="lg:col-span-7 reveal-left">
+              <div class="bg-white rounded-[40px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.07)] border border-slate-200/80 p-8 md:p-14 relative overflow-hidden">
+                <!-- Top accent line -->
+                <div class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-[#007CC3] via-[#00C8E6] to-[#1044C8] rounded-full"></div>
+
+                <!-- Header -->
+                <div class="mb-10">
+                  <p class="text-[10px] font-black uppercase tracking-widest text-[#007CC3] mb-2">Step 1 of 1</p>
+                  <h2 class="text-3xl font-black text-[#0D1B3E]">Request a Consultation</h2>
+                  <p class="text-slate-500 mt-2 text-sm">All fields marked <span class="text-red-400 font-bold">*</span> are required.</p>
+                </div>
+
+                <form id="contactForm" class="space-y-6">
+                   <!-- Name row -->
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <label class="vt-label" for="contactFName">First Name <span>*</span></label>
+                        <input type="text" id="contactFName" required placeholder="John" class="vt-input">
+                      </div>
+                      <div>
+                        <label class="vt-label" for="contactLName">Last Name <span>*</span></label>
+                        <input type="text" id="contactLName" required placeholder="Smith" class="vt-input">
+                      </div>
+                   </div>
+
+                   <!-- Email + Company -->
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <label class="vt-label" for="contactEmail">Corporate Email <span>*</span></label>
+                        <input type="email" id="contactEmail" required placeholder="john@company.com" class="vt-input">
+                      </div>
+                      <div>
+                        <label class="vt-label" for="contactCompany">Company Name</label>
+                        <input type="text" id="contactCompany" placeholder="Acme Corp." class="vt-input">
+                      </div>
+                   </div>
+
+                   <!-- Service Interest -->
+                   <div>
+                     <label class="vt-label" for="contactSubject">Project Interest <span>*</span></label>
+                     <select id="contactSubject" class="vt-input" style="color: #0F172A;">
+                       <option value="" disabled selected>— Select a service —</option>
+                       <option>AI / Machine Learning Development</option>
+                       <option>Custom Software / ERP / CRM</option>
+                       <option>Web Application (Next.js / React)</option>
+                       <option>Mobile App (iOS & Android)</option>
+                       <option>Digital Marketing & SEO</option>
+                       <option>Cloud Infrastructure & DevOps</option>
+                       <option>UI/UX Design</option>
+                       <option>Branding & Corporate Identity</option>
+                       <option>IT Consulting & Roadmapping</option>
+                       <option>Other / Not Sure Yet</option>
+                     </select>
+                   </div>
+
+                   <!-- Callback Time -->
+                   <div>
+                     <label class="vt-label" for="contactCallback">
+                       <i class="fas fa-calendar-alt text-[#00C8E6] mr-1"></i>
+                       Preferred Callback Time
+                       <span class="normal-case font-normal text-slate-400 ml-1">(min. 5 hrs from now)</span>
+                     </label>
+                     <input type="datetime-local" id="contactCallback" class="vt-input">
+                   </div>
+
+                   <!-- Message -->
+                   <div>
+                     <label class="vt-label" for="contactMessage">Project Details <span>*</span></label>
+                     <textarea id="contactMessage" rows="5" required placeholder="Describe your goals, timeline, tech stack preferences, and any current challenges you face..." class="vt-input resize-none"></textarea>
+                   </div>
+
+                   <!-- Status message -->
+                   <p id="contactStatusMsg" class="text-sm font-bold hidden"></p>
+
+                   <!-- Submit -->
+                   <button type="submit" id="contactSubmitBtn"
+                     class="w-full flex items-center justify-center gap-3 bg-[#0D1B3E] hover:bg-[#1044C8] text-white font-black text-sm uppercase tracking-widest py-5 rounded-2xl transition-all duration-300 shadow-xl shadow-[#0D1B3E]/20 hover:shadow-[#1044C8]/30 hover:-translate-y-0.5 mt-2">
+                     <i class="fas fa-paper-plane"></i>
+                     Submit Request
+                   </button>
+
+                   <p class="text-center text-xs text-slate-400 mt-3">
+                     <i class="fas fa-lock text-[#00C8E6] mr-1"></i>
+                     Your information is encrypted and never shared with third parties.
+                   </p>
+                </form>
+              </div>
            </div>
 
            <!-- Info Sidebar -->
-           <div class="lg:col-span-5 space-y-8 reveal-right">
-              <div class="bg-[#002D62] p-10 rounded-[40px] text-white shadow-xl relative overflow-hidden h-full flex flex-col justify-between">
-                 <div class="absolute -top-20 -right-20 w-64 h-64 border border-white/10 rounded-full opacity-50 animate-[spin_20s_linear_infinite]"></div>
-                 
-                 <div class="relative z-10">
-                    <h3 class="text-3xl font-black mb-8">Global HQ</h3>
-                    <div class="space-y-8">
-                       <div class="flex items-start gap-4">
-                          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-map-marker-alt text-cyan-400"></i></div>
-                          <div>
-                             <div class="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">Development Center</div>
-                             <p class="font-medium text-lg leading-snug">Udaipur, Rajasthan<br>India</p>
-                          </div>
-                       </div>
-                       <div class="flex items-start gap-4">
-                          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-envelope text-cyan-400"></i></div>
-                          <div>
-                             <div class="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">Enterprise Sales</div>
-                             <p class="font-medium text-lg">info@vybtek.com</p>
-                          </div>
-                       </div>
-                    </div>
+           <div class="lg:col-span-5 space-y-6 reveal-right">
+
+             <!-- Dark card: Contact details -->
+             <div class="bg-[#0D1B3E] p-8 md:p-10 rounded-[40px] text-white shadow-2xl shadow-[#0D1B3E]/30 relative overflow-hidden">
+               <!-- Decorative rings -->
+               <div class="absolute -top-16 -right-16 w-48 h-48 border border-white/10 rounded-full"></div>
+               <div class="absolute -top-8 -right-8 w-32 h-32 border border-white/5 rounded-full"></div>
+               <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-[#00C8E6]/10 rounded-full blur-2xl"></div>
+
+               <div class="relative z-10">
+                 <h3 class="text-2xl font-black mb-2">Global HQ</h3>
+                 <p class="text-white/50 text-sm mb-8">Headquartered in India. Delivering globally.</p>
+
+                 <div class="space-y-6">
+                   <div class="flex items-start gap-4">
+                     <div class="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 text-[#00C8E6]">
+                       <i class="fas fa-map-marker-alt"></i>
+                     </div>
+                     <div>
+                       <div class="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">Development Center</div>
+                       <p class="font-semibold text-lg leading-snug">Udaipur, Rajasthan<br>India — 313001</p>
+                     </div>
+                   </div>
+                   <div class="flex items-start gap-4">
+                     <div class="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 text-[#00C8E6]">
+                       <i class="fas fa-envelope"></i>
+                     </div>
+                     <div>
+                       <div class="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">Enterprise Sales</div>
+                       <a href="mailto:support@vybtek.com" class="font-semibold text-lg hover:text-[#00C8E6] transition-colors">support@vybtek.com</a>
+                     </div>
+                   </div>
                  </div>
 
-                 <!-- Global Delivery Block -->
-                 <div class="relative z-10 mt-10 pt-8 border-t border-white/10">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-white/50 mb-6">Global Delivery Architecture</h4>
-                    <div class="space-y-4">
-                       <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-globe-americas text-cyan-400 text-xs"></i></div>
-                          <p class="text-sm font-medium">EST / GMT Timezone Alignment</p>
-                       </div>
-                       <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-headset text-cyan-400 text-xs"></i></div>
-                          <p class="text-sm font-medium">24/7 Enterprise SLA Support</p>
-                       </div>
-                       <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0"><i class="fas fa-shield-alt text-cyan-400 text-xs"></i></div>
-                          <p class="text-sm font-medium">SOC2 Compliant Delivery Hub</p>
-                       </div>
-                    </div>
+                 <!-- Global Delivery -->
+                 <div class="mt-8 pt-8 border-t border-white/10">
+                   <h4 class="text-[10px] font-black uppercase tracking-widest text-white/40 mb-5">Global Delivery Architecture</h4>
+                   <div class="space-y-4">
+                     <div class="flex items-center gap-3">
+                       <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#00C8E6] text-sm"><i class="fas fa-globe-americas"></i></div>
+                       <span class="text-sm font-semibold">EST / GMT / IST Timezone Alignment</span>
+                     </div>
+                     <div class="flex items-center gap-3">
+                       <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#00C8E6] text-sm"><i class="fas fa-headset"></i></div>
+                       <span class="text-sm font-semibold">24/7 Enterprise SLA Support</span>
+                     </div>
+                     <div class="flex items-center gap-3">
+                       <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#00C8E6] text-sm"><i class="fas fa-shield-alt"></i></div>
+                       <span class="text-sm font-semibold">SOC2 Compliant Delivery Hub</span>
+                     </div>
+                     <div class="flex items-center gap-3">
+                       <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#00C8E6] text-sm"><i class="fas fa-file-contract"></i></div>
+                       <span class="text-sm font-semibold">NDA Available on Request</span>
+                     </div>
+                   </div>
                  </div>
 
-                 <div class="relative z-10 mt-12 pt-8 border-t border-white/10">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-white/50 mb-4">Direct Communication</h4>
-                    <a href="https://wa.me/message/XXXX" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-4 rounded-xl transition-colors">
-                       <i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp
-                    </a>
+                 <!-- WhatsApp CTA -->
+                 <div class="mt-8 pt-8 border-t border-white/10">
+                   <p class="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">Direct Communication</p>
+                   <a href="https://wa.me/message/XXXX" target="_blank" rel="noopener noreferrer"
+                     class="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-4 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-[#25D366]/30">
+                     <i class="fab fa-whatsapp text-xl"></i>
+                     Chat on WhatsApp
+                   </a>
                  </div>
-              </div>
+               </div>
+             </div>
+
+             <!-- Light cards: Response time + Confidentiality -->
+             <div class="grid grid-cols-2 gap-4">
+               <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm text-center">
+                 <div class="text-3xl font-black text-[#007CC3] mb-1">&lt; 4h</div>
+                 <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Avg. Response</p>
+               </div>
+               <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm text-center">
+                 <div class="text-3xl font-black text-[#0D1B3E] mb-1">100%</div>
+                 <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Confidential</p>
+               </div>
+             </div>
+
+             <!-- Social proof mini -->
+             <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+               <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Trusted By Companies In</p>
+               <div class="flex flex-wrap gap-2">
+                 <span class="px-3 py-1 bg-slate-50 border border-slate-200 rounded-full text-xs font-bold text-slate-600">🇺🇸 United States</span>
+                 <span class="px-3 py-1 bg-slate-50 border border-slate-200 rounded-full text-xs font-bold text-slate-600">🇬🇧 United Kingdom</span>
+                 <span class="px-3 py-1 bg-slate-50 border border-slate-200 rounded-full text-xs font-bold text-slate-600">🇦🇺 Australia</span>
+                 <span class="px-3 py-1 bg-slate-50 border border-slate-200 rounded-full text-xs font-bold text-slate-600">🇦🇪 UAE</span>
+                 <span class="px-3 py-1 bg-slate-50 border border-slate-200 rounded-full text-xs font-bold text-slate-600">🇮🇳 India</span>
+               </div>
+             </div>
            </div>
         </div>
       </div>
@@ -155,8 +361,93 @@
 
   </main>
 
-  <footer><special-footer></special-footer></footer>
+  <footer class="border-t border-slate-200"><special-footer></special-footer></footer>
   <script src="animations.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set minimum date to 5 hours from now
+      const callbackInput = document.getElementById('contactCallback');
+      if(callbackInput) {
+        const now = new Date();
+        now.setHours(now.getHours() + 5);
+        const tzOffset = now.getTimezoneOffset() * 60000;
+        const localISOTime = (new Date(now - tzOffset)).toISOString().slice(0, 16);
+        callbackInput.min = localISOTime;
+      }
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      const btn = document.getElementById("contactSubmitBtn");
+      const msg = document.getElementById("contactStatusMsg");
+      
+      const fname = document.getElementById("contactFName").value;
+      const lname = document.getElementById("contactLName").value;
+      const email = document.getElementById("contactEmail").value;
+      const company = document.getElementById("contactCompany").value;
+      const subject = document.getElementById("contactSubject").value;
+      const message = document.getElementById("contactMessage").value;
+      const callbackTime = document.getElementById("contactCallback").value;
+
+      // Validate callback is at least 5 hours ahead
+      if (callbackTime) {
+        const selectedTime = new Date(callbackTime);
+        const minTime = new Date();
+        minTime.setHours(minTime.getHours() + 5);
+        if (selectedTime < minTime) {
+          msg.classList.remove("hidden");
+          msg.className = "text-sm font-bold mt-2 text-red-500";
+          msg.innerText = "Please select a callback time at least 5 hours in the future.";
+          return;
+        }
+      }
+
+      msg.classList.add("hidden");
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+      btn.disabled = true;
+      btn.classList.add('opacity-70');
+
+      try {
+        const payload = {
+          name: fname + " " + lname,
+          email: email,
+          phone: company,
+          subject: subject,
+          message: message,
+          callback_time: callbackTime || null
+        };
+
+        const res = await fetch("http://localhost:5000/api/vybtek/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        
+        const data = await res.json();
+        
+        msg.classList.remove("hidden");
+        if (res.ok) {
+          msg.className = "text-sm font-bold mt-2 text-emerald-600 bg-emerald-50 px-4 py-3 rounded-xl border border-emerald-200";
+          msg.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Request submitted! We\'ll be in touch within 4 hours.';
+          document.getElementById("contactForm").reset();
+        } else {
+          msg.className = "text-sm font-bold mt-2 text-red-600 bg-red-50 px-4 py-3 rounded-xl border border-red-200";
+          msg.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>' + (data.error || "Failed to submit. Please try again.");
+        }
+      } catch (err) {
+        msg.classList.remove("hidden");
+        msg.className = "text-sm font-bold mt-2 text-red-600 bg-red-50 px-4 py-3 rounded-xl border border-red-200";
+        msg.innerHTML = '<i class="fas fa-wifi mr-2"></i>Network error. Please email us directly at support@vybtek.com';
+      } finally {
+        btn.innerHTML = originalHTML;
+        btn.disabled = false;
+        btn.classList.remove('opacity-70');
+      }}
+    });
+  </script>
 </body>
 </html>
+
 

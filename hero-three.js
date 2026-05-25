@@ -18,13 +18,14 @@ if (container) {
     const orbGeometry = new THREE.IcosahedronGeometry(2, 64);
     const orbMaterial = new THREE.MeshPhysicalMaterial({
         color: 0xffffff,
+        emissive: 0xebf8ff,
+        emissiveIntensity: 0.2,
         metalness: 0.1,
-        roughness: 0.05,
-        transmission: 0.95,
-        thickness: 1.5,
+        roughness: 0.1,
+        transmission: 0.9,
+        thickness: 0.5,
         transparent: true,
-        opacity: 0.8,
-        envMapIntensity: 2,
+        opacity: 0.9,
         clearcoat: 1,
         clearcoatRoughness: 0.1
     });
@@ -47,8 +48,8 @@ if (container) {
         positions[i * 3 + 2] = z;
 
         colors[i * 3] = 0.0; // R
-        colors[i * 3 + 1] = 0.48; // G (0.48 * 255 = 124, matches #007CC3)
-        colors[i * 3 + 2] = 0.76; // B
+        colors[i * 3 + 1] = 0.78; // G (0.78 * 255 = 200, Cyan)
+        colors[i * 3 + 2] = 0.90; // B (0.90 * 255 = 230, Cyan)
     }
 
     const particlesGeometry = new THREE.BufferGeometry();
@@ -56,26 +57,26 @@ if (container) {
     particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.03,
+        size: 0.04,
         vertexColors: true,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.8,
         blending: THREE.AdditiveBlending
     });
 
     const particles = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particles);
 
-    // 3. LIGHTING (Dynamic & Dramatic)
-    const mainLight = new THREE.PointLight(0x007CC3, 10, 20);
+    // 3. LIGHTING (Dynamic & Clean Light Theme)
+    const mainLight = new THREE.PointLight(0x007CC3, 12, 20); // Sky Blue
     mainLight.position.set(5, 5, 5);
     scene.add(mainLight);
 
-    const purpleLight = new THREE.PointLight(0x6366F1, 8, 20);
-    purpleLight.position.set(-5, -5, 5);
-    scene.add(purpleLight);
+    const cyanLight = new THREE.PointLight(0x00C8E6, 12, 20); // Cyan
+    cyanLight.position.set(-5, -5, 5);
+    scene.add(cyanLight);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5); // Bright Ambient Light
     scene.add(ambientLight);
 
     camera.position.z = 6;
