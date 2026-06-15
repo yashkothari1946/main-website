@@ -632,6 +632,33 @@
       </div>
 
     </div>
+    <!-- ONBOARDING SIDEBAR -->
+    <div id="onboarding-sidebar" class="fixed inset-y-0 right-0 w-96 bg-white border-l border-slate-200 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+      <div class="p-6 border-b border-slate-200 flex justify-between items-center bg-slate-50">
+        <div>
+          <h2 class="font-black text-slate-900 text-lg" id="onboarding-company-name">Client Name</h2>
+          <p class="text-xs font-bold text-slate-500 uppercase">Onboarding Checklist</p>
+        </div>
+        <button onclick="closeOnboarding()" class="w-8 h-8 rounded-full hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-colors">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="p-6 border-b border-slate-200">
+        <div class="flex justify-between items-end mb-2">
+          <span class="text-sm font-bold text-slate-900">Progress</span>
+          <span class="text-xs font-bold text-vt-blue" id="onboarding-progress-text">0%</span>
+        </div>
+        <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+          <div class="h-full bg-vt-blue transition-all duration-500" id="onboarding-progress-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="flex-1 overflow-auto p-6 space-y-3" id="onboarding-tasks-container">
+        <!-- Tasks injected here -->
+      </div>
+    </div>
+
   </main>
 
   <script>
@@ -877,9 +904,79 @@
       }
     }
 
-    function showOnboarding(company) {
-        // UI visual toggling
-        console.log("Showing onboarding for", company);
+    let currentOnboardingClientId = null;
+    
+    async function showOnboarding(companyName) {
+        const client = clientsData.find(c => c.company_name === companyName);
+        if(!client) return;
+        
+        currentOnboardingClientId = client.id;
+        document.getElementById('onboarding-company-name').textContent = companyName;
+        document.getElementById('onboarding-sidebar').classList.remove('translate-x-full');
+        
+        // Fetch tasks
+        try {
+            const res = await fetch(`${API_BASE}/clients/${client.id}/onboarding`);
+            const json = await res.json();
+            if(json.success) {
+                renderOnboardingTasks(json.data);
+            }
+        } catch(err) {
+            console.error("Failed to fetch onboarding tasks", err);
+        }
+    }
+
+    function closeOnboarding() {
+        document.getElementById('onboarding-sidebar').classList.add('translate-x-full');
+    }
+
+    function renderOnboardingTasks(tasks) {
+        const container = document.getElementById('onboarding-tasks-container');
+        container.innerHTML = '';
+        
+        if(tasks.length === 0) {
+            container.innerHTML = '<p class="text-sm text-slate-500 italic">No onboarding tasks found. Move the client to Closed Won to generate default tasks.</p>';
+            document.getElementById('onboarding-progress-bar').style.width = '0%';
+            document.getElementById('onboarding-progress-text').textContent = '0%';
+            return;
+        }
+
+        let completed = 0;
+        tasks.forEach(task => {
+            if(task.is_completed) completed++;
+            
+            const checkedAttr = task.is_completed ? 'checked' : '';
+            const textStyle = task.is_completed ? 'text-slate-400 line-through' : 'text-slate-700';
+            
+            container.innerHTML += `
+                <label class="flex items-start gap-3 p-3 rounded-lg border border-slate-200 hover:border-vt-blue cursor-pointer transition-colors">
+                    <input type="checkbox" ${checkedAttr} onchange="toggleTask(${task.id}, this.checked)" class="mt-1 w-4 h-4 text-vt-blue rounded border-slate-300 focus:ring-vt-blue">
+                    <span class="text-sm font-medium ${textStyle}">${task.task_name}</span>
+                </label>
+            `;
+        });
+        
+        const pct = Math.round((completed / tasks.length) * 100);
+        document.getElementById('onboarding-progress-bar').style.width = `${pct}%`;
+        document.getElementById('onboarding-progress-text').textContent = `${pct}%`;
+    }
+
+    async function toggleTask(taskId, isCompleted) {
+        try {
+            await fetch(`${API_BASE}/clients/onboarding/${taskId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ is_completed: isCompleted ? 1 : 0 })
+            });
+            // Refresh
+            if(currentOnboardingClientId) {
+                const res = await fetch(`${API_BASE}/clients/${currentOnboardingClientId}/onboarding`);
+                const json = await res.json();
+                if(json.success) renderOnboardingTasks(json.data);
+            }
+        } catch(err) {
+            console.error("Failed to toggle task", err);
+        }
     }
 
     // Initialize
