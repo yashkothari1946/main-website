@@ -45,22 +45,22 @@
 
   <style>
     body {
-      background-color: #060B1A;
-      color: #e2e8f0;
+      background-color: #F8FAFC;
+      color: #0F172A;
       overflow-x: hidden;
     }
     
     /* Scrollbar */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
 
     /* Glass Panels */
     .glass-panel {
-      background: rgba(30, 41, 59, 0.4);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
       border-radius: 16px;
     }
 
@@ -69,9 +69,9 @@
       transition: all 0.2s ease;
     }
     .nav-item:hover, .nav-item.active {
-      background: linear-gradient(90deg, rgba(0,200,230,0.1) 0%, transparent 100%);
-      border-left: 3px solid #00C8E6;
-      color: white;
+      background: #F1F5F9;
+      border-left: 3px solid #007CC3;
+      color: #0F172A;
     }
 
     /* Kanban Styles */
@@ -80,8 +80,9 @@
       max-width: 320px;
     }
     .kanban-card {
-      background: #1E293B;
-      border: 1px solid rgba(255,255,255,0.05);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       border-radius: 12px;
       padding: 16px;
       margin-bottom: 12px;
@@ -90,15 +91,15 @@
     }
     .kanban-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px -5px rgba(0, 200, 230, 0.1);
-      border-color: rgba(0, 200, 230, 0.3);
+      box-shadow: 0 10px 25px -5px rgba(0, 124, 195, 0.1);
+      border-color: #007CC3;
     }
     .kanban-card:active {
       cursor: grabbing;
     }
     .drag-over {
-      background: rgba(0, 200, 230, 0.05);
-      border: 2px dashed #00C8E6;
+      background: rgba(0, 124, 195, 0.05);
+      border: 2px dashed #007CC3;
     }
     
     /* Module transitions */
@@ -118,36 +119,36 @@
 <body class="flex h-screen antialiased">
 
   <!-- SIDEBAR -->
-  <aside class="w-64 bg-vt-navy flex flex-col border-r border-white/5 shrink-0 relative z-20">
+  <aside class="w-64 bg-white flex flex-col border-r border-slate-200 shrink-0 relative z-20">
     <div class="p-6 flex items-center gap-3">
       <img src="images/logo.png" alt="Vybtek Logo" class="h-8 object-contain">
-      <span class="font-black text-xl tracking-tight text-white">CRM</span>
+      <span class="font-black text-xl tracking-tight text-slate-900">CRM</span>
     </div>
 
     <div class="px-4 py-2 text-xs font-bold text-slate-500 uppercase tracking-widest mt-4">Modules</div>
     <nav class="flex-1 px-2 space-y-1 mt-2">
-      <button onclick="switchModule('dashboard')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-400 font-medium nav-item active" id="nav-dashboard">
+      <button onclick="switchModule('dashboard')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-500 font-medium nav-item active" id="nav-dashboard">
         <i class="fas fa-chart-pie w-5 text-center"></i> Dashboard
       </button>
-      <button onclick="switchModule('pipeline')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-400 font-medium nav-item" id="nav-pipeline">
+      <button onclick="switchModule('pipeline')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-500 font-medium nav-item" id="nav-pipeline">
         <i class="fas fa-columns w-5 text-center"></i> Pipeline
       </button>
-      <button onclick="switchModule('clients')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-400 font-medium nav-item" id="nav-clients">
+      <button onclick="switchModule('clients')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-500 font-medium nav-item" id="nav-clients">
         <i class="fas fa-users w-5 text-center"></i> Clients & Onboarding
       </button>
-      <button onclick="switchModule('quotations')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-400 font-medium nav-item" id="nav-quotations">
+      <button onclick="switchModule('quotations')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-500 font-medium nav-item" id="nav-quotations">
         <i class="fas fa-file-invoice w-5 text-center"></i> Quotations
       </button>
-      <button onclick="switchModule('billing')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-400 font-medium nav-item" id="nav-billing">
+      <button onclick="switchModule('billing')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-500 font-medium nav-item" id="nav-billing">
         <i class="fas fa-credit-card w-5 text-center"></i> Billing & Invoices
       </button>
-      <button onclick="switchModule('emails')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-400 font-medium nav-item" id="nav-emails">
+      <button onclick="switchModule('emails')" class="w-full flex items-center gap-3 px-4 py-3 text-slate-500 font-medium nav-item" id="nav-emails">
         <i class="fas fa-envelope w-5 text-center"></i> Emails & Follow-ups
       </button>
     </nav>
 
-    <div class="p-4 border-t border-white/5">
-      <a href="admin.html" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white transition-colors font-medium">
+    <div class="p-4 border-t border-slate-200">
+      <a href="admin.html" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-slate-900 transition-colors font-medium">
         <i class="fas fa-arrow-left w-5 text-center"></i> Back to Admin
       </a>
     </div>
@@ -157,24 +158,24 @@
   <main class="flex-1 flex flex-col h-screen overflow-hidden relative">
     
     <!-- TOPBAR -->
-    <header class="h-20 bg-vt-navy/50 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-8 shrink-0 relative z-10">
+    <header class="h-20 bg-white/50 backdrop-blur-md border-b border-slate-200 flex items-center justify-between px-8 shrink-0 relative z-10">
       <div class="flex items-center gap-4 w-1/3">
         <div class="relative w-full">
-          <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-          <input type="text" placeholder="Search clients, invoices, or projects..." class="w-full bg-vt-gray/50 border border-white/10 rounded-full py-2.5 pl-11 pr-4 text-sm text-white focus:outline-none focus:border-vt-cyan transition-colors">
+          <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+          <input type="text" placeholder="Search clients, invoices, or projects..." class="w-full bg-slate-100 border border-slate-200 rounded-full py-2.5 pl-11 pr-4 text-sm text-slate-900 focus:outline-none focus:border-vt-blue transition-colors">
         </div>
       </div>
       
       <div class="flex items-center gap-6">
-        <button class="relative text-slate-300 hover:text-white transition-colors">
+        <button class="relative text-slate-600 hover:text-slate-900 transition-colors">
           <i class="fas fa-bell text-xl"></i>
-          <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-[9px] flex items-center justify-center font-bold text-white border-2 border-vt-navy">3</span>
+          <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-[9px] flex items-center justify-center font-bold text-slate-900 border-2 border-vt-navy">3</span>
         </button>
-        <div class="flex items-center gap-3 pl-6 border-l border-white/10 cursor-pointer">
+        <div class="flex items-center gap-3 pl-6 border-l border-slate-200 cursor-pointer">
           <img src="https://ui-avatars.com/api/?name=Admin&background=00C8E6&color=fff" class="w-10 h-10 rounded-full" alt="Admin">
           <div class="hidden md:block text-sm">
-            <p class="font-bold text-white">System Admin</p>
-            <p class="text-xs text-slate-400">Vybtek HQ</p>
+            <p class="font-bold text-slate-900">System Admin</p>
+            <p class="text-xs text-slate-500">Vybtek HQ</p>
           </div>
         </div>
       </div>
@@ -185,51 +186,51 @@
       
       <!-- MODULE: DASHBOARD -->
       <div id="module-dashboard" class="crm-module active">
-        <h1 class="text-3xl font-black text-white mb-2">Dashboard Overview</h1>
-        <p class="text-slate-400 mb-8">Welcome back. Here's what's happening with your clients today.</p>
+        <h1 class="text-3xl font-black text-slate-900 mb-2">Dashboard Overview</h1>
+        <p class="text-slate-500 mb-8">Welcome back. Here's what's happening with your clients today.</p>
         
         <!-- Stats Row -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <div class="glass-panel p-6">
             <div class="flex justify-between items-start mb-4">
-              <div class="w-12 h-12 rounded-xl bg-vt-cyan/20 text-vt-cyan flex items-center justify-center text-xl"><i class="fas fa-users"></i></div>
+              <div class="w-12 h-12 rounded-xl bg-vt-cyan/20 text-vt-blue flex items-center justify-center text-xl"><i class="fas fa-users"></i></div>
               <span class="text-emerald-400 text-sm font-bold flex items-center gap-1"><i class="fas fa-arrow-up"></i> 12%</span>
             </div>
-            <h3 class="text-slate-400 text-sm font-medium mb-1">Total Active Leads</h3>
-            <p class="text-3xl font-black text-white">45</p>
+            <h3 class="text-slate-500 text-sm font-medium mb-1">Total Active Leads</h3>
+            <p class="text-3xl font-black text-slate-900">45</p>
           </div>
           <div class="glass-panel p-6">
             <div class="flex justify-between items-start mb-4">
               <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl"><i class="fas fa-project-diagram"></i></div>
             </div>
-            <h3 class="text-slate-400 text-sm font-medium mb-1">Active Projects (Onboarding)</h3>
-            <p class="text-3xl font-black text-white">12</p>
+            <h3 class="text-slate-500 text-sm font-medium mb-1">Active Projects (Onboarding)</h3>
+            <p class="text-3xl font-black text-slate-900">12</p>
           </div>
           <div class="glass-panel p-6">
             <div class="flex justify-between items-start mb-4">
               <div class="w-12 h-12 rounded-xl bg-green-500/20 text-green-400 flex items-center justify-center text-xl"><i class="fas fa-dollar-sign"></i></div>
               <span class="text-emerald-400 text-sm font-bold flex items-center gap-1"><i class="fas fa-arrow-up"></i> 8%</span>
             </div>
-            <h3 class="text-slate-400 text-sm font-medium mb-1">Pending Invoices</h3>
-            <p class="text-3xl font-black text-white">$24,500</p>
+            <h3 class="text-slate-500 text-sm font-medium mb-1">Pending Invoices</h3>
+            <p class="text-3xl font-black text-slate-900">$24,500</p>
           </div>
           <div class="glass-panel p-6">
             <div class="flex justify-between items-start mb-4">
               <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl"><i class="fas fa-bell"></i></div>
-              <span class="bg-red-500 text-white text-xs px-2 py-1 rounded font-bold">3 Due Today</span>
+              <span class="bg-red-500 text-slate-900 text-xs px-2 py-1 rounded font-bold">3 Due Today</span>
             </div>
-            <h3 class="text-slate-400 text-sm font-medium mb-1">Follow-ups Required</h3>
-            <p class="text-3xl font-black text-white">8</p>
+            <h3 class="text-slate-500 text-sm font-medium mb-1">Follow-ups Required</h3>
+            <p class="text-3xl font-black text-slate-900">8</p>
           </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div class="lg:col-span-2 glass-panel p-6">
-            <h2 class="text-lg font-bold text-white mb-6">Recent Quotations & Deals</h2>
+            <h2 class="text-lg font-bold text-slate-900 mb-6">Recent Quotations & Deals</h2>
             <div class="overflow-x-auto">
               <table class="w-full text-left border-collapse">
                 <thead>
-                  <tr class="border-b border-white/5 text-xs uppercase tracking-wider text-slate-500">
+                  <tr class="border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
                     <th class="pb-3 pr-4">Client</th>
                     <th class="pb-3 px-4">Service</th>
                     <th class="pb-3 px-4">Amount</th>
@@ -238,45 +239,45 @@
                   </tr>
                 </thead>
                 <tbody class="text-sm">
-                  <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td class="py-4 pr-4 font-bold text-white">TechVision AI</td>
-                    <td class="py-4 px-4 text-slate-300">Custom ML Model</td>
-                    <td class="py-4 px-4 text-white font-medium">$45,000</td>
-                    <td class="py-4 px-4"><span class="bg-vt-cyan/20 text-vt-cyan px-2 py-1 rounded text-xs font-bold">Proposal Sent</span></td>
-                    <td class="py-4 pl-4 text-slate-400">Today</td>
+                  <tr class="border-b border-slate-200 hover:bg-slate-100 transition-colors">
+                    <td class="py-4 pr-4 font-bold text-slate-900">TechVision AI</td>
+                    <td class="py-4 px-4 text-slate-600">Custom ML Model</td>
+                    <td class="py-4 px-4 text-slate-900 font-medium">$45,000</td>
+                    <td class="py-4 px-4"><span class="bg-vt-cyan/20 text-vt-blue px-2 py-1 rounded text-xs font-bold">Proposal Sent</span></td>
+                    <td class="py-4 pl-4 text-slate-500">Today</td>
                   </tr>
-                  <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td class="py-4 pr-4 font-bold text-white">Nexus Global</td>
-                    <td class="py-4 px-4 text-slate-300">Enterprise CRM</td>
-                    <td class="py-4 px-4 text-white font-medium">$85,000</td>
+                  <tr class="border-b border-slate-200 hover:bg-slate-100 transition-colors">
+                    <td class="py-4 pr-4 font-bold text-slate-900">Nexus Global</td>
+                    <td class="py-4 px-4 text-slate-600">Enterprise CRM</td>
+                    <td class="py-4 px-4 text-slate-900 font-medium">$85,000</td>
                     <td class="py-4 px-4"><span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs font-bold">Won / Onboarding</span></td>
-                    <td class="py-4 pl-4 text-slate-400">Yesterday</td>
+                    <td class="py-4 pl-4 text-slate-500">Yesterday</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="glass-panel p-6">
-            <h2 class="text-lg font-bold text-white mb-6">Upcoming Follow-ups</h2>
+            <h2 class="text-lg font-bold text-slate-900 mb-6">Upcoming Follow-ups</h2>
             <div class="space-y-4">
               <!-- Follow up item -->
-              <div class="flex gap-4 items-start p-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer border-l-2 border-red-500">
+              <div class="flex gap-4 items-start p-3 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer border-l-2 border-red-500">
                 <div class="w-10 h-10 rounded-full bg-vt-gray flex items-center justify-center shrink-0">
                   <span class="text-sm font-bold">JD</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm">John Doe</h4>
-                  <p class="text-xs text-slate-400 mb-1">Call regarding SEO Proposal</p>
+                  <h4 class="font-bold text-slate-900 text-sm">John Doe</h4>
+                  <p class="text-xs text-slate-500 mb-1">Call regarding SEO Proposal</p>
                   <p class="text-[10px] text-red-400 font-bold"><i class="fas fa-clock mr-1"></i> Today, 2:00 PM</p>
                 </div>
               </div>
-              <div class="flex gap-4 items-start p-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer border-l-2 border-orange-500">
+              <div class="flex gap-4 items-start p-3 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer border-l-2 border-orange-500">
                 <div class="w-10 h-10 rounded-full bg-vt-gray flex items-center justify-center shrink-0">
                   <span class="text-sm font-bold">SA</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm">Sarah Adams</h4>
-                  <p class="text-xs text-slate-400 mb-1">Send updated quotation</p>
+                  <h4 class="font-bold text-slate-900 text-sm">Sarah Adams</h4>
+                  <p class="text-xs text-slate-500 mb-1">Send updated quotation</p>
                   <p class="text-[10px] text-orange-400 font-bold"><i class="fas fa-clock mr-1"></i> Tomorrow, 10:00 AM</p>
                 </div>
               </div>
@@ -289,10 +290,10 @@
       <div id="module-pipeline" class="crm-module h-full flex flex-col">
         <div class="flex justify-between items-center mb-6 shrink-0">
           <div>
-            <h1 class="text-3xl font-black text-white mb-1">Sales Pipeline</h1>
-            <p class="text-slate-400">Drag and drop leads through the sales cycle.</p>
+            <h1 class="text-3xl font-black text-slate-900 mb-1">Sales Pipeline</h1>
+            <p class="text-slate-500">Drag and drop leads through the sales cycle.</p>
           </div>
-          <button class="bg-vt-blue hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-vt-blue/30 transition-all flex items-center gap-2">
+          <button class="bg-vt-blue hover:bg-blue-600 text-slate-900 px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-vt-blue/30 transition-all flex items-center gap-2">
             <i class="fas fa-plus"></i> New Lead
           </button>
         </div>
@@ -306,10 +307,10 @@
       <div id="module-clients" class="crm-module h-full flex flex-col">
         <div class="flex justify-between items-center mb-6 shrink-0">
           <div>
-            <h1 class="text-3xl font-black text-white mb-1">Clients & Onboarding</h1>
-            <p class="text-slate-400">Manage active clients and track onboarding progress.</p>
+            <h1 class="text-3xl font-black text-slate-900 mb-1">Clients & Onboarding</h1>
+            <p class="text-slate-500">Manage active clients and track onboarding progress.</p>
           </div>
-          <button class="bg-vt-blue hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-vt-blue/30 transition-all flex items-center gap-2">
+          <button class="bg-vt-blue hover:bg-blue-600 text-slate-900 px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-vt-blue/30 transition-all flex items-center gap-2">
             <i class="fas fa-user-plus"></i> Add Client
           </button>
         </div>
@@ -317,16 +318,16 @@
         <div class="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6 overflow-hidden">
           <!-- Client List -->
           <div class="lg:col-span-2 glass-panel flex flex-col overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
-              <h2 class="font-bold text-white">Active Clients</h2>
+            <div class="p-4 border-b border-slate-200 flex justify-between items-center bg-white/[0.02]">
+              <h2 class="font-bold text-slate-900">Active Clients</h2>
               <div class="flex gap-2">
-                <button class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded text-xs transition-colors"><i class="fas fa-filter mr-1"></i> Filter</button>
+                <button class="bg-slate-200 hover:bg-slate-300 text-slate-900 px-3 py-1.5 rounded text-xs transition-colors"><i class="fas fa-filter mr-1"></i> Filter</button>
               </div>
             </div>
             <div class="flex-1 overflow-auto p-0">
               <table class="w-full text-left border-collapse">
-                <thead class="sticky top-0 bg-vt-navy z-10 shadow-sm shadow-black/20">
-                  <tr class="border-b border-white/5 text-xs uppercase tracking-wider text-slate-500">
+                <thead class="sticky top-0 bg-white z-10 shadow-sm shadow-slate-200/50">
+                  <tr class="border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
                     <th class="py-3 pl-6 pr-4">Client</th>
                     <th class="py-3 px-4">Contact</th>
                     <th class="py-3 px-4">Project</th>
@@ -342,19 +343,19 @@
 
           <!-- Onboarding Details Sidebar -->
           <div class="glass-panel flex flex-col overflow-hidden" id="onboarding-panel">
-            <div class="p-6 border-b border-white/5 bg-gradient-to-br from-vt-navy to-transparent">
+            <div class="p-6 border-b border-slate-200 bg-gradient-to-br from-vt-navy to-transparent">
               <div class="flex justify-between items-start mb-4">
                 <img src="https://ui-avatars.com/api/?name=Nexus+Global&background=00C8E6&color=fff" class="w-12 h-12 rounded-xl shadow-lg" id="ob-avatar">
-                <span class="bg-orange-500 text-white px-2 py-1 rounded text-[10px] font-black uppercase tracking-wider" id="ob-status">Onboarding</span>
+                <span class="bg-orange-500 text-slate-900 px-2 py-1 rounded text-[10px] font-black uppercase tracking-wider" id="ob-status">Onboarding</span>
               </div>
-              <h2 class="text-xl font-black text-white" id="ob-name">Nexus Global</h2>
-              <p class="text-sm text-slate-400 mb-4"><i class="fas fa-envelope mr-1"></i> sarah@nexusglobal.co</p>
+              <h2 class="text-xl font-black text-slate-900" id="ob-name">Nexus Global</h2>
+              <p class="text-sm text-slate-500 mb-4"><i class="fas fa-envelope mr-1"></i> sarah@nexusglobal.co</p>
               
               <!-- Progress Bar -->
               <div class="w-full bg-slate-800 rounded-full h-2 mb-2">
                 <div class="bg-vt-cyan h-2 rounded-full transition-all" style="width: 45%" id="ob-progress"></div>
               </div>
-              <p class="text-xs text-right text-vt-cyan font-bold" id="ob-progress-text">45% Complete</p>
+              <p class="text-xs text-right text-vt-blue font-bold" id="ob-progress-text">45% Complete</p>
             </div>
 
             <div class="flex-1 overflow-auto p-6">
@@ -362,49 +363,49 @@
               
               <div class="space-y-3" id="ob-checklist">
                 <label class="flex items-start gap-3 cursor-pointer group">
-                  <div class="relative flex items-center justify-center w-5 h-5 rounded border border-vt-cyan bg-vt-cyan text-white shrink-0 mt-0.5 transition-colors">
+                  <div class="relative flex items-center justify-center w-5 h-5 rounded border border-vt-blue bg-vt-cyan text-slate-900 shrink-0 mt-0.5 transition-colors">
                     <i class="fas fa-check text-[10px]"></i>
                   </div>
                   <div>
-                    <p class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors line-through">Sign NDA & Contract</p>
+                    <p class="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors line-through">Sign NDA & Contract</p>
                     <p class="text-[10px] text-slate-500">Completed Oct 12</p>
                   </div>
                 </label>
 
                 <label class="flex items-start gap-3 cursor-pointer group">
-                  <div class="relative flex items-center justify-center w-5 h-5 rounded border border-vt-cyan bg-vt-cyan text-white shrink-0 mt-0.5 transition-colors">
+                  <div class="relative flex items-center justify-center w-5 h-5 rounded border border-vt-blue bg-vt-cyan text-slate-900 shrink-0 mt-0.5 transition-colors">
                     <i class="fas fa-check text-[10px]"></i>
                   </div>
                   <div>
-                    <p class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors line-through">Initial Invoice Paid</p>
+                    <p class="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors line-through">Initial Invoice Paid</p>
                     <p class="text-[10px] text-slate-500">Completed Oct 14</p>
                   </div>
                 </label>
 
                 <label class="flex items-start gap-3 cursor-pointer group">
                   <input type="checkbox" class="peer sr-only">
-                  <div class="relative flex items-center justify-center w-5 h-5 rounded border border-white/20 peer-checked:bg-vt-cyan peer-checked:border-vt-cyan shrink-0 mt-0.5 transition-colors">
-                    <i class="fas fa-check text-[10px] opacity-0 peer-checked:opacity-100 text-white"></i>
+                  <div class="relative flex items-center justify-center w-5 h-5 rounded border border-slate-300 peer-checked:bg-vt-cyan peer-checked:border-vt-blue shrink-0 mt-0.5 transition-colors">
+                    <i class="fas fa-check text-[10px] opacity-0 peer-checked:opacity-100 text-slate-900"></i>
                   </div>
                   <div>
-                    <p class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Project Kickoff Meeting</p>
+                    <p class="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">Project Kickoff Meeting</p>
                     <p class="text-[10px] text-orange-400 font-bold"><i class="fas fa-calendar mr-1"></i> Scheduled Oct 18</p>
                   </div>
                 </label>
 
                 <label class="flex items-start gap-3 cursor-pointer group">
                   <input type="checkbox" class="peer sr-only">
-                  <div class="relative flex items-center justify-center w-5 h-5 rounded border border-white/20 peer-checked:bg-vt-cyan peer-checked:border-vt-cyan shrink-0 mt-0.5 transition-colors">
-                    <i class="fas fa-check text-[10px] opacity-0 peer-checked:opacity-100 text-white"></i>
+                  <div class="relative flex items-center justify-center w-5 h-5 rounded border border-slate-300 peer-checked:bg-vt-cyan peer-checked:border-vt-blue shrink-0 mt-0.5 transition-colors">
+                    <i class="fas fa-check text-[10px] opacity-0 peer-checked:opacity-100 text-slate-900"></i>
                   </div>
                   <div>
-                    <p class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Provide Asset Access (AWS/Git)</p>
+                    <p class="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">Provide Asset Access (AWS/Git)</p>
                     <p class="text-[10px] text-slate-500">Pending</p>
                   </div>
                 </label>
               </div>
 
-              <button class="w-full mt-8 bg-white/5 hover:bg-white/10 text-white text-sm font-bold py-3 rounded-lg border border-white/10 transition-colors">
+              <button class="w-full mt-8 bg-slate-100 hover:bg-slate-200 text-slate-900 text-sm font-bold py-3 rounded-lg border border-slate-200 transition-colors">
                 <i class="fas fa-paper-plane mr-2"></i> Send Reminder
               </button>
             </div>
@@ -416,8 +417,8 @@
       <div id="module-quotations" class="crm-module h-full flex flex-col">
         <div class="flex justify-between items-center mb-6 shrink-0">
           <div>
-            <h1 class="text-3xl font-black text-white mb-1">Quotations Builder</h1>
-            <p class="text-slate-400">Create and send proposals to leads.</p>
+            <h1 class="text-3xl font-black text-slate-900 mb-1">Quotations Builder</h1>
+            <p class="text-slate-500">Create and send proposals to leads.</p>
           </div>
           <button class="bg-vt-cyan hover:bg-cyan-400 text-vt-navy px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-vt-cyan/20 transition-all flex items-center gap-2">
             <i class="fas fa-file-invoice"></i> Create New Quote
@@ -427,8 +428,8 @@
         <div class="flex-1 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 overflow-hidden">
           <!-- Quotations List -->
           <div class="glass-panel flex flex-col overflow-hidden">
-            <div class="p-4 border-b border-white/5 bg-white/[0.02]">
-              <h2 class="font-bold text-white">Recent Quotes</h2>
+            <div class="p-4 border-b border-slate-200 bg-white/[0.02]">
+              <h2 class="font-bold text-slate-900">Recent Quotes</h2>
             </div>
             <div class="flex-1 overflow-auto p-4 space-y-3" id="quotes-list">
               <!-- Injected via JS -->
@@ -437,11 +438,11 @@
 
           <!-- Quotation Editor -->
           <div class="xl:col-span-2 glass-panel flex flex-col overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
-              <h2 class="font-bold text-white">Edit Quote <span class="text-slate-500 font-normal">#QT-2026-042</span></h2>
+            <div class="p-4 border-b border-slate-200 flex justify-between items-center bg-white/[0.02]">
+              <h2 class="font-bold text-slate-900">Edit Quote <span class="text-slate-500 font-normal">#QT-2026-042</span></h2>
               <div class="flex gap-2">
-                <button class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded text-xs transition-colors"><i class="fas fa-file-pdf mr-1"></i> Preview PDF</button>
-                <button class="bg-vt-blue hover:bg-blue-600 text-white px-3 py-1.5 rounded text-xs transition-colors"><i class="fas fa-paper-plane mr-1"></i> Send to Client</button>
+                <button class="bg-slate-200 hover:bg-slate-300 text-slate-900 px-3 py-1.5 rounded text-xs transition-colors"><i class="fas fa-file-pdf mr-1"></i> Preview PDF</button>
+                <button class="bg-vt-blue hover:bg-blue-600 text-slate-900 px-3 py-1.5 rounded text-xs transition-colors"><i class="fas fa-paper-plane mr-1"></i> Send to Client</button>
               </div>
             </div>
             
@@ -450,63 +451,63 @@
               <div class="grid grid-cols-2 gap-6 mb-8">
                 <div>
                   <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Client Name</label>
-                  <input type="text" value="TechVision AI" class="w-full bg-vt-gray/50 border border-white/10 rounded py-2 px-3 text-sm text-white focus:outline-none focus:border-vt-cyan">
+                  <input type="text" value="TechVision AI" class="w-full bg-slate-100 border border-slate-200 rounded py-2 px-3 text-sm text-slate-900 focus:outline-none focus:border-vt-blue">
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Valid Until</label>
-                  <input type="date" value="2026-11-01" class="w-full bg-vt-gray/50 border border-white/10 rounded py-2 px-3 text-sm text-white focus:outline-none focus:border-vt-cyan">
+                  <input type="date" value="2026-11-01" class="w-full bg-slate-100 border border-slate-200 rounded py-2 px-3 text-sm text-slate-900 focus:outline-none focus:border-vt-blue">
                 </div>
               </div>
 
               <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Line Items</h3>
               <table class="w-full text-left mb-6">
                 <thead>
-                  <tr class="text-xs text-slate-500 border-b border-white/10">
+                  <tr class="text-xs text-slate-500 border-b border-slate-200">
                     <th class="pb-2 w-1/2">Description</th>
                     <th class="pb-2 px-2 text-right">Qty</th>
                     <th class="pb-2 px-2 text-right">Price</th>
                     <th class="pb-2 pl-2 text-right">Total</th>
                   </tr>
                 </thead>
-                <tbody class="text-sm text-slate-300">
-                  <tr class="border-b border-white/5">
-                    <td class="py-3"><input type="text" value="Custom ML Model Architecture" class="w-full bg-transparent border-0 text-white focus:ring-0 p-0"></td>
-                    <td class="py-3 px-2 text-right"><input type="number" value="1" class="w-16 bg-transparent border-0 text-white focus:ring-0 p-0 text-right"></td>
-                    <td class="py-3 px-2 text-right"><input type="text" value="$15,000" class="w-24 bg-transparent border-0 text-white focus:ring-0 p-0 text-right"></td>
-                    <td class="py-3 pl-2 text-right text-white font-bold">$15,000</td>
+                <tbody class="text-sm text-slate-600">
+                  <tr class="border-b border-slate-200">
+                    <td class="py-3"><input type="text" value="Custom ML Model Architecture" class="w-full bg-transparent border-0 text-slate-900 focus:ring-0 p-0"></td>
+                    <td class="py-3 px-2 text-right"><input type="number" value="1" class="w-16 bg-transparent border-0 text-slate-900 focus:ring-0 p-0 text-right"></td>
+                    <td class="py-3 px-2 text-right"><input type="text" value="$15,000" class="w-24 bg-transparent border-0 text-slate-900 focus:ring-0 p-0 text-right"></td>
+                    <td class="py-3 pl-2 text-right text-slate-900 font-bold">$15,000</td>
                   </tr>
-                  <tr class="border-b border-white/5">
-                    <td class="py-3"><input type="text" value="Model Training & Validation" class="w-full bg-transparent border-0 text-white focus:ring-0 p-0"></td>
-                    <td class="py-3 px-2 text-right"><input type="number" value="1" class="w-16 bg-transparent border-0 text-white focus:ring-0 p-0 text-right"></td>
-                    <td class="py-3 px-2 text-right"><input type="text" value="$25,000" class="w-24 bg-transparent border-0 text-white focus:ring-0 p-0 text-right"></td>
-                    <td class="py-3 pl-2 text-right text-white font-bold">$25,000</td>
+                  <tr class="border-b border-slate-200">
+                    <td class="py-3"><input type="text" value="Model Training & Validation" class="w-full bg-transparent border-0 text-slate-900 focus:ring-0 p-0"></td>
+                    <td class="py-3 px-2 text-right"><input type="number" value="1" class="w-16 bg-transparent border-0 text-slate-900 focus:ring-0 p-0 text-right"></td>
+                    <td class="py-3 px-2 text-right"><input type="text" value="$25,000" class="w-24 bg-transparent border-0 text-slate-900 focus:ring-0 p-0 text-right"></td>
+                    <td class="py-3 pl-2 text-right text-slate-900 font-bold">$25,000</td>
                   </tr>
-                  <tr class="border-b border-white/5">
-                    <td class="py-3"><input type="text" value="API Integration Layer" class="w-full bg-transparent border-0 text-white focus:ring-0 p-0"></td>
-                    <td class="py-3 px-2 text-right"><input type="number" value="1" class="w-16 bg-transparent border-0 text-white focus:ring-0 p-0 text-right"></td>
-                    <td class="py-3 px-2 text-right"><input type="text" value="$5,000" class="w-24 bg-transparent border-0 text-white focus:ring-0 p-0 text-right"></td>
-                    <td class="py-3 pl-2 text-right text-white font-bold">$5,000</td>
+                  <tr class="border-b border-slate-200">
+                    <td class="py-3"><input type="text" value="API Integration Layer" class="w-full bg-transparent border-0 text-slate-900 focus:ring-0 p-0"></td>
+                    <td class="py-3 px-2 text-right"><input type="number" value="1" class="w-16 bg-transparent border-0 text-slate-900 focus:ring-0 p-0 text-right"></td>
+                    <td class="py-3 px-2 text-right"><input type="text" value="$5,000" class="w-24 bg-transparent border-0 text-slate-900 focus:ring-0 p-0 text-right"></td>
+                    <td class="py-3 pl-2 text-right text-slate-900 font-bold">$5,000</td>
                   </tr>
                 </tbody>
               </table>
 
-              <button class="text-vt-cyan hover:text-cyan-400 text-sm font-bold flex items-center gap-2 transition-colors mb-8">
+              <button class="text-vt-blue hover:text-cyan-400 text-sm font-bold flex items-center gap-2 transition-colors mb-8">
                 <i class="fas fa-plus-circle"></i> Add Line Item
               </button>
 
               <div class="flex justify-end">
                 <div class="w-64 space-y-3">
-                  <div class="flex justify-between text-sm text-slate-400">
+                  <div class="flex justify-between text-sm text-slate-500">
                     <span>Subtotal</span>
                     <span>$45,000</span>
                   </div>
-                  <div class="flex justify-between text-sm text-slate-400">
+                  <div class="flex justify-between text-sm text-slate-500">
                     <span>Tax (0%)</span>
                     <span>$0</span>
                   </div>
-                  <div class="flex justify-between text-lg font-black text-white pt-3 border-t border-white/10">
+                  <div class="flex justify-between text-lg font-black text-slate-900 pt-3 border-t border-slate-200">
                     <span>Total</span>
-                    <span class="text-vt-cyan">$45,000</span>
+                    <span class="text-vt-blue">$45,000</span>
                   </div>
                 </div>
               </div>
@@ -520,24 +521,24 @@
       <div id="module-billing" class="crm-module h-full flex flex-col">
         <div class="flex justify-between items-center mb-6 shrink-0">
           <div>
-            <h1 class="text-3xl font-black text-white mb-1">Billing & Invoices</h1>
-            <p class="text-slate-400">Manage payments and recurring invoices.</p>
+            <h1 class="text-3xl font-black text-slate-900 mb-1">Billing & Invoices</h1>
+            <p class="text-slate-500">Manage payments and recurring invoices.</p>
           </div>
-          <button class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-green-500/30 transition-all flex items-center gap-2">
+          <button class="bg-green-500 hover:bg-green-600 text-slate-900 px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-green-500/30 transition-all flex items-center gap-2">
             <i class="fas fa-plus"></i> Create Invoice
           </button>
         </div>
 
         <div class="flex-1 overflow-auto glass-panel p-0">
-          <div class="p-4 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
-            <h2 class="font-bold text-white">All Invoices</h2>
+          <div class="p-4 border-b border-slate-200 flex justify-between items-center bg-white/[0.02]">
+            <h2 class="font-bold text-slate-900">All Invoices</h2>
             <div class="flex gap-2">
-              <button class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded text-xs transition-colors"><i class="fas fa-download mr-1"></i> Export CSV</button>
+              <button class="bg-slate-200 hover:bg-slate-300 text-slate-900 px-3 py-1.5 rounded text-xs transition-colors"><i class="fas fa-download mr-1"></i> Export CSV</button>
             </div>
           </div>
           <table class="w-full text-left border-collapse">
-            <thead class="sticky top-0 bg-vt-navy z-10 shadow-sm shadow-black/20">
-              <tr class="border-b border-white/5 text-xs uppercase tracking-wider text-slate-500">
+            <thead class="sticky top-0 bg-white z-10 shadow-sm shadow-slate-200/50">
+              <tr class="border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
                 <th class="py-3 pl-6 pr-4">Invoice ID</th>
                 <th class="py-3 px-4">Client</th>
                 <th class="py-3 px-4">Amount</th>
@@ -556,10 +557,10 @@
       <div id="module-emails" class="crm-module h-full flex flex-col">
         <div class="flex justify-between items-center mb-6 shrink-0">
           <div>
-            <h1 class="text-3xl font-black text-white mb-1">Emails & Follow-ups</h1>
-            <p class="text-slate-400">Compose emails and manage your scheduled tasks.</p>
+            <h1 class="text-3xl font-black text-slate-900 mb-1">Emails & Follow-ups</h1>
+            <p class="text-slate-500">Compose emails and manage your scheduled tasks.</p>
           </div>
-          <button class="bg-vt-blue hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-vt-blue/30 transition-all flex items-center gap-2">
+          <button class="bg-vt-blue hover:bg-blue-600 text-slate-900 px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-vt-blue/30 transition-all flex items-center gap-2">
             <i class="fas fa-paper-plane"></i> Compose Email
           </button>
         </div>
@@ -568,26 +569,26 @@
           
           <!-- Inbox/Sent List -->
           <div class="glass-panel flex flex-col overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex gap-4 bg-white/[0.02]">
-              <button class="text-vt-cyan font-bold text-sm border-b-2 border-vt-cyan pb-1">Inbox</button>
-              <button class="text-slate-500 hover:text-slate-300 font-bold text-sm pb-1 transition-colors">Sent</button>
-              <button class="text-slate-500 hover:text-slate-300 font-bold text-sm pb-1 transition-colors">Scheduled</button>
+            <div class="p-4 border-b border-slate-200 flex gap-4 bg-white/[0.02]">
+              <button class="text-vt-blue font-bold text-sm border-b-2 border-vt-blue pb-1">Inbox</button>
+              <button class="text-slate-500 hover:text-slate-600 font-bold text-sm pb-1 transition-colors">Sent</button>
+              <button class="text-slate-500 hover:text-slate-600 font-bold text-sm pb-1 transition-colors">Scheduled</button>
             </div>
             <div class="flex-1 overflow-auto p-0">
-              <div class="p-4 border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-vt-cyan bg-white/[0.02]">
+              <div class="p-4 border-b border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer border-l-4 border-l-vt-blue bg-white/[0.02]">
                 <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-bold text-white text-sm">Sarah Jenkins</h3>
+                  <h3 class="font-bold text-slate-900 text-sm">Sarah Jenkins</h3>
                   <span class="text-xs text-slate-500">10:45 AM</span>
                 </div>
-                <p class="text-xs font-bold text-slate-300 mb-1">Re: Enterprise CRM Proposal</p>
+                <p class="text-xs font-bold text-slate-600 mb-1">Re: Enterprise CRM Proposal</p>
                 <p class="text-xs text-slate-500 truncate">Thanks for sending this over. The team has reviewed it and...</p>
               </div>
-              <div class="p-4 border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-transparent">
+              <div class="p-4 border-b border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer border-l-4 border-l-transparent">
                 <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-bold text-white text-sm">Omar Tariq</h3>
+                  <h3 class="font-bold text-slate-900 text-sm">Omar Tariq</h3>
                   <span class="text-xs text-slate-500">Yesterday</span>
                 </div>
-                <p class="text-xs text-slate-400 mb-1">Checking in on phase 2</p>
+                <p class="text-xs text-slate-500 mb-1">Checking in on phase 2</p>
                 <p class="text-xs text-slate-500 truncate">Hi, just wanted to get a quick update on where we stand...</p>
               </div>
             </div>
@@ -595,21 +596,21 @@
 
           <!-- Email Reader/Composer -->
           <div class="lg:col-span-2 glass-panel flex flex-col overflow-hidden">
-            <div class="p-6 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
+            <div class="p-6 border-b border-slate-200 flex justify-between items-center bg-white/[0.02]">
               <div class="flex items-center gap-4">
                 <img src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=random" class="w-10 h-10 rounded-full">
                 <div>
-                  <h2 class="font-bold text-white text-lg">Re: Enterprise CRM Proposal</h2>
-                  <p class="text-xs text-slate-400">From: sarah@nexusglobal.co</p>
+                  <h2 class="font-bold text-slate-900 text-lg">Re: Enterprise CRM Proposal</h2>
+                  <p class="text-xs text-slate-500">From: sarah@nexusglobal.co</p>
                 </div>
               </div>
               <div class="flex gap-2">
-                <button class="bg-white/10 hover:bg-white/20 text-white w-8 h-8 rounded flex items-center justify-center transition-colors"><i class="fas fa-reply"></i></button>
-                <button class="bg-white/10 hover:bg-white/20 text-white w-8 h-8 rounded flex items-center justify-center transition-colors"><i class="fas fa-trash"></i></button>
+                <button class="bg-slate-200 hover:bg-slate-300 text-slate-900 w-8 h-8 rounded flex items-center justify-center transition-colors"><i class="fas fa-reply"></i></button>
+                <button class="bg-slate-200 hover:bg-slate-300 text-slate-900 w-8 h-8 rounded flex items-center justify-center transition-colors"><i class="fas fa-trash"></i></button>
               </div>
             </div>
             
-            <div class="flex-1 overflow-auto p-8 text-slate-300 text-sm leading-relaxed space-y-4">
+            <div class="flex-1 overflow-auto p-8 text-slate-600 text-sm leading-relaxed space-y-4">
               <p>Hi team,</p>
               <p>Thanks for sending this over. The team has reviewed the quotation and the technical scope looks solid. We are very excited about the AI-driven data processing capabilities you've outlined.</p>
               <p>We do have a quick question regarding the timeline: If we expedite the initial wireframing phase, can we pull the launch date forward by 2 weeks? Let us know if that affects the current billing structure.</p>
@@ -617,11 +618,11 @@
             </div>
             
             <!-- Quick Reply Box -->
-            <div class="p-4 border-t border-white/5 bg-vt-gray/30">
+            <div class="p-4 border-t border-slate-200 bg-slate-50">
               <div class="flex items-start gap-4">
                 <img src="https://ui-avatars.com/api/?name=Admin&background=00C8E6&color=fff" class="w-8 h-8 rounded-full">
                 <div class="flex-1 relative">
-                  <textarea rows="3" placeholder="Click here to reply..." class="w-full bg-vt-gray/50 border border-white/10 rounded-lg py-3 px-4 text-sm text-white focus:outline-none focus:border-vt-cyan resize-none"></textarea>
+                  <textarea rows="3" placeholder="Click here to reply..." class="w-full bg-slate-100 border border-slate-200 rounded-lg py-3 px-4 text-sm text-slate-900 focus:outline-none focus:border-vt-blue resize-none"></textarea>
                   <button class="absolute bottom-3 right-3 bg-vt-cyan text-vt-navy px-4 py-1.5 rounded text-xs font-bold hover:bg-cyan-400 transition-colors">Send</button>
                 </div>
               </div>
@@ -716,15 +717,15 @@
         let cardsHtml = stageLeads.map(lead => `
           <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="lead-${lead.id}">
             <div class="flex justify-between items-start mb-2">
-              <span class="text-xs font-bold text-slate-400 uppercase">${lead.company_name}</span>
-              <span class="text-xs font-bold bg-white/5 px-2 py-1 rounded text-white">$${Number(lead.project_value).toLocaleString()}</span>
+              <span class="text-xs font-bold text-slate-500 uppercase">${lead.company_name}</span>
+              <span class="text-xs font-bold bg-slate-100 px-2 py-1 rounded text-slate-900">$${Number(lead.project_value).toLocaleString()}</span>
             </div>
-            <h4 class="font-bold text-white text-sm mb-3 leading-snug">${lead.project_title}</h4>
-            <div class="flex justify-between items-center mt-4 pt-3 border-t border-white/5">
+            <h4 class="font-bold text-slate-900 text-sm mb-3 leading-snug">${lead.project_title}</h4>
+            <div class="flex justify-between items-center mt-4 pt-3 border-t border-slate-200">
               <div class="flex -space-x-2">
                 <img class="w-6 h-6 rounded-full border border-vt-navy" src="https://ui-avatars.com/api/?name=${encodeURIComponent(lead.company_name)}&background=random">
               </div>
-              <button class="text-slate-400 hover:text-vt-cyan text-xs"><i class="fas fa-ellipsis-h"></i></button>
+              <button class="text-slate-500 hover:text-vt-blue text-xs"><i class="fas fa-ellipsis-h"></i></button>
             </div>
           </div>
         `).join('');
@@ -732,11 +733,11 @@
         const colHtml = `
           <div class="kanban-col flex flex-col shrink-0">
             <div class="flex justify-between items-center mb-4 pb-2 border-b-2 ${stage.color}">
-              <h3 class="font-bold text-white text-sm flex items-center gap-2">
+              <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full ${stage.bg}"></span>
                 ${stage.title}
               </h3>
-              <span class="text-xs font-bold text-slate-500 bg-white/5 px-2 py-0.5 rounded-full">${stageLeads.length}</span>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">${stageLeads.length}</span>
             </div>
             <div class="flex-1 glass-panel p-2 rounded-xl min-h-[200px]" 
                  ondrop="drop(event, '${stage.id}')" 
@@ -762,20 +763,20 @@
             : `<span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs font-bold">Onboarding</span>`;
             
         tbody.innerHTML += `
-          <tr class="border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-vt-cyan" onclick="showOnboarding('${client.company_name}')">
+          <tr class="border-b border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-vt-blue" onclick="showOnboarding('${client.company_name}')">
             <td class="py-4 pl-6 pr-4">
               <div class="flex items-center gap-3">
-                <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(client.company_name)}&background=random" class="w-8 h-8 rounded-full border border-white/10">
+                <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(client.company_name)}&background=random" class="w-8 h-8 rounded-full border border-slate-200">
                 <div>
-                  <p class="font-bold text-white">${client.company_name}</p>
-                  <p class="text-xs text-slate-400">Added: ${new Date(client.created_at).toLocaleDateString()}</p>
+                  <p class="font-bold text-slate-900">${client.company_name}</p>
+                  <p class="text-xs text-slate-500">Added: ${new Date(client.created_at).toLocaleDateString()}</p>
                 </div>
               </div>
             </td>
-            <td class="py-4 px-4 text-slate-300">
-              <p class="text-white">${client.contact_name}</p>
+            <td class="py-4 px-4 text-slate-600">
+              <p class="text-slate-900">${client.contact_name}</p>
             </td>
-            <td class="py-4 px-4 text-slate-300">${client.project_title}</td>
+            <td class="py-4 px-4 text-slate-600">${client.project_title}</td>
             <td class="py-4 pl-4 pr-6">${statusBadge}</td>
           </tr>
         `;
@@ -798,10 +799,10 @@
         }
         
         tbody.innerHTML += `
-          <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-            <td class="py-4 pl-6 pr-4 font-mono text-slate-300">${inv.invoice_number}</td>
-            <td class="py-4 px-4 font-bold text-white">${inv.company_name}</td>
-            <td class="py-4 px-4 text-white font-medium">$${Number(inv.amount).toLocaleString()}</td>
+          <tr class="border-b border-slate-200 hover:bg-slate-100 transition-colors">
+            <td class="py-4 pl-6 pr-4 font-mono text-slate-600">${inv.invoice_number}</td>
+            <td class="py-4 px-4 font-bold text-slate-900">${inv.company_name}</td>
+            <td class="py-4 px-4 text-slate-900 font-medium">$${Number(inv.amount).toLocaleString()}</td>
             <td class="py-4 px-4 ${dateColor}">${new Date(inv.due_date).toLocaleDateString()}</td>
             <td class="py-4 pl-4 pr-6">${badge}</td>
           </tr>
@@ -818,13 +819,13 @@
         let badgeColor = quote.status === 'accepted' ? 'emerald' : 'blue';
         
         list.innerHTML += `
-          <div class="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-${badgeColor}-500">
+          <div class="p-4 rounded-xl border border-slate-200 bg-white/[0.02] hover:bg-slate-100 transition-colors cursor-pointer border-l-4 border-l-${badgeColor}-500">
             <div class="flex justify-between items-start mb-2">
-              <h3 class="font-bold text-white text-sm">${quote.company_name}</h3>
-              <span class="text-xs font-bold text-slate-400">${quote.quote_number}</span>
+              <h3 class="font-bold text-slate-900 text-sm">${quote.company_name}</h3>
+              <span class="text-xs font-bold text-slate-500">${quote.quote_number}</span>
             </div>
             <div class="flex justify-between items-center">
-              <span class="font-black text-white">$${Number(quote.total).toLocaleString()}</span>
+              <span class="font-black text-slate-900">$${Number(quote.total).toLocaleString()}</span>
               <span class="bg-${badgeColor}-500/20 text-${badgeColor}-400 px-2 py-1 rounded text-[10px] font-bold uppercase">${quote.status}</span>
             </div>
           </div>
