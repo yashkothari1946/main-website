@@ -333,41 +333,8 @@
                     <th class="py-3 pl-4 pr-6">Status</th>
                   </tr>
                 </thead>
-                <tbody class="text-sm">
-                  <tr class="border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-vt-cyan" onclick="showOnboarding('Nexus Global')">
-                    <td class="py-4 pl-6 pr-4">
-                      <div class="flex items-center gap-3">
-                        <img src="https://ui-avatars.com/api/?name=Nexus+Global&background=random" class="w-8 h-8 rounded-full border border-white/10">
-                        <div>
-                          <p class="font-bold text-white">Nexus Global</p>
-                          <p class="text-xs text-slate-400">Since Oct 2025</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="py-4 px-4 text-slate-300">
-                      <p class="text-white">Sarah Jenkins</p>
-                      <p class="text-xs text-slate-400">CEO</p>
-                    </td>
-                    <td class="py-4 px-4 text-slate-300">Enterprise CRM Build</td>
-                    <td class="py-4 pl-4 pr-6"><span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs font-bold">Onboarding</span></td>
-                  </tr>
-                  <tr class="border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-vt-cyan" onclick="showOnboarding('Tashmeh')">
-                    <td class="py-4 pl-6 pr-4">
-                      <div class="flex items-center gap-3">
-                        <img src="https://ui-avatars.com/api/?name=Tashmeh&background=random" class="w-8 h-8 rounded-full border border-white/10">
-                        <div>
-                          <p class="font-bold text-white">Tashmeh Group</p>
-                          <p class="text-xs text-slate-400">Since Jan 2026</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="py-4 px-4 text-slate-300">
-                      <p class="text-white">Omar Tariq</p>
-                      <p class="text-xs text-slate-400">Director</p>
-                    </td>
-                    <td class="py-4 px-4 text-slate-300">Web App Development</td>
-                    <td class="py-4 pl-4 pr-6"><span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs font-bold">Active</span></td>
-                  </tr>
+                <tbody class="text-sm" id="clients-tbody">
+                  <!-- Injected via JS -->
                 </tbody>
               </table>
             </div>
@@ -463,29 +430,8 @@
             <div class="p-4 border-b border-white/5 bg-white/[0.02]">
               <h2 class="font-bold text-white">Recent Quotes</h2>
             </div>
-            <div class="flex-1 overflow-auto p-4 space-y-3">
-              <div class="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-vt-cyan">
-                <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-bold text-white text-sm">TechVision AI</h3>
-                  <span class="text-xs font-bold text-slate-400">#QT-2026-042</span>
-                </div>
-                <p class="text-xs text-slate-400 mb-3">Custom ML Model Development</p>
-                <div class="flex justify-between items-center">
-                  <span class="font-black text-white">$45,000</span>
-                  <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-[10px] font-bold uppercase">Sent</span>
-                </div>
-              </div>
-              <div class="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-emerald-500">
-                <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-bold text-white text-sm">Nexus Global</h3>
-                  <span class="text-xs font-bold text-slate-400">#QT-2026-041</span>
-                </div>
-                <p class="text-xs text-slate-400 mb-3">Enterprise CRM Build</p>
-                <div class="flex justify-between items-center">
-                  <span class="font-black text-white">$85,000</span>
-                  <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-[10px] font-bold uppercase">Accepted</span>
-                </div>
-              </div>
+            <div class="flex-1 overflow-auto p-4 space-y-3" id="quotes-list">
+              <!-- Injected via JS -->
             </div>
           </div>
 
@@ -599,28 +545,8 @@
                 <th class="py-3 pl-4 pr-6">Status</th>
               </tr>
             </thead>
-            <tbody class="text-sm">
-              <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                <td class="py-4 pl-6 pr-4 font-mono text-slate-300">#INV-2026-089</td>
-                <td class="py-4 px-4 font-bold text-white">Tashmeh Group</td>
-                <td class="py-4 px-4 text-white font-medium">$15,000</td>
-                <td class="py-4 px-4 text-red-400 font-bold">Oct 12, 2026 (Overdue)</td>
-                <td class="py-4 pl-4 pr-6"><span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs font-bold uppercase">Overdue</span></td>
-              </tr>
-              <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                <td class="py-4 pl-6 pr-4 font-mono text-slate-300">#INV-2026-090</td>
-                <td class="py-4 px-4 font-bold text-white">Nexus Global</td>
-                <td class="py-4 px-4 text-white font-medium">$42,500</td>
-                <td class="py-4 px-4 text-slate-300">Oct 20, 2026</td>
-                <td class="py-4 pl-4 pr-6"><span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs font-bold uppercase">Pending</span></td>
-              </tr>
-              <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                <td class="py-4 pl-6 pr-4 font-mono text-slate-300">#INV-2026-091</td>
-                <td class="py-4 px-4 font-bold text-white">ListItNow</td>
-                <td class="py-4 px-4 text-white font-medium">$7,500</td>
-                <td class="py-4 px-4 text-slate-300">Oct 05, 2026</td>
-                <td class="py-4 pl-4 pr-6"><span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs font-bold uppercase">Paid</span></td>
-              </tr>
+            <tbody class="text-sm" id="invoices-tbody">
+              <!-- Injected via JS -->
             </tbody>
           </table>
         </div>
@@ -708,6 +634,11 @@
   </main>
 
   <script>
+    const API_BASE = 'http://localhost:5000/api/vybtek/crm';
+    
+    // State
+    let clientsData = [];
+
     // Module Switcher
     function switchModule(moduleId) {
       document.querySelectorAll('.crm-module').forEach(m => m.classList.remove('active'));
@@ -715,16 +646,16 @@
       
       document.getElementById('module-' + moduleId).classList.add('active');
       document.getElementById('nav-' + moduleId).classList.add('active');
+      
+      // Fetch relevant data when switching modules
+      if (moduleId === 'dashboard' || moduleId === 'pipeline' || moduleId === 'clients') {
+        fetchClients();
+      } else if (moduleId === 'billing') {
+        fetchInvoices();
+      } else if (moduleId === 'quotations') {
+        fetchQuotations();
+      }
     }
-
-    // --- MOCK DATA FOR CRM ---
-    const MOCK_LEADS = [
-      { id: 'L1', title: 'Healthcare App Redesign', company: 'PatientXpress', value: '$25,000', status: 'new' },
-      { id: 'L2', title: 'SEO & Content Strategy', company: 'Addins Education', value: '$8,000', status: 'contacted' },
-      { id: 'L3', title: 'ERP System Migration', company: 'Manuplast', value: '$120,000', status: 'proposal' },
-      { id: 'L4', title: 'Custom AI Chatbot', company: 'ListItNow', value: '$15,000', status: 'negotiation' },
-      { id: 'L5', title: 'Web App Development', company: 'Tashmeh', value: '$45,000', status: 'won' }
-    ];
 
     const PIPELINE_STAGES = [
       { id: 'new', title: 'New Leads', color: 'border-blue-500', bg: 'bg-blue-500' },
@@ -734,24 +665,64 @@
       { id: 'won', title: 'Closed Won', color: 'border-emerald-500', bg: 'bg-emerald-500' }
     ];
 
-    // Initialize Kanban Board
+    // --- FETCH FUNCTIONS ---
+    async function fetchClients() {
+      try {
+        const res = await fetch(`${API_BASE}/clients`);
+        const json = await res.json();
+        if (json.success) {
+          clientsData = json.data;
+          renderKanban();
+          renderClientsTable();
+        }
+      } catch (err) {
+        console.error('Error fetching clients:', err);
+      }
+    }
+
+    async function fetchInvoices() {
+      try {
+        const res = await fetch(`${API_BASE}/invoices`);
+        const json = await res.json();
+        if (json.success) {
+          renderInvoicesTable(json.data);
+        }
+      } catch (err) {
+        console.error('Error fetching invoices:', err);
+      }
+    }
+
+    async function fetchQuotations() {
+      try {
+        const res = await fetch(`${API_BASE}/quotations`);
+        const json = await res.json();
+        if (json.success) {
+          renderQuotationsTable(json.data);
+        }
+      } catch (err) {
+        console.error('Error fetching quotes:', err);
+      }
+    }
+
+    // --- RENDER FUNCTIONS ---
     function renderKanban() {
       const board = document.getElementById('kanban-board');
+      if(!board) return;
       board.innerHTML = '';
 
       PIPELINE_STAGES.forEach(stage => {
-        const stageLeads = MOCK_LEADS.filter(l => l.status === stage.id);
+        const stageLeads = clientsData.filter(l => l.pipeline_status === stage.id);
         
         let cardsHtml = stageLeads.map(lead => `
-          <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="${lead.id}">
+          <div class="kanban-card" draggable="true" ondragstart="drag(event)" id="lead-${lead.id}">
             <div class="flex justify-between items-start mb-2">
-              <span class="text-xs font-bold text-slate-400 uppercase">${lead.company}</span>
-              <span class="text-xs font-bold bg-white/5 px-2 py-1 rounded text-white">${lead.value}</span>
+              <span class="text-xs font-bold text-slate-400 uppercase">${lead.company_name}</span>
+              <span class="text-xs font-bold bg-white/5 px-2 py-1 rounded text-white">$${Number(lead.project_value).toLocaleString()}</span>
             </div>
-            <h4 class="font-bold text-white text-sm mb-3 leading-snug">${lead.title}</h4>
+            <h4 class="font-bold text-white text-sm mb-3 leading-snug">${lead.project_title}</h4>
             <div class="flex justify-between items-center mt-4 pt-3 border-t border-white/5">
               <div class="flex -space-x-2">
-                <img class="w-6 h-6 rounded-full border border-vt-navy" src="https://ui-avatars.com/api/?name=${lead.company}&background=random">
+                <img class="w-6 h-6 rounded-full border border-vt-navy" src="https://ui-avatars.com/api/?name=${encodeURIComponent(lead.company_name)}&background=random">
               </div>
               <button class="text-slate-400 hover:text-vt-cyan text-xs"><i class="fas fa-ellipsis-h"></i></button>
             </div>
@@ -780,7 +751,88 @@
       });
     }
 
-    // Drag and Drop Logic
+    function renderClientsTable() {
+      const tbody = document.getElementById('clients-tbody');
+      if(!tbody) return;
+      tbody.innerHTML = '';
+      
+      clientsData.forEach(client => {
+        let statusBadge = client.pipeline_status === 'won' 
+            ? `<span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs font-bold">Active</span>`
+            : `<span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs font-bold">Onboarding</span>`;
+            
+        tbody.innerHTML += `
+          <tr class="border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-vt-cyan" onclick="showOnboarding('${client.company_name}')">
+            <td class="py-4 pl-6 pr-4">
+              <div class="flex items-center gap-3">
+                <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(client.company_name)}&background=random" class="w-8 h-8 rounded-full border border-white/10">
+                <div>
+                  <p class="font-bold text-white">${client.company_name}</p>
+                  <p class="text-xs text-slate-400">Added: ${new Date(client.created_at).toLocaleDateString()}</p>
+                </div>
+              </div>
+            </td>
+            <td class="py-4 px-4 text-slate-300">
+              <p class="text-white">${client.contact_name}</p>
+            </td>
+            <td class="py-4 px-4 text-slate-300">${client.project_title}</td>
+            <td class="py-4 pl-4 pr-6">${statusBadge}</td>
+          </tr>
+        `;
+      });
+    }
+
+    function renderInvoicesTable(invoices) {
+      const tbody = document.getElementById('invoices-tbody');
+      if(!tbody) return;
+      tbody.innerHTML = '';
+      
+      invoices.forEach(inv => {
+        let badge = `<span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs font-bold uppercase">Pending</span>`;
+        let dateColor = "text-slate-300";
+        if(inv.status === 'paid') {
+            badge = `<span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs font-bold uppercase">Paid</span>`;
+        } else if (inv.status === 'overdue') {
+            badge = `<span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs font-bold uppercase">Overdue</span>`;
+            dateColor = "text-red-400 font-bold";
+        }
+        
+        tbody.innerHTML += `
+          <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+            <td class="py-4 pl-6 pr-4 font-mono text-slate-300">${inv.invoice_number}</td>
+            <td class="py-4 px-4 font-bold text-white">${inv.company_name}</td>
+            <td class="py-4 px-4 text-white font-medium">$${Number(inv.amount).toLocaleString()}</td>
+            <td class="py-4 px-4 ${dateColor}">${new Date(inv.due_date).toLocaleDateString()}</td>
+            <td class="py-4 pl-4 pr-6">${badge}</td>
+          </tr>
+        `;
+      });
+    }
+
+    function renderQuotationsTable(quotes) {
+      const list = document.getElementById('quotes-list');
+      if(!list) return;
+      list.innerHTML = '';
+      
+      quotes.forEach(quote => {
+        let badgeColor = quote.status === 'accepted' ? 'emerald' : 'blue';
+        
+        list.innerHTML += `
+          <div class="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-l-${badgeColor}-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-white text-sm">${quote.company_name}</h3>
+              <span class="text-xs font-bold text-slate-400">${quote.quote_number}</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-black text-white">$${Number(quote.total).toLocaleString()}</span>
+              <span class="bg-${badgeColor}-500/20 text-${badgeColor}-400 px-2 py-1 rounded text-[10px] font-bold uppercase">${quote.status}</span>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    // --- DRAG AND DROP LOGIC ---
     function allowDrop(ev) {
       ev.preventDefault();
     }
@@ -797,25 +849,41 @@
     function drag(ev) {
       ev.dataTransfer.setData("text", ev.target.id);
     }
-    function drop(ev, newStatus) {
+    async function drop(ev, newStatus) {
       ev.preventDefault();
-      
-      // Remove styling
       document.querySelectorAll('.glass-panel').forEach(el => el.classList.remove('drag-over'));
       
-      const leadId = ev.dataTransfer.getData("text");
+      const leadElementId = ev.dataTransfer.getData("text");
+      const leadId = leadElementId.replace('lead-', '');
       
-      // Update data
-      const lead = MOCK_LEADS.find(l => l.id === leadId);
-      if(lead && lead.status !== newStatus) {
-        lead.status = newStatus;
+      // Optimistic UI Update
+      const lead = clientsData.find(l => l.id == leadId);
+      if(lead && lead.pipeline_status !== newStatus) {
+        lead.pipeline_status = newStatus;
         renderKanban();
+        
+        // Push update to DB
+        try {
+          await fetch(`${API_BASE}/clients/${leadId}/status`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: newStatus })
+          });
+        } catch (err) {
+          console.error("Failed to update status", err);
+          fetchClients(); // Revert on fail
+        }
       }
+    }
+
+    function showOnboarding(company) {
+        // UI visual toggling
+        console.log("Showing onboarding for", company);
     }
 
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
-      renderKanban();
+      fetchClients();
     });
   </script>
 </body>
