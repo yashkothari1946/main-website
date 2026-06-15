@@ -1,0 +1,66 @@
+body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* Glass Panels */
+.glass-panel {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+}
+
+/* Sidebar Active Item */
+.nav-item {
+  transition: all 0.2s ease;
+}
+.nav-item:hover, .nav-item.active {
+  background: #F1F5F9;
+  border-left: 3px solid #007CC3;
+  color: #0F172A;
+}
+
+/* Kanban Styles */
+.kanban-col {
+  min-width: 320px;
+  max-width: 320px;
+}
+.kanban-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.kanban-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 124, 195, 0.1);
+  border-color: #007CC3;
+}
+.kanban-card:active {
+  cursor: grabbing;
+}
+.drag-over {
+  background: rgba(0, 124, 195, 0.05);
+  border: 2px dashed #007CC3;
+}
+
+/* Module transitions */
+.crm-module {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
