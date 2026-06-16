@@ -200,19 +200,21 @@
       </div>
     </div>
 
-    <!-- CREATE INVOICE MODAL -->
+    <!-- CREATE/EDIT INVOICE MODAL -->
     <div id="modal-invoice" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center">
-      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden flex flex-col">
-        <div class="p-6 border-b border-slate-200 flex justify-between items-center">
-          <h2 class="font-black text-slate-900 text-lg">Create Invoice</h2>
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+        <div class="p-6 border-b border-slate-200 flex justify-between items-center bg-slate-50">
+          <h2 id="invoice-modal-title" class="font-black text-slate-900 text-lg">Create Invoice</h2>
           <button onclick="toggleModal('modal-invoice', false)" class="text-slate-500 hover:text-slate-900"><i class="fas fa-times"></i></button>
         </div>
-        <div class="p-6 space-y-4 flex-1 overflow-auto">
-          <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Select Client</label>
-            <select id="invoice-client" class="w-full bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-sm"></select>
-          </div>
-          <div class="grid grid-cols-2 gap-4">
+        <div class="p-6 space-y-6 flex-1 overflow-auto">
+          <input type="hidden" id="invoice-id">
+          
+          <div class="grid grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Select Client</label>
+              <select id="invoice-client" class="w-full bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-sm"></select>
+            </div>
             <div>
               <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Invoice Number</label>
               <input type="text" id="invoice-number" placeholder="INV-2026-..." class="w-full bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-sm">
@@ -222,14 +224,78 @@
               <input type="date" id="invoice-date" class="w-full bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-sm">
             </div>
           </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Amount ($)</label>
-            <input type="number" id="invoice-amount" placeholder="1500" class="w-full bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-sm">
+
+          <!-- Currency & Status -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Currency</label>
+              <select id="invoice-currency" onchange="calculateInvoiceTotals()" class="w-full bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-sm">
+                <option value="USD">USD ($)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+              </select>
+            </div>
+            <div id="invoice-status-container" class="hidden">
+              <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Status</label>
+              <select id="invoice-status" class="w-full bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-sm">
+                <option value="pending">Pending</option>
+                <option value="paid">Paid</option>
+                <option value="overdue">Overdue</option>
+              </select>
+            </div>
           </div>
+
+          <!-- Line Items -->
+          <div>
+            <div class="flex justify-between items-end mb-2">
+              <label class="block text-xs font-bold text-slate-500 uppercase">Line Items</label>
+              <button onclick="addInvoiceLineItem()" class="text-xs font-bold text-vt-blue hover:text-blue-700 flex items-center gap-1">
+                <i class="fas fa-plus-circle"></i> Add Item
+              </button>
+            </div>
+            
+            <div class="border border-slate-200 rounded-lg overflow-hidden">
+              <table class="w-full text-left">
+                <thead class="bg-slate-50 border-b border-slate-200">
+                  <tr class="text-xs font-bold text-slate-500 uppercase">
+                    <th class="p-3 w-1/2">Description</th>
+                    <th class="p-3">Qty</th>
+                    <th class="p-3">Price</th>
+                    <th class="p-3">GST (%)</th>
+                    <th class="p-3 text-right">Total</th>
+                    <th class="p-3 text-center"></th>
+                  </tr>
+                </thead>
+                <tbody id="invoice-line-items" class="divide-y divide-slate-100 bg-white">
+                  <!-- JS injected items -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Totals -->
+          <div class="flex justify-end pt-4">
+            <div class="w-64 space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500 font-medium">Subtotal</span>
+                <span class="text-slate-900 font-bold" id="invoice-display-subtotal">0.00</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500 font-medium">Total Tax</span>
+                <span class="text-slate-900 font-bold" id="invoice-display-tax">0.00</span>
+              </div>
+              <div class="flex justify-between text-lg border-t border-slate-200 pt-2 mt-2">
+                <span class="text-slate-900 font-black">Grand Total</span>
+                <span class="text-vt-blue font-black" id="invoice-display-total">0.00</span>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="p-6 border-t border-slate-200 flex justify-end gap-3">
+        <div class="p-6 border-t border-slate-200 flex justify-end gap-3 bg-slate-50">
           <button onclick="toggleModal('modal-invoice', false)" class="px-5 py-2.5 rounded-lg font-bold text-sm text-slate-600 hover:bg-slate-100 transition-colors">Cancel</button>
-          <button onclick="submitInvoice()" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg transition-all">Send Invoice</button>
+          <button onclick="submitInvoice()" id="invoice-submit-btn" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg transition-all">Save Invoice</button>
         </div>
       </div>
     </div>

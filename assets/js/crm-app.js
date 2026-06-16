@@ -28,11 +28,13 @@ async function fetchClients() {
   }
 }
 
+let invoicesData = [];
 async function fetchInvoices() {
   try {
     const res = await fetch(`${API_BASE}/invoices`);
     const json = await res.json();
     if (json.success) {
+      invoicesData = json.data;
       if(document.getElementById('invoices-tbody')) renderInvoicesTable(json.data);
     }
   } catch (err) {
@@ -145,13 +147,19 @@ function renderInvoicesTable(invoices) {
         dateColor = "text-red-400 font-bold";
     }
     
+    const currencySymbol = inv.currency === 'INR' ? '₹' : inv.currency === 'EUR' ? '€' : inv.currency === 'GBP' ? '£' : '$';
+
     tbody.innerHTML += `
       <tr class="border-b border-slate-200 hover:bg-slate-100 transition-colors">
         <td class="py-4 pl-6 pr-4 font-mono text-slate-600">${inv.invoice_number}</td>
         <td class="py-4 px-4 font-bold text-slate-900">${inv.company_name}</td>
-        <td class="py-4 px-4 text-slate-900 font-medium">$${Number(inv.amount).toLocaleString()}</td>
+        <td class="py-4 px-4 text-slate-900 font-medium">${currencySymbol}${Number(inv.amount).toLocaleString()}</td>
         <td class="py-4 px-4 ${dateColor}">${new Date(inv.due_date).toLocaleDateString()}</td>
-        <td class="py-4 pl-4 pr-6">${badge}</td>
+        <td class="py-4 pl-4 pr-6 flex items-center gap-3">
+          ${badge}
+          <button onclick="editInvoice(${inv.id})" class="text-vt-blue hover:text-blue-700 ml-auto" title="Edit"><i class="fas fa-edit"></i></button>
+          <button onclick="toggleInvoiceStatus(${inv.id}, '${inv.status}')" class="text-slate-400 hover:text-slate-700" title="Toggle Status"><i class="fas fa-check-circle"></i></button>
+        </td>
       </tr>
     `;
   });
@@ -346,23 +354,191 @@ async function submitQuote() {
     }
 }
 
+// --- INVOICE LINE ITEMS LOGIC ---
+function addInvoiceLineItem(desc = '', qty = 1, price = 0, gst = 0) {
+    const tbody = document.getElementById('invoice-line-items');
+    if(!tbody) return;
+    const tr = document.createElement('tr');
+    tr.className = 'invoice-item-row';
+    tr.innerHTML = `
+        <td class="p-2"><input type="text" class="item-desc w-full bg-slate-50 border border-slate-200 rounded p-2 text-sm" placeholder="Service description..." value="${desc}"></td>
+        <td class="p-2"><input type="number" class="item-qty w-full bg-slate-50 border border-slate-200 rounded p-2 text-sm" value="${qty}" min="1" onchange="calculateInvoiceTotals()"></td>
+        <td class="p-2"><input type="number" class="item-price w-full bg-slate-50 border border-slate-200 rounded p-2 text-sm" value="${price}" min="0" onchange="calculateInvoiceTotals()"></td>
+        <td class="p-2"><input type="number" class="item-gst w-full bg-slate-50 border border-slate-200 rounded p-2 text-sm" value="${gst}" min="0" max="100" onchange="calculateInvoiceTotals()"></td>
+        <td class="p-2 text-right font-medium text-slate-900 item-total">0.00</td>
+        <td class="p-2 text-center"><button onclick="removeInvoiceLineItem(this)" class="text-red-400 hover:text-red-600"><i class="fas fa-trash"></i></button></td>
+    `;
+    tbody.appendChild(tr);
+    calculateInvoiceTotals();
+}
+
+function removeInvoiceLineItem(btn) {
+    btn.closest('tr').remove();
+    calculateInvoiceTotals();
+}
+
+function calculateInvoiceTotals() {
+    const rows = document.querySelectorAll('.invoice-item-row');
+    let subtotal = 0;
+    let totalTax = 0;
+    
+    rows.forEach(row => {
+        const qty = parseFloat(row.querySelector('.item-qty').value) || 0;
+        const price = parseFloat(row.querySelector('.item-price').value) || 0;
+        const gst = parseFloat(row.querySelector('.item-gst').value) || 0;
+        
+        const rowSub = qty * price;
+        const rowTax = rowSub * (gst / 100);
+        const rowTotal = rowSub + rowTax;
+        
+        row.querySelector('.item-total').textContent = rowTotal.toFixed(2);
+        
+        subtotal += rowSub;
+        totalTax += rowTax;
+    });
+    
+    const grandTotal = subtotal + totalTax;
+    
+    // Update Display
+    const currency = document.getElementById('invoice-currency').value;
+    const sym = currency === 'INR' ? '₹' : currency === 'EUR' ? '€' : currency === 'GBP' ? '£' : '$';
+    
+    document.getElementById('invoice-display-subtotal').textContent = sym + subtotal.toFixed(2);
+    document.getElementById('invoice-display-tax').textContent = sym + totalTax.toFixed(2);
+    document.getElementById('invoice-display-total').textContent = sym + grandTotal.toFixed(2);
+}
+
+// --- OPEN INVOICE MODAL ---
+function openInvoiceModal(id = null) {
+    const modal = document.getElementById('modal-invoice');
+    if(!modal) return;
+    
+    document.getElementById('invoice-line-items').innerHTML = ''; // Clear items
+    populateClientDropdowns();
+    
+    const statusContainer = document.getElementById('invoice-status-container');
+    const title = document.getElementById('invoice-modal-title');
+    const idInput = document.getElementById('invoice-id');
+    
+    if (id) {
+        // Edit Mode
+        const inv = invoicesData.find(i => i.id === id);
+        if(!inv) return;
+        
+        title.textContent = 'Edit Invoice';
+        idInput.value = inv.id;
+        document.getElementById('invoice-client').value = inv.client_id;
+        document.getElementById('invoice-number').value = inv.invoice_number;
+        document.getElementById('invoice-date').value = inv.due_date.split('T')[0];
+        document.getElementById('invoice-currency').value = inv.currency || 'USD';
+        document.getElementById('invoice-status').value = inv.status;
+        
+        statusContainer.classList.remove('hidden');
+        
+        // Populate Line Items
+        if (inv.line_items && typeof inv.line_items === 'string') {
+            try {
+                const items = JSON.parse(inv.line_items);
+                items.forEach(i => addInvoiceLineItem(i.description, i.qty, i.price, i.gst));
+            } catch(e) { console.error("Could not parse line items", e); }
+        } else if (inv.line_items && Array.isArray(inv.line_items)) {
+            inv.line_items.forEach(i => addInvoiceLineItem(i.description, i.qty, i.price, i.gst));
+        } else {
+            // Legacy invoice fallback
+            addInvoiceLineItem('Services rendered', 1, inv.amount, 0);
+        }
+    } else {
+        // Create Mode
+        title.textContent = 'Create Invoice';
+        idInput.value = '';
+        document.getElementById('invoice-number').value = '';
+        document.getElementById('invoice-date').value = '';
+        document.getElementById('invoice-currency').value = 'USD';
+        statusContainer.classList.add('hidden');
+        addInvoiceLineItem(); // Add one empty row
+    }
+    
+    calculateInvoiceTotals();
+    modal.classList.remove('hidden');
+}
+
+// Override the default toggleModal specifically for invoice to use our new function
+const originalToggleModal = toggleModal;
+toggleModal = function(modalId, show) {
+    if(modalId === 'modal-invoice' && show) {
+        openInvoiceModal();
+    } else {
+        originalToggleModal(modalId, show);
+    }
+}
+
 async function submitInvoice() {
+    const rows = document.querySelectorAll('.invoice-item-row');
+    let line_items = [];
+    let subtotal = 0;
+    let tax_total = 0;
+    
+    rows.forEach(row => {
+        const qty = parseFloat(row.querySelector('.item-qty').value) || 0;
+        const price = parseFloat(row.querySelector('.item-price').value) || 0;
+        const gst = parseFloat(row.querySelector('.item-gst').value) || 0;
+        const desc = row.querySelector('.item-desc').value;
+        
+        line_items.push({ description: desc, qty, price, gst });
+        subtotal += (qty * price);
+        tax_total += (qty * price) * (gst / 100);
+    });
+    
+    const amount = subtotal + tax_total;
+    const id = document.getElementById('invoice-id').value;
+
     const payload = {
         client_id: document.getElementById('invoice-client').value,
         invoice_number: document.getElementById('invoice-number').value,
         due_date: document.getElementById('invoice-date').value,
-        amount: document.getElementById('invoice-amount').value
+        currency: document.getElementById('invoice-currency').value,
+        subtotal: subtotal,
+        tax_total: tax_total,
+        amount: amount,
+        line_items: line_items
     };
+    
     try {
-        await fetch(`${API_BASE}/invoices`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-        toggleModal('modal-invoice', false);
+        if(id) {
+            // Update
+            payload.status = document.getElementById('invoice-status').value;
+            await fetch(`${API_BASE}/invoices/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+        } else {
+            // Create
+            await fetch(`${API_BASE}/invoices`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+        }
+        
+        document.getElementById('modal-invoice').classList.add('hidden');
         fetchInvoices(); // Refresh
     } catch(err) {
-        console.error("Failed to create invoice", err);
+        console.error("Failed to save invoice", err);
+    }
+}
+
+async function toggleInvoiceStatus(id, currentStatus) {
+    const newStatus = currentStatus === 'paid' ? 'pending' : 'paid';
+    try {
+        await fetch(`${API_BASE}/invoices/${id}/status`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: newStatus })
+        });
+        fetchInvoices();
+    } catch(err) {
+        console.error("Failed to toggle status", err);
     }
 }
 
