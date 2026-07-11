@@ -1,3 +1,9 @@
+window.__ENV__ = {
+  NEXT_PUBLIC_API_URL: (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ? 'http://localhost:5000'
+    : 'https://api.vybtek.com'
+};
+
 const scriptTag = document.querySelector('script[src*="headerFooter.js"]');
 let globalRel = './';
 if (scriptTag) {

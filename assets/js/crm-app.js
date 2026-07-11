@@ -1,9 +1,4 @@
-const API_BASE = (function () {
-  const h = location.hostname;
-  return (h === 'localhost' || h === '127.0.0.1')
-    ? 'http://localhost:5000/api/vybtek/crm'
-    : `${location.protocol}//${location.host}/api/vybtek/crm`;
-})();
+const API_BASE = ((window.__ENV__ && window.__ENV__.NEXT_PUBLIC_API_URL) || 'https://api.vybtek.com') + '/api/vybtek/crm';
 
 // --- UTILITIES ---
 function esc(str) {
