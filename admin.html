@@ -109,7 +109,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img src="images/logo.png" alt="Vybtek Logo" class="h-10 mx-auto mb-8 object-contain">
       <h2 class="text-2xl font-black text-slate-800 mb-2">Admin Portal</h2>
       <p class="text-slate-500 mb-8 text-sm">Enter your credentials to manage content.</p>
-      <input type="password" id="adminPass" placeholder="Admin Password (Hint: admin123)" class="form-input mb-6 text-center tracking-widest">
+      <input type="text" id="adminUser" placeholder="Username" class="form-input mb-4" autocomplete="username">
+      <input type="password" id="adminPass" placeholder="Password" class="form-input mb-6 tracking-widest" autocomplete="current-password">
       <button onclick="login()" class="vt-btn-primary w-full justify-center">Secure Login</button>
     </div>
   </div>
@@ -453,7 +454,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <script>
-    const API_BASE = "http://localhost:5000/api/vybtek";
+    const API_BASE = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+      ? 'http://localhost:5000/api/vybtek'
+      : `${location.protocol}//${location.host}/api/vybtek`;
+
+    function esc(str) {
+      return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    }
+
     let quillJobDesc, quillBlogDesc, quillFaqAnswer;
     let editingBlogId = null;
     let editingFaqId = null;
@@ -476,26 +484,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       quillFaqAnswer = new Quill('#faqAnswerEditor', { ...quillConfig, placeholder: 'Enter the detailed answer...' });
 
       // Persist login state
-      if(localStorage.getItem('vybtek_admin_logged_in') === 'true') {
+      if(localStorage.getItem('vybtek_admin_token')) {
         document.getElementById('loginOverlay').style.display = 'none';
         fetchData();
       }
     });
 
     // 1. Login System
-    function login() {
+    async function login() {
+      const username = document.getElementById('adminUser').value.trim();
       const pass = document.getElementById('adminPass').value;
-      if(pass === 'admin123') {
-        localStorage.setItem('vybtek_admin_logged_in', 'true');
-        document.getElementById('loginOverlay').style.display = 'none';
-        fetchData(); // Load data once logged in
-      } else {
-        alert('Invalid credentials!');
+      if (!username || !pass) { alert('Please enter username and password.'); return; }
+
+      try {
+        const res = await fetch(`${API_BASE}/admin/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password: pass })
+        });
+        const data = await res.json();
+        if (res.ok && data.token) {
+          localStorage.setItem('vybtek_admin_token', data.token);
+          document.getElementById('loginOverlay').style.display = 'none';
+          fetchData();
+        } else {
+          alert(data.message || 'Invalid credentials!');
+        }
+      } catch (err) {
+        alert('Login failed. Is the backend running?');
       }
     }
 
     function logout() {
-      localStorage.removeItem('vybtek_admin_logged_in');
+      localStorage.removeItem('vybtek_admin_token');
+      document.getElementById('adminUser').value = '';
       document.getElementById('adminPass').value = '';
       document.getElementById('loginOverlay').style.display = 'flex';
       switchTab('dashboard');
@@ -674,12 +696,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (contactsArr.length > 0) {
           tbody.innerHTML = contactsArr.map(c => `
             <tr>
-              <td class="font-bold text-slate-800">${c.name}</td>
+              <td class="font-bold text-slate-800">${esc(c.name)}</td>
               <td>
-                <div class="text-xs font-bold text-slate-700">${c.email}</div>
-                <div class="text-[10px] text-slate-400">${c.phone || 'No phone'}</div>
+                <div class="text-xs font-bold text-slate-700">${esc(c.email)}</div>
+                <div class="text-[10px] text-slate-400">${esc(c.phone || 'No phone')}</div>
               </td>
-              <td class="text-sm">${c.subject || 'N/A'}</td>
+              <td class="text-sm">${esc(c.subject || 'N/A')}</td>
               <td class="text-xs text-slate-500">${new Date(c.created_at).toLocaleDateString()}</td>
               <td>
                 <button onclick="viewContact(${c.id})" class="text-[#007CC3] hover:text-blue-700 bg-blue-50 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors">
@@ -717,18 +739,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           tbody.innerHTML = data.data.map(a => `
             <tr>
               <td>
-                <div class="font-bold text-slate-800">${a.candidate_name}</div>
-                <div class="text-[10px] text-slate-400 font-medium">${a.candidate_email}</div>
+                <div class="font-bold text-slate-800">${esc(a.candidate_name)}</div>
+                <div class="text-[10px] text-slate-400 font-medium">${esc(a.candidate_email)}</div>
               </td>
-              <td class="text-xs font-medium text-slate-600">${a.candidate_phone || 'N/A'}</td>
-              <td><span class="bg-blue-50 text-[#007CC3] px-3 py-1 rounded-full text-[10px] font-bold">${a.job_title}</span></td>
+              <td class="text-xs font-medium text-slate-600">${esc(a.candidate_phone || 'N/A')}</td>
+              <td><span class="bg-blue-50 text-[#007CC3] px-3 py-1 rounded-full text-[10px] font-bold">${esc(a.job_title)}</span></td>
               <td>
-                <div class="text-xs font-bold text-slate-700">${a.qualification || 'N/A'}</div>
-                <div class="text-[10px] text-slate-400">${a.experience || 'N/A'} exp</div>
+                <div class="text-xs font-bold text-slate-700">${esc(a.qualification || 'N/A')}</div>
+                <div class="text-[10px] text-slate-400">${esc(a.experience || 'N/A')} exp</div>
               </td>
               <td class="text-sm text-slate-500">${new Date(a.applied_at).toLocaleDateString()}</td>
               <td>
-                <a href="${a.resume_url}" target="_blank" class="text-[#007CC3] hover:underline font-bold text-xs">
+                <a href="${esc(a.resume_url)}" target="_blank" rel="noopener noreferrer" class="text-[#007CC3] hover:underline font-bold text-xs">
                   <i class="fas fa-file-pdf mr-1"></i> View CV
                 </a>
               </td>

@@ -25,7 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Security / Auth Check -->
   <script>
     // Immediately check if the user is logged in
-    if (localStorage.getItem('vybtek_admin_logged_in') !== 'true') {
+    if (!localStorage.getItem('vybtek_admin_token')) {
       // Not logged in, redirect to the admin login portal
       window.location.href = 'admin.html';
     }
