@@ -69,66 +69,6 @@ class SpecialHeader extends HTMLElement {
         </div>
       </div>
 
-      <!-- Mobile Menu (Glass UI) -->
-      <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[190] opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
-      <div id="mobile-menu" class="fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-white/80 backdrop-blur-xl border-l border-white/20 shadow-2xl z-[200] transform translate-x-full transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) flex flex-col">
-        <div class="flex items-center justify-between p-6 border-b border-gray-100/50">
-           <span class="text-xl font-extrabold tracking-tight text-[#0D1B3E] uppercase">Menu</span>
-           <button id="menu-close" class="text-2xl text-gray-500 hover:text-[#007CC3] transition-colors"><i class="fas fa-times"></i></button>
-        </div>
-        
-        <div class="flex-1 overflow-y-auto p-6">
-          <nav class="space-y-6 text-lg font-bold uppercase tracking-tighter text-[#0D1B3E]">
-            
-            <!-- What We Do Accordion -->
-            <div class="mobile-accordion">
-              <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn">
-                <span>What We Do</span>
-                <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
-              </button>
-              <div class="mobile-accordion-content hidden pl-8 pt-4 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
-                <a href="${rel}services.html" class="block hover:text-[#007CC3] font-bold">All Services</a>
-                <a href="${rel}services.html#digital-branding" class="block hover:text-[#007CC3]">Digital Branding</a>
-                <a href="${rel}services.html#it-services" class="block hover:text-[#007CC3]">IT & Tech Solutions</a>
-              </div>
-            </div>
-
-            <a href="${rel}industries.html" class="block hover:text-[#007CC3] transition-colors">Who We Help</a>
-
-            <!-- Who We Are Accordion -->
-            <div class="mobile-accordion">
-              <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn">
-                <span>Who We Are</span>
-                <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
-              </button>
-              <div class="mobile-accordion-content hidden pl-8 pt-4 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
-                <a href="${rel}about.html" class="block hover:text-[#007CC3]">About Us</a>
-                <a href="${rel}careers.html" class="block hover:text-[#007CC3]">Careers</a>
-                <a href="${rel}contact.html" class="block hover:text-[#007CC3]">Contact Us</a>
-              </div>
-            </div>
-
-            <!-- Resources Accordion -->
-            <div class="mobile-accordion">
-              <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn">
-                <span>Resources</span>
-                <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
-              </button>
-              <div class="mobile-accordion-content hidden pl-8 pt-4 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
-                <a href="${rel}blog.html" class="block hover:text-[#007CC3]">Blog</a>
-                <a href="${rel}portfolio.html" class="block hover:text-[#007CC3]">Case Studies</a>
-                <a href="${rel}faq.html" class="block hover:text-[#007CC3]">FAQ</a>
-                <a href="${rel}resources.html" class="block hover:text-[#007CC3]">Guides / Resources</a>
-              </div>
-            </div>
-
-          </nav>
-        </div>
-        
-        <div class="p-6 border-t border-gray-100/50">
-          <a href="${rel}contact.html#consultation" class="block w-full text-center bg-[#007CC3] text-white px-5 py-3 font-black text-xs uppercase tracking-tighter hover:bg-[#0D1B3E] transition-colors shadow-lg">Book Consultation</a>
-        </div>
-      </div>
     </header>
     `;
     this.activateCurrentNavLink();
@@ -161,38 +101,97 @@ class SpecialHeader extends HTMLElement {
 
   setupMobileMenu() {
     const toggleBtn = this.querySelector("#menu-toggle");
-    const closeBtn = this.querySelector("#menu-close");
-    const mobileMenu = this.querySelector("#mobile-menu");
-    const overlay = this.querySelector("#mobile-menu-overlay");
+    const rel = globalRel;
+
+    // Overlay and panel must live on document.body — fixed descendants of a
+    // backdrop-filter ancestor are positioned relative to that ancestor, not
+    // the viewport, which breaks full-screen overlay and slide-in panel.
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 bg-black/50 z-[190] opacity-0 pointer-events-none transition-opacity duration-300';
+    overlay.style.backdropFilter = 'blur(4px)';
+
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-white border-l border-gray-200 shadow-2xl z-[200] translate-x-full transition-transform duration-300 ease-out flex flex-col';
+    mobileMenu.innerHTML = `
+      <div class="flex items-center justify-between p-6 border-b border-gray-100">
+        <span class="text-xl font-extrabold tracking-tight text-[#0D1B3E] uppercase">Menu</span>
+        <button id="menu-close" class="text-2xl text-gray-500 hover:text-[#007CC3] transition-colors p-1"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="flex-1 overflow-y-auto p-6">
+        <nav class="space-y-6 text-lg font-bold uppercase tracking-tighter text-[#0D1B3E]">
+          <div class="mobile-accordion">
+            <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn py-1">
+              <span>What We Do</span>
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-accordion-content hidden pl-6 pt-3 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
+              <a href="${rel}services.html" class="block hover:text-[#007CC3] font-bold">All Services</a>
+              <a href="${rel}services.html#digital-branding" class="block hover:text-[#007CC3]">Digital Branding</a>
+              <a href="${rel}services.html#it-services" class="block hover:text-[#007CC3]">IT &amp; Tech Solutions</a>
+            </div>
+          </div>
+          <a href="${rel}industries.html" class="block hover:text-[#007CC3] transition-colors py-1">Who We Help</a>
+          <div class="mobile-accordion">
+            <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn py-1">
+              <span>Who We Are</span>
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-accordion-content hidden pl-6 pt-3 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
+              <a href="${rel}about.html" class="block hover:text-[#007CC3]">About Us</a>
+              <a href="${rel}careers.html" class="block hover:text-[#007CC3]">Careers</a>
+              <a href="${rel}contact.html" class="block hover:text-[#007CC3]">Contact Us</a>
+            </div>
+          </div>
+          <div class="mobile-accordion">
+            <button class="w-full flex items-center justify-between hover:text-[#007CC3] transition-colors mobile-accordion-btn py-1">
+              <span>Resources</span>
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-accordion-content hidden pl-6 pt-3 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
+              <a href="${rel}blog.html" class="block hover:text-[#007CC3]">Blog</a>
+              <a href="${rel}portfolio.html" class="block hover:text-[#007CC3]">Case Studies</a>
+              <a href="${rel}faq.html" class="block hover:text-[#007CC3]">FAQ</a>
+              <a href="${rel}resources.html" class="block hover:text-[#007CC3]">Guides / Resources</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="p-6 border-t border-gray-100">
+        <a href="${rel}contact.html#consultation" class="block w-full text-center bg-[#007CC3] text-white px-5 py-3 rounded-full font-black text-xs uppercase tracking-tighter hover:bg-[#0D1B3E] transition-colors shadow-lg">Book Consultation</a>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(mobileMenu);
+
+    const closeBtn = mobileMenu.querySelector('#menu-close');
 
     const openMenu = () => {
-      overlay.classList.remove("opacity-0", "pointer-events-none");
-      mobileMenu.classList.remove("translate-x-full");
-      // Prevent body scroll
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      mobileMenu.classList.remove('translate-x-full');
       document.body.style.overflow = 'hidden';
     };
 
     const closeMenu = () => {
-      overlay.classList.add("opacity-0", "pointer-events-none");
-      mobileMenu.classList.add("translate-x-full");
-      // Restore body scroll
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      mobileMenu.classList.add('translate-x-full');
       document.body.style.overflow = '';
     };
 
-    toggleBtn?.addEventListener("click", openMenu);
-    closeBtn?.addEventListener("click", closeMenu);
-    overlay?.addEventListener("click", closeMenu);
+    toggleBtn?.addEventListener('click', openMenu);
+    closeBtn?.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu when any nav link is tapped
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
     // Accordion Logic
-    const accordionBtns = this.querySelectorAll(".mobile-accordion-btn");
-    accordionBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
+    mobileMenu.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
         const content = btn.nextElementSibling;
-        const icon = btn.querySelector("i");
-        
-        // Toggle current
-        content.classList.toggle("hidden");
-        icon.style.transform = content.classList.contains("hidden") ? "rotate(0deg)" : "rotate(180deg)";
+        const icon = btn.querySelector('i');
+        content.classList.toggle('hidden');
+        icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
       });
     });
   }

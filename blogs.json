@@ -31,16 +31,5 @@
     "excerpt": "How cohesive styling rules, smooth GSAP scrolling triggers, and dynamic micro-animations secure user attention and dictate perceived engineering quality.",
     "seo_keywords": "Visual Identity, UI/UX, GSAP Animations, Micro-interactions, Web Design",
     "content_html": "<p class=\"text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-10\">Visual design is your first contact with the user. In the modern web environment, a stunning digital interface operates as the immediate indicator of your engineering precision and quality.</p> <div class=\"mb-10 p-8 bg-slate-50 border-l-4 border-purple-500 rounded-r-3xl\"> <h2 class=\"text-2xl font-black text-[#0F172A] mb-4\">Harmonized HSL Styling Variables</h2> <p class=\"text-slate-600 leading-relaxed\">Generic template color rules feel cheap and introduce friction. VybTek utilizes dynamic HSL tailored variables, smooth dark theme mesh overrides, and premium shadows that flow elegantly, conveying professional digital craftsmanship immediately.</p> </div> <div class=\"mb-10 p-8 bg-slate-50 border-l-4 border-rose-500 rounded-r-3xl\"> <h2 class=\"text-2xl font-black text-[#0F172A] mb-4\">Tactile Animations & Micro-Interactions</h2> <p class=\"text-slate-600 leading-relaxed\">By utilizing GSAP transitions and Lenis smooth scrolling, we create user interfaces that feel alive, responsive, and tactile. Micro-interactions during form submissions and card hovers elevate interaction satisfaction scores, keeping users engaged and in active buying pathways.</p> </div>"
-  },
-  {
-    "slug": "future-post-scheduled",
-    "title": "Quantum Computing & the Future of Enterprise Encryption",
-    "category": "Cybersecurity",
-    "author_name": "Security Architect",
-    "publish_date": "2030-01-01T00:00:00Z",
-    "image": "images/webdesign.jpg",
-    "excerpt": "A deep dive into quantum resistant cryptography for modern SaaS architectures.",
-    "seo_keywords": "Quantum Computing, Cyber Security",
-    "content_html": "<p>This is a scheduled post. If you are seeing this on the live site before 2030, the scheduling system failed!</p>"
   }
 ]
