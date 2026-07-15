@@ -271,6 +271,7 @@ class SpecialFooter extends HTMLElement {
                 <li><a href="${rel}services/app-development.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">App Development</a></li>
                 <li><a href="${rel}services/software-development.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Software Dev</a></li>
                 <li><a href="${rel}services/ui-ux.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">UI/UX Design</a></li>
+                <li><a href="${rel}services/graphic-design.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Graphic Design</a></li>
                 <li><a href="${rel}services/branding.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Branding</a></li>
                 <li><a href="${rel}services/digital-marketing.html" class="text-white/50 hover:text-white transition-colors text-xs font-bold">Digital Marketing</a></li>
               </ul>

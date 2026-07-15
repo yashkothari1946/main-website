@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graphic Design Services | VybTek</title>
+  <meta name="description" content="Custom graphic design, brand identity, social media graphics, and packaging design services for ambitious brands." />
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind via CDN for quick styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link href="../style.css" rel="stylesheet">
+  <script defer src="../headerFooter.js"></script>
+  
+  <!-- Animation Libraries -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .brand-gradient-text {
+    background: linear-gradient(90deg, #00C8E6, #007CC3, #1044C8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .vt-btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #00C8E6, #007CC3);
+    color: #fff; font-weight: 800; padding: 0.85rem 2rem; border-radius: 999px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .vt-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 124, 195, 0.4);
+  }
+  .vt-btn-outline {
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 2px solid #e2e8f0; color: #0D1B3E; font-weight: 800;
+    padding: 0.85rem 2rem; border-radius: 999px; background: transparent;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .vt-btn-outline:hover {
+    border-color: #00C8E6; color: #007CC3;
+  }
+  
+  /* Reveal classes */
+  .reveal-up { opacity: 0; transform: translateY(30px); }
+  .reveal-left { opacity: 0; transform: translateX(-30px); }
+  .reveal-right { opacity: 0; transform: translateX(30px); }
+  .is-revealed { opacity: 1; transform: translate(0,0); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-[#007CC3] selection:text-white">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header><special-header></special-header></header>
+
+  <main id="main-content">
+    
+    <!-- 1. HERO -->
+    <section class="relative w-full bg-white overflow-hidden" style="min-height:100vh;display:flex;align-items:center;padding:120px 0 64px;">
+      <!-- Ambient blobs -->
+      <div class="absolute pointer-events-none" style="top:-10%;right:-8%;width:520px;height:520px;background:rgba(0,200,230,0.08);border-radius:50%;filter:blur(110px);"></div>
+      <div class="absolute pointer-events-none" style="bottom:-12%;left:-8%;width:400px;height:400px;background:rgba(0,124,195,0.06);border-radius:50%;filter:blur(90px);"></div>
+      <!-- Dot grid -->
+      <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(circle,rgba(0,124,195,0.06) 1px,transparent 1px);background-size:28px 28px;"></div>
+
+      <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+          <!-- LEFT -->
+          <div class="reveal-left">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full border border-[#00C8E6]/30" style="background:rgba(0,200,230,0.05);">
+              <span class="w-2 h-2 rounded-full bg-[#00C8E6] animate-pulse"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#007CC3;">Creative Design</span>
+            </div>
+
+            <!-- H1 -->
+            <h1 class="font-black text-[#0D1B3E]" style="font-size:clamp(1.8rem,3.8vw,3rem);line-height:1.1;">
+              Graphics Design Services: Where Ideas Bloom Into <br>
+              <span class="brand-gradient-text">Timeless Visual Stories</span>
+            </h1>
+
+            <p class="text-slate-500 mt-5 leading-relaxed" style="font-size:clamp(0.88rem,1.2vw,1rem);max-width:460px;">
+              Every color whispers. Every shape speaks. Every detail leaves a lasting impression. From unforgettable brand identities and captivating social media visuals to marketing creatives, packaging, e-commerce graphics, and custom illustrations, we create designs that inspire, connect, and stay in the hearts of your audience.
+            </p>
+
+            <!-- Metrics Strip -->
+            <div class="flex items-center gap-6 mt-8 py-6 border-t border-b border-slate-100">
+              <div>
+                <div class="text-2xl font-black text-[#0D1B3E]">100%</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Custom Built</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;height:40px;"></div>
+              <div>
+                <div class="text-2xl font-black text-[#00C8E6]">A+</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Creative Quality</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;height:40px;"></div>
+              <div>
+                <div class="text-2xl font-black text-[#0D1B3E]">2-3</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Day Delivery</div>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4 mt-8">
+              <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Request a Design Quote</a>
+              <a href="../portfolio.html" class="vt-btn-outline">
+                See Our Creative Work <i class="fas fa-arrow-right" style="font-size:0.7rem;margin-left:4px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="reveal-right w-full min-w-0">
+            <!-- Main image card -->
+            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200" style="box-shadow:0 24px 60px -12px rgba(0,124,195,0.15);">
+              <!-- Top gradient bar -->
+              <div class="absolute top-0 left-0 right-0 z-10" style="height:3px;background:linear-gradient(90deg,#00C8E6,#007CC3,#1044C8);"></div>
+              <!-- Live badge -->
+              <div class="absolute top-4 right-4 z-20 bg-white rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-md border border-slate-100">
+                <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+                <span style="font-size:11px;font-weight:700;color:#0D1B3E;">Creative Studio</span>
+              </div>
+              <img
+                src="../images/creative_workspace.png"
+                alt="Graphic Design Services"
+                class="w-full block object-cover"
+                style="aspect-ratio:1/1;max-height:520px;object-position:center;"
+              >
+              <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(0,200,230,0.05) 0%,transparent 60%);"></div>
+            </div>
+
+            <!-- Metric cards below image -->
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <div class="bg-white border border-slate-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#00C8E6] flex-shrink-0" style="background:rgba(0,200,230,0.1);font-size:1rem;"><i class="fas fa-palette"></i></div>
+                <div>
+                  <div class="font-black text-[#0D1B3E]" style="font-size:1.1rem;">Brand</div>
+                  <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;">Focused Design</div>
+                </div>
+              </div>
+              <div class="rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm" style="background:#0D1B3E;border:1px solid rgba(16,68,200,0.4);">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#00C8E6] flex-shrink-0" style="background:rgba(255,255,255,0.1);font-size:1rem;"><i class="fas fa-crown"></i></div>
+                <div>
+                  <div class="font-black text-white" style="font-size:1.1rem;">Premium</div>
+                  <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;">Visual Quality</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. WHY CHOOSE US -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10">
+        <div class="text-center mb-16 reveal-up">
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-4">Why Choose <span class="text-[#00C8E6]">Us</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#00C8E6]/10 rounded-xl flex items-center justify-center text-[#00C8E6] mb-4"><i class="fas fa-tag"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Affordable</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Professional designs that deliver premium quality at a fair price.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#007CC3]/10 rounded-xl flex items-center justify-center text-[#007CC3] mb-4"><i class="fas fa-magic"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Modern</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Contemporary visuals that stay ahead of trends.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#1044C8]/10 rounded-xl flex items-center justify-center text-[#1044C8] mb-4"><i class="fas fa-pencil-ruler"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Custom Made</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Every design is created specifically for your brand.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#00C8E6]/10 rounded-xl flex items-center justify-center text-[#00C8E6] mb-4"><i class="fas fa-gem"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Premium Quality</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Pixel perfect visuals crafted with attention to detail.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#007CC3]/10 rounded-xl flex items-center justify-center text-[#007CC3] mb-4"><i class="fas fa-bullseye"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Brand Focused</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Every element strengthens your brand identity.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#1044C8]/10 rounded-xl flex items-center justify-center text-[#1044C8] mb-4"><i class="fas fa-rocket"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Fast Delivery</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Beautiful designs delivered on time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURES SECTION — Fullscreen Split Pin -->
+    <section id="services-pin-wrapper" class="relative" style="background:#0a1020; border-top:1px solid rgba(255,255,255,0.05);">
+      <div id="services-pin-panel" style="height:100vh; display:flex; align-items:center; position:relative; overflow:hidden;">
+        
+        <!-- BG Elements -->
+        <div style="position:absolute; inset:0; background:radial-gradient(circle at 70% 50%, rgba(0,200,230,0.05) 0%, transparent 60%); pointer-events:none;"></div>
+        <div style="position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:30px 30px; pointer-events:none; opacity:0.5;"></div>
+
+        <div class="max-w-[1400px] w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center h-full max-h-[850px] gap-12">
+          
+          <!-- LEFT: Content -->
+          <div class="w-full md:w-[45%] flex flex-col justify-center text-white">
+            
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:2rem;">
+              <span style="width:24px;height:1px;background:#00C8E6;display:inline-block;"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#00C8E6;">Capabilities</span>
+            </div>
+
+            <div id="split-content-wrap" style="transition: opacity 0.4s ease, transform 0.4s ease;">
+              <!-- Dynamic Content -->
+              <div id="split-num" style="font-size:5rem; font-weight:900; line-height:0.9; color:rgba(255,255,255,0.05); margin-bottom:1rem;">01</div>
+              <h3 id="split-title" class="text-3xl lg:text-4xl font-black mb-6 leading-tight text-white">Brand Identity Design</h3>
+              <p id="split-desc" class="text-slate-400 text-lg leading-relaxed mb-8">We design logos, build brand guidelines, craft business cards and stationery, and handle brand refreshes and full rebranding, so your identity looks intentional on every surface it touches, not assembled piece by piece.</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mt-auto pt-8 border-t border-slate-800/50 w-full max-w-md">
+              <div class="flex justify-between text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                <span id="split-prog-label">1 of 6 Services</span>
+                <span id="split-prog-pct" class="text-[#00C8E6]">16%</span>
+              </div>
+              <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                <div id="split-prog-bar" class="h-full bg-gradient-to-r from-[#00C8E6] to-[#007CC3] rounded-full transition-all duration-300 w-[16%]"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Image -->
+          <div class="w-full md:w-[55%] h-[50vh] md:h-[80%] relative rounded-[2rem] overflow-hidden shadow-2xl border border-slate-800 group">
+            <!-- Decorative corner accent -->
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#00C8E6]/20 to-transparent z-20"></div>
+            
+            <div class="absolute inset-0 bg-[#0a1020]/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+            
+            <div id="split-img-wrap" class="w-full h-full relative" style="transition: opacity 0.4s ease, transform 0.6s ease-out;">
+              <img id="split-img" src="../images/editorial_collage.png" alt="Brand Identity Design" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
+            </div>
+            
+            <!-- Scroll Hint -->
+            <div id="split-scroll-hint" class="absolute bottom-6 right-6 z-20 bg-black/50 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-full flex items-center gap-3 transition-opacity duration-500">
+              <i class="fas fa-mouse text-[#00C8E6]"></i> Scroll to explore
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Post-pin spacer to transition back to white background smoothly -->
+    <div style="height:120px; background:linear-gradient(to bottom, #0a1020, #ffffff); text-align:center; padding-top:40px;">
+        <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Request a Design Quote</a>
+    </div>
+
+    <!-- 4. WHO IT'S FOR -->
+    <section class="py-24 bg-[#0D1B3E] text-white border-t border-[#1044C8]/30">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10 text-center reveal-up">
+        <span class="inline-block py-1 px-3 rounded-full border border-[#00C8E6]/30 text-[#00C8E6] text-xs font-bold uppercase tracking-widest mb-6">Who It's For</span>
+        <h2 class="text-4xl md:text-5xl font-black mb-8">Built for Ambitious Brands</h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-10 mx-auto">For startups, growing businesses, and established brands looking to elevate their visual identity, connect with their audience, and make a lasting impact.</p>
+        <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#00C8E6]/20 bg-[#00C8E6] hover:bg-white hover:text-[#0D1B3E] transition-colors border-none">Book a Free Product Demo</a>
+      </div>
+    </section>
+
+    <!-- 5. FAQ SECTION -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10">
+        <div class="text-center mb-16 reveal-up">
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E]">Frequently Asked <span class="text-[#00C8E6]">Questions</span></h2>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you offer one-time projects or ongoing monthly design support?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Both. You can request a single project or set up a monthly retainer for consistent, ongoing design support.</p>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">What file formats do I receive for logos and print designs?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">You'll receive all standard formats including AI, EPS, PNG, JPG and PDF, ready for both digital and print use.</p>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">How many revisions are included per design?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Each project includes 2-3 rounds of revisions, with additional revisions available if needed.</p>
+            </div>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Can you match our existing brand guidelines?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we design every piece to stay consistent with your existing brand colors, fonts and visual identity.</p>
+            </div>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you design for both print and digital?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we handle everything from packaging and print collateral to social media and digital ad creatives.</p>
+            </div>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">How fast is the turnaround on social media creatives?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Standard turnaround is 2-3 business days, with faster options available for urgent requests.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FINAL CTA -->
+    <section class="py-32 bg-white text-center border-t border-slate-100">
+      <div class="max-w-[800px] mx-auto px-6 md:px-10 reveal-up">
+        <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-6 leading-tight">Every masterpiece begins with a single idea.</h2>
+        <p class="text-lg text-slate-500 mb-10">Let's shape your vision into designs that inspire today and are remembered tomorrow.</p>
+        <a href="../contact.html" class="vt-btn-primary shadow-xl shadow-[#00C8E6]/20 px-10 py-4 text-lg">Request a Design Quote</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><special-footer></special-footer></footer>
+
+  <script src="../animations.js"></script>
+  
+  <script>
+    // FAQ Accordion Logic
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        // Close all others
+        document.querySelectorAll('.faq-content').forEach(c => {
+          c.style.maxHeight = '0px';
+          c.style.opacity = '0';
+        });
+        document.querySelectorAll('.faq-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+        
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+
+    // GSAP Split Pin Logic for Features
+    (function() {
+      var SERVICES = [
+        {
+          num:'01', img:'editorial_collage.png',
+          title:'Brand Identity Design',
+          desc:'We design logos, build brand guidelines, craft business cards and stationery, and handle brand refreshes and full rebranding, so your identity looks intentional on every surface it touches, not assembled piece by piece.'
+        },
+        {
+          num:'02', img:'dm_social.png',
+          title:'Social Media Design',
+          desc:'We create scroll-stopping social creatives, build reusable templates for your team, and design branded template systems, so every post looks like it belongs to you, even on the busiest, fastest-moving days.'
+        },
+        {
+          num:'03', img:'dm_ads.png',
+          title:'Marketing & Advertising Design',
+          desc:'We design flyers, posters and banners, brochures and event creatives, and ad creatives built to convert, so your message holds its shape whether it\'s printed, projected or scrolled past in a feed.'
+        },
+        {
+          num:'04', img:'polaroid_stack.png',
+          title:'Packaging & Label Design',
+          desc:'We design product packaging, boxes, pouches and sachets, and labels, then mock them up for retail so you see exactly how they\'ll sit on a shelf before a single unit gets printed.'
+        },
+        {
+          num:'05', img:'dm_ecommerce.png',
+          title:'E-commerce & Product Graphics',
+          desc:'We create product promotion graphics, realistic mockups, website product visuals and infographics, so your listings explain themselves at a glance and shoppers understand what they\'re buying before they even read the description.'
+        },
+        {
+          num:'06', img:'ink_brushwork.png',
+          title:'Illustration & Custom Graphics',
+          desc:'We craft vector and digital illustrations, custom visual assets, product and brand illustrations, and mascots, giving your brand a visual voice that photography alone could never quite capture.'
+        }
+      ];
+
+      var current = -1;
+      var isAnimating = false;
+      
+      // Preload images
+      var imgCache = [];
+      window.addEventListener('load', function() {
+        SERVICES.forEach(function(s) {
+          var img = new Image();
+          img.src = '../images/' + s.img;
+          imgCache.push(img);
+        });
+      });
+
+      function setActive(idx) {
+        if (idx === current || isAnimating) return;
+        isAnimating = true;
+        current = idx;
+        var s = SERVICES[idx];
+        var pct = Math.round((idx + 1) / SERVICES.length * 100);
+
+        var cWrap = document.getElementById('split-content-wrap');
+        var iWrap = document.getElementById('split-img-wrap');
+        
+        // Fade out
+        cWrap.style.opacity = '0';
+        cWrap.style.transform = 'translateY(15px)';
+        iWrap.style.opacity = '0';
+        iWrap.style.transform = 'scale(0.98)';
+
+        setTimeout(function() {
+          // Update content
+          document.getElementById('split-num').textContent = s.num;
+          document.getElementById('split-title').innerHTML = s.title;
+          document.getElementById('split-desc').textContent = s.desc;
+          
+          document.getElementById('split-prog-label').textContent = (idx+1) + ' of ' + SERVICES.length + ' Services';
+          document.getElementById('split-prog-pct').textContent = pct + '%';
+          document.getElementById('split-prog-bar').style.width = pct + '%';
+          
+          document.getElementById('split-img').src = '../images/' + s.img;
+
+          // Fade in
+          cWrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          iWrap.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.2,0.8,0.2,1)';
+          
+          requestAnimationFrame(function() {
+            cWrap.style.opacity = '1';
+            cWrap.style.transform = 'translateY(0)';
+            iWrap.style.opacity = '1';
+            iWrap.style.transform = 'scale(1)';
+            setTimeout(function(){ isAnimating = false; }, 400);
+          });
+        }, 300);
+      }
+
+      window.addEventListener('load', function() {
+        setActive(0);
+
+        var gsap = window.gsap;
+        var ST = window.ScrollTrigger;
+        if (!gsap || !ST) return;
+        
+        gsap.registerPlugin(ST);
+
+        var wrapper = document.getElementById('services-pin-wrapper');
+        var panel   = document.getElementById('services-pin-panel');
+        var N       = SERVICES.length; 
+
+        ST.create({
+          trigger: wrapper,
+          start: 'top top',
+          end: '+=' + (N * 80) + '%', 
+          pin: panel,
+          pinSpacing: true,
+          anticipatePin: 1,
+          onUpdate: function(self) {
+            var idx = Math.min(N - 1, Math.floor(self.progress * N));
+            setActive(idx);
+            
+            var hint = document.getElementById('split-scroll-hint');
+            if (hint) hint.style.opacity = self.progress > 0.05 ? '0' : '1';
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
