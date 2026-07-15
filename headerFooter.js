@@ -250,8 +250,8 @@ class SpecialFooter extends HTMLElement {
             </p>
             <div class="space-y-3 text-white/50 text-xs font-medium">
               <p class="flex items-start gap-3"><i class="fas fa-envelope text-[#007CC3] mt-1"></i> <span>Support@vybtek.com</span></p>
-              <p class="flex items-start gap-3"><i class="fas fa-phone text-[#007CC3] mt-1"></i> <span>+91 900 1200 450</span></p>
-              <p class="flex items-start gap-3"><i class="fas fa-location-dot text-[#007CC3] mt-1"></i> <span>Innovation Park, Udaipur, RJ 313001</span></p>
+              <p class="flex items-start gap-3"><i class="fas fa-phone text-[#007CC3] mt-1"></i> <span>+91 80005 30501</span></p>
+              <p class="flex items-start gap-3"><i class="fas fa-location-dot text-[#007CC3] mt-1"></i> <span>319, Amritshree, Ashok Nagar, Udaipur, 313001</span></p>
               <p class="flex items-start gap-3"><i class="fas fa-clock text-[#007CC3] mt-1"></i> <span>Mon - Fri: 9:00 AM - 6:00 PM (IST)</span></p>
             </div>
           </div>

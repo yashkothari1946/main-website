@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = chatInput.value.trim();
     if (message) {
       // Replace with your phone number
-      const phoneNumber = "+919116560069";
+      const phoneNumber = "+918000530501";
       const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
         message
       )}`;
