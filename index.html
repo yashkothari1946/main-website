@@ -1,251 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K3BXLS28');</script>
-<!-- End Google Tag Manager -->
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VybTek | Digital Marketing, AI & Software Solutions</title>
+  <meta name="description" content="We build brands, run digital marketing, design websites, develop apps, and build AI solutions to power tomorrow's businesses." />
 
-  <title>Vybtek | AI Engineering & Digital Branding for Global Enterprise</title>
-  <link rel="icon" type="image/png" href="./images/favicon.png" />
-  <meta name="description" content="Vybtek is a premier global technology and digital branding partner. We specialize in AI development, enterprise software, and high-fidelity marketing strategies like SEO, AEO, and GEO to transform your digital presence from nowhere to the top." />
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
   
-  <!-- Global SEO & Localization -->
-  <link rel="canonical" href="https://vybtek.com/" />
-  <link rel="alternate" hreflang="en-US" href="https://vybtek.com/" />
-  <link rel="alternate" hreflang="en-GB" href="https://vybtek.com/uk" />
-  <link rel="alternate" hreflang="x-default" href="https://vybtek.com/" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vybtek.com/" />
-  <meta property="og:title" content="Vybtek | AI Engineering & Digital Branding for Global Enterprise" />
-  <meta property="og:description" content="Vybtek is a premier global partner specializing in AI development, enterprise software, and high-fidelity digital branding for US & UK markets." />
-  <meta property="og:image" content="https://vybtek.com/images/og-image.png" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://vybtek.com/" />
-  <meta property="twitter:title" content="Vybtek | AI Engineering & Digital Branding for Global Enterprise" />
-  <meta property="twitter:description" content="Vybtek is a premier global partner specializing in AI development, enterprise software, and high-fidelity digital branding for US & UK markets." />
-  <meta property="twitter:image" content="https://vybtek.com/images/og-image.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- SEO Keywords / Meta -->
-  <meta name="keywords" content="enterprise AI development company, offshore software engineering USA, nearshore tech partner UK, custom SaaS development, AI automation agency, enterprise ERP development, digital transformation company North America" />
-
-  <!-- ═══════════════════════════════════════════════════
-       PERFORMANCE: DNS preconnect for ALL external origins
-       Saves ~150-300ms per domain on first visit
-  ════════════════════════════════════════════════════ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="dns-prefetch" href="https://cdn.skypack.dev" />
-
-  <!-- ═══════════════════════════════════════════════════
-       CRITICAL CSS: style.css blocks render (intentional — it's local)
-       Google Fonts: preloaded then swapped to avoid FOUT
-  ════════════════════════════════════════════════════ -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" /></noscript>
-  
-  <!-- Local styles — critical, render-blocking (correct) -->
-  <link href="style.css" rel="stylesheet" />
-
-  <!-- ═══════════════════════════════════════════════════
-       FOUC PREVENTION
-       Hide page BEFORE Tailwind CDN loads, reveal AFTER it processes.
-       Tailwind CDN is a JS-based CSS generator — it scans the DOM and
-       injects <style> tags. There's always a gap between first paint
-       and when those styles appear, causing the flash. This fixes it.
-  ════════════════════════════════════════════════════ -->
-  <style>
-    html { opacity: 0; }
-    html.tw-ready { opacity: 1; transition: opacity 0.25s ease; }
-  </style>
-
-  <!-- Tailwind CDN: synchronous — must block to process classes -->
+  <!-- Tailwind via CDN for quick styling -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Runs immediately after Tailwind finishes (synchronous) → page reveals styled -->
-  <script>document.documentElement.classList.add('tw-ready');</script>
+  
+  <link href="style.css" rel="stylesheet">
+  <script defer src="headerFooter.js"></script>
+  
+  <!-- Animation Libraries -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <!-- ═══════════════════════════════════════════════════
-       Font Awesome: async non-blocking load
-       Saves ~200ms on LCP (icons appear shortly after paint)
-  ════════════════════════════════════════════════════ -->
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
-
-  <!-- ═══════════════════════════════════════════════════
-       Animation libraries: ALL deferred — never block paint
-       GSAP + ScrollTrigger + Lenis load after HTML is parsed
-  ════════════════════════════════════════════════════ -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-
-  <script defer src="headerFooter.js?v=3"></script>
-  <script type="module" src="hero-three.js"></script>
-
-  <!-- JSON-LD SCHEMAS -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Vybtek IT Solutions",
-    "url": "https://vybtek.com",
-    "logo": "https://vybtek.com/images/logo.png",
-    "sameAs": [
-      "https://facebook.com/vybtek",
-      "https://linkedin.com/company/vybtek",
-      "https://instagram.com/vybtek"
-    ]
+  <style>
+  body {
+    font-family: 'Inter', sans-serif;
   }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "Which is the best digital branding company in India?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vybtek IT Solutions is recognized as a leading digital branding company in India, specializing in AI-powered marketing and branding."
-      }
-    }, {
-      "@type": "Question",
-      "name": "What AI solutions do you provide?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We provide custom AI integrations, AI-powered websites, and business automation systems."
-      }
-    }]
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
   }
-  </script>
+  .brand-gradient-text {
+    background: linear-gradient(90deg, #00C8E6, #007CC3, #1044C8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .vt-btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #00C8E6, #007CC3);
+    color: #fff; font-weight: 800; padding: 0.85rem 2rem; border-radius: 999px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .vt-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 124, 195, 0.4);
+  }
+  .vt-btn-outline {
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 2px solid #e2e8f0; color: #0D1B3E; font-weight: 800;
+    padding: 0.85rem 2rem; border-radius: 999px; background: transparent;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .vt-btn-outline:hover {
+    border-color: #00C8E6; color: #007CC3;
+  }
+  
+  /* Reveal classes */
+  .reveal-up { opacity: 0; transform: translateY(30px); }
+  .reveal-left { opacity: 0; transform: translateX(-30px); }
+  .reveal-right { opacity: 0; transform: translateX(30px); }
+  .is-revealed { opacity: 1; transform: translate(0,0); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  </style>
 </head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-[#007CC3] selection:text-white">
 
-<body class="bg-mesh overflow-x-hidden font-sans">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Grain Texture for Premium Feel -->
-  <div class="grain-overlay"></div>
+  <header><special-header></special-header></header>
 
-  <header>
-    <special-header></special-header>
-  </header>
-
-  <main id="main-content" class="opacity-0">
+  <main id="main-content">
     
-    <!-- 1. HERO SECTION - Cinematic & Immersive -->
-    <section class="vt-hero relative min-h-screen flex items-center overflow-hidden">
-      <div id="three-canvas-container" class="absolute inset-0 pointer-events-none"></div>
-      
-      <!-- Background Decorative Elements (no animate-pulse - costs main thread on mobile) -->
-      <div class="absolute top-1/4 -right-20 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px]"></div>
-      <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px]"></div>
+    <!-- 1. HERO -->
+    <section class="relative w-full bg-white overflow-hidden" style="min-height:100vh;display:flex;align-items:center;padding:120px 0 64px;">
+      <!-- Ambient blobs -->
+      <div class="absolute pointer-events-none" style="top:-10%;right:-8%;width:520px;height:520px;background:rgba(0,200,230,0.08);border-radius:50%;filter:blur(110px);"></div>
+      <div class="absolute pointer-events-none" style="bottom:-12%;left:-8%;width:400px;height:400px;background:rgba(0,124,195,0.06);border-radius:50%;filter:blur(90px);"></div>
+      <!-- Dot grid -->
+      <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(circle,rgba(0,124,195,0.06) 1px,transparent 1px);background-size:28px 28px;"></div>
 
-      <div class="vt-container !max-w-[1400px] relative z-20 flex flex-col lg:flex-row items-center pt-20 lg:pt-40">
-        <!-- Content Layer -->
-        <div class="lg:w-full text-left lg:pr-[450px]">
-          
-          <!-- Animated Badge -->
-          <div class="vt-innovation-badge mb-8 reveal-up max-w-[95vw] md:max-w-full">
-            <span class="vt-badge-glow"></span>
-            <span class="vt-badge-text !text-[8px] sm:!text-[10px] md:!text-xs !tracking-wider md:!tracking-[0.3em] whitespace-normal text-center leading-relaxed block w-full px-2">Complete 360° Corporate Brand Architecture & Marketing Automations</span>
+      <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-10 flex flex-col items-center text-center">
+
+        <!-- Eyebrow Headline -->
+        <div class="reveal-up inline-flex items-center gap-2 mb-6 px-5 py-2.5 rounded-full border border-[#00C8E6]/30" style="background:rgba(0,200,230,0.05);">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#00C8E6] animate-pulse"></span>
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#007CC3;">You've Built Something Worth Growing</span>
+        </div>
+
+        <!-- H1 -->
+        <h1 class="reveal-up font-black text-[#0D1B3E] max-w-4xl mx-auto" style="font-size:clamp(2.2rem,4.5vw,4.5rem);line-height:1.1;">
+          We Give It the Brand, Website, Marketing and <br>
+          <span class="brand-gradient-text">Reach It Deserves</span>
+        </h1>
+
+        <p class="reveal-up text-slate-500 mt-8 leading-relaxed text-lg md:text-xl max-w-3xl mx-auto">
+          We build brands, run digital marketing, design websites, create graphics, develop apps, and build AI solutions, plus our own line of Vybtek products. All under one roof, so you never have to settle for less.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal-up flex flex-wrap justify-center gap-4 mt-10">
+          <a href="contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20 text-lg px-8 py-4">Let's Talk About Your Business</a>
+          <a href="services.html" class="vt-btn-outline text-lg px-8 py-4 bg-white">
+            Explore Our Services <i class="fas fa-arrow-down" style="font-size:0.8rem;margin-left:6px;"></i>
+          </a>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="reveal-up mt-16 flex flex-wrap justify-center gap-8 md:gap-16 pt-10 border-t border-slate-100 max-w-2xl mx-auto">
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#007CC3] animate-pulse"></div>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">AI Powered</span>
           </div>
-          
-          <!-- Cinematic Headline -->
-          <h1 class="text-[2.5rem] sm:text-5xl md:text-7xl font-black text-slate-900 leading-[1.15] tracking-tighter mb-8 md:mb-10 reveal-up break-words" id="hero-title">
-            <span class="block opacity-60 whitespace-normal lg:whitespace-nowrap">We Architect Legendary</span>
-            <span class="ai-gradient-text block whitespace-normal lg:whitespace-nowrap py-1 md:py-2" id="rotating-text">360° Brand Authority</span>
-            <span class="block whitespace-normal lg:whitespace-nowrap">For Global Enterprises</span>
-          </h1>
-          
-          <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mb-8 leading-relaxed reveal-up" id="hero-sub">
-            We don't just market products—we build legendary brands. We help companies establish elite visual identity systems, bespoke web designs, multi-channel search authority, and marketing automations.
-          </p>
-
-          <!-- Interactive Brand Capabilities Ribbon -->
-          <div class="flex flex-wrap gap-2 md:gap-3 mb-10 md:mb-12 max-w-2xl reveal-up">
-            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-laptop-code text-accent-blue"></i> Web Designing</span>
-            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-bullhorn text-accent-blue"></i> Digital Marketing</span>
-            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-search text-accent-cyan"></i> SEO Optimization</span>
-            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-share-alt text-accent-cyan"></i> Social Media (SMM)</span>
-            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-robot text-accent-blue"></i> AEO & GEO Search</span>
-            <span class="px-3 md:px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-full text-[10px] md:text-xs font-bold text-slate-600 flex items-center gap-2 hover:bg-[#007CC3]/10 hover:border-[#007CC3] transition-all"><i class="fas fa-magic text-accent-blue"></i> Marketing Automations</span>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#007CC3] animate-pulse"></div>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Enterprise Ready</span>
           </div>
-
-          <!-- Cinematic CTAs -->
-          <div class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 md:gap-8 reveal-up w-full" id="hero-btns">
-            <a href="contact.html" class="vt-btn-primary !py-4 md:!py-5 !px-8 md:!px-12 group relative overflow-hidden w-full sm:w-auto text-center flex justify-center items-center">
-              <span class="relative z-10 text-[11px] md:text-sm">Start Your Project</span>
-              <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-              <i class="fas fa-rocket ml-3 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
-            </a>
-            <a href="portfolio.html" class="vt-btn-ghost !border-slate-200 !text-slate-800 hover:!bg-slate-50 transition-all group w-full sm:w-auto text-center flex justify-center items-center py-4 px-8 rounded-full border">
-              <span class="text-[11px] md:text-sm font-extrabold tracking-widest uppercase">Explore Portfolio</span>
-              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
-            </a>
-          </div>
-
-          <!-- Trust Indicators -->
-          <div class="mt-20 flex flex-wrap gap-12 border-t border-slate-100 pt-12 reveal-up">
-            <div class="flex items-center gap-3">
-              <div class="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></div>
-              <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">AI Powered</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></div>
-              <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Enterprise Ready</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></div>
-              <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Global Solutions</span>
-            </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#00C8E6] animate-pulse"></div>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Global Scale</span>
           </div>
         </div>
 
-        <!-- Interactive Tech Card Layer -->
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] hidden lg:block reveal-right z-30">
-            <div class="hero-tech-card glass-card p-10 rounded-[40px] border border-slate-200/50 backdrop-blur-3xl animate-float">
-               <div class="flex justify-between items-start mb-8">
-                  <div class="w-12 h-12 bg-accent-blue/10 rounded-2xl flex items-center justify-center text-accent-blue">
-                     <i class="fas fa-fingerprint text-2xl"></i>
-                  </div>
-                  <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Brand Authority: Peak</div>
-               </div>
-               <h4 class="text-2xl font-black text-slate-900 mb-4">360° Brand Engine</h4>
-               <p class="text-slate-600 text-sm mb-8 leading-relaxed">Synchronizing Web Designing, SEO, AEO, GEO, and automated marketing pipelines to scale global brand authority.</p>
-               <div class="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-                  <div class="h-full bg-accent-blue w-11/12 animate-pulse"></div>
-               </div>
-            </div>
-         </div>
       </div>
     </section>
 
-    <section class="py-20 border-y border-gray-100 overflow-hidden bg-white">
-      <div class="vt-container mb-10">
-        <p class="text-center text-xs font-black uppercase tracking-[0.4em] text-gray-400">Trusted by Global Enterprise Leaders</p>
+    <!-- 2. TRUST AND SOCIAL PROOF -->
+    <section class="py-20 border-t border-b border-slate-200 overflow-hidden bg-white">
+      <div class="max-w-[1200px] mx-auto px-6 mb-10">
+        <p class="text-center text-xs font-black uppercase tracking-[0.4em] text-slate-400">Trusted by Growing Enterprise Leaders</p>
       </div>
       <!-- Interactive Marquee Wrapper (GPU-composited) -->
-      <div class="flex w-max animate-[marquee-scroll_30s_linear_infinite] hover:[animation-play-state:paused] vt-brand-marquee">
+      <div class="flex w-max animate-[marquee-scroll_30s_linear_infinite] hover:[animation-play-state:paused] vt-brand-marquee" style="animation: scroll 40s linear infinite;">
          <!-- Group 1 -->
          <div class="flex gap-16 md:gap-32 items-center shrink-0 pr-16 md:pr-32">
             <img loading="lazy" src="images/patientxpress_logo_latest.png" alt="PatientXpress" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
@@ -265,742 +153,376 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <img loading="lazy" src="images/catalyst_financial_logo_latest.png" alt="Catalyst Financial" class="h-10 md:h-12 w-auto object-contain shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer">
          </div>
       </div>
+      <style>
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      </style>
     </section>
 
-    <!-- 2.5 PARTNERS & CERTIFICATIONS SECTION -->
-    <section class="py-24 relative overflow-hidden bg-white border-b border-gray-100">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,#F0F7FF_0%,transparent_50%)]"></div>
-      
-      <div class="vt-container relative z-10">
-        <!-- Section Header -->
-        <div class="max-w-3xl mx-auto text-center mb-20 reveal-up">
-          <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-black text-[#007CC3] mb-6 uppercase tracking-[0.2em]">
-            <i class="fas fa-certificate mr-2"></i> Certified Ecosystem
-          </div>
-          <h2 class="text-4xl md:text-5xl font-black text-[#0D1B3E] tracking-tight leading-[1.1]">
-            Official Partnerships & <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#007CC3] to-[#1044C8]">Certified Tech Stack</span>
-          </h2>
-          <p class="text-slate-500 mt-6 text-sm md:text-base font-medium max-w-xl mx-auto leading-relaxed">
-            We work with and are certified experts in deploying systems across global infrastructure leaders, conversational platforms, and advanced generative AI models.
-          </p>
-        </div>
+    <!-- 3. FEATURES SECTION — Fullscreen Split Pin -->
+    <section id="services-pin-wrapper" class="relative" style="background:#0a1020; border-top:1px solid rgba(255,255,255,0.05);">
+      <div id="services-pin-panel" style="height:100vh; display:flex; align-items:center; position:relative; overflow:hidden;">
+        
+        <!-- BG Elements -->
+        <div style="position:absolute; inset:0; background:radial-gradient(circle at 70% 50%, rgba(0,200,230,0.05) 0%, transparent 60%); pointer-events:none;"></div>
+        <div style="position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:30px 30px; pointer-events:none; opacity:0.5;"></div>
 
-        <!-- Partners Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up">
+        <div class="max-w-[1400px] w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center h-full max-h-[850px] gap-12">
           
-          <!-- Card 1: AWS -->
-          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(255,153,0,0.08)]">
-            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-[#FF9900]/40 to-[#FF9900]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
-              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#FF9900]/10 group-hover:text-[#FF9900] group-hover:border-[#FF9900]/20 transition-all duration-500 shadow-sm mb-6">
-                <i class="fab fa-aws"></i>
-              </div>
-              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">AWS Cloud</h3>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#FF9900]/5 border border-[#FF9900]/10 text-[9px] font-black text-[#FF9900] uppercase tracking-wider w-max mb-4">
-                Certified Solutions Architects
-              </div>
-              <p class="text-xs text-slate-500 leading-relaxed font-medium">
-                Highly scalable serverless architectures, multi-region failover, secure VPC configurations, and cost-optimized EC2/RDS deployment strategies.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 2: Azure -->
-          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,120,215,0.08)]">
-            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-[#0078D7]/40 to-[#0078D7]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
-              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#0078D7]/10 group-hover:text-[#0078D7] group-hover:border-[#0078D7]/20 transition-all duration-500 shadow-sm mb-6">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M1.6 17.5L11.6 3.5h.8L22 17.5h-5.6l-4.8-9.3-4.5 9.3H1.6z"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">Microsoft Azure</h3>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0078D7]/5 border border-[#0078D7]/10 text-[9px] font-black text-[#0078D7] uppercase tracking-wider w-max mb-4">
-                Certified Cloud Partner
-              </div>
-              <p class="text-xs text-slate-500 leading-relaxed font-medium">
-                Enterprise Active Directory integration, hybrid cloud architectures, Azure Synapse analytics, and secure Kubernetes (AKS) workloads.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3: DigitalOcean -->
-          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,143,255,0.08)]">
-            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-[#008FFF]/40 to-[#008FFF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
-              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#008FFF]/10 group-hover:text-[#008FFF] group-hover:border-[#008FFF]/20 transition-all duration-500 shadow-sm mb-6">
-                <i class="fab fa-digital-ocean"></i>
-              </div>
-              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">DigitalOcean</h3>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#008FFF]/5 border border-[#008FFF]/10 text-[9px] font-black text-[#008FFF] uppercase tracking-wider w-max mb-4">
-                Solutions Partner
-              </div>
-              <p class="text-xs text-slate-500 leading-relaxed font-medium">
-                Rapid VM deployment, scalable App Platform configurations, managed PostgreSQL/Redis databases, and high-performance CDN assets.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 4: WhatsApp -->
-          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(37,211,102,0.08)]">
-            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-[#25D366]/40 to-[#25D366]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
-              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#25D366]/10 group-hover:text-[#25D366] group-hover:border-[#25D366]/20 transition-all duration-500 shadow-sm mb-6">
-                <i class="fab fa-whatsapp"></i>
-              </div>
-              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">WhatsApp</h3>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#25D366]/5 border border-[#25D366]/10 text-[9px] font-black text-[#25D366] uppercase tracking-wider w-max mb-4">
-                Official API Experts
-              </div>
-              <p class="text-xs text-slate-500 leading-relaxed font-medium">
-                Direct Cloud API automation, complex interactive conversational flow development, message templates, and automated support pipelines.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 5: Meta -->
-          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(6,149,240,0.08)]">
-            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-[#0695F0]/40 to-[#0695F0]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
-              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#0695F0]/10 group-hover:text-[#0695F0] group-hover:border-[#0695F0]/20 transition-all duration-500 shadow-sm mb-6">
-                <i class="fab fa-meta"></i>
-              </div>
-              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">Meta</h3>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0695F0]/5 border border-[#0695F0]/10 text-[9px] font-black text-[#0695F0] uppercase tracking-wider w-max mb-4">
-                Certified Business Partner
-              </div>
-              <p class="text-xs text-slate-500 leading-relaxed font-medium">
-                Meta Conversational Commerce setup, Advanced Conversion API (CAPI) tracking, Messenger API automation, and Business Suite scaling.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 6: OpenAI -->
-          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(16,163,127,0.08)]">
-            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-[#10A37F]/40 to-[#10A37F]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
-              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#10A37F]/10 group-hover:text-[#10A37F] group-hover:border-[#10A37F]/20 transition-all duration-500 shadow-sm mb-6">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M21.3 10.3c.1-.5.1-1.1-.1-1.6-.2-.5-.6-1-1-1.3-.1-.1-.2-.1-.4-.2C19.7 5 18 3.9 16 4c-.5 0-1 .2-1.5.4-.1.1-.3.1-.4 0C13.2 3.3 11.5 2.9 9.8 3.6c-1.5.6-2.6 1.9-3 3.5-.1.1-.2.2-.3.2-1.8.7-3 2.4-3.1 4.3 0 .5.1 1.1.3 1.6.2.5.6 1 1 1.3.1.1.2.1.4.2.1 2.2 1.8 3.3 3.8 3.2.5 0 1-.2 1.5-.4.1-.1.3-.1.4 0 .9 1.1 2.6 1.5 4.3.8 1.5-.6 2.6-1.9 3-3.5.1-.1.2-.2.3-.2 1.8-.7 3-2.4 3.1-4.3-.1-.6-.1-1.2-.2-1.7zm-4.6 8.1c-.1.2-.2.4-.4.5-.9.5-2 .4-2.8-.2l-4.5-2.6v-2.2l3.8 2.2c.5.3 1.1.3 1.6 0 .5-.3.8-.8.8-1.4v-5.2l1.5.9c1.4.8 1.9 2.3 1.6 3.8-.1 1.7-.5 3.2-1 4.4zm1.2-8l-1.5-.9V7.4c0-.6-.3-1.1-.8-1.4-.5-.3-1.1-.3-1.6 0l-4.5 2.6 1.5-2.6c.8-1.4 2.5-2.1 4-1.6 1.5.5 2.4 2 2.3 3.6v2.4zm-7.5-4c.2 0 .4.1.5.2.9.5 1.4 1.5 1.4 2.6v5.2L8.5 12c-.5-.3-1.1-.3-1.6 0-.5.3-.8.8-.8 1.4v5.2l-1.5-.9c-1.4-.8-2-2.5-1.5-4 .5-1.5 1.8-2.6 3.4-2.6.4 0 .7.1 1.1.3zm-1.6 8.2l1.5.9v2.1c0 .6.3 1.1.8 1.4.5.3 1.1.3 1.6 0l4.5-2.6-1.5 2.6c-.8 1.4-2.5 2.1-4 1.6-1.5-.5-2.4-2-2.3-3.6v-3.2zm7.5 4v-5.2l3.8 2.2c.5.3 1.1.3 1.6 0 .5-.3.8-.8.8-1.4V8c1.4.8 2 2.5 1.5 4-.5 1.5-1.8 2.6-3.4 2.6-.4 0-.7-.1-1.1-.3z"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">OpenAI</h3>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#10A37F]/5 border border-[#10A37F]/10 text-[9px] font-black text-[#10A37F] uppercase tracking-wider w-max mb-4">
-                API Integration Experts
-              </div>
-              <p class="text-xs text-slate-500 leading-relaxed font-medium">
-                Advanced GPT-4o integration, custom assistants with secure RAG data pipelines, functional API calling, and specialized model fine-tuning.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 7: Google Gemini -->
-          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(26,115,232,0.08)]">
-            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-[#1044C8]/40 to-[#00C8E6]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
-              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#1A73E8]/10 group-hover:text-[#1A73E8] group-hover:border-[#1A73E8]/20 transition-all duration-500 shadow-sm mb-6">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C12 2 12.5 7.5 18 8C12.5 8.5 12 14 12 14C12 14 11.5 8.5 6 8C11.5 7.5 12 2 12 2Z" fill="url(#gemini-grad-home-1)"/>
-                  <path d="M18 14C18 14 18.25 16.75 21 17C18.25 17.25 18 20 18 20C18 20 17.75 17.25 15 17C17.75 16.75 18 14 18 14Z" fill="url(#gemini-grad-home-2)"/>
-                  <defs>
-                    <linearGradient id="gemini-grad-home-1" x1="6" y1="2" x2="18" y2="14" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stop-color="#00C8E6" />
-                      <stop offset="100%" stop-color="#1044C8" />
-                    </linearGradient>
-                    <linearGradient id="gemini-grad-home-2" x1="15" y1="14" x2="21" y2="20" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stop-color="#00C8E6" />
-                      <stop offset="100%" stop-color="#1044C8" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">Google Gemini</h3>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#1044C8]/5 border border-[#1044C8]/10 text-[9px] font-black text-[#1044C8] uppercase tracking-wider w-max mb-4">
-                Gemini Pro Integrations
-              </div>
-              <p class="text-xs text-slate-500 leading-relaxed font-medium">
-                Multimodal application engineering, high-volume token parsing via Gemini Flash, and robust Vertex AI pipeline architecture integrations.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 8: Claude AI -->
-          <div class="group relative rounded-[30px] p-[1px] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(217,119,87,0.08)]">
-            <div class="absolute inset-0 bg-slate-200/60 transition-opacity duration-500 group-hover:opacity-0"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-[#D97757]/40 to-[#D97757]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative h-full bg-white rounded-[29px] p-8 flex flex-col z-10 transition-all duration-500">
-              <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl text-slate-400 group-hover:bg-[#D97757]/10 group-hover:text-[#D97757] group-hover:border-[#D97757]/20 transition-all duration-500 shadow-sm mb-6">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 3L3.5 19.5h3.8l2-4.2h5.4l2 4.2h3.8L12 3zm1.4 9.5H10.6l1.4-3.1 1.4 3.1z"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-black text-slate-800 mb-2 transition-colors duration-300 group-hover:text-[#0D1B3E]">Anthropic Claude</h3>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#D97757]/5 border border-[#D97757]/10 text-[9px] font-black text-[#D97757] uppercase tracking-wider w-max mb-4">
-                Claude AI Integration
-              </div>
-              <p class="text-xs text-slate-500 leading-relaxed font-medium">
-                High-context window processing using Claude 3.5 Sonnet, structured JSON output setups, and robust agentic workflow orchestration.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. SERVICES SECTION - Complete IT Solutions -->
-    <section class="vt-section relative overflow-hidden bg-[#F8FAFC]">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,#EFF6FF_0%,transparent_50%)]"></div>
-      
-      <div class="vt-container relative z-10">
-        <div class="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
-          <div class="max-w-2xl reveal-left">
-            <div class="vt-section-label">Our Capabilities</div>
-            <h2 class="vt-section-heading">Architecting <span class="vt-accent">Digital Dominance</span> for the Modern Era</h2>
-            <p class="vt-section-sub">From rapid technical prototyping to global market penetration, we provide the full-stack engineering and branding power to transform your presence.</p>
-          </div>
-          <div class="reveal-right">
-            <a href="services.html" class="vt-btn-ghost group">
-              View All Solutions 
-              <i class="fas fa-chevron-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card 1: AI & Machine Learning -->
-          <a href="services/ai-solutions.html" class="vt-card group reveal-up">
-            <div class="vt-card-icon"><i class="fas fa-microchip"></i></div>
-            <h3 class="vt-card-title">Cognitive Computing</h3>
-            <p class="vt-card-desc">Advanced LLM fine-tuning, RAG systems, and predictive neural networks tailored for ROI.</p>
-            <span class="vt-card-link">Learn More <i class="fas fa-arrow-right"></i></span>
-          </a>
-
-          <!-- Card 2: Enterprise Architecture -->
-          <a href="services/erp-crm.html" class="vt-card group reveal-up">
-            <div class="vt-card-icon"><i class="fas fa-layer-group"></i></div>
-            <h3 class="vt-card-title">Enterprise Systems</h3>
-            <p class="vt-card-desc">Custom ERP/CRM architectures that unify your global operations into a single source of truth.</p>
-            <span class="vt-card-link">Learn More <i class="fas fa-arrow-right"></i></span>
-          </a>
-
-          <!-- Card 3: Cloud Engineering -->
-          <a href="services/web-app.html" class="vt-card group reveal-up">
-            <div class="vt-card-icon"><i class="fas fa-cloud-bolt"></i></div>
-            <h3 class="vt-card-title">Cloud Native Apps</h3>
-            <p class="vt-card-desc">High-performance Next.js and React Native applications built with hyper-scale in mind.</p>
-            <span class="vt-card-link">Learn More <i class="fas fa-arrow-right"></i></span>
-          </a>
-
-          <a href="services/branding.html" class="vt-card group reveal-up">
-            <div class="vt-card-icon"><i class="fas fa-fingerprint"></i></div>
-            <h3 class="vt-card-title">360° Brand Building</h3>
-            <p class="vt-card-desc">Corporate visual identity, narrative AI Cinematography (commercial shoots, video generation, pre-weddings), and deep AEO & GEO search domination.</p>
-            <span class="vt-card-link">Learn More <i class="fas fa-arrow-right"></i></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. WHY CHOOSE VYBTEK - High Fidelity Brand Values -->
-    <section class="vt-section relative overflow-hidden">
-      <div class="vt-container">
-        <div class="flex flex-col lg:flex-row gap-24 items-center">
-          <div class="flex-1 reveal-left">
-            <div class="vt-section-label">Strategic Edge</div>
-            <h2 class="vt-section-heading mb-8">Innovating at the <span class="vt-accent">Speed of Intelligence</span></h2>
-            <p class="text-xl text-slate-500 mb-12 leading-relaxed">
-              Vybtek is more than a technical partner; we are the engine of your digital evolution. We fuse Silicon Valley agility with global enterprise stability.
-            </p>
+          <!-- LEFT: Content -->
+          <div class="w-full md:w-[45%] flex flex-col justify-center text-white">
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div class="p-8 bg-white border border-slate-100 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-accent-blue mb-6">
-                   <i class="fas fa-chess-knight"></i>
-                </div>
-                <h4 class="font-black text-[#0D1B3E] mb-3 uppercase text-xs tracking-widest">Philosophy</h4>
-                <p class="text-sm text-slate-500 leading-relaxed">A business-first technical approach that prioritizes ROI and long-term scalability over hype.</p>
-              </div>
-              <div class="p-8 bg-white border border-slate-100 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-accent-blue mb-6">
-                   <i class="fas fa-microscope"></i>
-                </div>
-                <h4 class="font-black text-[#0D1B3E] mb-3 uppercase text-xs tracking-widest">R&D Culture</h4>
-                <p class="text-sm text-slate-500 leading-relaxed">Continuous experimentation with emerging AI models ensures your stack remains future-proof.</p>
-              </div>
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:2rem;">
+              <span style="width:24px;height:1px;background:#00C8E6;display:inline-block;"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#00C8E6;">Our Expertise</span>
             </div>
-          </div>
-          
-          <div class="flex-1 w-full reveal-right">
-            <div class="relative">
-               <!-- Decorative Backdrop -->
-               <div class="absolute -inset-10 bg-gradient-to-tr from-accent-blue/10 to-accent-cyan/10 blur-[80px] rounded-full opacity-50"></div>
-               
-               <div class="relative grid grid-cols-2 gap-6">
-                 <div class="glass-card p-10 flex flex-col justify-between h-64 hover:-translate-y-2 transition-transform">
-                    <div class="vt-stat-num text-5xl font-black text-accent-blue"><span class="counter" data-target="500">0</span>+</div>
-                    <div>
-                      <div class="vt-stat-label font-black text-[10px] tracking-widest">Projects</div>
-                      <p class="text-[10px] text-slate-400 mt-2">Delivered globally with 99.9% uptime.</p>
-                    </div>
-                 </div>
-                 <div class="glass-card p-10 flex flex-col justify-between h-64 mt-12 hover:-translate-y-2 transition-transform">
-                    <div class="vt-stat-num text-5xl font-black text-[#007CC3]"><span class="counter" data-target="150">0</span>+</div>
-                    <div>
-                      <div class="vt-stat-label font-black text-[10px] tracking-widest">Experts</div>
-                      <p class="text-[10px] text-slate-400 mt-2">Specialized in AI, Cloud, and Fintech.</p>
-                    </div>
-                 </div>
-                 <div class="glass-card p-10 flex flex-col justify-between h-64 -mt-12 hover:-translate-y-2 transition-transform">
-                    <div class="vt-stat-num text-5xl font-black text-accent-cyan"><span class="counter" data-target="12">0</span>+</div>
-                    <div>
-                      <div class="vt-stat-label font-black text-[10px] tracking-widest">Regions</div>
-                      <p class="text-[10px] text-slate-400 mt-2">Operating across 4 continents.</p>
-                    </div>
-                 </div>
-                 <div class="glass-card p-10 flex flex-col justify-between h-64 hover:-translate-y-2 transition-transform">
-                    <div class="vt-stat-num text-5xl font-black text-[#0D1B3E]">24/7</div>
-                    <div>
-                      <div class="vt-stat-label font-black text-[10px] tracking-widest">Support</div>
-                      <p class="text-[10px] text-slate-400 mt-2">Enterprise-grade monitoring and response.</p>
-                    </div>
-                 </div>
-               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 5. OUR PROCESS - The Vybtek Blueprint -->
-    <section class="vt-section relative overflow-hidden">
-      <div class="vt-container">
-        <div class="flex flex-col lg:flex-row gap-20">
-          <div class="lg:w-1/3 reveal-left">
-            <div class="vt-section-label">Dominance Lifecycle</div>
-            <h2 class="vt-section-heading">The <span class="vt-accent">Vybtek Blueprint</span></h2>
-            <p class="vt-section-sub">A precision-tuned methodology designed for zero-latency technical execution and total market dominance.</p>
+            <div id="split-content-wrap" style="transition: opacity 0.4s ease, transform 0.4s ease;">
+              <!-- Dynamic Content -->
+              <div id="split-num" style="font-size:5rem; font-weight:900; line-height:0.9; color:rgba(255,255,255,0.05); margin-bottom:1rem;">01</div>
+              <h3 id="split-title" class="text-3xl lg:text-4xl font-black mb-6 leading-tight text-white">Branding</h3>
+              <p id="split-desc" class="text-slate-400 text-lg leading-relaxed mb-8">We craft brands from the ground up, shaping strategy, positioning, and identity into a story worth remembering. From logo design and typography to brand voice, packaging, and rebranding, every touchpoint is built to turn attention into lasting loyalty.</p>
+              
+              <div class="mt-4">
+                 <a id="split-link" href="services/branding.html" class="text-[#00C8E6] font-bold text-sm hover:text-white transition-colors border-b border-[#00C8E6]/30 pb-1">Explore Service &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mt-auto pt-8 border-t border-slate-800/50 w-full max-w-md">
+              <div class="flex justify-between text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                <span id="split-prog-label">1 of 7 Services</span>
+                <span id="split-prog-pct" class="text-[#00C8E6]">14%</span>
+              </div>
+              <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                <div id="split-prog-bar" class="h-full bg-gradient-to-r from-[#00C8E6] to-[#007CC3] rounded-full transition-all duration-300 w-[14%]"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Image -->
+          <div class="w-full md:w-[55%] h-[50vh] md:h-[80%] relative rounded-[2rem] overflow-hidden shadow-2xl border border-slate-800 group">
+            <!-- Decorative corner accent -->
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#00C8E6]/20 to-transparent z-20"></div>
             
-            <div class="mt-12 space-y-6">
-              <div class="flex items-center gap-4 p-4 glass-card">
-                <div class="w-10 h-10 rounded-full bg-accent-blue/10 flex items-center justify-center text-accent-blue font-bold">1</div>
-                <div class="font-bold text-slate-800">Strategic Ideation</div>
-              </div>
-              <div class="flex items-center gap-4 p-4 glass-card">
-                <div class="w-10 h-10 rounded-full bg-accent-blue/10 flex items-center justify-center text-accent-blue font-bold">2</div>
-                <div class="font-bold text-slate-800">Agile Engineering</div>
-              </div>
-              <div class="flex items-center gap-4 p-4 glass-card">
-                <div class="w-10 h-10 rounded-full bg-accent-cyan/10 flex items-center justify-center text-accent-cyan font-bold">3</div>
-                <div class="font-bold text-slate-800">Market Execution</div>
-              </div>
+            <div class="absolute inset-0 bg-[#0a1020]/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+            
+            <div id="split-img-wrap" class="w-full h-full relative" style="transition: opacity 0.4s ease, transform 0.6s ease-out;">
+              <img id="split-img" src="images/editorial_collage.png" alt="Branding" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
+            </div>
+            
+            <!-- Scroll Hint -->
+            <div id="split-scroll-hint" class="absolute bottom-6 right-6 z-20 bg-black/50 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-full flex items-center gap-3 transition-opacity duration-500">
+              <i class="fas fa-mouse text-[#00C8E6]"></i> Scroll to explore
             </div>
           </div>
-          
-          <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 reveal-right">
-             <div class="vt-process-step group">
-                <div class="vt-process-num">01</div>
-                <div class="vt-process-icon group-hover:scale-110 transition-transform"><i class="fas fa-magnifying-glass-chart"></i></div>
-                <h3 class="vt-process-title text-xl font-black">Strategic Ideation</h3>
-                <p class="vt-process-desc">We distill your brand essence into a disruptive marketing plan and a technical roadmap for dominance.</p>
-             </div>
-             <div class="vt-process-step group">
-                <div class="vt-process-num">02</div>
-                <div class="vt-process-icon group-hover:scale-110 transition-transform"><i class="fas fa-microchip"></i></div>
-                <h3 class="vt-process-title text-xl font-black">Dominance Architecture</h3>
-                <p class="vt-process-desc">Designing hyper-scalable cloud schemas and AI-driven brand architectures tailored for SEO, AEO, and GEO.</p>
-             </div>
-             <div class="vt-process-step group">
-                <div class="vt-process-num">03</div>
-                <div class="vt-process-icon group-hover:scale-110 transition-transform"><i class="fas fa-code-commit"></i></div>
-                <h3 class="vt-process-title text-xl font-black">Rapid Prototyping</h3>
-                <p class="vt-process-desc">Deploying MVP environments in record time, ensuring market feedback is integrated instantly.</p>
-             </div>
-             <div class="vt-process-step group">
-                <div class="vt-process-num">04</div>
-                <div class="vt-process-icon group-hover:scale-110 transition-transform"><i class="fas fa-rocket"></i></div>
-                <h3 class="vt-process-title text-xl font-black">Market Takeover</h3>
-                <p class="vt-process-desc">Executing aggressive brand ranking and 24/7 technical monitoring to ensure your brand commands the #1 spot globally.</p>
-             </div>
-          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 6. DIGITAL DOMINANCE - 360° Brand Building Blueprint -->
-    <section class="vt-section relative overflow-hidden">
-      <div class="vt-container">
-        <div class="max-w-4xl mb-24 reveal-up">
-          <div class="vt-section-label">The 360° Brand Blueprint</div>
-          <h2 class="vt-section-heading">We Don't Just Market. <span class="vt-accent">We Architect Brands.</span></h2>
-          <p class="vt-section-sub">A premium brand is your ultimate unfair advantage. We execute full-spectrum 360° brand architecture, visual systems, and AI-enabled authority channels to move you from obscurity to market dominance.</p>
-        </div>
+    <!-- Post-pin spacer -->
+    <div style="height:80px; background:linear-gradient(to bottom, #0a1020, #0D1B3E);"></div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-          <!-- Connector Line (Desktop Only) -->
-          <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-slate-100 -translate-y-1/2 z-0"></div>
-
-          <!-- Phase 1 -->
-          <div class="relative z-10 group reveal-up">
-            <div class="w-16 h-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center font-black text-xl text-accent-blue mb-8 group-hover:bg-accent-blue group-hover:text-white transition-all duration-500">01</div>
-            <h3 class="text-2xl font-black text-slate-900 mb-4">360° Identity Architecture</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">We distill your business vision into comprehensive visual systems, custom voice guidelines, and competitive brand positioning designed for absolute authority.</p>
-            <ul class="mt-6 space-y-3 text-[10px] font-black uppercase tracking-widest text-slate-400">
-              <li><i class="fas fa-check text-accent-blue mr-2"></i> Brand Architecture</li>
-              <li><i class="fas fa-check text-accent-blue mr-2"></i> Visual Identity Design</li>
-              <li><i class="fas fa-check text-accent-blue mr-2"></i> AI Cinematography</li>
-            </ul>
-          </div>
-
-          <!-- Phase 2 -->
-          <div class="relative z-10 group reveal-up" data-delay="200">
-            <div class="w-16 h-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center font-black text-xl text-[#007CC3] mb-8 group-hover:bg-[#007CC3] group-hover:text-white transition-all duration-500">02</div>
-            <h3 class="text-2xl font-black text-slate-900 mb-4">Omnipresent Brand Trust</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">We build semantic authority across standard search (SEO), AI Answer Engines (AEO), and Generative Search (GEO) so your brand is the definitive answer everywhere.</p>
-            <ul class="mt-6 space-y-3 text-[10px] font-black uppercase tracking-widest text-slate-400">
-              <li><i class="fas fa-check text-[#007CC3] mr-2"></i> GEO/AEO Domination</li>
-              <li><i class="fas fa-check text-[#007CC3] mr-2"></i> Semantic Brand Trust</li>
-            </ul>
-          </div>
-
-          <!-- Phase 3 -->
-          <div class="relative z-10 group reveal-up" data-delay="400">
-            <div class="w-16 h-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center font-black text-xl text-accent-cyan mb-8 group-hover:bg-accent-cyan group-hover:text-white transition-all duration-500">03</div>
-            <h3 class="text-2xl font-black text-slate-900 mb-4">Global Market Dominance</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">We execute highly focused digital PR, brand equity campaigns, and authoritative ranking systems to scale your brand presence across global markets.</p>
-            <ul class="mt-6 space-y-3 text-[10px] font-black uppercase tracking-widest text-slate-400">
-              <li><i class="fas fa-check text-accent-cyan mr-2"></i> Tier-1 Brand Equity</li>
-              <li><i class="fas fa-check text-accent-cyan mr-2"></i> Global Scaled Leadership</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. FEATURED PROJECTS - Pinned Horizontal Showcase -->
-    <section class="horizontal-scroll-container bg-[#0D1B3E] relative overflow-hidden text-white border-y border-[#1044C8]/30">
-      <!-- Dark Theme Glow Effects -->
-      <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-[#00C8E6]/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#1044C8]/10 rounded-full blur-[120px] pointer-events-none"></div>
-      
-      <div class="horizontal-scroll-wrapper relative z-10">
-        <!-- Title Slide -->
-        <div class="flex-none w-[80vw] md:w-[60vw] flex flex-col justify-center px-8 md:px-16">
-          <div class="inline-flex items-center gap-3 mb-6">
-            <span class="w-8 h-px bg-[#00C8E6]"></span>
-            <span class="text-[10px] font-black uppercase tracking-widest text-[#00C8E6]">Elite Portfolio</span>
-          </div>
-          <h2 class="text-5xl md:text-7xl font-black text-white leading-[1.1]">Global <br><span class="brand-gradient-text drop-shadow-xl">Success Stories.</span></h2>
-          <p class="text-blue-100/70 mt-8 text-lg md:text-xl max-w-lg leading-relaxed">We architect digital dominance. Explore how our AI-first methodology transforms enterprise operations across the globe.</p>
-        </div>
-
-        <!-- Project 1: PatientXpress -->
-        <div class="apple-scroll-item group bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-[#00C8E6]/20 blur-[50px] group-hover:bg-[#00C8E6]/40 transition-colors duration-500"></div>
-          
-          <div class="flex items-center gap-3 mb-8">
-            <span class="px-4 py-2 rounded-full bg-[#1044C8]/20 border border-[#1044C8]/30 text-[#00C8E6] font-black text-[10px] uppercase tracking-widest"><i class="fas fa-chart-line mr-2"></i> +150% Leads</span>
-            <span class="text-white/40 font-black text-[10px] uppercase tracking-widest">Healthcare | AI</span>
-          </div>
-          
-          <div>
-            <h3 class="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#00C8E6] transition-colors">PatientXpress</h3>
-            <p class="text-blue-100/60 text-sm leading-relaxed">Complete marketing transformation (Website, SEO, AEO, SMM) integrated with automated AI workflows.</p>
-          </div>
-          
-          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-white relative my-8 shadow-2xl border border-white/5 flex items-center justify-center p-8">
-             <img src="images/patientxpress_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain scale-100 group-hover:scale-110 transition-transform duration-1000" alt="PatientXpress Logo">
-          </div>
-          
-          <a href="project-patientxpress.html" class="text-white font-bold flex items-center gap-3 group/link hover:text-[#00C8E6] transition-colors uppercase text-[11px] tracking-widest">Read Case Study <i class="fas fa-arrow-right w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-[#00C8E6] group-hover/link:border-[#00C8E6] group-hover/link:text-[#0D1B3E] transition-all"></i></a>
-        </div>
-
-        <!-- Project 2: Addins Education -->
-        <div class="apple-scroll-item group bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-[#1044C8]/20 blur-[50px] group-hover:bg-[#1044C8]/40 transition-colors duration-500"></div>
-          
-          <div class="flex items-center gap-3 mb-8">
-            <span class="px-4 py-2 rounded-full bg-[#1044C8]/20 border border-[#1044C8]/30 text-[#00C8E6] font-black text-[10px] uppercase tracking-widest"><i class="fas fa-users mr-2"></i> 50k+ Users</span>
-            <span class="text-white/40 font-black text-[10px] uppercase tracking-widest">EdTech | ERP</span>
-          </div>
-          
-          <div>
-            <h3 class="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#00C8E6] transition-colors">Addins Education</h3>
-            <p class="text-blue-100/60 text-sm leading-relaxed">National level platform for tutor hiring and 1-on-1 class management with deep ERP & CRM AI integration.</p>
-          </div>
-          
-          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-white relative my-8 shadow-2xl border border-white/5 flex items-center justify-center p-8">
-             <img src="images/addins_education_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain scale-100 group-hover:scale-110 transition-transform duration-1000" alt="Addins Education Logo">
-          </div>
-          
-          <a href="project-addins.html" class="text-white font-bold flex items-center gap-3 group/link hover:text-[#00C8E6] transition-colors uppercase text-[11px] tracking-widest">Read Case Study <i class="fas fa-arrow-right w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-[#00C8E6] group-hover/link:border-[#00C8E6] group-hover/link:text-[#0D1B3E] transition-all"></i></a>
-        </div>
-
-        <!-- Project 3: List IT Now -->
-        <div class="apple-scroll-item group bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-[#007CC3]/20 blur-[50px] group-hover:bg-[#007CC3]/40 transition-colors duration-500"></div>
-          
-          <div class="flex items-center gap-3 mb-8">
-            <span class="px-4 py-2 rounded-full bg-[#1044C8]/20 border border-[#1044C8]/30 text-[#00C8E6] font-black text-[10px] uppercase tracking-widest"><i class="fas fa-map-marker-alt mr-2"></i> 107 Cities</span>
-            <span class="text-white/40 font-black text-[10px] uppercase tracking-widest">PropTech | AI</span>
-          </div>
-          
-          <div>
-            <h3 class="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#00C8E6] transition-colors">List IT Now</h3>
-            <p class="text-blue-100/60 text-sm leading-relaxed">Built from scratch, this AI-powered property management platform scaled from zero to 107 cities seamlessly.</p>
-          </div>
-          
-          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-white relative my-8 shadow-2xl border border-white/5 flex items-center justify-center p-8">
-             <img src="images/listitnow_logo_latest.png" class="max-w-[70%] max-h-[70%] object-contain scale-100 group-hover:scale-110 transition-transform duration-1000" alt="List IT Now Logo">
-          </div>
-          
-          <a href="project-listitnow.html" class="text-white font-bold flex items-center gap-3 group/link hover:text-[#00C8E6] transition-colors uppercase text-[11px] tracking-widest">Read Case Study <i class="fas fa-arrow-right w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-[#00C8E6] group-hover/link:border-[#00C8E6] group-hover/link:text-[#0D1B3E] transition-all"></i></a>
-        </div>
-
-        <!-- Project 4: Manuplast -->
-        <div class="apple-scroll-item group bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/10 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-[#1044C8]/20 blur-[50px] group-hover:bg-[#1044C8]/40 transition-colors duration-500"></div>
-          
-          <div class="flex items-center gap-3 mb-8">
-            <span class="px-4 py-2 rounded-full bg-[#1044C8]/20 border border-[#1044C8]/30 text-[#00C8E6] font-black text-[10px] uppercase tracking-widest"><i class="fas fa-industry mr-2"></i> Digital Trans.</span>
-            <span class="text-white/40 font-black text-[10px] uppercase tracking-widest">Industrial | Strategy</span>
-          </div>
-          
-          <div>
-            <h3 class="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#00C8E6] transition-colors">Manuplast</h3>
-            <p class="text-blue-100/60 text-sm leading-relaxed">Complete digital transformation and rebranding for a legacy industrial manufacturing operator.</p>
-          </div>
-          
-          <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-white relative my-8 shadow-2xl border border-white/5 flex items-center justify-center p-8">
-             <img src="images/manuplast_logo_latest.png" class="max-w-[80%] max-h-[80%] object-contain scale-100 group-hover:scale-110 transition-transform duration-1000" alt="Manuplast Logo">
-          </div>
-          
-          <a href="project-manuplast.html" class="text-white font-bold flex items-center gap-3 group/link hover:text-[#00C8E6] transition-colors uppercase text-[11px] tracking-widest">Read Case Study <i class="fas fa-arrow-right w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/link:bg-[#00C8E6] group-hover/link:border-[#00C8E6] group-hover/link:text-[#0D1B3E] transition-all"></i></a>
-        </div>
-
-        <!-- Final Slide -->
-        <div class="flex-none w-[80vw] md:w-[60vw] flex flex-col justify-center px-8 md:px-16 items-center text-center">
-          <div class="w-24 h-24 rounded-full bg-[#1044C8]/20 flex items-center justify-center text-[#00C8E6] text-3xl mb-8 border border-[#1044C8]/50 shadow-[0_0_50px_rgba(0,124,195,0.3)]">
-             <i class="fas fa-rocket"></i>
-          </div>
-          <h2 class="text-4xl md:text-6xl font-black text-white mb-8">Ready to Scale?</h2>
-          <a href="portfolio.html" class="inline-flex items-center justify-center px-10 py-5 rounded-full bg-white text-[#0D1B3E] font-black text-sm uppercase tracking-widest hover:bg-[#00C8E6] hover:scale-105 transition-all duration-300 shadow-xl group">Explore All 500+ Projects <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. TECHNOLOGY STACK -->
-    <!-- 7. TECHNOLOGY STACK -->
-    <section class="vt-section bg-slate-50 relative overflow-hidden text-slate-900 border-b border-slate-200 py-32">
-      <!-- Ambient Lights -->
-      <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#00C8E6]/5 rounded-full blur-[150px] pointer-events-none"></div>
-      <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#1044C8]/5 rounded-full blur-[150px] pointer-events-none"></div>
-
-      <div class="vt-container relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-24 reveal-up">
-          <div class="inline-flex items-center gap-3 mb-6">
-            <span class="w-8 h-px bg-[#00C8E6]"></span>
-            <span class="text-[10px] font-black uppercase tracking-widest text-[#007CC3]">Enterprise Architecture</span>
-            <span class="w-8 h-px bg-[#00C8E6]"></span>
-          </div>
-          <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] mb-8">Built with the <br><span class="brand-gradient-text drop-shadow-sm">World's Best.</span></h2>
-          <p class="text-slate-600 text-lg md:text-xl leading-relaxed">Our enterprise systems run on the exact same high-performance infrastructure and tech stacks utilized by Fortune 500 companies.</p>
+    <!-- 4. TESTIMONIALS -->
+    <section class="py-24 bg-[#0D1B3E] text-white overflow-hidden relative">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,200,230,0.05)_0%,transparent_60%)]"></div>
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10 relative z-10">
+        
+        <div class="text-center reveal-up mb-20 max-w-2xl mx-auto">
+          <span class="inline-block py-1 px-3 rounded-full border border-[#00C8E6]/30 text-[#00C8E6] text-xs font-bold uppercase tracking-widest mb-6">Testimonials</span>
+          <h2 class="text-4xl md:text-5xl font-black mb-6">Client Stories</h2>
+          <p class="text-slate-400 text-lg">See what business owners say about partnering with Vybtek.</p>
         </div>
         
-        <!-- Premium Tech Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 reveal-up">
-          
-          <!-- Box 1: Frontend & UI -->
-          <div class="bg-white border border-slate-200 rounded-[40px] p-10 hover:shadow-2xl hover:border-[#00C8E6]/30 transition-all duration-500 relative overflow-hidden group shadow-lg shadow-slate-200/50">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-[#00C8E6]/5 blur-[40px] group-hover:bg-[#00C8E6]/10 transition-colors duration-500"></div>
-            
-            <div class="w-16 h-16 rounded-2xl bg-[#00C8E6]/10 border border-[#00C8E6]/20 flex items-center justify-center text-[#00C8E6] text-2xl mb-8 group-hover:scale-110 transition-transform duration-500">
-              <i class="fas fa-layer-group"></i>
-            </div>
-            
-            <h3 class="text-2xl font-black text-[#0D1B3E] mb-4">Frontend & Interface</h3>
-            <p class="text-slate-500 text-sm leading-relaxed mb-10">Pixel-perfect, hyper-responsive, and accessible interfaces built for massive scale.</p>
-            
-            <div class="flex flex-wrap gap-4">
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#61DAFB] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="React.js"><i class="fab fa-react"></i></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-900 text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Next.js"><b>N</b></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#38B2AC] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Tailwind CSS"><i class="fas fa-wind"></i></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#E34F26] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="HTML5"><i class="fab fa-html5"></i></div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white/5 border border-white/10 p-8 rounded-3xl reveal-up hover:border-[#00C8E6]/30 transition-colors">
+            <div class="flex text-[#00C8E6] mb-6 text-sm gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="text-slate-300 italic mb-8 leading-relaxed">"Vybtek didn't just build us a website; they transformed our entire digital presence. Our lead volume has doubled in 6 months, and our new brand identity perfectly captures our vision."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold text-lg border border-slate-700">M</div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Michael R.</h4>
+                <p class="text-[#00C8E6] text-xs uppercase tracking-wider">CEO, TechStart</p>
+              </div>
             </div>
           </div>
-
-          <!-- Box 2: Core Backend -->
-          <div class="bg-white border border-slate-200 rounded-[40px] p-10 hover:shadow-2xl hover:border-[#1044C8]/30 transition-all duration-500 relative overflow-hidden group shadow-lg shadow-slate-200/50">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-[#1044C8]/5 blur-[40px] group-hover:bg-[#1044C8]/10 transition-colors duration-500"></div>
-            
-            <div class="w-16 h-16 rounded-2xl bg-[#1044C8]/10 border border-[#1044C8]/20 flex items-center justify-center text-[#1044C8] text-2xl mb-8 group-hover:scale-110 transition-transform duration-500">
-              <i class="fas fa-server"></i>
-            </div>
-            
-            <h3 class="text-2xl font-black text-[#0D1B3E] mb-4">Core Backend APIs</h3>
-            <p class="text-slate-500 text-sm leading-relaxed mb-10">High-throughput microservices designed for zero-downtime data processing.</p>
-            
-            <div class="flex flex-wrap gap-4">
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#339933] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Node.js"><i class="fab fa-node-js"></i></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#3776AB] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Python"><i class="fab fa-python"></i></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#4479A1] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="MySQL"><i class="fas fa-database"></i></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#D22128] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Redis"><i class="fas fa-bolt"></i></div>
+          <!-- Testimonial 2 -->
+          <div class="bg-white/5 border border-white/10 p-8 rounded-3xl reveal-up hover:border-[#00C8E6]/30 transition-colors" style="transition-delay: 100ms;">
+            <div class="flex text-[#00C8E6] mb-6 text-sm gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="text-slate-300 italic mb-8 leading-relaxed">"The AI chatbot they deployed for our customer service handles 70% of inquiries instantly. It's saved us thousands of hours and our customers love the immediate response times."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold text-lg border border-slate-700">S</div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Sarah L.</h4>
+                <p class="text-[#00C8E6] text-xs uppercase tracking-wider">Director of Ops, RetailGen</p>
+              </div>
             </div>
           </div>
-
-          <!-- Box 3: Cloud & AI -->
-          <div class="bg-white border border-slate-200 rounded-[40px] p-10 hover:shadow-2xl hover:border-[#007CC3]/30 transition-all duration-500 relative overflow-hidden group shadow-lg shadow-slate-200/50">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-[#007CC3]/5 blur-[40px] group-hover:bg-[#007CC3]/10 transition-colors duration-500"></div>
-            
-            <div class="w-16 h-16 rounded-2xl bg-[#007CC3]/10 border border-[#007CC3]/20 flex items-center justify-center text-[#007CC3] text-2xl mb-8 group-hover:scale-110 transition-transform duration-500">
-              <i class="fas fa-brain"></i>
-            </div>
-            
-            <h3 class="text-2xl font-black text-[#0D1B3E] mb-4">Cloud & AI Native</h3>
-            <p class="text-slate-500 text-sm leading-relaxed mb-10">Autoscaling infrastructure heavily integrated with custom LLMs and machine learning.</p>
-            
-            <div class="flex flex-wrap gap-4">
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#FF9900] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="AWS"><i class="fab fa-aws"></i></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#0088CC] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="DigitalOcean"><i class="fab fa-digital-ocean"></i></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#10A37F] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="OpenAI"><i class="fas fa-robot"></i></div>
-              <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[#0078D4] text-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm" title="Azure"><i class="fab fa-windows"></i></div>
+          <!-- Testimonial 3 -->
+          <div class="bg-white/5 border border-white/10 p-8 rounded-3xl reveal-up hover:border-[#00C8E6]/30 transition-colors" style="transition-delay: 200ms;">
+            <div class="flex text-[#00C8E6] mb-6 text-sm gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="text-slate-300 italic mb-8 leading-relaxed">"Their custom ERP solution connected all our fragmented spreadsheets into one cohesive system. The visibility we now have across our multi-location business is incredible."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold text-lg border border-slate-700">D</div>
+              <div>
+                <h4 class="font-bold text-white text-sm">David K.</h4>
+                <p class="text-[#00C8E6] text-xs uppercase tracking-wider">Founder, BuildPro</p>
+              </div>
             </div>
           </div>
-          
         </div>
+
       </div>
     </section>
 
-    <!-- 10. FAQ SECTION - Expanded & Improved -->
-    <section class="vt-section relative overflow-hidden bg-slate-50">
-      <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-50/30 -skew-x-12 translate-x-1/2"></div>
-      
-      <div class="vt-container relative z-10">
-        <div class="vt-section-header text-center mb-24">
-          <div class="vt-section-label">Expert Insights</div>
-          <h2 class="vt-section-heading">Strategic <span class="vt-accent">Intelligence</span> FAQ</h2>
-          <p class="vt-section-sub mx-auto">Addressing technical queries for enterprise-scale transformation.</p>
+    <!-- 5. FAQ SECTION -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10">
+        <div class="text-center mb-16 reveal-up">
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E]">Frequently Asked <span class="text-[#00C8E6]">Questions</span></h2>
         </div>
-        
-        <div class="faq-grid reveal-up">
-          <div class="faq-item">
-            <button class="faq-question">
-              Which is the best digital branding company in India?
-              <i class="fas fa-plus faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              Vybtek IT Solutions is recognized as a premier digital branding agency in India, combining AI technology with creative storytelling to build market-leading brands.
-            </div>
-          </div>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              How long does a custom AI integration take?
-              <i class="fas fa-plus faq-icon"></i>
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">What services does Vybtek IT Solutions offer?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
             </button>
-            <div class="faq-answer">
-              Typically, a rapid prototype takes 4-6 weeks, while a full enterprise-grade AI ecosystem deployment ranges from 3-6 months depending on data complexity and training requirements.
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">We offer digital marketing, branding, website and app development, graphic design, and AI development, along with our own products including ERP, CRM, Vybchat and AI transcription, so most of your business needs can be handled under one roof.</p>
             </div>
           </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Do you provide post-launch maintenance?
-              <i class="fas fa-plus faq-icon"></i>
+          <!-- FAQ 2 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you work with businesses of all sizes?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
             </button>
-            <div class="faq-answer">
-              Yes, we offer 24/7 technical monitoring, security patching, and iterative AI model fine-tuning through our dedicated Managed Services tier.
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we work with startups, small businesses, growing companies and established brands, tailoring our approach to whatever stage your business is actually at.</p>
             </div>
           </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Can Vybtek help with migrating legacy ERP systems?
-              <i class="fas fa-plus faq-icon"></i>
+          <!-- FAQ 3 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you work with businesses in my industry?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
             </button>
-            <div class="faq-answer">
-              We specialize in zero-downtime data migrations, modernizing legacy COBOL or SQL architectures into high-performance, cloud-native microservices.
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we work across industries including local services, e-commerce, education, real estate, healthcare and SaaS, adapting strategy and design to fit how your industry actually operates.</p>
             </div>
           </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              What industries do you specialize in?
-              <i class="fas fa-plus faq-icon"></i>
+          <!-- FAQ 4 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Can I get multiple services together, like branding and a website?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
             </button>
-            <div class="faq-answer">
-              While we are industry-agnostic, we have deep domain expertise in Fintech, Manufacturing (Industry 4.0), Healthcare, and Global Logistics.
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, many clients combine services, like branding with website development, or a website with digital marketing, and we coordinate them together so everything stays consistent.</p>
             </div>
           </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              How do you ensure data security in AI applications?
-              <i class="fas fa-plus faq-icon"></i>
+          <!-- FAQ 5 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">How much do your services cost?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
             </button>
-            <div class="faq-answer">
-              We implement military-grade AES-256 encryption, SOC2 compliant data handling, and private VPC deployments to ensure your proprietary data never leaves your environment.
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Pricing depends on the service and scope involved. We offer flexible packages, as well as custom pricing tailored to your specific needs, so you only pay for what your business actually requires.</p>
             </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              How does Vybtek transform a brand from "nowhere" to the top?
-              <i class="fas fa-plus faq-icon"></i>
+          <!-- FAQ 6 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you offer a free consultation or quote?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
             </button>
-            <div class="faq-answer">
-              Our transformation blueprint involves aggressive market intelligence, AEO/GEO-first technical optimization, and high-fidelity branding execution to secure absolute authority in search and AI results.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              What is GEO and why is it essential for global ranking?
-              <i class="fas fa-plus faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              GEO (Generative Engine Optimization) ensures your brand is cited as a primary source by AI models like ChatGPT and Claude. It is the modern standard for maintaining visibility in an AI-dominated search landscape.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Does Vybtek handle the full marketing ideation and planning lifecycle?
-              <i class="fas fa-plus faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              Yes, we provide end-to-end strategic services from initial marketing ideation and comprehensive planning to ruthless technical and creative execution.
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we offer a free initial consultation to understand your needs and provide a clear quote before any commitment.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 11. FINAL CTA -->
-    <section class="vt-section bg-[#0D1B3E] text-white text-center py-40">
-      <div class="vt-container relative z-10">
-        <h2 class="text-6xl font-black mb-10">Let’s Build Your <span class="vt-accent">Digital Future</span></h2>
-        <div class="flex justify-center gap-8">
-          <a href="#" class="vt-btn-primary !bg-white !text-[#0D1B3E]">Schedule Strategy Call</a>
-          <a href="#" class="vt-btn-primary">Start Your Project</a>
+    <!-- 6. FINAL CTA -->
+    <section class="py-32 bg-white text-center border-t border-slate-100">
+      <div class="max-w-[800px] mx-auto px-6 md:px-10 reveal-up">
+        <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-6 leading-tight">Let's Build Something Your Business Actually Needs</h2>
+        <p class="text-lg text-slate-500 mb-10">Power your growth with a partner who understands every angle of your digital presence.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="contact.html" class="vt-btn-primary shadow-xl shadow-[#00C8E6]/20 px-8 py-4 text-lg">Let’s talk about your business</a>
+            <a href="services.html" class="vt-btn-outline px-8 py-4 text-lg bg-white">Explore Our Services</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <special-footer></special-footer>
-  </footer>
+  <footer><special-footer></special-footer></footer>
 
-  <script defer src="animations.js"></script>
+  <script src="animations.js"></script>
+  
+  <script>
+    // FAQ Accordion Logic
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        // Close all others
+        document.querySelectorAll('.faq-content').forEach(c => {
+          c.style.maxHeight = '0px';
+          c.style.opacity = '0';
+        });
+        document.querySelectorAll('.faq-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+        
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+
+    // GSAP Split Pin Logic for Features
+    (function() {
+      var SERVICES = [
+        {
+          num:'01', img:'brand_stamp.png', url:'services/branding.html',
+          title:'Branding',
+          desc:'We craft brands from the ground up, shaping strategy, positioning, and identity into a story worth remembering. From logo design and typography to brand voice, packaging, and rebranding, every touchpoint is built to turn attention into lasting loyalty.'
+        },
+        {
+          num:'02', img:'wd_automation.png', url:'services/ai-development.html',
+          title:'AI Development',
+          desc:'We build intelligence into your business, from AI chatbots and voice bots to autonomous agents and LLM integrations. Through automation, fine-tuning, and RAG-powered systems that chat with your data, we turn complex AI into simple, working solutions.'
+        },
+        {
+          num:'03', img:'wd_custom.png', url:'services/website-development.html',
+          title:'Website Development',
+          desc:'We design and build websites that work as hard as you do, from custom development and UI/UX to web applications, CRMs, and client portals. With redesigns, integrations, and reliable maintenance, your digital presence stays fast, secure, and growing.'
+        },
+        {
+          num:'04', img:'wd_webapp.png', url:'services/app-development.html',
+          title:'App Development',
+          desc:'We turn ideas into apps people actually use, crafting Android, iOS, Flutter, and React Native experiences with intuitive UI/UX design at their core. From first build to ongoing maintenance, we keep your app running smoothly, always.'
+        },
+        {
+          num:'05', img:'dm_seo.png', url:'services/digital-marketing.html',
+          title:'Digital Marketing',
+          desc:'We grow brands through SEO, paid advertising, and social media, blending content, email, and WhatsApp marketing with sharp analytics. From answer engine optimization to conversion tracking, every strategy is built to turn visibility into measurable, lasting growth.'
+        },
+        {
+          num:'06', img:'editorial_collage.png', url:'services/graphic-design.html',
+          title:'Graphics Design',
+          desc:'We shape visuals that speak instantly, from brand identity and packaging to social media creatives and marketing collateral. With illustrations, mockups, and product graphics crafted for impact, every design tells your story clearly, boldly, and beautifully.'
+        },
+        {
+          num:'07', img:'creative_workspace.png', url:'services/software-development.html',
+          title:'Vybtek Products',
+          desc:'We build tools that power businesses forward, from ERP and CRM systems to AI chatbots and transcription technology. Designed for efficiency and built for scale, our products turn everyday operations into smarter, faster, more connected workflows.'
+        }
+      ];
+
+      var current = -1;
+      var isAnimating = false;
+      
+      // Preload images
+      var imgCache = [];
+      window.addEventListener('load', function() {
+        SERVICES.forEach(function(s) {
+          var img = new Image();
+          img.src = 'images/' + s.img;
+          imgCache.push(img);
+        });
+      });
+
+      function setActive(idx) {
+        if (idx === current || isAnimating) return;
+        isAnimating = true;
+        current = idx;
+        var s = SERVICES[idx];
+        var pct = Math.round((idx + 1) / SERVICES.length * 100);
+
+        var cWrap = document.getElementById('split-content-wrap');
+        var iWrap = document.getElementById('split-img-wrap');
+        
+        // Fade out
+        cWrap.style.opacity = '0';
+        cWrap.style.transform = 'translateY(15px)';
+        iWrap.style.opacity = '0';
+        iWrap.style.transform = 'scale(0.98)';
+
+        setTimeout(function() {
+          // Update content
+          document.getElementById('split-num').textContent = s.num;
+          document.getElementById('split-title').innerHTML = s.title;
+          document.getElementById('split-desc').textContent = s.desc;
+          
+          var linkBtn = document.getElementById('split-link');
+          if (linkBtn) {
+             linkBtn.href = s.url;
+          }
+          
+          document.getElementById('split-prog-label').textContent = (idx+1) + ' of ' + SERVICES.length + ' Expertise Areas';
+          document.getElementById('split-prog-pct').textContent = pct + '%';
+          document.getElementById('split-prog-bar').style.width = pct + '%';
+          
+          document.getElementById('split-img').src = 'images/' + s.img;
+
+          // Fade in
+          cWrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          iWrap.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.2,0.8,0.2,1)';
+          
+          requestAnimationFrame(function() {
+            cWrap.style.opacity = '1';
+            cWrap.style.transform = 'translateY(0)';
+            iWrap.style.opacity = '1';
+            iWrap.style.transform = 'scale(1)';
+            setTimeout(function(){ isAnimating = false; }, 400);
+          });
+        }, 300);
+      }
+
+      window.addEventListener('load', function() {
+        setActive(0);
+
+        var gsap = window.gsap;
+        var ST = window.ScrollTrigger;
+        if (!gsap || !ST) return;
+        
+        gsap.registerPlugin(ST);
+
+        var wrapper = document.getElementById('services-pin-wrapper');
+        var panel   = document.getElementById('services-pin-panel');
+        var N       = SERVICES.length; 
+
+        ST.create({
+          trigger: wrapper,
+          start: 'top top',
+          end: '+=' + (N * 80) + '%', 
+          pin: panel,
+          pinSpacing: true,
+          anticipatePin: 1,
+          onUpdate: function(self) {
+            var idx = Math.min(N - 1, Math.floor(self.progress * N));
+            setActive(idx);
+            
+            var hint = document.getElementById('split-scroll-hint');
+            if (hint) hint.style.opacity = self.progress > 0.05 ? '0' : '1';
+          }
+        });
+      });
+    })();
+  </script>
 </body>
-
 </html>
-
