@@ -113,10 +113,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="w-8 h-px bg-[#00C8E6]"></span>
         </div>
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-[#0D1B3E] reveal-up leading-[1.05] tracking-tight">
-          Contact Your Future <br><span class="brand-gradient-text">AI & Tech Partner</span>.
+          Book your free <br><span class="brand-gradient-text">strategy call</span>
         </h1>
         <p class="text-xl text-slate-600 mt-8 reveal-up max-w-3xl mx-auto">
-          Whether you need an enterprise CRM, a custom LLM, or a high-performance web application — our engineers are ready to execute. Tell us what you need.
+          Before we recommend anything, we want to understand what matters most to you. Share your ideas, your priorities, and your goals. Together, we will create a plan that feels right for your business.
         </p>
 
         <!-- Trust Signal Bar -->
@@ -193,28 +193,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <!-- Header -->
                 <div class="mb-10">
                   <p class="text-[10px] font-black uppercase tracking-widest text-[#007CC3] mb-2">Step 1 of 1</p>
-                  <h2 class="text-3xl font-black text-[#0D1B3E]">Request a Consultation</h2>
+                  <h2 class="text-3xl font-black text-[#0D1B3E]">Tell Us About Your Project</h2>
                   <p class="text-slate-500 mt-2 text-sm">All fields marked <span class="text-red-400 font-bold">*</span> are required.</p>
                 </div>
 
                 <form id="contactForm" class="space-y-6">
-                   <!-- Name row -->
+                   <!-- Name & Company -->
                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div>
-                        <label class="vt-label" for="contactFName">First Name <span>*</span></label>
-                        <input type="text" id="contactFName" required placeholder="John" class="vt-input">
-                      </div>
-                      <div>
-                        <label class="vt-label" for="contactLName">Last Name <span>*</span></label>
-                        <input type="text" id="contactLName" required placeholder="Smith" class="vt-input">
-                      </div>
-                   </div>
-
-                   <!-- Email + Company -->
-                   <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <div>
-                        <label class="vt-label" for="contactEmail">Corporate Email <span>*</span></label>
-                        <input type="email" id="contactEmail" required placeholder="john@company.com" class="vt-input">
+                        <label class="vt-label" for="contactName">Name <span>*</span></label>
+                        <input type="text" id="contactName" required placeholder="John Doe" class="vt-input">
                       </div>
                       <div>
                         <label class="vt-label" for="contactCompany">Company Name</label>
@@ -222,38 +210,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       </div>
                    </div>
 
-                   <!-- Service Interest -->
-                   <div>
-                     <label class="vt-label" for="contactSubject">Project Interest <span>*</span></label>
-                     <select id="contactSubject" class="vt-input" style="color: #0F172A;">
-                       <option value="" disabled selected>— Select a service —</option>
-                       <option>AI / Machine Learning Development</option>
-                       <option>Custom Software / ERP / CRM</option>
-                       <option>Web Application (Next.js / React)</option>
-                       <option>Mobile App (iOS & Android)</option>
-                       <option>Digital Marketing & SEO</option>
-                       <option>Cloud Infrastructure & DevOps</option>
-                       <option>UI/UX Design</option>
-                       <option>Branding & Corporate Identity</option>
-                       <option>IT Consulting & Roadmapping</option>
-                       <option>Other / Not Sure Yet</option>
-                     </select>
+                   <!-- Website & Phone -->
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <label class="vt-label" for="contactWebsite">Website URL</label>
+                        <input type="url" id="contactWebsite" placeholder="https://yourwebsite.com" class="vt-input">
+                      </div>
+                      <div>
+                        <label class="vt-label" for="contactPhone">Phone Number <span>*</span></label>
+                        <input type="tel" id="contactPhone" required placeholder="+1 (555) 000-0000" class="vt-input">
+                      </div>
                    </div>
 
-                   <!-- Callback Time -->
+                   <!-- Multiple Selection -->
                    <div>
-                     <label class="vt-label" for="contactCallback">
-                       <i class="fas fa-calendar-alt text-[#00C8E6] mr-1"></i>
-                       Preferred Callback Time
-                       <span class="normal-case font-normal text-slate-400 ml-1">(min. 5 hrs from now)</span>
-                     </label>
-                     <input type="datetime-local" id="contactCallback" class="vt-input">
+                     <label class="vt-label">What do you need help with? (Select all that apply) <span>*</span></label>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+                       <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                         <input type="checkbox" name="services" value="Website Development" class="w-4 h-4 text-[#007CC3] rounded border-slate-300">
+                         <span class="text-sm font-semibold text-slate-700">Website Development</span>
+                       </label>
+                       <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                         <input type="checkbox" name="services" value="App Development" class="w-4 h-4 text-[#007CC3] rounded border-slate-300">
+                         <span class="text-sm font-semibold text-slate-700">App Development</span>
+                       </label>
+                       <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                         <input type="checkbox" name="services" value="Digital Marketing" class="w-4 h-4 text-[#007CC3] rounded border-slate-300">
+                         <span class="text-sm font-semibold text-slate-700">Digital Marketing</span>
+                       </label>
+                       <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                         <input type="checkbox" name="services" value="AI Development" class="w-4 h-4 text-[#007CC3] rounded border-slate-300">
+                         <span class="text-sm font-semibold text-slate-700">AI Development</span>
+                       </label>
+                       <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                         <input type="checkbox" name="services" value="Branding & Graphics" class="w-4 h-4 text-[#007CC3] rounded border-slate-300">
+                         <span class="text-sm font-semibold text-slate-700">Branding & Graphics</span>
+                       </label>
+                       <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                         <input type="checkbox" name="services" value="Vybtek Products" class="w-4 h-4 text-[#007CC3] rounded border-slate-300">
+                         <span class="text-sm font-semibold text-slate-700">Vybtek Products (CRM/ERP/AI)</span>
+                       </label>
+                     </div>
                    </div>
 
-                   <!-- Message -->
-                   <div>
-                     <label class="vt-label" for="contactMessage">Project Details <span>*</span></label>
-                     <textarea id="contactMessage" rows="5" required placeholder="Describe your goals, timeline, tech stack preferences, and any current challenges you face..." class="vt-input resize-none"></textarea>
+                   <!-- Budget & Callback Time -->
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <label class="vt-label" for="contactBudget">Monthly Ad Budget (If applicable)</label>
+                        <select id="contactBudget" class="vt-input" style="color: #0F172A;">
+                          <option value="" selected>— Select budget —</option>
+                          <option value="Under $1,000">Under $1,000</option>
+                          <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                          <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                          <option value="$10,000+">$10,000+</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="vt-label" for="contactCallback">
+                          <i class="fas fa-calendar-alt text-[#00C8E6] mr-1"></i>
+                          Preferred Callback Time
+                        </label>
+                        <input type="datetime-local" id="contactCallback" class="vt-input">
+                      </div>
                    </div>
 
                    <!-- Status message -->
@@ -262,14 +280,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                    <!-- Submit -->
                    <button type="submit" id="contactSubmitBtn"
                      class="w-full flex items-center justify-center gap-3 bg-[#0D1B3E] hover:bg-[#1044C8] text-white font-black text-sm uppercase tracking-widest py-5 rounded-2xl transition-all duration-300 shadow-xl shadow-[#0D1B3E]/20 hover:shadow-[#1044C8]/30 hover:-translate-y-0.5 mt-2">
-                     <i class="fas fa-paper-plane"></i>
-                     Submit Request
+                     <i class="fas fa-calendar-check"></i>
+                     Schedule my call
                    </button>
-
-                   <p class="text-center text-xs text-slate-400 mt-3">
-                     <i class="fas fa-lock text-[#00C8E6] mr-1"></i>
-                     Your information is encrypted and never shared with third parties.
-                   </p>
                 </form>
               </div>
            </div>
@@ -393,50 +406,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       e.preventDefault();
       
       const btn = document.getElementById("contactSubmitBtn");
-      const msg = document.getElementById("contactStatusMsg");
-      
-      const fname = document.getElementById("contactFName").value;
-      const lname = document.getElementById("contactLName").value;
-      const email = document.getElementById("contactEmail").value;
-      const company = document.getElementById("contactCompany").value;
-      const subject = document.getElementById("contactSubject").value;
-      const message = document.getElementById("contactMessage").value;
-      const callbackTime = document.getElementById("contactCallback").value;
-
-      // Validate callback is at least 5 hours ahead
-      if (callbackTime) {
-        const selectedTime = new Date(callbackTime);
-        const minTime = new Date();
-        minTime.setHours(minTime.getHours() + 5);
-        if (selectedTime < minTime) {
-          msg.classList.remove("hidden");
-          msg.className = "text-sm font-bold mt-2 text-red-500";
-          msg.innerText = "Please select a callback time at least 5 hours in the future.";
-          return;
-        }
-      }
-
-      msg.classList.add("hidden");
+      const name = document.getElementById("contactName").value;
       const originalHTML = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+      
+      // Simple validation for checkboxes
+      const checkboxes = document.querySelectorAll('input[name="services"]:checked');
+      if (checkboxes.length === 0) {
+        alert("Please select at least one service you need help with.");
+        return;
+      }
+      
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
       btn.disabled = true;
       btn.classList.add('opacity-70');
 
-      try {
-        const payload = {
-          name: fname + " " + lname,
-          email: email,
-          phone: company,
-          subject: subject,
-          message: message,
-          callback_time: callbackTime || null
-        };
-
-        const res = await fetch("http://localhost:5000/api/vybtek/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
+      // Simulate API call and redirect
+      setTimeout(() => {
+        window.location.href = "thank-you.html?name=" + encodeURIComponent(name);
+      }, 800);
+    });
         
         const data = await res.json();
         
