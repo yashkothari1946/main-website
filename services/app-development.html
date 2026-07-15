@@ -1,361 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K3BXLS28');</script>
-<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App Development Services | VybTek</title>
+  <meta name="description" content="Custom mobile app development, iOS, Android, Flutter, React Native, UI/UX, and maintenance for ambitious brands." />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
   
-  <title>Mobile App Development Services India | Android, iOS & Flutter Apps | Vybtek</title>
-  <meta name="description" content="Build Android, iOS, Flutter, and React Native apps with Vybtek. Custom mobile app development, UI/UX design, maintenance, and support services.">
-  <link rel="canonical" href="https://vybtek.com/services/app-development">
-  <meta property="og:title" content="Mobile App Development Services India | Android, iOS & Flutter Apps | Vybtek">
-  <meta property="og:description" content="Build Android, iOS, Flutter, and React Native apps with Vybtek. Custom mobile app development, UI/UX design, maintenance, and support services.">
-  <meta name="twitter:title" content="Mobile App Development Services India | Android, iOS & Flutter Apps | Vybtek">
-  <meta name="twitter:description" content="Build Android, iOS, Flutter, and React Native apps with Vybtek. Custom mobile app development, UI/UX design, maintenance, and support services.">
-  <meta property="og:image" content="https://vybtek.com/images/favicon.png">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://vybtek.com/images/favicon.png">
-  <link rel="icon" type="image/png" href="../images/favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="../style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind via CDN for quick styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   
+  <link href="../style.css" rel="stylesheet">
+  <script defer src="../headerFooter.js"></script>
+  
+  <!-- Animation Libraries -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-  <script defer src="../headerFooter.js"></script>
 
   <style>
-    /* PHONE MOCKUP ANIMATION */
-    .phone-mockup {
-      width: 300px;
-      height: 600px;
-      background: #000;
-      border-radius: 40px;
-      border: 14px solid #1f2937;
-      box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.4);
-      position: relative;
-      overflow: hidden;
-      animation: float-phone 6s ease-in-out infinite;
-      transform-style: preserve-3d;
-      perspective: 1000px;
-    }
-    .phone-notch {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 25px;
-      background: #1f2937;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      z-index: 10;
-    }
-    .phone-screen {
-      background: #fff;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-    @keyframes float-phone {
-      0% { transform: translateY(0px) rotateY(-10deg) rotateX(5deg); }
-      50% { transform: translateY(-20px) rotateY(-5deg) rotateX(10deg); }
-      100% { transform: translateY(0px) rotateY(-10deg) rotateX(5deg); }
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": {
-      "@type": "Organization",
-      "name": "Vybtek",
-      "url": "https://vybtek.com"
-    },
-    "name": "Mobile App Development Services India | Android, iOS & Flutter Apps | Vybtek",
-    "description": "Build Android, iOS, Flutter, and React Native apps with Vybtek. Custom mobile app development, UI/UX design, maintenance, and support services.",
-    "areaServed": "Worldwide"
+  body {
+    font-family: 'Inter', sans-serif;
   }
-  </script>
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .brand-gradient-text {
+    background: linear-gradient(90deg, #00C8E6, #007CC3, #1044C8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .vt-btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #00C8E6, #007CC3);
+    color: #fff; font-weight: 800; padding: 0.85rem 2rem; border-radius: 999px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .vt-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 124, 195, 0.4);
+  }
+  .vt-btn-outline {
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 2px solid #e2e8f0; color: #0D1B3E; font-weight: 800;
+    padding: 0.85rem 2rem; border-radius: 999px; background: transparent;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .vt-btn-outline:hover {
+    border-color: #00C8E6; color: #007CC3;
+  }
+  
+  /* Reveal classes */
+  .reveal-up { opacity: 0; transform: translateY(30px); }
+  .reveal-left { opacity: 0; transform: translateX(-30px); }
+  .reveal-right { opacity: 0; transform: translateX(30px); }
+  .is-revealed { opacity: 1; transform: translate(0,0); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  </style>
 </head>
-<body class="bg-mesh overflow-x-hidden">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-[#007CC3] selection:text-white">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header><special-header></special-header></header>
 
-  <main id="main-content" class="pt-32">
+  <main id="main-content">
     
     <!-- 1. HERO -->
-    <section class="vt-section min-h-[90vh] flex items-center">
-      <div class="vt-container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-           <div class="reveal-left">
-             <div class="vt-section-label !pl-0 !before:hidden">Mobile Engineering</div>
-             <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#0D1B3E] leading-[1.05]">
-               Mobile App Development Services That Turn Ideas Into <br><span class="brand-gradient-text drop-shadow-sm">Scalable Digital Products</span>
-             </h1>
-             <p class="text-lg md:text-xl text-slate-600 mt-8 max-w-3xl">
-               At Vybtek, we provide end-to-end mobile app development services, from UI/UX design and application development to deployment, maintenance, and ongoing support. We build high-performance mobile applications that are secure, scalable, user-friendly, and designed to support long-term business growth.
-             </p>
-             <div class="mt-12 flex gap-6">
-                <a href="../contact.html" class="vt-btn-primary">Launch Your App</a>
-             </div>
-           </div>
-           
-           <div class="reveal-right flex justify-center perspective-[1000px]">
-              <!-- Phone Mockup -->
-              <div class="phone-mockup">
-                 <div class="phone-notch"></div>
-                 <div class="phone-screen p-6 pt-12 flex flex-col gap-4">
-                    <div class="flex justify-between items-center mb-4">
-                       <div class="w-10 h-10 rounded-full bg-gray-200"></div>
-                       <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600"><i class="fas fa-bell"></i></div>
-                    </div>
-                    <div class="h-24 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-4 text-white flex flex-col justify-between shadow-lg">
-                       <div class="text-[10px] uppercase tracking-widest opacity-80">Total Balance</div>
-                       <div class="text-2xl font-black">$124,500.00</div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 mt-2">
-                       <div class="h-32 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400"><i class="fas fa-chart-line text-2xl"></i></div>
-                       <div class="h-32 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400"><i class="fas fa-wallet text-2xl"></i></div>
-                    </div>
-                    <div class="flex-1 bg-gray-50 rounded-t-3xl mt-4 border border-gray-200 p-4 space-y-3 relative overflow-hidden">
-                       <div class="h-10 bg-white rounded-xl shadow-sm border border-gray-100"></div>
-                       <div class="h-10 bg-white rounded-xl shadow-sm border border-gray-100"></div>
-                       <div class="h-10 bg-white rounded-xl shadow-sm border border-gray-100"></div>
-                    </div>
-                 </div>
+    <section class="relative w-full bg-white overflow-hidden" style="min-height:100vh;display:flex;align-items:center;padding:120px 0 64px;">
+      <!-- Ambient blobs -->
+      <div class="absolute pointer-events-none" style="top:-10%;right:-8%;width:520px;height:520px;background:rgba(0,200,230,0.08);border-radius:50%;filter:blur(110px);"></div>
+      <div class="absolute pointer-events-none" style="bottom:-12%;left:-8%;width:400px;height:400px;background:rgba(0,124,195,0.06);border-radius:50%;filter:blur(90px);"></div>
+      <!-- Dot grid -->
+      <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(circle,rgba(0,124,195,0.06) 1px,transparent 1px);background-size:28px 28px;"></div>
+
+      <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+          <!-- LEFT -->
+          <div class="reveal-left">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full border border-[#00C8E6]/30" style="background:rgba(0,200,230,0.05);">
+              <span class="w-2 h-2 rounded-full bg-[#00C8E6] animate-pulse"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#007CC3;">Mobile Solutions</span>
+            </div>
+
+            <!-- H1 -->
+            <h1 class="font-black text-[#0D1B3E]" style="font-size:clamp(1.8rem,3.8vw,3rem);line-height:1.1;">
+              App Development Services: Where Innovation Lives at <br>
+              <span class="brand-gradient-text">Your Fingertips</span>
+            </h1>
+
+            <p class="text-slate-500 mt-5 leading-relaxed" style="font-size:clamp(0.88rem,1.2vw,1rem);max-width:460px;">
+              Every remarkable app begins with a single vision. We transform ideas into seamless digital experiences through Android, iOS, Flutter, React Native, intuitive UI and UX design, and reliable maintenance that keeps your app evolving long after launch.
+            </p>
+
+            <!-- Metrics Strip -->
+            <div class="flex items-center gap-6 mt-8 py-6 border-t border-b border-slate-100">
+              <div>
+                <div class="text-2xl font-black text-[#0D1B3E]">100%</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Native Feel</div>
               </div>
-           </div>
+              <div style="width:1px;background:#e2e8f0;height:40px;"></div>
+              <div>
+                <div class="text-2xl font-black text-[#00C8E6]">5★</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">UX Standards</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;height:40px;"></div>
+              <div>
+                <div class="text-2xl font-black text-[#0D1B3E]">2-In-1</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Cross Platform</div>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4 mt-8">
+              <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Build Your App</a>
+              <a href="../contact.html" class="vt-btn-outline">
+                Book a Free App Consultation <i class="fas fa-arrow-right" style="font-size:0.7rem;margin-left:4px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="reveal-right w-full min-w-0">
+            <!-- Main image card -->
+            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200" style="box-shadow:0 24px 60px -12px rgba(0,124,195,0.15);">
+              <!-- Top gradient bar -->
+              <div class="absolute top-0 left-0 right-0 z-10" style="height:3px;background:linear-gradient(90deg,#00C8E6,#007CC3,#1044C8);"></div>
+              <!-- Live badge -->
+              <div class="absolute top-4 right-4 z-20 bg-white rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-md border border-slate-100">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                <span style="font-size:11px;font-weight:700;color:#0D1B3E;">Live App Build</span>
+              </div>
+              <!-- Placeholder image mapping to wd_webapp or similar -->
+              <img
+                src="../images/wd_webapp.png"
+                alt="App Development Services"
+                class="w-full block object-cover"
+                style="aspect-ratio:1/1;max-height:520px;object-position:center;"
+              >
+              <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(0,200,230,0.05) 0%,transparent 60%);"></div>
+            </div>
+
+            <!-- Metric cards below image -->
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <div class="bg-white border border-slate-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#00C8E6] flex-shrink-0" style="background:rgba(0,200,230,0.1);font-size:1rem;"><i class="fas fa-mobile-alt"></i></div>
+                <div>
+                  <div class="font-black text-[#0D1B3E]" style="font-size:1.1rem;">Native</div>
+                  <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;">iOS & Android</div>
+                </div>
+              </div>
+              <div class="rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm" style="background:#0D1B3E;border:1px solid rgba(16,68,200,0.4);">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#00C8E6] flex-shrink-0" style="background:rgba(255,255,255,0.1);font-size:1rem;"><i class="fas fa-code-branch"></i></div>
+                <div>
+                  <div class="font-black text-white" style="font-size:1.1rem;">Flutter</div>
+                  <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;">React Native</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-        <!-- CAPABILITIES SECTION -->
-    <section class="vt-section bg-slate-50 relative border-t border-slate-200 py-32" id="capabilities">
-       <div class="vt-container">
-          <div class="text-center mb-16 max-w-3xl mx-auto reveal-up">
-             <div class="glass-pill mb-4 inline-block px-4 py-1.5 bg-[#00C8E6]/10 rounded-full text-xs font-bold text-[#007CC3]"><span class="w-2 h-2 rounded-full bg-[#00C8E6] inline-block mr-2"></span> App Development</div>
-             <h2 class="text-4xl md:text-5xl font-black mb-6 text-[#0D1B3E]">Native & <span class="text-[#00C8E6]">Cross-Platform</span></h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-             
-             <!-- 1. Android App Development -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-xl flex-shrink-0"><i class="fab fa-android"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">Android App Development</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Android powers the majority of mobile devices worldwide. A professionally developed Android application helps businesses increase accessibility, improve customer experiences, and expand their digital presence.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Custom Android App Development</li>
-                     <li>• Business Mobile Applications</li>
-                     <li>• E-Commerce Mobile Apps</li>
-                     <li>• Service & Educational Apps</li>
-                     <li>• Enterprise Android Solutions</li>
-                     <li>• API & Payment Integrations</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 2. iOS App Development -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#007CC3]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:100ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#007CC3]/10 rounded-2xl flex items-center justify-center text-[#007CC3] text-xl flex-shrink-0"><i class="fab fa-apple"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">iOS App Development</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Apple users represent highly engaged and valuable customer segments. A professionally developed iOS application helps businesses deliver premium user experiences across the Apple ecosystem.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Custom iPhone App Development</li>
-                     <li>• iPad Application Development</li>
-                     <li>• Consumer Mobile Applications</li>
-                     <li>• Subscription-Based Apps</li>
-                     <li>• App Store Submission Support</li>
-                     <li>• Performance Optimization</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 3. Flutter App Development -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#1044C8]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:200ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#1044C8]/10 rounded-2xl flex items-center justify-center text-[#1044C8] text-xl flex-shrink-0"><i class="fas fa-layer-group"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">Flutter App Development</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Flutter allows businesses to launch cross-platform applications from a single codebase while maintaining excellent performance, reducing development costs and maintenance requirements.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Cross-Platform App Development</li>
-                     <li>• Flutter Mobile Applications</li>
-                     <li>• MVP & Startup Development</li>
-                     <li>• Marketplace & E-Commerce Apps</li>
-                     <li>• Third-Party Integrations</li>
-                     <li>• Backend Connectivity</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 4. React Native App Development -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-xl flex-shrink-0"><i class="fab fa-react"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">React Native App Dev</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">React Native provides an efficient framework for building mobile applications that work seamlessly across Android and iOS devices, accelerating development while maintaining scalability.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• React Native Applications</li>
-                     <li>• Customer-Facing Apps</li>
-                     <li>• Enterprise Mobile Solutions</li>
-                     <li>• API & Cloud Service Integrations</li>
-                     <li>• App Modernization</li>
-                     <li>• Feature Expansion</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 5. UI/UX Design -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#007CC3]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:100ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#007CC3]/10 rounded-2xl flex items-center justify-center text-[#007CC3] text-xl flex-shrink-0"><i class="fas fa-paint-brush"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">Mobile App UI/UX Design</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">An application's success depends heavily on user experience. Effective UI/UX design helps improve engagement, retention, usability, and customer satisfaction.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Mobile App Interface Design</li>
-                     <li>• User Journey Mapping & Flows</li>
-                     <li>• Wireframing & Prototyping</li>
-                     <li>• Concept Validation</li>
-                     <li>• Accessibility Enhancements</li>
-                     <li>• Conversion-Focused Design</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 6. App Maintenance & Support -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#1044C8]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:200ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#1044C8]/10 rounded-2xl flex items-center justify-center text-[#1044C8] text-xl flex-shrink-0"><i class="fas fa-tools"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">App Maintenance & Support</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Launching an app is only the beginning. Applications require regular updates, security monitoring, performance optimization, and ongoing support to remain competitive and reliable.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Performance & Health Monitoring</li>
-                     <li>• Security Updates & Management</li>
-                     <li>• Bug Fixes & Technical Support</li>
-                     <li>• New Feature Development</li>
-                     <li>• Platform & OS Updates</li>
-                     <li>• App Store Release Management</li>
-                   </ul>
-                </div>
-             </div>
-
-          </div>
-       </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="vt-section py-32 bg-white border-t border-slate-200">
-      <div class="vt-container max-w-4xl mx-auto">
+    <!-- 2. WHY CHOOSE US -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10">
         <div class="text-center mb-16 reveal-up">
-           <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-4">Frequently Asked <span class="text-[#00C8E6]">Questions</span></h2>
-           <p class="text-slate-600">Got questions? We've got answers about our mobile development process.</p>
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-4">Why Choose <span class="text-[#00C8E6]">Us</span></h2>
         </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#00C8E6]/10 rounded-xl flex items-center justify-center text-[#00C8E6] mb-4"><i class="fas fa-coins"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Affordable</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">High quality mobile apps that fit your budget.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#007CC3]/10 rounded-xl flex items-center justify-center text-[#007CC3] mb-4"><i class="fas fa-heart"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">User Friendly</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Intuitive apps designed for exceptional user experiences.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#1044C8]/10 rounded-xl flex items-center justify-center text-[#1044C8] mb-4"><i class="fas fa-pencil-ruler"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Custom</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Built around your business and user needs.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#00C8E6]/10 rounded-xl flex items-center justify-center text-[#00C8E6] mb-4"><i class="fas fa-chart-line"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Scalable</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Apps that grow with your business.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#007CC3]/10 rounded-xl flex items-center justify-center text-[#007CC3] mb-4"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Secure</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Developed with modern security standards.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#1044C8]/10 rounded-xl flex items-center justify-center text-[#1044C8] mb-4"><i class="fas fa-random"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Cross Platform</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Reach Android and iOS users with one solution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="space-y-4 reveal-up">
-           
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>What types of mobile apps do you develop?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 We develop Android apps, iOS apps, Flutter apps, React Native apps, business applications, e-commerce apps, customer portals, marketplace apps, and custom mobile solutions tailored to business requirements.
-              </div>
-           </details>
+    <!-- 3. FEATURES SECTION — Fullscreen Split Pin -->
+    <section id="services-pin-wrapper" class="relative" style="background:#0a1020; border-top:1px solid rgba(255,255,255,0.05);">
+      <div id="services-pin-panel" style="height:100vh; display:flex; align-items:center; position:relative; overflow:hidden;">
+        
+        <!-- BG Elements -->
+        <div style="position:absolute; inset:0; background:radial-gradient(circle at 70% 50%, rgba(0,200,230,0.05) 0%, transparent 60%); pointer-events:none;"></div>
+        <div style="position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:30px 30px; pointer-events:none; opacity:0.5;"></div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Do you provide app UI/UX design services?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We provide complete mobile app UI/UX design services, including wireframes, prototypes, user journey mapping, interface design, and usability optimization.
-              </div>
-           </details>
+        <div class="max-w-[1400px] w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center h-full max-h-[850px] gap-12">
+          
+          <!-- LEFT: Content -->
+          <div class="w-full md:w-[45%] flex flex-col justify-center text-white">
+            
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:2rem;">
+              <span style="width:24px;height:1px;background:#00C8E6;display:inline-block;"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#00C8E6;">Capabilities</span>
+            </div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Can you build apps for both Android and iPhone users?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We develop applications for Android and iOS devices using both native and cross-platform technologies, depending on project requirements.
-              </div>
-           </details>
+            <div id="split-content-wrap" style="transition: opacity 0.4s ease, transform 0.4s ease;">
+              <!-- Dynamic Content -->
+              <div id="split-num" style="font-size:5rem; font-weight:900; line-height:0.9; color:rgba(255,255,255,0.05); margin-bottom:1rem;">01</div>
+              <h3 id="split-title" class="text-3xl lg:text-4xl font-black mb-6 leading-tight text-white">Android App Development</h3>
+              <p id="split-desc" class="text-slate-400 text-lg leading-relaxed mb-8">We build native Android apps in Kotlin and Java, optimized for Play Store approval, real device performance and battery efficiency, so your app runs smoothly across the vast range of Android phones people actually use.</p>
+            </div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Do you provide app maintenance after launch?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We offer ongoing maintenance, security updates, bug fixes, performance optimization, feature enhancements, and technical support after deployment.
+            <!-- Progress Bar -->
+            <div class="mt-auto pt-8 border-t border-slate-800/50 w-full max-w-md">
+              <div class="flex justify-between text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                <span id="split-prog-label">1 of 6 Services</span>
+                <span id="split-prog-pct" class="text-[#00C8E6]">16%</span>
               </div>
-           </details>
+              <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                <div id="split-prog-bar" class="h-full bg-gradient-to-r from-[#00C8E6] to-[#007CC3] rounded-full transition-all duration-300 w-[16%]"></div>
+              </div>
+            </div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Can you update or improve an existing mobile app?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We can modernize existing applications, redesign interfaces, improve performance, add new features, fix technical issues, and migrate apps to newer technologies.
-              </div>
-           </details>
+          </div>
+
+          <!-- RIGHT: Image -->
+          <div class="w-full md:w-[55%] h-[50vh] md:h-[80%] relative rounded-[2rem] overflow-hidden shadow-2xl border border-slate-800 group">
+            <!-- Decorative corner accent -->
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#00C8E6]/20 to-transparent z-20"></div>
+            
+            <div class="absolute inset-0 bg-[#0a1020]/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+            
+            <div id="split-img-wrap" class="w-full h-full relative" style="transition: opacity 0.4s ease, transform 0.6s ease-out;">
+              <img id="split-img" src="../images/wd_custom.png" alt="Android App Development" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
+            </div>
+            
+            <!-- Scroll Hint -->
+            <div id="split-scroll-hint" class="absolute bottom-6 right-6 z-20 bg-black/50 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-full flex items-center gap-3 transition-opacity duration-500">
+              <i class="fas fa-mouse text-[#00C8E6]"></i> Scroll to explore
+            </div>
+          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="vt-section vt-cta py-32 bg-slate-50 border-t border-slate-200">
-      <div class="vt-container relative z-10 text-center">
-        <h2 class="text-5xl md:text-7xl font-black text-[#0D1B3E] mb-8 reveal-up">Ready for the <span class="text-[#00C8E6]">App Store?</span></h2>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 reveal-up">Let's build a mobile application that delights your users and scales your business.</p>
-        <div class="flex justify-center reveal-up">
-          <a href="../contact.html" class="vt-btn-primary shadow-xl shadow-[#007CC3]/20">Get App Estimate</a>
+    <!-- Post-pin spacer to transition back to white background smoothly -->
+    <div style="height:120px; background:linear-gradient(to bottom, #0a1020, #ffffff); text-align:center; padding-top:40px;">
+        <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Build Your App</a>
+    </div>
+
+    <!-- 4. WHO IT'S FOR -->
+    <section class="py-24 bg-[#0D1B3E] text-white border-t border-[#1044C8]/30">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10 text-center reveal-up">
+        <span class="inline-block py-1 px-3 rounded-full border border-[#00C8E6]/30 text-[#00C8E6] text-xs font-bold uppercase tracking-widest mb-6">Who It's For</span>
+        <h2 class="text-4xl md:text-5xl font-black mb-8">Built for Ambitious Brands</h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-10 mx-auto">For startups, growing businesses, and established brands looking to launch scalable mobile applications and deliver premium experiences directly to their users' hands.</p>
+        <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#00C8E6]/20 bg-[#00C8E6] hover:bg-white hover:text-[#0D1B3E] transition-colors border-none">Book a Free Product Demo</a>
+      </div>
+    </section>
+
+    <!-- 5. FAQ SECTION -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10">
+        <div class="text-center mb-16 reveal-up">
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E]">Frequently Asked <span class="text-[#00C8E6]">Questions</span></h2>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">How long does it take to build a mobile app?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Timelines depend on complexity, but most apps take 8-16 weeks from planning to launch.</p>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Should I build for iOS, Android, or both?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">It depends on where your audience is. We can guide that decision, or build cross-platform from the start so you launch on both simultaneously.</p>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you build native apps or cross-platform apps?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">We build both, native apps in Swift and Kotlin for maximum performance, or cross-platform apps using Flutter and React Native for faster, more cost-effective development.</p>
+            </div>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">What's included after the app launches?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">We offer ongoing maintenance covering bug fixes, performance monitoring, OS updates and feature improvements post-launch.</p>
+            </div>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you help publish the app to the App Store and Play Store?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we handle the entire submission and approval process for both platforms.</p>
+            </div>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Can you rebuild or improve an existing app?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we audit your current app and rebuild or optimize it for better performance, design and functionality.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-</main>
+
+    <!-- 6. FINAL CTA -->
+    <section class="py-32 bg-white text-center border-t border-slate-100">
+      <div class="max-w-[800px] mx-auto px-6 md:px-10 reveal-up">
+        <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-6 leading-tight">Great ideas deserve to live in every hand.</h2>
+        <p class="text-lg text-slate-500 mb-10">Let's build an app that people love to use and remember to return to.</p>
+        <a href="../contact.html" class="vt-btn-primary shadow-xl shadow-[#00C8E6]/20 px-10 py-4 text-lg">Build Your App</a>
+      </div>
+    </section>
+
+  </main>
 
   <footer><special-footer></special-footer></footer>
+
   <script src="../animations.js"></script>
+  
+  <script>
+    // FAQ Accordion Logic
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        // Close all others
+        document.querySelectorAll('.faq-content').forEach(c => {
+          c.style.maxHeight = '0px';
+          c.style.opacity = '0';
+        });
+        document.querySelectorAll('.faq-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+        
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+
+    // GSAP Split Pin Logic for Features
+    (function() {
+      var SERVICES = [
+        {
+          num:'01', img:'wd_custom.png', // Temporary placeholder
+          title:'Android App Development',
+          desc:'We build native Android apps in Kotlin and Java, optimized for Play Store approval, real device performance and battery efficiency, so your app runs smoothly across the vast range of Android phones people actually use.'
+        },
+        {
+          num:'02', img:'wd_uiux.png', // Temporary placeholder
+          title:'iOS App Development',
+          desc:'We build native iOS apps in Swift, tuned for App Store guidelines, Apple\'s hardware and its ecosystem of interactions, so your app feels exactly like it belongs on an iPhone, not adapted to fit one.'
+        },
+        {
+          num:'03', img:'wd_webapp.png', // Temporary placeholder
+          title:'Flutter App Development',
+          desc:'We build cross-platform apps in a single Flutter codebase, shipping to both Android and iOS at once, cutting development time and cost while keeping native-level speed, animations and responsiveness intact.'
+        },
+        {
+          num:'04', img:'creative_workspace.png', // Temporary placeholder
+          title:'React Native App Development',
+          desc:'We build cross-platform apps in React Native, sharing logic across Android and iOS while still tapping native modules where needed, so you launch faster without giving up performance or platform-specific feel.'
+        },
+        {
+          num:'05', img:'dm_social.png', // Temporary placeholder
+          title:'Mobile App UI/UX Design',
+          desc:'We wireframe, prototype and design app interfaces around real user flows and platform conventions, so navigation feels obvious, screens feel uncluttered, and people stay in the app instead of abandoning it.'
+        },
+        {
+          num:'06', img:'wd_maintenance.png', // Temporary placeholder
+          title:'App Maintenance & Support',
+          desc:'We monitor crashes and performance, patch security issues, update for new OS versions, and refine features post-launch, so your app keeps working reliably instead of quietly falling behind with every update.'
+        }
+      ];
+
+      var current = -1;
+      var isAnimating = false;
+      
+      // Preload images
+      var imgCache = [];
+      window.addEventListener('load', function() {
+        SERVICES.forEach(function(s) {
+          var img = new Image();
+          img.src = '../images/' + s.img;
+          imgCache.push(img);
+        });
+      });
+
+      function setActive(idx) {
+        if (idx === current || isAnimating) return;
+        isAnimating = true;
+        current = idx;
+        var s = SERVICES[idx];
+        var pct = Math.round((idx + 1) / SERVICES.length * 100);
+
+        var cWrap = document.getElementById('split-content-wrap');
+        var iWrap = document.getElementById('split-img-wrap');
+        
+        // Fade out
+        cWrap.style.opacity = '0';
+        cWrap.style.transform = 'translateY(15px)';
+        iWrap.style.opacity = '0';
+        iWrap.style.transform = 'scale(0.98)';
+
+        setTimeout(function() {
+          // Update content
+          document.getElementById('split-num').textContent = s.num;
+          document.getElementById('split-title').innerHTML = s.title;
+          document.getElementById('split-desc').textContent = s.desc;
+          
+          document.getElementById('split-prog-label').textContent = (idx+1) + ' of ' + SERVICES.length + ' Services';
+          document.getElementById('split-prog-pct').textContent = pct + '%';
+          document.getElementById('split-prog-bar').style.width = pct + '%';
+          
+          document.getElementById('split-img').src = '../images/' + s.img;
+
+          // Fade in
+          cWrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          iWrap.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.2,0.8,0.2,1)';
+          
+          requestAnimationFrame(function() {
+            cWrap.style.opacity = '1';
+            cWrap.style.transform = 'translateY(0)';
+            iWrap.style.opacity = '1';
+            iWrap.style.transform = 'scale(1)';
+            setTimeout(function(){ isAnimating = false; }, 400);
+          });
+        }, 300);
+      }
+
+      window.addEventListener('load', function() {
+        setActive(0);
+
+        var gsap = window.gsap;
+        var ST = window.ScrollTrigger;
+        if (!gsap || !ST) return;
+        
+        gsap.registerPlugin(ST);
+
+        var wrapper = document.getElementById('services-pin-wrapper');
+        var panel   = document.getElementById('services-pin-panel');
+        var N       = SERVICES.length; 
+
+        ST.create({
+          trigger: wrapper,
+          start: 'top top',
+          end: '+=' + (N * 80) + '%', 
+          pin: panel,
+          pinSpacing: true,
+          anticipatePin: 1,
+          onUpdate: function(self) {
+            var idx = Math.min(N - 1, Math.floor(self.progress * N));
+            setActive(idx);
+            
+            var hint = document.getElementById('split-scroll-hint');
+            if (hint) hint.style.opacity = self.progress > 0.05 ? '0' : '1';
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
-
