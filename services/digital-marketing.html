@@ -210,257 +210,125 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
 
-        <!-- 2. CORE SERVICES — GSAP Pinned Scroll -->
-    <!-- Outer wrapper that GSAP will pin -->
-    <div id="services-pin-wrapper" style="background:#f8fafc;border-top:1px solid #e2e8f0;">
+        <!-- 2. CORE SERVICES — Fullscreen Split Pin -->
+    <section id="services-pin-wrapper" class="relative" style="background:#0a1020; border-top:1px solid rgba(255,255,255,0.05);">
+      <div id="services-pin-panel" style="height:100vh; display:flex; align-items:center; position:relative; overflow:hidden;">
+        
+        <!-- BG Elements -->
+        <div style="position:absolute; inset:0; background:radial-gradient(circle at 70% 50%, rgba(0,200,230,0.05) 0%, transparent 60%); pointer-events:none;"></div>
+        <div style="position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:30px 30px; pointer-events:none; opacity:0.5;"></div>
 
-      <!-- The pinned panel itself -->
-      <div id="services-pin-panel" style="height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;position:relative;">
-
-        <!-- BG dot grid -->
-        <div style="position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(0,124,195,0.05) 1px,transparent 1px);background-size:30px 30px;"></div>
-
-        <div class="max-w-[1200px] mx-auto w-full px-6 md:px-10" style="position:relative;z-index:1;">
-
-          <!-- Section label -->
-          <div style="text-align:center;margin-bottom:3rem;">
-            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:10px;">
-              <span style="width:32px;height:1px;background:#00C8E6;display:inline-block;"></span>
-              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#007CC3;">Capabilities</span>
-              <span style="width:32px;height:1px;background:#00C8E6;display:inline-block;"></span>
+        <div class="max-w-[1400px] w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center h-full max-h-[850px] gap-12">
+          
+          <!-- LEFT: Content -->
+          <div class="w-full md:w-[45%] flex flex-col justify-center text-white">
+            
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:2rem;">
+              <span style="width:24px;height:1px;background:#00C8E6;display:inline-block;"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#00C8E6;">Capabilities</span>
             </div>
-            <h2 style="font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;color:#0D1B3E;margin:0;">Digital Marketing <span style="color:#00C8E6;">Solutions</span></h2>
-          </div>
 
-          <!-- 2-column layout -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
-
-            <!-- LEFT: Animated card -->
-            <div>
-              <div id="svc-card" style="background:#fff;border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 20px 60px -10px rgba(0,124,195,0.12);overflow:hidden;transition:transform 0.3s ease;">
-
-                <!-- Top bar -->
-                <div id="svc-bar" style="height:4px;background:linear-gradient(90deg,#00C8E6,#007CC3);transition:background 0.5s ease;"></div>
-
-                <div style="padding:36px 40px;">
-                  <!-- Step number -->
-                  <div id="svc-num" style="font-size:5rem;font-weight:900;line-height:1;color:rgba(0,200,230,0.12);margin-bottom:16px;font-family:inherit;transition:opacity 0.3s;">01</div>
-
-                  <!-- Icon + heading -->
-                  <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
-                    <div id="svc-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;flex-shrink:0;background:linear-gradient(135deg,#00C8E6,#007CC3);transition:background 0.5s ease;">
-                      <i class="fas fa-search"></i>
-                    </div>
-                    <div>
-                      <div id="svc-label" style="font-size:10px;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:#007CC3;margin-bottom:4px;">Service 01</div>
-                      <h3 id="svc-title" style="font-size:1.35rem;font-weight:900;color:#0D1B3E;line-height:1.25;margin:0;">SEO &amp; AI Search Optimization</h3>
-                    </div>
-                  </div>
-
-                  <!-- Description -->
-                  <p id="svc-desc" style="color:#64748b;font-size:0.9rem;line-height:1.75;margin-bottom:20px;">
-                    We repair the technical bones of your site, sharpen on-page content, and earn off-page authority, then carry that trust into AEO and GEO so AI engines cite you, while Local, International and E-commerce SEO widen every doorway in.
-                  </p>
-
-                  <!-- Tags -->
-                  <div id="svc-tags" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-                    <span style="padding:4px 14px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid #e2e8f0;color:#64748b;">On-Page SEO</span>
-                    <span style="padding:4px 14px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid #e2e8f0;color:#64748b;">AEO</span>
-                    <span style="padding:4px 14px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid #e2e8f0;color:#64748b;">GEO</span>
-                    <span style="padding:4px 14px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid #e2e8f0;color:#64748b;">Local SEO</span>
-                  </div>
-
-                  <!-- Progress -->
-                  <div style="border-top:1px solid #f1f5f9;padding-top:20px;">
-                    <div style="display:flex;justify-content:space-between;font-size:11px;color:#94a3b8;margin-bottom:8px;">
-                      <span id="svc-prog-label">1 of 9 Services</span>
-                      <span id="svc-prog-pct">11%</span>
-                    </div>
-                    <div style="height:3px;background:#f1f5f9;border-radius:999px;overflow:hidden;">
-                      <div id="svc-prog-bar" style="height:100%;width:11%;background:linear-gradient(90deg,#00C8E6,#1044C8);border-radius:999px;transition:width 0.4s ease,background 0.5s ease;"></div>
-                    </div>
-                  </div>
-                </div>
+            <div id="split-content-wrap" style="transition: opacity 0.4s ease, transform 0.4s ease;">
+              <!-- Dynamic Content -->
+              <div id="split-num" style="font-size:5rem; font-weight:900; line-height:0.9; color:rgba(255,255,255,0.05); margin-bottom:1rem;">01</div>
+              <h3 id="split-title" class="text-3xl lg:text-4xl font-black mb-6 leading-tight text-white">SEO &amp; AI Search Optimization</h3>
+              <p id="split-desc" class="text-slate-400 text-lg leading-relaxed mb-8">We repair the technical bones of your site, sharpen on-page content, and earn off-page authority, then carry that trust into AEO and GEO so AI engines cite you.</p>
+              
+              <div id="split-tags" class="flex flex-wrap gap-2 mb-12">
+                <!-- tags injected here -->
               </div>
             </div>
 
-            <!-- RIGHT: Steps list -->
-            <div id="svc-list" style="max-height:65vh;overflow-y:auto;padding-right:8px;scrollbar-width:thin;scrollbar-color:#e2e8f0 transparent;">
-              <div class="svc-step" data-idx="0" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;background:rgba(0,200,230,0.06);box-shadow:inset 3px 0 0 #00C8E6;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#00C8E6;color:#fff;flex-shrink:0;">01</span>
-                  <div>
-                    <div style="font-weight:800;color:#0D1B3E;font-size:0.9rem;margin-bottom:2px;">SEO &amp; AI Search Optimization</div>
-                    <div style="font-size:0.78rem;color:#64748b;">Technical, On-Page, Off-Page, AEO, GEO</div>
-                  </div>
-                </div>
+            <!-- Progress Bar -->
+            <div class="mt-auto pt-8 border-t border-slate-800/50 w-full max-w-md">
+              <div class="flex justify-between text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                <span id="split-prog-label">1 of 9 Services</span>
+                <span id="split-prog-pct" class="text-[#00C8E6]">11%</span>
               </div>
-              <div class="svc-step" data-idx="1" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#94a3b8;flex-shrink:0;">02</span>
-                  <div>
-                    <div style="font-weight:700;color:#94a3b8;font-size:0.9rem;margin-bottom:2px;">Paid Advertising &amp; Performance Marketing</div>
-                    <div style="font-size:0.78rem;color:#cbd5e1;">Google, Meta, LinkedIn, TikTok Ads</div>
-                  </div>
-                </div>
-              </div>
-              <div class="svc-step" data-idx="2" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#94a3b8;flex-shrink:0;">03</span>
-                  <div>
-                    <div style="font-weight:700;color:#94a3b8;font-size:0.9rem;margin-bottom:2px;">Social Media Management</div>
-                    <div style="font-size:0.78rem;color:#cbd5e1;">Instagram, LinkedIn, TikTok, YouTube</div>
-                  </div>
-                </div>
-              </div>
-              <div class="svc-step" data-idx="3" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#94a3b8;flex-shrink:0;">04</span>
-                  <div>
-                    <div style="font-weight:700;color:#94a3b8;font-size:0.9rem;margin-bottom:2px;">Content Marketing</div>
-                    <div style="font-size:0.78rem;color:#cbd5e1;">Blogs, Copywriting, Case Studies</div>
-                  </div>
-                </div>
-              </div>
-              <div class="svc-step" data-idx="4" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#94a3b8;flex-shrink:0;">05</span>
-                  <div>
-                    <div style="font-weight:700;color:#94a3b8;font-size:0.9rem;margin-bottom:2px;">Email Marketing &amp; Automation</div>
-                    <div style="font-size:0.78rem;color:#cbd5e1;">Newsletters, Automation, CRM Sync</div>
-                  </div>
-                </div>
-              </div>
-              <div class="svc-step" data-idx="5" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#94a3b8;flex-shrink:0;">06</span>
-                  <div>
-                    <div style="font-weight:700;color:#94a3b8;font-size:0.9rem;margin-bottom:2px;">WhatsApp &amp; SMS Marketing</div>
-                    <div style="font-size:0.78rem;color:#cbd5e1;">API, Chatbots, Broadcast Campaigns</div>
-                  </div>
-                </div>
-              </div>
-              <div class="svc-step" data-idx="6" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#94a3b8;flex-shrink:0;">07</span>
-                  <div>
-                    <div style="font-weight:700;color:#94a3b8;font-size:0.9rem;margin-bottom:2px;">E-commerce &amp; Marketplace Marketing</div>
-                    <div style="font-size:0.78rem;color:#cbd5e1;">Shopify, WooCommerce, Google Shopping</div>
-                  </div>
-                </div>
-              </div>
-              <div class="svc-step" data-idx="7" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#94a3b8;flex-shrink:0;">08</span>
-                  <div>
-                    <div style="font-weight:700;color:#94a3b8;font-size:0.9rem;margin-bottom:2px;">Online Reputation Management</div>
-                    <div style="font-size:0.78rem;color:#cbd5e1;">Reviews, Google Listing, Brand Monitor</div>
-                  </div>
-                </div>
-              </div>
-              <div class="svc-step" data-idx="8" style="padding:20px 16px;border-radius:14px;cursor:pointer;margin-bottom:4px;transition:background 0.25s,box-shadow 0.25s;">
-                <div style="display:flex;align-items:center;gap:12px;">
-                  <span style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#94a3b8;flex-shrink:0;">09</span>
-                  <div>
-                    <div style="font-weight:700;color:#94a3b8;font-size:0.9rem;margin-bottom:2px;">Analytics &amp; Conversion Optimization</div>
-                    <div style="font-size:0.78rem;color:#cbd5e1;">GA4, CRO, Funnel Tracking, Dashboards</div>
-                  </div>
-                </div>
+              <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                <div id="split-prog-bar" class="h-full bg-gradient-to-r from-[#00C8E6] to-[#007CC3] rounded-full transition-all duration-300 w-[11%]"></div>
               </div>
             </div>
 
           </div>
 
-          <!-- Scroll hint -->
-          <div id="svc-scroll-hint" style="text-align:center;margin-top:24px;transition:opacity 0.5s;">
-            <div style="display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#94a3b8;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">
-              <i class="fas fa-mouse" style="color:#00C8E6;"></i>
-              Scroll to explore all 9 services
+          <!-- RIGHT: Image -->
+          <div class="w-full md:w-[55%] h-[50vh] md:h-[80%] relative rounded-[2rem] overflow-hidden shadow-2xl border border-slate-800 group">
+            <!-- Decorative corner accent -->
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#00C8E6]/20 to-transparent z-20"></div>
+            
+            <div class="absolute inset-0 bg-[#0a1020]/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+            
+            <div id="split-img-wrap" class="w-full h-full relative" style="transition: opacity 0.4s ease, transform 0.6s ease-out;">
+              <img id="split-img" src="../images/dm_seo.png" alt="Digital Marketing Service" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
+            </div>
+            
+            <!-- Scroll Hint overlay on first image -->
+            <div id="split-scroll-hint" class="absolute bottom-6 right-6 z-20 bg-black/50 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-full flex items-center gap-3 transition-opacity duration-500">
+              <i class="fas fa-mouse text-[#00C8E6]"></i> Scroll to explore
             </div>
           </div>
 
         </div>
       </div>
+    </section>
 
-      <!-- CTA row after pin releases -->
-      <div style="padding:60px 0;text-align:center;background:#f8fafc;border-top:1px solid #e2e8f0;">
-        <p style="font-size:0.95rem;color:#64748b;margin-bottom:20px;">Ready to transform your digital presence?</p>
-        <a href="../contact.html" class="vt-btn-primary" style="box-shadow:0 8px 30px rgba(0,124,195,0.2);">See Our Marketing Packages</a>
-      </div>
-
-    </div>
+    <!-- Post-pin spacer to transition back to white background smoothly -->
+    <div style="height:120px; background:linear-gradient(to bottom, #0a1020, #ffffff);"></div>
 
     <script>
     (function() {
       var SERVICES = [
         {
-          num:'01', label:'Service 01', icon:'fa-search',
-          grad:'linear-gradient(135deg,#00C8E6,#007CC3)',
-          bar:'linear-gradient(90deg,#00C8E6,#007CC3)',
+          num:'01', img:'dm_seo.png',
           title:'SEO &amp; AI Search Optimization',
           desc:'We repair the technical bones of your site, sharpen on-page content, and earn off-page authority, then carry that trust into AEO and GEO so AI engines cite you, while Local, International and E-commerce SEO widen every doorway in.',
           tags:['On-Page SEO','AEO','GEO','Local SEO','Technical SEO']
         },
         {
-          num:'02', label:'Service 02', icon:'fa-mouse-pointer',
-          grad:'linear-gradient(135deg,#007CC3,#1044C8)',
-          bar:'linear-gradient(90deg,#007CC3,#1044C8)',
+          num:'02', img:'dm_ads.png',
           title:'Paid Advertising &amp; Performance Marketing',
           desc:'Across Google, Bing and Yahoo, Meta, LinkedIn, YouTube, TikTok and Snapchat, we place your brand where eyes already linger, then retarget every visitor who almost said yes, turning near misses into paying customers.',
           tags:['Google Ads','Meta Ads','LinkedIn Ads','TikTok Ads','Retargeting']
         },
         {
-          num:'03', label:'Service 03', icon:'fa-share-alt',
-          grad:'linear-gradient(135deg,#1044C8,#00C8E6)',
-          bar:'linear-gradient(90deg,#1044C8,#00C8E6)',
+          num:'03', img:'dm_social.png',
           title:'Social Media Management',
           desc:'We design scroll-stopping posts and short-form video for Facebook, Instagram, LinkedIn, TikTok and Snapchat, grow your YouTube channel one upload at a time, and plan every post on a calendar so nothing goes quiet.',
           tags:['Instagram','LinkedIn','TikTok','YouTube','Content Calendar']
         },
         {
-          num:'04', label:'Service 04', icon:'fa-pen-nib',
-          grad:'linear-gradient(135deg,#00C8E6,#0D1B3E)',
-          bar:'linear-gradient(90deg,#00C8E6,#0D1B3E)',
+          num:'04', img:'dm_content.png',
           title:'Content Marketing',
           desc:'We build a content strategy first, then fill it in: sharp copywriting, blog posts that answer real questions, newsletters people actually open, and case studies that prove your results instead of just claiming them.',
           tags:['Copywriting','Blog Writing','SEO Content','Newsletters','Case Studies']
         },
         {
-          num:'05', label:'Service 05', icon:'fa-envelope-open-text',
-          grad:'linear-gradient(135deg,#007CC3,#00C8E6)',
-          bar:'linear-gradient(90deg,#007CC3,#00C8E6)',
+          num:'05', img:'dm_email.png',
           title:'Email Marketing &amp; Automation',
           desc:'From strategy and newsletter design to copy that gets opened, we build automation flows and nurture sequences that follow up while you sleep, all synced into your CRM so no lead slips through.',
           tags:['Newsletters','Automation Flows','CRM Sync','Lead Nurturing']
         },
         {
-          num:'06', label:'Service 06', icon:'fa-comment-dots',
-          grad:'linear-gradient(135deg,#25D366,#007CC3)',
-          bar:'linear-gradient(90deg,#25D366,#007CC3)',
+          num:'06', img:'dm_whatsapp.png',
           title:'WhatsApp &amp; SMS Marketing',
           desc:'We set up WhatsApp Business API and chatbots that answer instantly, run broadcast campaigns across WhatsApp and Telegram, nurture leads message by message, and automate customer support so help arrives before frustration does.',
           tags:['WhatsApp API','Chatbots','SMS Campaigns','Broadcast','Telegram']
         },
         {
-          num:'07', label:'Service 07', icon:'fa-shopping-cart',
-          grad:'linear-gradient(135deg,#1044C8,#007CC3)',
-          bar:'linear-gradient(90deg,#1044C8,#007CC3)',
+          num:'07', img:'dm_ecommerce.png',
           title:'E-commerce &amp; Marketplace Marketing',
           desc:'We optimize your Shopify or WooCommerce store, set up clean product catalogs, run shopping and retargeting ads across marketplaces, and tighten every step of the funnel until browsers turn into buyers.',
           tags:['Shopify','WooCommerce','Google Shopping','Product Feeds','Funnel CRO']
         },
         {
-          num:'08', label:'Service 08', icon:'fa-star',
-          grad:'linear-gradient(135deg,#f59e0b,#007CC3)',
-          bar:'linear-gradient(90deg,#f59e0b,#007CC3)',
+          num:'08', img:'dm_reputation.png',
           title:'Online Reputation Management',
           desc:'We generate genuine reviews, manage your Google listing, monitor what is said about you across the web, and respond to criticism with strategy instead of panic, turning scattered opinions into steady trust.',
           tags:['Review Generation','Google Listing','Brand Monitoring','ORM','Crisis Response']
         },
         {
-          num:'09', label:'Service 09', icon:'fa-chart-line',
-          grad:'linear-gradient(135deg,#0D1B3E,#00C8E6)',
-          bar:'linear-gradient(90deg,#0D1B3E,#00C8E6)',
+          num:'09', img:'dm_analytics.png',
           title:'Analytics &amp; Conversion Optimization',
           desc:'We track every conversion, trace where your funnel leaks, and test and refine until more visitors become customers, then hand you monthly dashboards that turn numbers into decisions you can actually act on.',
           tags:['GA4 Setup','Funnel Tracking','CRO','A/B Testing','KPI Dashboards']
@@ -469,9 +337,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       var current = -1;
       var isAnimating = false;
+      
+      // Preload images
+      var imgCache = [];
+      window.addEventListener('load', function() {
+        SERVICES.forEach(function(s) {
+          var img = new Image();
+          img.src = '../images/' + s.img;
+          imgCache.push(img);
+        });
+      });
 
       function tag(t) {
-        return '<span style="padding:4px 14px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid #e2e8f0;color:#64748b;">' + t + '</span>';
+        return '<span style="padding:6px 16px; border-radius:999px; font-size:11px; font-weight:700; border:1px solid rgba(255,255,255,0.1); color:#94a3b8; background:rgba(255,255,255,0.03);">' + t + '</span>';
       }
 
       function setActive(idx) {
@@ -481,93 +359,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var s = SERVICES[idx];
         var pct = Math.round((idx + 1) / SERVICES.length * 100);
 
-        var card = document.getElementById('svc-card');
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(10px)';
+        var cWrap = document.getElementById('split-content-wrap');
+        var iWrap = document.getElementById('split-img-wrap');
+        
+        // Fade out
+        cWrap.style.opacity = '0';
+        cWrap.style.transform = 'translateY(15px)';
+        iWrap.style.opacity = '0';
+        iWrap.style.transform = 'scale(0.98)';
 
         setTimeout(function() {
-          document.getElementById('svc-num').textContent = s.num;
-          document.getElementById('svc-icon').style.background = s.grad;
-          document.getElementById('svc-icon').innerHTML = '<i class="fas ' + s.icon + '"></i>';
-          document.getElementById('svc-label').textContent = s.label;
-          document.getElementById('svc-title').innerHTML = s.title;
-          document.getElementById('svc-desc').textContent = s.desc.replace(/&amp;/g,'&');
-          document.getElementById('svc-tags').innerHTML = s.tags.map(tag).join('');
-          document.getElementById('svc-bar').style.background = s.bar;
-          document.getElementById('svc-prog-label').textContent = (idx+1) + ' of ' + SERVICES.length + ' Services';
-          document.getElementById('svc-prog-pct').textContent = pct + '%';
-          document.getElementById('svc-prog-bar').style.width = pct + '%';
-          document.getElementById('svc-prog-bar').style.background = s.bar;
+          // Update content
+          document.getElementById('split-num').textContent = s.num;
+          document.getElementById('split-title').innerHTML = s.title;
+          document.getElementById('split-desc').textContent = s.desc.replace(/&amp;/g,'&');
+          document.getElementById('split-tags').innerHTML = s.tags.map(tag).join('');
+          
+          document.getElementById('split-prog-label').textContent = (idx+1) + ' of ' + SERVICES.length + ' Services';
+          document.getElementById('split-prog-pct').textContent = pct + '%';
+          document.getElementById('split-prog-bar').style.width = pct + '%';
+          
+          document.getElementById('split-img').src = '../images/' + s.img;
 
-          // Update step list
-          document.querySelectorAll('.svc-step').forEach(function(el, i) {
-            var badge = el.querySelector('span');
-            var title = el.querySelectorAll('div > div')[0];
-            var sub   = el.querySelectorAll('div > div')[1];
-            if (i === idx) {
-              el.style.background = 'rgba(0,200,230,0.06)';
-              el.style.boxShadow  = 'inset 3px 0 0 #00C8E6';
-              badge.style.background = '#00C8E6';
-              badge.style.color = '#fff';
-              if(title){ title.style.color = '#0D1B3E'; title.style.fontWeight='800'; }
-              if(sub){ sub.style.color = '#64748b'; }
-              // scroll step into view
-              el.scrollIntoView({block:'nearest',behavior:'smooth'});
-            } else {
-              el.style.background = 'transparent';
-              el.style.boxShadow  = 'none';
-              badge.style.background = '#e2e8f0';
-              badge.style.color = '#94a3b8';
-              if(title){ title.style.color = '#94a3b8'; title.style.fontWeight='700'; }
-              if(sub){ sub.style.color = '#cbd5e1'; }
-            }
-          });
-
-          card.style.transition = 'opacity 0.4s ease,transform 0.4s ease';
+          // Fade in
+          cWrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          iWrap.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.2,0.8,0.2,1)';
+          
           requestAnimationFrame(function() {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-            setTimeout(function(){ isAnimating = false; }, 420);
+            cWrap.style.opacity = '1';
+            cWrap.style.transform = 'translateY(0)';
+            iWrap.style.opacity = '1';
+            iWrap.style.transform = 'scale(1)';
+            setTimeout(function(){ isAnimating = false; }, 400);
           });
-        }, 100);
+        }, 300); // Wait for fade out
       }
 
       // ── GSAP PIN + ScrollTrigger ──────────────────────────────────────
       window.addEventListener('load', function() {
-        // Click on step rows
-        document.querySelectorAll('.svc-step').forEach(function(el) {
-          el.addEventListener('click', function() {
-            setActive(parseInt(el.dataset.idx));
-          });
-        });
-
-        // Init first
         setActive(0);
 
-        var gsap   = window.gsap;
-        var ST     = window.ScrollTrigger;
-        if (!gsap || !ST) { console.warn('GSAP/ScrollTrigger not found'); return; }
-
+        var gsap = window.gsap;
+        var ST = window.ScrollTrigger;
+        if (!gsap || !ST) return;
+        
         gsap.registerPlugin(ST);
 
         var wrapper = document.getElementById('services-pin-wrapper');
         var panel   = document.getElementById('services-pin-panel');
-        var N       = SERVICES.length; // 9
+        var N       = SERVICES.length; 
 
-        // Create a pin: the panel stays visible for N viewport heights of scroll
         ST.create({
           trigger: wrapper,
           start: 'top top',
-          end: '+=' + (N * 100) + '%',       // 900vh of scroll space
+          end: '+=' + (N * 80) + '%', // Pin duration based on steps
           pin: panel,
           pinSpacing: true,
           anticipatePin: 1,
           onUpdate: function(self) {
-            // Map progress 0→1 across N steps
             var idx = Math.min(N - 1, Math.floor(self.progress * N));
             setActive(idx);
-            // Hide scroll hint after first step
-            var hint = document.getElementById('svc-scroll-hint');
+            
+            // Hide scroll hint
+            var hint = document.getElementById('split-scroll-hint');
             if (hint) hint.style.opacity = self.progress > 0.05 ? '0' : '1';
           }
         });
