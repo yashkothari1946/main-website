@@ -37,8 +37,12 @@ class SpecialHeader extends HTMLElement {
             <li class="relative group">
               <a href="${rel}services.html" class="flex items-center gap-1 hover:text-[#007CC3] transition-colors cursor-pointer nav-link">What We Do <i class="fas fa-chevron-down text-[10px]"></i></a>
               <div class="absolute left-0 top-[calc(100%+10px)] w-60 bg-white border border-gray-100 shadow-2xl rounded-xl p-3 hidden group-hover:block animate-in fade-in slide-in-from-top-2 duration-200 before:content-[''] before:absolute before:-top-[15px] before:left-0 before:w-full before:h-[20px]">
-                <a href="${rel}services.html#digital-branding" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Digital Branding</a>
-                <a href="${rel}services.html#it-services" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">IT & Tech Solutions</a>
+                <a href="${rel}services/website-development.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Website Development</a>
+                <a href="${rel}services/app-development.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">App Development</a>
+                <a href="${rel}services/ai-development.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">AI Development</a>
+                <a href="${rel}services/digital-marketing.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Digital Marketing</a>
+                <a href="${rel}services/graphic-design.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Graphic Design</a>
+                <a href="${rel}services/software-development.html" class="block p-3 hover:bg-slate-50 rounded-lg text-[#0D1B3E] font-black transition-colors">Vybtek Products</a>
               </div>
             </li>
 
@@ -132,8 +136,12 @@ class SpecialHeader extends HTMLElement {
             </button>
             <div class="mobile-accordion-content hidden pl-6 pt-3 space-y-4 text-sm font-medium normal-case text-gray-600 border-l-2 border-gray-100 ml-2 mt-2">
               <a href="${rel}services.html" class="block hover:text-[#007CC3] font-bold">All Services</a>
-              <a href="${rel}services.html#digital-branding" class="block hover:text-[#007CC3]">Digital Branding</a>
-              <a href="${rel}services.html#it-services" class="block hover:text-[#007CC3]">IT &amp; Tech Solutions</a>
+              <a href="${rel}services/website-development.html" class="block hover:text-[#007CC3]">Website Development</a>
+              <a href="${rel}services/app-development.html" class="block hover:text-[#007CC3]">App Development</a>
+              <a href="${rel}services/ai-development.html" class="block hover:text-[#007CC3]">AI Development</a>
+              <a href="${rel}services/digital-marketing.html" class="block hover:text-[#007CC3]">Digital Marketing</a>
+              <a href="${rel}services/graphic-design.html" class="block hover:text-[#007CC3]">Graphic Design</a>
+              <a href="${rel}services/software-development.html" class="block hover:text-[#007CC3]">Vybtek Products</a>
             </div>
           </div>
           <a href="${rel}industries.html" class="block hover:text-[#007CC3] transition-colors py-1">Who We Help</a>
