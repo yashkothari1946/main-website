@@ -425,7 +425,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           gradient: 'linear-gradient(135deg,#f59e0b,#007CC3)',
           bar: 'linear-gradient(90deg,#f59e0b,#007CC3)',
           title: 'Online Reputation Management',
-          desc: 'We generate genuine reviews, manage your Google listing, monitor what's said about you across the web, and respond to criticism with strategy instead of panic, turning scattered opinions into steady trust.',
+          desc: 'We generate genuine reviews, manage your Google listing, monitor what is said about you across the web, and respond to criticism with strategy instead of panic, turning scattered opinions into steady trust.',
           tags: ['Review Generation', 'Google Listing', 'Brand Monitoring', 'ORM']
         },
         {
@@ -438,84 +438,115 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
       ];
 
-      let current = 0;
+      let current = -1;
 
       function buildTags(tags) {
-        return tags.map(t => `<span style="display:inline-block;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid #e2e8f0;color:#64748b;margin-right:6px;margin-bottom:6px;">${t}</span>`).join('');
+        return tags.map(function(t) {
+          return '<span style="display:inline-block;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid #e2e8f0;color:#64748b;margin-right:6px;margin-bottom:6px;">' + t + '</span>';
+        }).join('');
       }
 
-      function updateCard(idx, animate) {
-        if (idx === current && !animate) return;
+      function updateCard(idx) {
+        if (idx === current) return;
         current = idx;
-        const s = services[idx];
-        const pct = Math.round(((idx + 1) / services.length) * 100);
+        var s = services[idx];
+        var pct = Math.round(((idx + 1) / services.length) * 100);
 
-        const card = document.getElementById('service-card');
-        if (animate) {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
-        }
+        var card = document.getElementById('service-card');
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(14px)';
 
-        setTimeout(() => {
+        setTimeout(function() {
           document.getElementById('sc-num').textContent = s.num;
           document.getElementById('sc-icon').style.background = s.gradient;
-          document.getElementById('sc-icon').innerHTML = `<i class="fas ${s.icon}"></i>`;
+          document.getElementById('sc-icon').innerHTML = '<i class="fas ' + s.icon + '"></i>';
           document.getElementById('sc-label').textContent = s.label;
           document.getElementById('sc-title').innerHTML = s.title;
-          document.getElementById('sc-desc').textContent = s.desc.replace(/&amp;/g,'&');
+          document.getElementById('sc-desc').textContent = s.desc;
           document.getElementById('sc-tags').innerHTML = buildTags(s.tags);
           document.getElementById('sc-bar').style.background = s.bar;
-          document.getElementById('sc-progress-label').textContent = `${idx + 1} of ${services.length} Services`;
+          document.getElementById('sc-progress-label').textContent = (idx + 1) + ' of ' + services.length + ' Services';
           document.getElementById('sc-progress-pct').textContent = pct + '%';
           document.getElementById('sc-progress-bar').style.width = pct + '%';
           document.getElementById('sc-progress-bar').style.background = s.bar;
 
-          if (animate) {
-            card.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
-            requestAnimationFrame(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            });
-          }
-
-          // Update right-side active states
-          document.querySelectorAll('.service-trigger').forEach((el, i) => {
-            const circle = el.querySelector('span');
-            const heading = el.querySelector('h4');
-            const desc = el.querySelector('p');
+          // Highlight active trigger row
+          document.querySelectorAll('.service-trigger').forEach(function(el, i) {
+            var circle = el.querySelector('span');
+            var heading = el.querySelector('h4');
+            var desc = el.querySelector('p');
+            if (!circle || !heading || !desc) return;
             if (i === idx) {
               circle.style.borderColor = '#00C8E6';
-              circle.style.color = '#00C8E6';
+              circle.style.color = '#007CC3';
+              circle.style.background = 'rgba(0,200,230,0.08)';
               heading.style.color = '#0D1B3E';
               desc.style.color = '#64748b';
             } else {
               circle.style.borderColor = '#e2e8f0';
               circle.style.color = '#94a3b8';
+              circle.style.background = 'transparent';
               heading.style.color = '#94a3b8';
               desc.style.color = '#cbd5e1';
             }
           });
-        }, animate ? 120 : 0);
+
+          card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          requestAnimationFrame(function() {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          });
+        }, 100);
       }
 
-      // IntersectionObserver for scroll-based updates
-      document.addEventListener('DOMContentLoaded', function() {
-        const items = document.querySelectorAll('.service-trigger');
+      function onScroll() {
+        var items = document.querySelectorAll('.service-trigger');
+        if (!items.length) return;
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-              const idx = parseInt(entry.target.dataset.index);
-              updateCard(idx, true);
-            }
+        var viewportMid = window.innerHeight / 2;
+        var closestIdx = 0;
+        var closestDist = Infinity;
+
+        items.forEach(function(el, i) {
+          var rect = el.getBoundingClientRect();
+          var itemMid = rect.top + rect.height / 2;
+          var dist = Math.abs(itemMid - viewportMid);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closestIdx = i;
+          }
+        });
+
+        updateCard(closestIdx);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Init and handle lenis/load
+      function init() {
+        onScroll();
+        // Also handle Lenis smooth scroll if present
+        if (window.lenis) {
+          window.lenis.on('scroll', onScroll);
+        }
+        // Re-fire after images/layout settle
+        setTimeout(onScroll, 500);
+        setTimeout(onScroll, 1200);
+
+        // Clickable triggers for mobile / extra reliability
+        document.querySelectorAll('.service-trigger').forEach(function(el) {
+          el.addEventListener('click', function() {
+            var idx = parseInt(el.dataset.index);
+            updateCard(idx);
           });
-        }, { threshold: 0.5, rootMargin: '0px 0px -20% 0px' });
+        });
+      }
 
-        items.forEach(item => observer.observe(item));
-
-        // init
-        updateCard(0, false);
-      });
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
     })();
     </script>
   <!-- WHO IT'S FOR -->
