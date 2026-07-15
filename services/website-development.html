@@ -1,548 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K3BXLS28');</script>
-<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Development Services | VybTek</title>
+  <meta name="description" content="Custom website development, UI/UX design, web applications, and maintenance services for growing brands." />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
   
-  <title>Website Development Services India | Custom Websites & Web Apps| Vybtek</title>
-  <meta name="description" content="Build high-performance websites, eCommerce stores, web applications, UI/UX designs, and custom integrations with Vybtek's website development services.">
-  <link rel="canonical" href="https://vybtek.com/services/website-development">
-  <meta property="og:title" content="Website Development Services India | Custom Websites & Web Apps| Vybtek">
-  <meta property="og:description" content="Build high-performance websites, eCommerce stores, web applications, UI/UX designs, and custom integrations with Vybtek's website development services.">
-  <meta name="twitter:title" content="Website Development Services India | Custom Websites & Web Apps| Vybtek">
-  <meta name="twitter:description" content="Build high-performance websites, eCommerce stores, web applications, UI/UX designs, and custom integrations with Vybtek's website development services.">
-  <meta property="og:image" content="https://vybtek.com/images/favicon.png">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://vybtek.com/images/favicon.png">
-  <link rel="icon" type="image/png" href="../images/favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="../style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind via CDN for quick styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   
+  <link rel="stylesheet" href="../style.css" />
+  <script type="module" src="../components/header.js"></script>
+  <script type="module" src="../components/footer.js"></script>
+  
+  <!-- GSAP for Split Pin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-  <script defer src="../headerFooter.js"></script>
 
   <style>
-    /* PRO LEVEL UI SPECIFIC STYLES (Light Aesthetic) */
-    
-    body {
-       background-color: #F8FAFC !important; /* slate-50 */
-       color: #0F172A; /* slate-900 */
-    }
-
-    /* Massive Glow Effect */
-    .hero-glow {
-      position: absolute;
-      top: -20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(0, 124, 195, 0.15) 0%, rgba(0, 200, 230, 0.1) 40%, rgba(255,255,255,0) 70%);
-      filter: blur(80px);
-      z-index: 0;
-      pointer-events: none;
-      animation: pulse-glow 8s infinite alternate;
-    }
-
-    @keyframes pulse-glow {
-       0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
-       100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
-    }
-
-    /* 3D Browser Mockup */
-    .pro-browser {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 124, 195, 0.1);
-      border-radius: 12px;
-      box-shadow: 0 40px 100px -20px rgba(0, 124, 195, 0.15), inset 0 1px 0 rgba(255,255,255,1);
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      transform: perspective(2000px) rotateX(15deg) translateY(40px) scale(0.95);
-      transform-style: preserve-3d;
-      transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-    
-    .pro-browser:hover {
-       transform: perspective(2000px) rotateX(5deg) translateY(20px) scale(1);
-    }
-
-    .browser-header {
-      padding: 12px 16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .browser-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-    .dot-r { background: #FF5F56; }
-    .dot-y { background: #FFBD2E; }
-    .dot-g { background: #27C93F; }
-
-    /* Bento Box Grid Layout */
-    .bento-grid {
-       display: grid;
-       grid-template-columns: repeat(3, 1fr);
-       gap: 24px;
-       margin-top: 80px;
-    }
-    
-    @media (max-width: 768px) {
-       .bento-grid {
-          grid-template-columns: 1fr;
-       }
-       .bento-large {
-          grid-column: span 1 !important;
-       }
-       .bento-card {
-          padding: 24px !important;
-       }
-    }
-
-    .bento-card {
-       background: #ffffff;
-       border: 1px solid rgba(0, 0, 0, 0.05);
-       border-radius: 24px;
-       padding: 40px;
-       position: relative;
-       overflow: hidden;
-       box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
-       transition: all 0.3s ease;
-    }
-
-    .bento-card:hover {
-       border-color: rgba(0, 124, 195, 0.2);
-       box-shadow: 0 20px 50px -10px rgba(0, 124, 195, 0.1);
-       transform: translateY(-5px);
-    }
-
-    .bento-card::before {
-       content: '';
-       position: absolute;
-       top: 0; left: 0; right: 0; height: 1px;
-       background: linear-gradient(90deg, transparent, rgba(0, 124, 195, 0.2), transparent);
-       opacity: 0;
-       transition: opacity 0.3s ease;
-    }
-    .bento-card:hover::before { opacity: 1; }
-
-    .bento-large {
-       grid-column: span 2;
-    }
-
-    /* Typographic updates */
-    .ultra-title {
-       font-size: clamp(3rem, 6vw, 5.5rem);
-       line-height: 1;
-       letter-spacing: -0.05em;
-       background: linear-gradient(to bottom, #0D1B3E 30%, #1044C8 100%);
-       -webkit-background-clip: text;
-       -webkit-text-fill-color: transparent;
-    }
-
-    .glass-pill {
-       display: inline-flex;
-       align-items: center;
-       gap: 8px;
-       padding: 8px 16px;
-       background: rgba(0, 124, 195, 0.05);
-       border: 1px solid rgba(0, 124, 195, 0.1);
-       border-radius: 999px;
-       font-size: 12px;
-       font-weight: 700;
-       letter-spacing: 1px;
-       text-transform: uppercase;
-       color: #007CC3;
-       backdrop-filter: blur(10px);
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": {
-      "@type": "Organization",
-      "name": "Vybtek",
-      "url": "https://vybtek.com"
-    },
-    "name": "Website Development Services India | Custom Websites & Web Apps| Vybtek",
-    "description": "Build high-performance websites, eCommerce stores, web applications, UI/UX designs, and custom integrations with Vybtek's website development services.",
-    "areaServed": "Worldwide"
+  body {
+    font-family: 'Inter', sans-serif;
   }
-  </script>
-</head>
-<body class="overflow-x-hidden bg-slate-50 text-slate-900 selection:bg-[#007CC3] selection:text-white">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .brand-gradient-text {
+    background: linear-gradient(90deg, #00C8E6, #007CC3, #1044C8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .vt-btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #00C8E6, #007CC3);
+    color: #fff; font-weight: 800; padding: 0.85rem 2rem; border-radius: 999px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .vt-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 124, 195, 0.4);
+  }
+  .vt-btn-outline {
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 2px solid #e2e8f0; color: #0D1B3E; font-weight: 800;
+    padding: 0.85rem 2rem; border-radius: 999px; background: transparent;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .vt-btn-outline:hover {
+    border-color: #00C8E6; color: #007CC3;
+  }
   
-  <header>
-     <!-- Modifying header slightly to fit dark mode if needed, but SpecialHeader will inject. Assuming it supports dark backgrounds. -->
-     <special-header></special-header>
-  </header>
+  /* Reveal classes */
+  .reveal-up { opacity: 0; transform: translateY(30px); }
+  .reveal-left { opacity: 0; transform: translateX(-30px); }
+  .reveal-right { opacity: 0; transform: translateX(30px); }
+  .is-revealed { opacity: 1; transform: translate(0,0); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-[#007CC3] selection:text-white">
 
-  <main id="main-content" class="pt-40">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header><special-header></special-header></header>
+
+  <main id="main-content">
     
-    <!-- 1. ULTRA HERO -->
-    <section class="relative min-h-screen flex flex-col items-center pt-10" id="hero-pro">
-      <div class="hero-glow"></div>
-      
-      <!-- Grid background -->
-      <div class="absolute inset-0 bg-[linear-gradient(rgba(0,124,195,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,124,195,0.05)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10"></div>
+    <!-- 1. HERO -->
+    <section class="relative w-full bg-white overflow-hidden" style="min-height:100vh;display:flex;align-items:center;padding:120px 0 64px;">
+      <!-- Ambient blobs -->
+      <div class="absolute pointer-events-none" style="top:-10%;right:-8%;width:520px;height:520px;background:rgba(0,200,230,0.08);border-radius:50%;filter:blur(110px);"></div>
+      <div class="absolute pointer-events-none" style="bottom:-12%;left:-8%;width:400px;height:400px;background:rgba(0,124,195,0.06);border-radius:50%;filter:blur(90px);"></div>
+      <!-- Dot grid -->
+      <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(circle,rgba(0,124,195,0.06) 1px,transparent 1px);background-size:28px 28px;"></div>
 
-      <div class="vt-container text-center relative z-10 w-full flex flex-col items-center">
-        
-        <div class="glass-pill mb-8 reveal-up">
-           <span class="w-2 h-2 rounded-full bg-[#00C8E6] animate-pulse"></span>
-           Next.js 14 Enterprise Architecture
+      <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+          <!-- LEFT -->
+          <div class="reveal-left">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full border border-[#00C8E6]/30" style="background:rgba(0,200,230,0.05);">
+              <span class="w-2 h-2 rounded-full bg-[#00C8E6] animate-pulse"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#007CC3;">Web Engineering</span>
+            </div>
+
+            <!-- H1 -->
+            <h1 class="font-black text-[#0D1B3E]" style="font-size:clamp(1.8rem,3.8vw,3rem);line-height:1.1;">
+              Website Development Services: Where Brands Find Their<br>
+              <span class="brand-gradient-text">Digital Home</span>
+            </h1>
+
+            <p class="text-slate-500 mt-5 leading-relaxed" style="font-size:clamp(0.88rem,1.2vw,1rem);max-width:460px;">
+              For startups, growing businesses, and established brands, we craft custom websites, design intuitive user experiences, build scalable web applications, modernize outdated websites, and keep your digital presence performing at its best.
+            </p>
+
+            <!-- Metrics Strip -->
+            <div class="flex items-center gap-6 mt-8 py-6 border-t border-b border-slate-100">
+              <div>
+                <div class="text-2xl font-black text-[#0D1B3E]">99%</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Uptime</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;height:40px;"></div>
+              <div>
+                <div class="text-2xl font-black text-[#00C8E6]">A+</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Performance</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;height:40px;"></div>
+              <div>
+                <div class="text-2xl font-black text-[#0D1B3E]">100%</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Custom Built</div>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4 mt-8">
+              <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Explore Our Website Plans</a>
+              <a href="../contact.html" class="vt-btn-outline">
+                Book a Free Consultation <i class="fas fa-arrow-right" style="font-size:0.7rem;margin-left:4px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="reveal-right w-full min-w-0">
+            <!-- Main image card -->
+            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200" style="box-shadow:0 24px 60px -12px rgba(0,124,195,0.15);">
+              <!-- Top gradient bar -->
+              <div class="absolute top-0 left-0 right-0 z-10" style="height:3px;background:linear-gradient(90deg,#00C8E6,#007CC3,#1044C8);"></div>
+              <!-- Live badge -->
+              <div class="absolute top-4 right-4 z-20 bg-white rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-md border border-slate-100">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span style="font-size:11px;font-weight:700;color:#0D1B3E;">Live Project Deploying</span>
+              </div>
+              <img
+                src="../images/wd_hero.png"
+                alt="Website Development Services"
+                class="w-full block object-cover"
+                style="aspect-ratio:1/1;max-height:520px;object-position:center;"
+              >
+              <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(0,200,230,0.05) 0%,transparent 60%);"></div>
+            </div>
+
+            <!-- Metric cards below image -->
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <div class="bg-white border border-slate-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#00C8E6] flex-shrink-0" style="background:rgba(0,200,230,0.1);font-size:1rem;"><i class="fas fa-bolt"></i></div>
+                <div>
+                  <div class="font-black text-[#0D1B3E]" style="font-size:1.1rem;">Lightning</div>
+                  <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;">Fast Speeds</div>
+                </div>
+              </div>
+              <div class="rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm" style="background:#0D1B3E;border:1px solid rgba(16,68,200,0.4);">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#00C8E6] flex-shrink-0" style="background:rgba(255,255,255,0.1);font-size:1rem;"><i class="fas fa-mobile-alt"></i></div>
+                <div>
+                  <div class="font-black text-white" style="font-size:1.1rem;">Mobile</div>
+                  <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;">Optimized UI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        <h1 class="ultra-title font-black reveal-up" style="--d:100ms">
-          Website Development Services That Turn Visitors Into <br><span style="background: linear-gradient(135deg, #007CC3 0%, #00C8E6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Customers.</span>
-        </h1>
-        
-        <p class="text-lg md:text-xl text-slate-600 mt-8 max-w-3xl reveal-up font-medium" style="--d:200ms">
-          Whether you're launching a new business, scaling an e-commerce store, building a custom platform, or modernizing an existing website, you need a website that looks professional, performs reliably, and supports your business goals. At Vybtek, we provide website development services that combine strategy, design, functionality, and performance to create websites and web applications built for growth.
-        </p>
-        
-        <div class="mt-12 reveal-up flex justify-center gap-6" style="--d:300ms">
-           <a href="../contact.html" class="bg-[#1044C8] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-[0_10px_30px_rgba(16,68,200,0.3)]">Start Building</a>
-           <a href="#architecture" class="bg-white border border-slate-200 text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition-colors shadow-sm">Explore Stack</a>
-        </div>
-
       </div>
+    </section>
 
-      <!-- 3D BROWSER MOCKUP -->
-      <div class="w-full px-4 mt-32 relative z-20 reveal-up" style="--d:500ms" id="browser-scroll-target">
-         <div class="pro-browser">
-            <div class="browser-header">
-               <div class="browser-dot dot-r"></div>
-               <div class="browser-dot dot-y"></div>
-               <div class="browser-dot dot-g"></div>
-               <div class="mx-auto w-64 h-6 bg-slate-100 rounded text-center flex items-center justify-center text-[10px] text-slate-400 font-mono"><i class="fas fa-lock mr-2 text-[8px]"></i> https://vybtek.com/engine</div>
+    <!-- 2. WHY CHOOSE US -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10">
+        <div class="text-center mb-16 reveal-up">
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-4">Why Choose <span class="text-[#00C8E6]">Us</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#00C8E6]/10 rounded-xl flex items-center justify-center text-[#00C8E6] mb-4"><i class="fas fa-tags"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Affordable</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Premium websites without premium costs.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#007CC3]/10 rounded-xl flex items-center justify-center text-[#007CC3] mb-4"><i class="fas fa-tachometer-alt"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">High Performance</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Optimized for speed and seamless user experience.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#1044C8]/10 rounded-xl flex items-center justify-center text-[#1044C8] mb-4"><i class="fas fa-mobile"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Mobile First</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Designed for today's mobile driven world.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#00C8E6]/10 rounded-xl flex items-center justify-center text-[#00C8E6] mb-4"><i class="fas fa-search"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Search Optimized</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Built with SEO from the very first line of code.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#007CC3]/10 rounded-xl flex items-center justify-center text-[#007CC3] mb-4"><i class="fas fa-filter"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Conversion Focused</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Every page is designed to generate leads and sales.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#1044C8]/10 rounded-xl flex items-center justify-center text-[#1044C8] mb-4"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Reliable</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Stable, secure, and built to grow with your business.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURES SECTION — Fullscreen Split Pin -->
+    <section id="services-pin-wrapper" class="relative" style="background:#0a1020; border-top:1px solid rgba(255,255,255,0.05);">
+      <div id="services-pin-panel" style="height:100vh; display:flex; align-items:center; position:relative; overflow:hidden;">
+        
+        <!-- BG Elements -->
+        <div style="position:absolute; inset:0; background:radial-gradient(circle at 70% 50%, rgba(0,200,230,0.05) 0%, transparent 60%); pointer-events:none;"></div>
+        <div style="position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:30px 30px; pointer-events:none; opacity:0.5;"></div>
+
+        <div class="max-w-[1400px] w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center h-full max-h-[850px] gap-12">
+          
+          <!-- LEFT: Content -->
+          <div class="w-full md:w-[45%] flex flex-col justify-center text-white">
+            
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:2rem;">
+              <span style="width:24px;height:1px;background:#00C8E6;display:inline-block;"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#00C8E6;">Capabilities</span>
+            </div>
+
+            <div id="split-content-wrap" style="transition: opacity 0.4s ease, transform 0.4s ease;">
+              <!-- Dynamic Content -->
+              <div id="split-num" style="font-size:5rem; font-weight:900; line-height:0.9; color:rgba(255,255,255,0.05); margin-bottom:1rem;">01</div>
+              <h3 id="split-title" class="text-3xl lg:text-4xl font-black mb-6 leading-tight text-white">Custom Website Development</h3>
+              <p id="split-desc" class="text-slate-400 text-lg leading-relaxed mb-8">We build e-commerce stores, service-business sites, e-learning platforms and multi-vendor marketplaces, engineer custom headless CMS setups, and craft landing pages.</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mt-auto pt-8 border-t border-slate-800/50 w-full max-w-md">
+              <div class="flex justify-between text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                <span id="split-prog-label">1 of 6 Services</span>
+                <span id="split-prog-pct" class="text-[#00C8E6]">16%</span>
+              </div>
+              <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                <div id="split-prog-bar" class="h-full bg-gradient-to-r from-[#00C8E6] to-[#007CC3] rounded-full transition-all duration-300 w-[16%]"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Image -->
+          <div class="w-full md:w-[55%] h-[50vh] md:h-[80%] relative rounded-[2rem] overflow-hidden shadow-2xl border border-slate-800 group">
+            <!-- Decorative corner accent -->
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#00C8E6]/20 to-transparent z-20"></div>
+            
+            <div class="absolute inset-0 bg-[#0a1020]/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+            
+            <div id="split-img-wrap" class="w-full h-full relative" style="transition: opacity 0.4s ease, transform 0.6s ease-out;">
+              <img id="split-img" src="../images/wd_custom.png" alt="Custom Website Development" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
             </div>
             
-            <!-- Mockup Content -->
-             <div class="p-6 md:p-8 h-[500px] bg-slate-50 rounded-b-xl overflow-hidden relative border-t border-slate-100">
-               <!-- Abstract Dashboard UI inside the browser -->
-               <div class="flex gap-8 h-full">
-                  <!-- Sidebar -->
-                  <div class="w-48 border-r border-slate-200 flex flex-col gap-4 pr-4">
-                     <div class="h-8 w-24 bg-slate-200 rounded mb-4"></div>
-                     <div class="h-4 w-full bg-[#007CC3]/20 rounded"></div>
-                     <div class="h-4 w-3/4 bg-slate-200 rounded"></div>
-                     <div class="h-4 w-5/6 bg-slate-200 rounded"></div>
-                  </div>
-                  <!-- Main -->
-                  <div class="flex-1 flex flex-col gap-6">
-                     <div class="flex justify-between items-center">
-                        <div class="h-10 w-48 bg-slate-200 rounded-lg"></div>
-                        <div class="h-10 w-10 bg-slate-200 rounded-full"></div>
-                     </div>
-                     <div class="flex-1 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 relative overflow-hidden">
-                        <!-- Code visual -->
-                        <div class="absolute inset-0 opacity-60 font-mono text-xs text-[#0D1B3E] p-6">
-                           import { Suspense } from 'react'<br><br>
-                           export default function Loading() {<br>
-                           &nbsp;&nbsp;return &lt;Skeleton /&gt;<br>
-                           }<br><br>
-                           // Edge Cache Status: <span class="text-[#00C8E6] font-bold">HIT</span>
-                        </div>
-                        
-                        <!-- Glowing element in mock -->
-                        <div class="absolute bottom-10 right-10 w-32 h-32 bg-[#00C8E6]/20 rounded-full blur-[40px] animate-pulse"></div>
-                     </div>
-                     <div class="h-32 grid grid-cols-3 gap-6">
-                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm"></div>
-                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm"></div>
-                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm"></div>
-                     </div>
-                  </div>
-               </div>
+            <!-- Scroll Hint -->
+            <div id="split-scroll-hint" class="absolute bottom-6 right-6 z-20 bg-black/50 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-full flex items-center gap-3 transition-opacity duration-500">
+              <i class="fas fa-mouse text-[#00C8E6]"></i> Scroll to explore
             </div>
-         </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-        <!-- 2. CORE SERVICES -->
-    <section class="vt-section relative" id="capabilities">
-       <div class="vt-container">
-          <div class="text-left mb-16 max-w-3xl reveal-up">
-             <div class="glass-pill mb-4"><span class="w-2 h-2 rounded-full bg-[#00C8E6]"></span> Core Capabilities</div>
-             <h2 class="text-4xl md:text-5xl font-black mb-6 text-slate-900">End-to-End <br><span class="text-[#007CC3]">Development Solutions.</span></h2>
-          </div>
+    <!-- Post-pin spacer to transition back to white background smoothly -->
+    <div style="height:120px; background:linear-gradient(to bottom, #0a1020, #ffffff); text-align:center; padding-top:40px;">
+        <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Explore Our Website Plans</a>
+    </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-             
-             <!-- 1. Custom Website Dev -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-xl flex-shrink-0"><i class="fas fa-code"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">Custom Website Development</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Every business has different goals, audiences, and operational requirements. While template-based websites may work for some, many require custom functionality, better scalability, and a tailored user experience.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• E-commerce (Shopify/WooCommerce)</li>
-                     <li>• Corporate & Service-Based Websites</li>
-                     <li>• Educational & E-Learning (LMS)</li>
-                     <li>• Multi-Vendor Marketplaces</li>
-                     <li>• Custom Headless CMS Development</li>
-                     <li>• Conversion-focused Landing Pages</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 2. UI/UX Design -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#007CC3]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:100ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#007CC3]/10 rounded-2xl flex items-center justify-center text-[#007CC3] text-xl flex-shrink-0"><i class="fas fa-layer-group"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">UI/UX Design</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">A website should not only look good but also provide a seamless user experience. Poor navigation, confusing layouts, and inconsistent design can drive visitors away. Effective UI/UX design helps improve engagement, usability, and conversions.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Website UI/UX Design</li>
-                     <li>• Mobile App UI/UX Design</li>
-                     <li>• Web App & Dashboard Design</li>
-                     <li>• SaaS Dashboard Design</li>
-                     <li>• Wireframing & Prototyping</li>
-                     <li>• User flow planning & validation</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 3. Web Application Dev -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#1044C8]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:200ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#1044C8]/10 rounded-2xl flex items-center justify-center text-[#1044C8] text-xl flex-shrink-0"><i class="fas fa-laptop-code"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">Web Application Development</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Many businesses require more than a standard website. Custom web applications help automate processes, improve customer experiences, and streamline internal operations. We build scalable web applications tailored to your specific requirements.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Progressive Web Apps (PWAs)</li>
-                     <li>• Custom CRM & ERP Development</li>
-                     <li>• Admin Dashboard Development</li>
-                     <li>• Custom API Integrations</li>
-                     <li>• Booking System Development</li>
-                     <li>• Secure Client Portals</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 4. Website Maintenance -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-xl flex-shrink-0"><i class="fas fa-tools"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">Website Maintenance & Support</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Launching a website is only the beginning. Regular maintenance, updates, monitoring, and security management are essential for keeping your website secure, fast, and functioning properly without facing compatibility errors.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Hosting & Domain Management</li>
-                     <li>• Seamless Website Migrations</li>
-                     <li>• Security & SSL Management</li>
-                     <li>• Performance Monitoring & Audits</li>
-                     <li>• Bug Fixes & Feature Enhancements</li>
-                     <li>• Ongoing technical support</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 5. Website Redesign -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#007CC3]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:100ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#007CC3]/10 rounded-2xl flex items-center justify-center text-[#007CC3] text-xl flex-shrink-0"><i class="fas fa-paint-brush"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">Website Redesign Services</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">An outdated website can negatively impact user trust, search visibility, and conversion rates. If your website no longer reflects your brand or performs poorly, a redesign can significantly improve results.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Content Structure Improvements</li>
-                     <li>• Modern Interface & UI Updates</li>
-                     <li>• Complete Brand Refresh</li>
-                     <li>• Mobile Responsiveness Fixes</li>
-                     <li>• User Journey Restructuring</li>
-                     <li>• Conversion-focused layouts</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 6. Integrations & Automation -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#1044C8]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:200ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#1044C8]/10 rounded-2xl flex items-center justify-center text-[#1044C8] text-xl flex-shrink-0"><i class="fas fa-plug"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">Integrations & Automation</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Modern businesses rely on multiple tools and platforms to manage sales, marketing, customer service, and operations. Integrations and automation help connect these systems, reduce manual work, and improve efficiency.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• CRM Setup & Integration</li>
-                     <li>• Third-Party API Integrations</li>
-                     <li>• Email Marketing Integration</li>
-                     <li>• WhatsApp & Live Chat Integration</li>
-                     <li>• Booking & Calendar Syncing</li>
-                     <li>• Business Tool Connectivity</li>
-                   </ul>
-                </div>
-             </div>
-
-          </div>
-       </div>
+    <!-- 4. WHO IT'S FOR -->
+    <section class="py-24 bg-[#0D1B3E] text-white border-t border-[#1044C8]/30">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10 text-center reveal-up">
+        <span class="inline-block py-1 px-3 rounded-full border border-[#00C8E6]/30 text-[#00C8E6] text-xs font-bold uppercase tracking-widest mb-6">Who It's For</span>
+        <h2 class="text-4xl md:text-5xl font-black mb-8">Built for Ambitious Brands</h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-10 mx-auto">For startups, growing businesses, and established brands looking to build scalable web applications, modernize outdated websites, and keep your digital presence performing at its best.</p>
+        <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#00C8E6]/20 bg-[#00C8E6] hover:bg-white hover:text-[#0D1B3E] transition-colors border-none">Book a Free Product Demo</a>
+      </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="vt-section py-32 bg-white border-t border-slate-200">
-      <div class="vt-container max-w-4xl mx-auto">
+    <!-- 5. FAQ SECTION -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10">
         <div class="text-center mb-16 reveal-up">
-           <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-4">Frequently Asked <span class="text-[#00C8E6]">Questions</span></h2>
-           <p class="text-slate-600">Common queries regarding our website development and engineering process.</p>
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E]">Frequently Asked <span class="text-[#00C8E6]">Questions</span></h2>
         </div>
 
-        <div class="space-y-4 reveal-up">
-           
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>What types of websites do you develop?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 We develop custom business websites, e-commerce websites, service-based websites, educational platforms, multi-vendor marketplaces, landing pages, custom web applications, client portals, booking systems, and enterprise solutions.
-              </div>
-           </details>
-
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Do you build custom websites or use templates?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 We offer both approaches depending on project requirements. For businesses that need unique functionality, scalability, and brand differentiation, we recommend custom website development tailored to specific goals and workflows.
-              </div>
-           </details>
-
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Will my website be optimized for SEO?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We build websites with SEO best practices in mind, including technical optimization, page speed improvements, responsive design, schema implementation, clean URL structures, and search engine-friendly architecture.
-              </div>
-           </details>
-
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Do you build e-commerce websites?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We develop e-commerce websites for businesses selling products online, including Shopify stores, WooCommerce websites, custom e-commerce solutions, product catalog systems, and online payment integrations.
-              </div>
-           </details>
-
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Can you develop custom web applications?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We build custom web applications such as CRM systems, ERP platforms, admin dashboards, booking systems, customer portals, workflow management tools, and business automation solutions.
-              </div>
-           </details>
-
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Do you provide hosting and domain support?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We can assist with hosting setup, hosting management, domain registration, DNS configuration, SSL installation, website migrations, and ongoing technical support.
-              </div>
-           </details>
-
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Do you provide website maintenance after launch?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We offer ongoing website maintenance services that include updates, security monitoring, performance optimization, backups, bug fixes, and technical support.
-              </div>
-           </details>
-
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Can you migrate my website from another platform?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We provide website migration services for businesses moving between hosting providers, CMS platforms, e-commerce platforms, or custom environments while minimizing downtime and preserving functionality.
-              </div>
-           </details>
-
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">How long does it take to build a website?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Timelines depend on complexity, but most websites are completed within 3-8 weeks from kickoff to launch.</p>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you build on WordPress, Shopify, or custom code?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">We work across WordPress, Shopify, WooCommerce and fully custom-coded builds, choosing the platform that best fits your business needs and goals.</p>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Is hosting and domain included, or do I arrange that separately?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">We can manage hosting and domain setup for you, or work with hosting you already have in place, whichever you prefer.</p>
+            </div>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Will the website be mobile-friendly and fast?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, every website we build is mobile-responsive and optimized for speed, since both directly affect user experience and search rankings.</p>
+            </div>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you provide maintenance after the site goes live?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we offer ongoing maintenance plans covering updates, security, performance monitoring and support after launch.</p>
+            </div>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Can you redesign my existing website instead of building from scratch?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we assess what's working, then redesign and modernize the site without necessarily rebuilding everything from the ground up.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-<!-- 3. FINAL CTA -->
-    <section class="vt-section mt-20 border-t border-white/5">
-      <div class="vt-container relative z-10 text-center">
-        <h2 class="ultra-title text-5xl md:text-7xl !mb-10">Stop <br><span class="text-blue-500">Compromising.</span></h2>
-        <div class="flex justify-center gap-8 mt-10">
-          <a href="../contact.html" class="bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">Start Enterprise Project</a>
-        </div>
+    <!-- 6. FINAL CTA -->
+    <section class="py-32 bg-white text-center border-t border-slate-100">
+      <div class="max-w-[800px] mx-auto px-6 md:px-10 reveal-up">
+        <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-6 leading-tight">Every click tells a story.<br>Every page builds trust.</h2>
+        <p class="text-lg text-slate-500 mb-10">Let's create a website that welcomes, inspires, and converts.</p>
+        <a href="../contact.html" class="vt-btn-primary shadow-xl shadow-[#00C8E6]/20 px-10 py-4 text-lg">Explore Our Website Plans</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-white/10 mt-32"><special-footer></special-footer></footer>
+  <footer><special-footer></special-footer></footer>
+
   <script src="../animations.js"></script>
+  
   <script>
-     // Pro Level GSAP Scroll Magic for the Browser
-     document.addEventListener('DOMContentLoaded', () => {
-        gsap.to(".pro-browser", {
-           rotateX: 0,
-           translateY: -20,
-           scale: 1,
-           scrollTrigger: {
-              trigger: "#browser-scroll-target",
-              start: "top 90%",
-              end: "top 30%",
-              scrub: 1
-           }
+    // FAQ Accordion Logic
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        // Close all others
+        document.querySelectorAll('.faq-content').forEach(c => {
+          c.style.maxHeight = '0px';
+          c.style.opacity = '0';
         });
-     });
+        document.querySelectorAll('.faq-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+        
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+
+    // GSAP Split Pin Logic for Features
+    (function() {
+      var SERVICES = [
+        {
+          num:'01', img:'wd_custom.png',
+          title:'Custom Website Development',
+          desc:'We build e-commerce stores, service-business sites, e-learning platforms and multi-vendor marketplaces, engineer custom headless CMS setups, and craft landing pages, so whatever you sell finds a home built specifically to sell it.'
+        },
+        {
+          num:'02', img:'wd_uiux.png',
+          title:'UI/UX Design',
+          desc:'We design website and mobile app interfaces, shape web apps and dashboards for real use, and wireframe and prototype before a line of code exists, so the experience is right before it is ever built.'
+        },
+        {
+          num:'03', img:'wd_webapp.png',
+          title:'Web Application Development',
+          desc:'We build progressive web apps, custom CRMs and ERPs, admin dashboards, booking systems and client portals, and connect it all through API integration, turning scattered tools into one system that actually works together.'
+        },
+        {
+          num:'04', img:'wd_maintenance.png',
+          title:'Maintenance & Support',
+          desc:'We manage hosting and domains, handle website migrations, keep SSL and security current, monitor performance around the clock, and maintain your website or app so it keeps running while you focus elsewhere.'
+        },
+        {
+          num:'05', img:'wd_redesign.png',
+          title:'Website Redesign',
+          desc:'We restructure content that has lost its clarity, modernize outdated interfaces, refresh the brand where it has grown stale, and fix mobile responsiveness, so an old site starts working like a new one again.'
+        },
+        {
+          num:'06', img:'wd_automation.png',
+          title:'Integrations & Automation',
+          desc:'We connect your CRM, third-party APIs, email marketing tools, WhatsApp and chat, and booking or calendar systems, so your website stops working in isolation and starts working with everything else you run.'
+        }
+      ];
+
+      var current = -1;
+      var isAnimating = false;
+      
+      // Preload images
+      var imgCache = [];
+      window.addEventListener('load', function() {
+        SERVICES.forEach(function(s) {
+          var img = new Image();
+          img.src = '../images/' + s.img;
+          imgCache.push(img);
+        });
+      });
+
+      function setActive(idx) {
+        if (idx === current || isAnimating) return;
+        isAnimating = true;
+        current = idx;
+        var s = SERVICES[idx];
+        var pct = Math.round((idx + 1) / SERVICES.length * 100);
+
+        var cWrap = document.getElementById('split-content-wrap');
+        var iWrap = document.getElementById('split-img-wrap');
+        
+        // Fade out
+        cWrap.style.opacity = '0';
+        cWrap.style.transform = 'translateY(15px)';
+        iWrap.style.opacity = '0';
+        iWrap.style.transform = 'scale(0.98)';
+
+        setTimeout(function() {
+          // Update content
+          document.getElementById('split-num').textContent = s.num;
+          document.getElementById('split-title').innerHTML = s.title;
+          document.getElementById('split-desc').textContent = s.desc;
+          
+          document.getElementById('split-prog-label').textContent = (idx+1) + ' of ' + SERVICES.length + ' Services';
+          document.getElementById('split-prog-pct').textContent = pct + '%';
+          document.getElementById('split-prog-bar').style.width = pct + '%';
+          
+          document.getElementById('split-img').src = '../images/' + s.img;
+
+          // Fade in
+          cWrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          iWrap.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.2,0.8,0.2,1)';
+          
+          requestAnimationFrame(function() {
+            cWrap.style.opacity = '1';
+            cWrap.style.transform = 'translateY(0)';
+            iWrap.style.opacity = '1';
+            iWrap.style.transform = 'scale(1)';
+            setTimeout(function(){ isAnimating = false; }, 400);
+          });
+        }, 300);
+      }
+
+      window.addEventListener('load', function() {
+        setActive(0);
+
+        var gsap = window.gsap;
+        var ST = window.ScrollTrigger;
+        if (!gsap || !ST) return;
+        
+        gsap.registerPlugin(ST);
+
+        var wrapper = document.getElementById('services-pin-wrapper');
+        var panel   = document.getElementById('services-pin-panel');
+        var N       = SERVICES.length; 
+
+        ST.create({
+          trigger: wrapper,
+          start: 'top top',
+          end: '+=' + (N * 80) + '%', 
+          pin: panel,
+          pinSpacing: true,
+          anticipatePin: 1,
+          onUpdate: function(self) {
+            var idx = Math.min(N - 1, Math.floor(self.progress * N));
+            setActive(idx);
+            
+            var hint = document.getElementById('split-scroll-hint');
+            if (hint) hint.style.opacity = self.progress > 0.05 ? '0' : '1';
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
-
