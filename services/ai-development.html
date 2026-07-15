@@ -1,376 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K3BXLS28');</script>
-<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Development Services | VybTek</title>
+  <meta name="description" content="Custom AI development, intelligent chatbots, AI agents, LLM integrations, RAG, and automation services for forward-thinking brands." />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
   
-  <title>AI Development Services India | Chatbots, AI Agents & Automation | Vybtek</title>
-  <meta name="description" content="Build AI chatbots, voice bots, AI agents, workflow automation, RAG systems, and custom AI solutions with Vybtek's AI development services.">
-  <meta name="keywords" content="AI development company, enterprise AI solutions, custom LLM training, predictive analytics, autonomous agents, RAG architecture, machine learning consulting">
-  <link rel="canonical" href="https://vybtek.com/services/ai-development">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <meta property="og:title" content="AI Development Services India | Chatbots, AI Agents & Automation | Vybtek">
-  <meta property="og:description" content="Build AI chatbots, voice bots, AI agents, workflow automation, RAG systems, and custom AI solutions with Vybtek's AI development services.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vybtek.com/services/ai-development">
-  <meta property="og:image" content="https://vybtek.com/images/favicon.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Development Services India | Chatbots, AI Agents & Automation | Vybtek">
-  <meta name="twitter:description" content="Build AI chatbots, voice bots, AI agents, workflow automation, RAG systems, and custom AI solutions with Vybtek's AI development services.">
-  
-  <meta name="twitter:image" content="https://vybtek.com/images/favicon.png">
-  <link rel="icon" type="image/png" href="../images/favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="../style.css" rel="stylesheet" />
+  <!-- Tailwind via CDN for quick styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   
+  <link href="../style.css" rel="stylesheet">
+  <script defer src="../headerFooter.js"></script>
+  
+  <!-- Animation Libraries -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-  <script defer src="../headerFooter.js"></script>
-
-  <!-- SEO Structured Data -->
-  
 
   <style>
-    /* NEURAL NETWORK ANIMATION */
-    .neural-net {
-       position: absolute;
-       inset: 0;
-       z-index: 0;
-       pointer-events: none;
-       opacity: 0.15;
-    }
-    .node {
-       position: absolute;
-       width: 4px;
-       height: 4px;
-       background: #007CC3;
-       border-radius: 50%;
-       box-shadow: 0 0 10px #007CC3;
-       animation: float-node 5s infinite ease-in-out alternate;
-    }
-    .line {
-       position: absolute;
-       background: linear-gradient(90deg, #007CC3, transparent);
-       height: 1px;
-       transform-origin: left center;
-       opacity: 0.5;
-       animation: pulse-line 3s infinite ease-in-out alternate;
-    }
-    @keyframes float-node {
-       0% { transform: translateY(0px) scale(1); }
-       100% { transform: translateY(-20px) scale(1.5); }
-    }
-    @keyframes pulse-line {
-       0% { opacity: 0.2; }
-       100% { opacity: 0.8; }
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": {
-      "@type": "Organization",
-      "name": "Vybtek",
-      "url": "https://vybtek.com"
-    },
-    "name": "AI Development Services India | Chatbots, AI Agents & Automation | Vybtek",
-    "description": "Build AI chatbots, voice bots, AI agents, workflow automation, RAG systems, and custom AI solutions with Vybtek's AI development services.",
-    "areaServed": "Worldwide"
+  body {
+    font-family: 'Inter', sans-serif;
   }
-  </script>
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .brand-gradient-text {
+    background: linear-gradient(90deg, #00C8E6, #007CC3, #1044C8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .vt-btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #00C8E6, #007CC3);
+    color: #fff; font-weight: 800; padding: 0.85rem 2rem; border-radius: 999px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .vt-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 124, 195, 0.4);
+  }
+  .vt-btn-outline {
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 2px solid #e2e8f0; color: #0D1B3E; font-weight: 800;
+    padding: 0.85rem 2rem; border-radius: 999px; background: transparent;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .vt-btn-outline:hover {
+    border-color: #00C8E6; color: #007CC3;
+  }
+  
+  /* Reveal classes */
+  .reveal-up { opacity: 0; transform: translateY(30px); }
+  .reveal-left { opacity: 0; transform: translateX(-30px); }
+  .reveal-right { opacity: 0; transform: translateX(30px); }
+  .is-revealed { opacity: 1; transform: translate(0,0); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-[#007CC3] selection:text-white">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3BXLS28"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header><special-header></special-header></header>
 
-  <main id="main-content" class="pt-32">
+  <main id="main-content">
     
     <!-- 1. HERO -->
-    <section class="vt-section min-h-[90vh] flex items-center relative overflow-hidden bg-white">
-      <!-- Neural Network Background -->
-      <div class="neural-net">
-         <div class="node" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-         <div class="node" style="top: 50%; left: 30%; animation-delay: 1s;"></div>
-         <div class="node" style="top: 80%; left: 15%; animation-delay: 2s;"></div>
-         <div class="node" style="top: 30%; left: 70%; animation-delay: 0.5s;"></div>
-         <div class="node" style="top: 70%; left: 85%; animation-delay: 1.5s;"></div>
-         <div class="node" style="top: 10%; left: 50%; animation-delay: 0.8s;"></div>
-         
-         <div class="line" style="top: 20%; left: 10%; width: 20%; transform: rotate(45deg); animation-delay: 0s;"></div>
-         <div class="line" style="top: 50%; left: 30%; width: 40%; transform: rotate(-15deg); animation-delay: 1s;"></div>
-         <div class="line" style="top: 10%; left: 50%; width: 25%; transform: rotate(30deg); animation-delay: 0.5s;"></div>
-         <div class="line" style="top: 80%; left: 15%; width: 60%; transform: rotate(-10deg); animation-delay: 2s;"></div>
-      </div>
+    <section class="relative w-full bg-white overflow-hidden" style="min-height:100vh;display:flex;align-items:center;padding:120px 0 64px;">
+      <!-- Ambient blobs -->
+      <div class="absolute pointer-events-none" style="top:-10%;right:-8%;width:520px;height:520px;background:rgba(0,200,230,0.08);border-radius:50%;filter:blur(110px);"></div>
+      <div class="absolute pointer-events-none" style="bottom:-12%;left:-8%;width:400px;height:400px;background:rgba(0,124,195,0.06);border-radius:50%;filter:blur(90px);"></div>
+      <!-- Dot grid -->
+      <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(circle,rgba(0,124,195,0.06) 1px,transparent 1px);background-size:28px 28px;"></div>
 
-      <div class="vt-container text-center max-w-5xl mx-auto relative z-10">
-        <div class="inline-flex items-center gap-3 mb-6 reveal-up">
-           <span class="w-8 h-px bg-[#00C8E6]"></span>
-           <span class="text-[10px] font-black uppercase tracking-widest text-[#007CC3]">Artificial Intelligence</span>
-           <span class="w-8 h-px bg-[#00C8E6]"></span>
-        </div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#0D1B3E] reveal-up leading-[1.05]" style="--d:100ms">
-          AI Development Services That Automate Work, <br><span class="brand-gradient-text drop-shadow-sm">Improve Efficiency & Scale Operations</span>
-        </h1>
-        <p class="text-lg md:text-xl text-slate-600 mt-8 max-w-4xl mx-auto reveal-up" style="--d:200ms">
-          At Vybtek, we provide AI development services that help businesses implement practical AI solutions tailored to real business challenges. Whether you want to automate customer support, build AI-powered assistants, integrate large language models into your products, create intelligent workflows, or develop custom AI applications, we help turn AI opportunities into measurable business outcomes.
-        </p>
-        <div class="mt-12 reveal-up flex justify-center gap-6" style="--d:300ms">
-           <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Automate Your Operations</a>
+      <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+          <!-- LEFT -->
+          <div class="reveal-left">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full border border-[#00C8E6]/30" style="background:rgba(0,200,230,0.05);">
+              <span class="w-2 h-2 rounded-full bg-[#00C8E6] animate-pulse"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#007CC3;">Artificial Intelligence</span>
+            </div>
+
+            <!-- H1 -->
+            <h1 class="font-black text-[#0D1B3E]" style="font-size:clamp(1.8rem,3.8vw,3rem);line-height:1.1;">
+              AI Development Services: Where Human Vision Meets <br>
+              <span class="brand-gradient-text">Artificial Intelligence</span>
+            </h1>
+
+            <p class="text-slate-500 mt-5 leading-relaxed" style="font-size:clamp(0.88rem,1.2vw,1rem);max-width:460px;">
+              We create intelligent AI solutions that think, learn, and adapt through custom chatbots, voice bots, AI agents, LLM integration and fine tuning, AI powered automation, RAG solutions, and strategic AI consulting that transforms complex challenges into effortless experiences.
+            </p>
+
+            <!-- Metrics Strip -->
+            <div class="flex items-center gap-6 mt-8 py-6 border-t border-b border-slate-100">
+              <div>
+                <div class="text-2xl font-black text-[#0D1B3E]">100%</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Custom Built</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;height:40px;"></div>
+              <div>
+                <div class="text-2xl font-black text-[#00C8E6]">24/7</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Autonomous</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;height:40px;"></div>
+              <div>
+                <div class="text-2xl font-black text-[#0D1B3E]">10x</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Efficiency</div>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4 mt-8">
+              <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Discuss Your AI Project</a>
+              <a href="../contact.html" class="vt-btn-outline">
+                Book a Free AI Consultation <i class="fas fa-arrow-right" style="font-size:0.7rem;margin-left:4px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="reveal-right w-full min-w-0">
+            <!-- Main image card -->
+            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200" style="box-shadow:0 24px 60px -12px rgba(0,124,195,0.15);">
+              <!-- Top gradient bar -->
+              <div class="absolute top-0 left-0 right-0 z-10" style="height:3px;background:linear-gradient(90deg,#00C8E6,#007CC3,#1044C8);"></div>
+              <!-- Live badge -->
+              <div class="absolute top-4 right-4 z-20 bg-white rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-md border border-slate-100">
+                <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                <span style="font-size:11px;font-weight:700;color:#0D1B3E;">AI System Active</span>
+              </div>
+              <!-- Placeholder image -->
+              <img
+                src="../images/wd_automation.png"
+                alt="AI Development Services"
+                class="w-full block object-cover"
+                style="aspect-ratio:1/1;max-height:520px;object-position:center;"
+              >
+              <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(0,200,230,0.05) 0%,transparent 60%);"></div>
+            </div>
+
+            <!-- Metric cards below image -->
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <div class="bg-white border border-slate-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#00C8E6] flex-shrink-0" style="background:rgba(0,200,230,0.1);font-size:1rem;"><i class="fas fa-brain"></i></div>
+                <div>
+                  <div class="font-black text-[#0D1B3E]" style="font-size:1.1rem;">LLM</div>
+                  <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;">Integration</div>
+                </div>
+              </div>
+              <div class="rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm" style="background:#0D1B3E;border:1px solid rgba(16,68,200,0.4);">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#00C8E6] flex-shrink-0" style="background:rgba(255,255,255,0.1);font-size:1rem;"><i class="fas fa-robot"></i></div>
+                <div>
+                  <div class="font-black text-white" style="font-size:1.1rem;">Agents</div>
+                  <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;">Autonomous</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-        <!-- CAPABILITIES SECTION -->
-    <section class="vt-section bg-slate-50 relative border-t border-slate-200 py-32" id="capabilities">
-       <div class="vt-container">
-          <div class="text-center mb-16 max-w-3xl mx-auto reveal-up">
-             <div class="glass-pill mb-4 inline-block px-4 py-1.5 bg-[#00C8E6]/10 rounded-full text-xs font-bold text-[#007CC3]"><span class="w-2 h-2 rounded-full bg-[#00C8E6] inline-block mr-2"></span> Core Services</div>
-             <h2 class="text-4xl md:text-5xl font-black mb-6 text-[#0D1B3E]">Intelligent <span class="text-[#00C8E6]">Solutions</span></h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-             
-             <!-- 1. AI Chatbot -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-xl flex-shrink-0"><i class="fas fa-comments"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">AI Chatbot Development</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">AI chatbots help businesses handle customer inquiries, capture leads, answer frequently asked questions, and automate support without increasing staffing costs. Modern AI chatbots understand natural language across multiple channels.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Customer Support Chatbots</li>
-                     <li>• WhatsApp Business Chatbots</li>
-                     <li>• Website & Live Chat Bots</li>
-                     <li>• Multilingual Chatbots</li>
-                     <li>• Appointment Booking Bots</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 2. AI Voice Bot -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#007CC3]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:100ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#007CC3]/10 rounded-2xl flex items-center justify-center text-[#007CC3] text-xl flex-shrink-0"><i class="fas fa-microphone-alt"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">AI Voice Bot Development</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Voice AI enables businesses to automate phone interactions while maintaining natural conversations. AI voice bots can answer calls, schedule appointments, and handle repetitive communication tasks without human intervention.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• AI Calling Assistants</li>
-                     <li>• Appointment Reminder Voice Bots</li>
-                     <li>• Customer Support Voice Bots</li>
-                     <li>• AI Receptionist Solutions</li>
-                     <li>• Call Summary & Transcription</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 3. AI Agent Dev -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#1044C8]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:200ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#1044C8]/10 rounded-2xl flex items-center justify-center text-[#1044C8] text-xl flex-shrink-0"><i class="fas fa-robot"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">AI Agent Development</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">AI agents go beyond simple chatbots by performing tasks, making decisions, interacting with systems, and completing workflows autonomously. Businesses use AI agents to automate sales, operations, and internal processes.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• AI Sales Agents</li>
-                     <li>• Customer Support Agents</li>
-                     <li>• Agentic Workflows</li>
-                     <li>• Multi-Agent Systems</li>
-                     <li>• Autonomous AI Agents</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 4. LLM Integration -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-xl flex-shrink-0"><i class="fas fa-network-wired"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">LLM Integration & Fine-Tuning</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Large Language Models (LLMs) have created new opportunities for businesses. Integrating AI into your existing systems allows your business to leverage advanced capabilities without building models from scratch.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• OpenAI, Claude & Gemini Integration</li>
-                     <li>• Custom LLM API Integration</li>
-                     <li>• Custom AI Feature Development</li>
-                     <li>• AI Assistants for SaaS Products</li>
-                     <li>• LLM Fine-Tuning & Customization</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 5. AI-Powered Automation -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#007CC3]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:100ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#007CC3]/10 rounded-2xl flex items-center justify-center text-[#007CC3] text-xl flex-shrink-0"><i class="fas fa-cogs"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">AI-Powered Automation</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Many businesses spend countless hours on repetitive administrative tasks that can be automated. Intelligent automation improves efficiency, reduces human error, and allows teams to focus on higher-value work.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• CRM & Lead Automation</li>
-                     <li>• Data Entry Automation</li>
-                     <li>• Email Workflows & Automation</li>
-                     <li>• AI Workflow Orchestration</li>
-                     <li>• Cross-platform Automation (Zapier/Make)</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 6. RAG Systems -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#1044C8]/30 transition-all duration-300 reveal-up flex flex-col h-full" style="--d:200ms">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#1044C8]/10 rounded-2xl flex items-center justify-center text-[#1044C8] text-xl flex-shrink-0"><i class="fas fa-database"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">RAG & Chat With Your Data</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Retrieval-Augmented Generation (RAG) enables AI systems to securely access and respond using your company's information (documents, manuals, knowledge bases) while maintaining perfect context and accuracy.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 space-y-2">
-                     <li>• Private ChatGPT for Business</li>
-                     <li>• Chat With Internal Documents</li>
-                     <li>• Chat With Knowledge Bases</li>
-                     <li>• Chat With Company Policies</li>
-                     <li>• Chat With Product Manuals</li>
-                   </ul>
-                </div>
-             </div>
-
-             <!-- 7. AI Consulting -->
-             <div class="bg-white border border-slate-200 p-8 rounded-[30px] shadow-sm hover:shadow-xl hover:border-[#00C8E6]/30 transition-all duration-300 reveal-up flex flex-col h-full md:col-span-2 lg:col-span-3">
-                <div class="flex items-center gap-4 mb-6">
-                   <div class="w-14 h-14 bg-[#00C8E6]/10 rounded-2xl flex items-center justify-center text-[#00C8E6] text-xl flex-shrink-0"><i class="fas fa-lightbulb"></i></div>
-                   <h3 class="text-xl font-bold text-[#0D1B3E] leading-tight">AI Consulting & Strategy</h3>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6">Many businesses understand the potential of AI but are unsure where to start. AI implementation requires careful planning, technical evaluation, and business alignment to ensure investments generate real value.</p>
-                <div class="pt-5 border-t border-slate-100">
-                   <p class="text-xs font-bold text-[#0D1B3E] uppercase tracking-wider mb-3">What We Do:</p>
-                   <ul class="text-sm text-slate-500 grid grid-cols-1 md:grid-cols-2 gap-2">
-                     <li>• AI Readiness Assessment</li>
-                     <li>• AI Roadmap Planning</li>
-                     <li>• Strategic Implementation Planning</li>
-                     <li>• AI Feasibility Analysis</li>
-                     <li>• AI Automation Audits</li>
-                   </ul>
-                </div>
-             </div>
-
-          </div>
-       </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="vt-section py-32 bg-white border-t border-slate-200">
-      <div class="vt-container max-w-4xl mx-auto">
+    <!-- 2. WHY CHOOSE US -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10">
         <div class="text-center mb-16 reveal-up">
-           <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-4">Frequently Asked <span class="text-[#00C8E6]">Questions</span></h2>
-           <p class="text-slate-600">Common questions about implementing AI in your business.</p>
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-4">Why Choose <span class="text-[#00C8E6]">Us</span></h2>
         </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#00C8E6]/10 rounded-xl flex items-center justify-center text-[#00C8E6] mb-4"><i class="fas fa-piggy-bank"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Affordable</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Intelligent AI solutions built to match your budget.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#007CC3]/10 rounded-xl flex items-center justify-center text-[#007CC3] mb-4"><i class="fas fa-lightbulb"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Intelligent</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">AI built to think, learn, and improve continuously.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#1044C8]/10 rounded-xl flex items-center justify-center text-[#1044C8] mb-4"><i class="fas fa-tools"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Custom Built</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Tailored AI solutions for your unique workflows.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#00C8E6]/10 rounded-xl flex items-center justify-center text-[#00C8E6] mb-4"><i class="fas fa-expand-arrows-alt"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Scalable</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Technology that grows with your business.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#007CC3]/10 rounded-xl flex items-center justify-center text-[#007CC3] mb-4"><i class="fas fa-lock"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Secure</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Enterprise grade security for your AI systems.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl reveal-up">
+            <div class="w-12 h-12 bg-[#1044C8]/10 rounded-xl flex items-center justify-center text-[#1044C8] mb-4"><i class="fas fa-cogs"></i></div>
+            <h3 class="text-xl font-bold text-[#0D1B3E] mb-2">Automation Ready</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Reduce manual work with intelligent automation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="space-y-4 reveal-up">
-           
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Can you build a custom ChatGPT for my business?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We develop private AI assistants that can securely access your business data, internal documents, knowledge bases, policies, FAQs, and product information to provide accurate responses tailored to your organization.
-              </div>
-           </details>
+    <!-- 3. FEATURES SECTION — Fullscreen Split Pin -->
+    <section id="services-pin-wrapper" class="relative" style="background:#0a1020; border-top:1px solid rgba(255,255,255,0.05);">
+      <div id="services-pin-panel" style="height:100vh; display:flex; align-items:center; position:relative; overflow:hidden;">
+        
+        <!-- BG Elements -->
+        <div style="position:absolute; inset:0; background:radial-gradient(circle at 70% 50%, rgba(0,200,230,0.05) 0%, transparent 60%); pointer-events:none;"></div>
+        <div style="position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:30px 30px; pointer-events:none; opacity:0.5;"></div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>What is RAG and how can it help my business?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 RAG (Retrieval-Augmented Generation) allows AI systems to retrieve information from your business documents, knowledge base, manuals, and internal resources before generating responses. This improves accuracy while keeping answers relevant to your organization's data.
-              </div>
-           </details>
+        <div class="max-w-[1400px] w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center h-full max-h-[850px] gap-12">
+          
+          <!-- LEFT: Content -->
+          <div class="w-full md:w-[45%] flex flex-col justify-center text-white">
+            
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:2rem;">
+              <span style="width:24px;height:1px;background:#00C8E6;display:inline-block;"></span>
+              <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#00C8E6;">Capabilities</span>
+            </div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Can AI access our internal documents and knowledge base?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We can develop secure AI systems that interact with internal documents, SOPs, policies, training materials, product manuals, customer support documentation, and company knowledge repositories.
-              </div>
-           </details>
+            <div id="split-content-wrap" style="transition: opacity 0.4s ease, transform 0.4s ease;">
+              <!-- Dynamic Content -->
+              <div id="split-num" style="font-size:5rem; font-weight:900; line-height:0.9; color:rgba(255,255,255,0.05); margin-bottom:1rem;">01</div>
+              <h3 id="split-title" class="text-3xl lg:text-4xl font-black mb-6 leading-tight text-white">AI Chatbot Development</h3>
+              <p id="split-desc" class="text-slate-400 text-lg leading-relaxed mb-8">We build customer support chatbots, WhatsApp bots, website live chat and multilingual assistants that speak your customers' language, plus appointment booking bots, so conversations happen and resolve, even while your team sleeps.</p>
+            </div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Do you develop WhatsApp AI chatbots?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We build WhatsApp AI chatbots that can answer customer questions, qualify leads, schedule appointments, provide support, automate conversations, and integrate with business systems.
+            <!-- Progress Bar -->
+            <div class="mt-auto pt-8 border-t border-slate-800/50 w-full max-w-md">
+              <div class="flex justify-between text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                <span id="split-prog-label">1 of 7 Services</span>
+                <span id="split-prog-pct" class="text-[#00C8E6]">14%</span>
               </div>
-           </details>
+              <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                <div id="split-prog-bar" class="h-full bg-gradient-to-r from-[#00C8E6] to-[#007CC3] rounded-full transition-all duration-300 w-[14%]"></div>
+              </div>
+            </div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Can you create AI chatbots for websites?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. We develop website chatbots and AI assistants that help businesses provide instant customer support, generate leads, answer FAQs, and improve website engagement.
-              </div>
-           </details>
+          </div>
 
-           <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer">
-              <summary class="flex items-center justify-between font-bold text-[#0D1B3E] text-lg p-6 list-none">
-                 <span>Can AI automate customer support?</span>
-                 <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-[#00C8E6]"></i></span>
-              </summary>
-              <div class="text-slate-600 px-6 pb-6 pt-2 leading-relaxed">
-                 Yes. AI can automate common support requests, answer frequently asked questions, provide product information, assist with troubleshooting, and escalate complex issues to human teams when needed.
-              </div>
-           </details>
+          <!-- RIGHT: Image -->
+          <div class="w-full md:w-[55%] h-[50vh] md:h-[80%] relative rounded-[2rem] overflow-hidden shadow-2xl border border-slate-800 group">
+            <!-- Decorative corner accent -->
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#00C8E6]/20 to-transparent z-20"></div>
+            
+            <div class="absolute inset-0 bg-[#0a1020]/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+            
+            <div id="split-img-wrap" class="w-full h-full relative" style="transition: opacity 0.4s ease, transform 0.6s ease-out;">
+              <img id="split-img" src="../images/dm_whatsapp.png" alt="AI Chatbot Development" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
+            </div>
+            
+            <!-- Scroll Hint -->
+            <div id="split-scroll-hint" class="absolute bottom-6 right-6 z-20 bg-black/50 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-full flex items-center gap-3 transition-opacity duration-500">
+              <i class="fas fa-mouse text-[#00C8E6]"></i> Scroll to explore
+            </div>
+          </div>
 
         </div>
       </div>
     </section>
 
-<!-- 5. FINAL CTA -->
-    <section class="vt-section vt-cta py-32 bg-slate-50">
-      <div class="vt-container relative z-10 text-center">
-        <h2 class="text-5xl md:text-7xl font-black text-[#0D1B3E] mb-8 reveal-up">Scale With <span class="text-[#00C8E6]">Intelligence.</span></h2>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 reveal-up">Don't fall behind. Let's build a custom AI strategy that drastically reduces operational overhead and scales your business.</p>
-        <div class="flex justify-center reveal-up">
-          <a href="../contact.html" class="vt-btn-primary shadow-xl shadow-[#007CC3]/20">Discuss AI Integration</a>
+    <!-- Post-pin spacer to transition back to white background smoothly -->
+    <div style="height:120px; background:linear-gradient(to bottom, #0a1020, #ffffff); text-align:center; padding-top:40px;">
+        <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#007CC3]/20">Discuss Your AI Project</a>
+    </div>
+
+    <!-- 4. WHO IT'S FOR -->
+    <section class="py-24 bg-[#0D1B3E] text-white border-t border-[#1044C8]/30">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10 text-center reveal-up">
+        <span class="inline-block py-1 px-3 rounded-full border border-[#00C8E6]/30 text-[#00C8E6] text-xs font-bold uppercase tracking-widest mb-6">Who It's For</span>
+        <h2 class="text-4xl md:text-5xl font-black mb-8">Built for Ambitious Brands</h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-10 mx-auto">For startups, growing businesses, and established brands ready to leverage artificial intelligence to automate workflows, scale operations, and deliver next-generation experiences.</p>
+        <a href="../contact.html" class="vt-btn-primary shadow-lg shadow-[#00C8E6]/20 bg-[#00C8E6] hover:bg-white hover:text-[#0D1B3E] transition-colors border-none">Book a Free Product Demo</a>
+      </div>
+    </section>
+
+    <!-- 5. FAQ SECTION -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-[900px] mx-auto px-6 md:px-10">
+        <div class="text-center mb-16 reveal-up">
+          <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E]">Frequently Asked <span class="text-[#00C8E6]">Questions</span></h2>
         </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">What can an AI chatbot actually handle for my business?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">It can answer customer questions, book appointments, qualify leads and provide support instantly, handling repetitive conversations so your team can focus on what needs a human.</p>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do you build AI on our existing data, or is it generic?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">We train and fine-tune the AI on your actual business data, documents and processes, so responses are accurate and specific to you, not generic.</p>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">How long does it take to build and deploy an AI solution?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Timelines vary by complexity, but most chatbot or automation projects are live within 3-6 weeks.</p>
+            </div>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Is our business data kept private and secure?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, your data is handled securely and used only to power your specific AI solution, never shared or used elsewhere.</p>
+            </div>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Can AI integrate with tools we already use, like our CRM?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">Yes, we integrate AI directly with your existing CRM, calendar, WhatsApp and other business tools.</p>
+            </div>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="border border-slate-200 rounded-2xl bg-white overflow-hidden reveal-up">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <span class="font-bold text-[#0D1B3E]">Do we need technical knowledge to use or manage the AI once it's built?</span>
+              <i class="fas fa-plus text-[#00C8E6] transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content px-6 py-0 max-h-0 opacity-0 transition-all duration-300">
+              <p class="text-slate-600 pb-5 leading-relaxed">No, we build these to be simple to manage, and provide training and support so your team can run it confidently.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FINAL CTA -->
+    <section class="py-32 bg-white text-center border-t border-slate-100">
+      <div class="max-w-[800px] mx-auto px-6 md:px-10 reveal-up">
+        <h2 class="text-3xl md:text-5xl font-black text-[#0D1B3E] mb-6 leading-tight">The future is written by those who build it today.</h2>
+        <p class="text-lg text-slate-500 mb-10">Let's create intelligent experiences that think, learn, and grow with your business.</p>
+        <a href="../contact.html" class="vt-btn-primary shadow-xl shadow-[#00C8E6]/20 px-10 py-4 text-lg">Discuss Your AI Project</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-slate-200"><special-footer></special-footer></footer>
+  <footer><special-footer></special-footer></footer>
+
   <script src="../animations.js"></script>
+  
+  <script>
+    // FAQ Accordion Logic
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        // Close all others
+        document.querySelectorAll('.faq-content').forEach(c => {
+          c.style.maxHeight = '0px';
+          c.style.opacity = '0';
+        });
+        document.querySelectorAll('.faq-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+        
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+
+    // GSAP Split Pin Logic for Features
+    (function() {
+      var SERVICES = [
+        {
+          num:'01', img:'dm_whatsapp.png', // Temporary placeholder
+          title:'AI Chatbot Development',
+          desc:'We build customer support chatbots, WhatsApp bots, website live chat and multilingual assistants that speak your customers\' language, plus appointment booking bots, so conversations happen and resolve, even while your team sleeps.'
+        },
+        {
+          num:'02', img:'dm_reputation.png', // Temporary placeholder
+          title:'AI Voice Bot Development',
+          desc:'We build AI calling assistants, appointment reminder bots, customer support voice agents and a voice AI receptionist, complete with call summaries and transcription, so every phone conversation is handled and remembered accurately.'
+        },
+        {
+          num:'03', img:'creative_workspace.png', // Temporary placeholder
+          title:'AI Agent Development',
+          desc:'We build sales agents and customer support agents, design agentic workflows and multi-agent systems, and deploy autonomous AI agents that act on their own, turning static software into something that actually gets work done.'
+        },
+        {
+          num:'04', img:'dm_analytics.png', // Temporary placeholder
+          title:'LLM Integration & Fine Tuning',
+          desc:'We integrate OpenAI, Claude and Gemini through custom APIs, build custom AI features and in-product assistants, and fine-tune models on your data, so the AI speaks your business, not a generic script.'
+        },
+        {
+          num:'05', img:'wd_automation.png', // Temporary placeholder
+          title:'AI-Powered Automation',
+          desc:'We automate CRM updates, data entry and email workflows, and connect Airtable, Make and Zapier with AI logic, so repetitive tasks disappear quietly and your team\'s time goes toward work that actually needs a human.'
+        },
+        {
+          num:'06', img:'wd_custom.png', // Temporary placeholder
+          title:'RAG / Chat With Your Data',
+          desc:'We build a private ChatGPT for your business that reads internal documents, your knowledge base, company policies and product manuals, so answers come from what you actually know, not what the internet guesses.'
+        },
+        {
+          num:'07', img:'dm_hero_vybtek.jpg', // Temporary placeholder
+          title:'AI Consulting & Strategy',
+          desc:'We run AI readiness assessments, build practical roadmaps, plan implementation, test feasibility, and audit where automation fits, so AI adoption is a deliberate plan for you, not a guess everyone else is also making.'
+        }
+      ];
+
+      var current = -1;
+      var isAnimating = false;
+      
+      // Preload images
+      var imgCache = [];
+      window.addEventListener('load', function() {
+        SERVICES.forEach(function(s) {
+          var img = new Image();
+          img.src = '../images/' + s.img;
+          imgCache.push(img);
+        });
+      });
+
+      function setActive(idx) {
+        if (idx === current || isAnimating) return;
+        isAnimating = true;
+        current = idx;
+        var s = SERVICES[idx];
+        var pct = Math.round((idx + 1) / SERVICES.length * 100);
+
+        var cWrap = document.getElementById('split-content-wrap');
+        var iWrap = document.getElementById('split-img-wrap');
+        
+        // Fade out
+        cWrap.style.opacity = '0';
+        cWrap.style.transform = 'translateY(15px)';
+        iWrap.style.opacity = '0';
+        iWrap.style.transform = 'scale(0.98)';
+
+        setTimeout(function() {
+          // Update content
+          document.getElementById('split-num').textContent = s.num;
+          document.getElementById('split-title').innerHTML = s.title;
+          document.getElementById('split-desc').textContent = s.desc;
+          
+          document.getElementById('split-prog-label').textContent = (idx+1) + ' of ' + SERVICES.length + ' Services';
+          document.getElementById('split-prog-pct').textContent = pct + '%';
+          document.getElementById('split-prog-bar').style.width = pct + '%';
+          
+          document.getElementById('split-img').src = '../images/' + s.img;
+
+          // Fade in
+          cWrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          iWrap.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.2,0.8,0.2,1)';
+          
+          requestAnimationFrame(function() {
+            cWrap.style.opacity = '1';
+            cWrap.style.transform = 'translateY(0)';
+            iWrap.style.opacity = '1';
+            iWrap.style.transform = 'scale(1)';
+            setTimeout(function(){ isAnimating = false; }, 400);
+          });
+        }, 300);
+      }
+
+      window.addEventListener('load', function() {
+        setActive(0);
+
+        var gsap = window.gsap;
+        var ST = window.ScrollTrigger;
+        if (!gsap || !ST) return;
+        
+        gsap.registerPlugin(ST);
+
+        var wrapper = document.getElementById('services-pin-wrapper');
+        var panel   = document.getElementById('services-pin-panel');
+        var N       = SERVICES.length; 
+
+        ST.create({
+          trigger: wrapper,
+          start: 'top top',
+          end: '+=' + (N * 80) + '%', 
+          pin: panel,
+          pinSpacing: true,
+          anticipatePin: 1,
+          onUpdate: function(self) {
+            var idx = Math.min(N - 1, Math.floor(self.progress * N));
+            setActive(idx);
+            
+            var hint = document.getElementById('split-scroll-hint');
+            if (hint) hint.style.opacity = self.progress > 0.05 ? '0' : '1';
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
-
