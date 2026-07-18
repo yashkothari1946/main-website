@@ -498,7 +498,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!username || !pass) { alert('Please enter username and password.'); return; }
 
       try {
-        const res = await fetch(`${API_BASE}/admin/login`, {
+        const baseUrl = (window.__ENV__ && window.__ENV__.NEXT_PUBLIC_API_URL) || 'https://api.vybtek.com';
+        const res = await fetch(`${baseUrl}/api/manuplast/admin/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, password: pass })
