@@ -1,0 +1,25 @@
+name: VybTek 24/7 Social Media Automation Engine
+
+on:
+  schedule:
+    # 04:30 UTC corresponds to 10:00 AM IST (UTC+5:30) every day
+    - cron: '30 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-social-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify & Report Queue Status
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY || 'EXvKj9N-hO_FicegWEvENJ6I0gjMYBpwpJaxPklXOIS' }}
+        run: |
+          node scripts/vybtek_social_engine.js --status
