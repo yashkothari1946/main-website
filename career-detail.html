@@ -29,6 +29,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="headerFooter.js" defer></script>
+  <script>window.VYBTEK_API=((location.hostname==="localhost"||location.hostname==="127.0.0.1")?"http://localhost:7001":"https://api.vybtek.com")+"/api/vybtek";</script>
 </head>
 <body class="bg-mesh text-slate-800 selection:bg-[#007CC3]/30 overflow-x-hidden">
 <!-- Google Tag Manager (noscript) -->
@@ -130,7 +131,7 @@ Requirements:
 
       let job;
       try {
-        const res = await fetch(`http://localhost:5000/api/vybtek/careers/slug/${slug}`);
+        const res = await fetch(`${window.VYBTEK_API}/careers/slug/${slug}`);
         const data = await res.json();
         job = data.data;
       } catch (err) {
@@ -238,7 +239,7 @@ Requirements:
       formData.append('resume', fileInput.files[0]);
 
       try {
-        const res = await fetch("http://localhost:5000/api/vybtek/applications", {
+        const res = await fetch(window.VYBTEK_API + "/applications", {
           method: 'POST',
           body: formData
         });

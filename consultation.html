@@ -40,7 +40,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     
     <script defer src="headerFooter.js"></script>
-  </head>
+    <script>window.VYBTEK_API=((location.hostname==="localhost"||location.hostname==="127.0.0.1")?"http://localhost:7001":"https://api.vybtek.com")+"/api/vybtek";</script>
+</head>
 
   <body class="bg-mesh overflow-x-hidden text-slate-800">
 <!-- Google Tag Manager (noscript) -->
@@ -434,7 +435,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             callback_time: callbackEl.value || null
           };
 
-          const res = await fetch("http://localhost:5000/api/vybtek/contact", {
+          const res = await fetch(window.VYBTEK_API + "/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)

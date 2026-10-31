@@ -89,6 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 ]
 </script>
+  <script>window.VYBTEK_API=((location.hostname==="localhost"||location.hostname==="127.0.0.1")?"http://localhost:7001":"https://api.vybtek.com")+"/api/vybtek";</script>
 </head>
 <body class="bg-mesh overflow-x-hidden min-h-screen flex flex-col text-slate-800 selection:bg-[#007CC3]/30">
 <!-- Google Tag Manager (noscript) -->
@@ -237,7 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.addEventListener("DOMContentLoaded", async () => {
       let json;
       try {
-        const response = await fetch("http://localhost:5000/api/vybtek/blogs");
+        const response = await fetch(window.VYBTEK_API + "/blogs");
         json = await response.json();
       } catch (err) {
         console.warn("Failed to load articles from API. Loading high-fidelity digital branding fallbacks...", err);
@@ -282,7 +283,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
       const grid = document.getElementById("dynamic-blog-grid");
       
-      if (json.data && json.data.length > 0) {
+      // The page now ships a pre-built static grid (BLOG_GRID_START/END); the dynamic
+      // grid only renders if its container exists. Without this guard the script threw
+      // here and the FAQ section below never loaded.
+      if (!grid) {
+        // static grid stays as is
+      } else if (json.data && json.data.length > 0) {
         // Filter out only published blogs
         const publishedBlogs = json.data.filter(blog => blog.status === 'Published');
         
@@ -344,7 +350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Fetch FAQs
       let fData;
       try {
-        const fRes = await fetch("http://localhost:5000/api/vybtek/faqs?category=Blogs");
+        const fRes = await fetch(window.VYBTEK_API + "/faqs?category=Blogs");
         fData = await fRes.json();
       } catch (err) {
         console.warn("Failed to load blog FAQs from API. Loading offline fallback...", err);

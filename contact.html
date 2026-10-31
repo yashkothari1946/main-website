@@ -89,6 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       opacity: 0.3;
     }
   </style>
+  <script>window.VYBTEK_API=((location.hostname==="localhost"||location.hostname==="127.0.0.1")?"http://localhost:7001":"https://api.vybtek.com")+"/api/vybtek";</script>
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-[#007CC3] selection:text-white">
 <!-- Google Tag Manager (noscript) -->
@@ -220,6 +221,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <label class="vt-label" for="contactPhone">Phone Number <span>*</span></label>
                         <input type="tel" id="contactPhone" required placeholder="+1 (555) 000-0000" class="vt-input">
                       </div>
+                   </div>
+
+                   <!-- Email -->
+                   <div>
+                     <label class="vt-label" for="contactEmail">Email Address <span>*</span></label>
+                     <input type="email" id="contactEmail" required placeholder="you@company.com" class="vt-input">
                    </div>
 
                    <!-- Multiple Selection -->
@@ -404,48 +411,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     document.getElementById("contactForm").addEventListener("submit", async (e) => {
       e.preventDefault();
-      
       const btn = document.getElementById("contactSubmitBtn");
-      const name = document.getElementById("contactName").value;
-      const originalHTML = btn.innerHTML;
-      
-      // Simple validation for checkboxes
-      const checkboxes = document.querySelectorAll('input[name="services"]:checked');
-      if (checkboxes.length === 0) {
+      const msg = document.getElementById("contactStatusMsg");
+      const val = (id) => (document.getElementById(id)?.value || "").trim();
+      const services = [...document.querySelectorAll('input[name="services"]:checked')].map((c) => c.value);
+      if (services.length === 0) {
         alert("Please select at least one service you need help with.");
         return;
       }
-      
+      const name = val("contactName");
+      const originalHTML = btn.innerHTML;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
       btn.disabled = true;
-      btn.classList.add('opacity-70');
+      btn.classList.add("opacity-70");
 
-      // Simulate API call and redirect
-      setTimeout(() => {
-        window.location.href = "thank-you.html?name=" + encodeURIComponent(name);
-      }, 800);
-    });
-        
-        const data = await res.json();
-        
-        msg.classList.remove("hidden");
+      // Backend /api/vybtek/contact takes name, email, phone, subject, message — extra fields go in the message.
+      const message = [
+        "Services: " + services.join(", "),
+        val("contactCompany") && "Company: " + val("contactCompany"),
+        val("contactWebsite") && "Website: " + val("contactWebsite"),
+        val("contactBudget") && "Budget: " + val("contactBudget"),
+        val("contactCallback") && "Preferred callback: " + val("contactCallback"),
+      ].filter(Boolean).join("\n");
+
+      try {
+        const res = await fetch(window.VYBTEK_API + "/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email: val("contactEmail"), phone: val("contactPhone"), subject: "Website enquiry: " + services.join(", "), message }),
+        });
+        const data = await res.json().catch(() => ({}));
         if (res.ok) {
-          msg.className = "text-sm font-bold mt-2 text-emerald-600 bg-emerald-50 px-4 py-3 rounded-xl border border-emerald-200";
-          msg.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Request submitted! We\'ll be in touch within 4 hours.';
-          document.getElementById("contactForm").reset();
-        } else {
+          window.location.href = "thank-you.html?name=" + encodeURIComponent(name);
+          return;
+        }
+        if (msg) {
+          msg.classList.remove("hidden");
           msg.className = "text-sm font-bold mt-2 text-red-600 bg-red-50 px-4 py-3 rounded-xl border border-red-200";
-          msg.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>' + (data.error || "Failed to submit. Please try again.");
+          msg.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>' + (data.error || data.message || "Failed to submit. Please try again.");
         }
       } catch (err) {
-        msg.classList.remove("hidden");
-        msg.className = "text-sm font-bold mt-2 text-red-600 bg-red-50 px-4 py-3 rounded-xl border border-red-200";
-        msg.innerHTML = '<i class="fas fa-wifi mr-2"></i>Network error. Please email us directly at support@vybtek.com';
-      } finally {
-        btn.innerHTML = originalHTML;
-        btn.disabled = false;
-        btn.classList.remove('opacity-70');
-      }}
+        if (msg) {
+          msg.classList.remove("hidden");
+          msg.className = "text-sm font-bold mt-2 text-red-600 bg-red-50 px-4 py-3 rounded-xl border border-red-200";
+          msg.innerHTML = '<i class="fas fa-wifi mr-2"></i>Network error. Please email us directly at support@vybtek.com';
+        }
+      }
+      btn.innerHTML = originalHTML;
+      btn.disabled = false;
+      btn.classList.remove("opacity-70");
     });
   </script>
 </body>

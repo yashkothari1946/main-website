@@ -48,6 +48,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .share-bar a { transition: all 0.2s ease; }
     .share-bar a:hover { transform: scale(1.15); }
   </style>
+  <script>window.VYBTEK_API=((location.hostname==="localhost"||location.hostname==="127.0.0.1")?"http://localhost:7001":"https://api.vybtek.com")+"/api/vybtek";</script>
 </head>
 <body class="bg-mesh overflow-x-hidden min-h-screen flex flex-col text-slate-800 selection:bg-[#007CC3]/30">
 <!-- Google Tag Manager (noscript) -->
@@ -174,7 +175,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       try {
         // Fetch specific blog details
-        const blogRes = await fetch(`http://localhost:5000/api/vybtek/blogs/slug/${slug}`);
+        const blogRes = await fetch(`${window.VYBTEK_API}/blogs/slug/${slug}`);
         if (!blogRes.ok) throw new Error("Blog not found");
         const blogData = await blogRes.json();
         const blog = blogData.data;
@@ -209,7 +210,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     async function fetchRecentBlogs(currentSlug) {
       try {
-        const res = await fetch("http://localhost:5000/api/vybtek/blogs");
+        const res = await fetch(window.VYBTEK_API + "/blogs");
         const data = await res.json();
         
         if (data.data) {
@@ -242,7 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     async function fetchFaqs() {
       try {
-        const res = await fetch("http://localhost:5000/api/vybtek/faqs?category=Blogs");
+        const res = await fetch(window.VYBTEK_API + "/faqs?category=Blogs");
         const data = await res.json();
         
         const faqList = document.getElementById("dynamic-faq-list");
@@ -296,7 +297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       msg.classList.add("hidden");
 
       try {
-        const res = await fetch("http://localhost:5000/api/vybtek/subscribe", {
+        const res = await fetch(window.VYBTEK_API + "/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email })

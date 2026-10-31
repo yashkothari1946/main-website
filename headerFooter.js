@@ -1,6 +1,6 @@
 window.__ENV__ = {
   NEXT_PUBLIC_API_URL: (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
-    ? 'http://localhost:5000'
+    ? 'http://localhost:7001'
     : 'https://api.vybtek.com'
 };
 
