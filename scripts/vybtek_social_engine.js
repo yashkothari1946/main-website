@@ -246,8 +246,8 @@ async function listQueue() {
   console.log('Fetching active Buffer queue for VybTek...');
   const res = await callMcpTool('list_posts', {
     organizationId: CONFIG.orgId,
-    statuses: ['scheduled', 'draft'],
-    pageSize: 15
+    status: ['scheduled'],
+    first: 50
   });
   
   const textContent = res.content.find(c => c.type === 'text')?.text;
@@ -261,75 +261,81 @@ async function listQueue() {
   console.log(`Found ${edges.length} posts in queue:`);
   edges.forEach((p, idx) => {
     const node = p.node || p;
-    console.log(`[${idx + 1}] ID: ${node.id} | Channel: ${node.channelService} | Due: ${node.dueAt} | Text: ${node.text.slice(0, 65)}...`);
+    console.log(`[${idx + 1}] ID: ${node.id} | Channel: ${node.channelService} | Due: ${node.dueAt} | Text: ${node.text?.slice(0, 65)}...`);
   });
-  return edges;
+  return edges.map(p => p.node || p);
 }
 
 // Schedule Multi-Day Automated Content Campaign
 async function scheduleCampaign() {
   console.log('=== Initiating Automated Multi-Day Campaign Scheduling ===\n');
+  const existingPosts = await listQueue();
   const results = [];
 
   for (let i = 0; i < CAMPAIGN_CONTENT.length; i++) {
     const item = CAMPAIGN_CONTENT[i];
     const dayOffset = i + 1; // Start from tomorrow
     const scheduledTime = getNextPeakTime(dayOffset, i % 2 === 1);
+    const targetDateStr = scheduledTime.slice(0, 10);
 
-    console.log(`[Campaign Day ${dayOffset}] Scheduling: "${item.topic}"`);
+    console.log(`[Campaign Day ${dayOffset}] Evaluating: "${item.topic}"`);
     console.log(`Target Time: ${scheduledTime} (IST Peak Engagement Window)`);
 
+    const alreadyScheduledLI = existingPosts.some(p => 
+      (p.channelId === CONFIG.channels.linkedin || p.channelService === 'linkedin') && 
+      (p.dueAt?.startsWith(targetDateStr) || (p.text && p.text.slice(0, 40) === item.linkedinText.slice(0, 40)))
+    );
+
+    const alreadyScheduledFB = existingPosts.some(p => 
+      (p.channelId === CONFIG.channels.facebook || p.channelService === 'facebook') && 
+      (p.dueAt?.startsWith(targetDateStr) || (p.text && p.text.slice(0, 40) === item.facebookText.slice(0, 40)))
+    );
+
     // 1. LinkedIn Post
-    try {
-      const liRes = await callMcpTool('create_post', {
-        channelId: CONFIG.channels.linkedin,
-        schedulingType: 'automatic',
-        mode: 'customScheduled',
-        dueAt: scheduledTime,
-        text: item.linkedinText,
-        assets: [
-          {
-            image: {
-              url: item.image,
-              metadata: { altText: item.altText }
-            }
-          }
-        ]
-      });
-      console.log(`  ✓ LinkedIn Post Scheduled (ID: ${JSON.parse(liRes.content[0].text).id})`);
-      results.push({ channel: 'linkedin', topic: item.topic, status: 'scheduled', time: scheduledTime });
-    } catch (err) {
-      console.error(`  ✗ Error scheduling LinkedIn: ${err.message}`);
+    if (!alreadyScheduledLI) {
+      try {
+        const liRes = await callMcpTool('create_post', {
+          channelId: CONFIG.channels.linkedin,
+          schedulingType: 'automatic',
+          mode: 'customScheduled',
+          dueAt: scheduledTime,
+          text: item.linkedinText,
+          assets: [{ image: { url: item.image, metadata: { altText: item.altText } } }]
+        });
+        console.log(`  ✓ LinkedIn Post Scheduled (ID: ${JSON.parse(liRes.content[0].text).id})`);
+        results.push({ channel: 'linkedin', topic: item.topic, status: 'scheduled', time: scheduledTime });
+      } catch (err) {
+        console.error(`  ✗ Error scheduling LinkedIn: ${err.message}`);
+      }
+    } else {
+      console.log(`  ↷ LinkedIn Post skipped (Already scheduled for ${targetDateStr})`);
     }
 
     // 2. Facebook Post
-    try {
-      const fbRes = await callMcpTool('create_post', {
-        channelId: CONFIG.channels.facebook,
-        schedulingType: 'automatic',
-        mode: 'customScheduled',
-        dueAt: scheduledTime,
-        text: item.facebookText,
-        metadata: { facebook: { type: 'post' } },
-        assets: [
-          {
-            image: {
-              url: item.image,
-              metadata: { altText: item.altText }
-            }
-          }
-        ]
-      });
-      console.log(`  ✓ Facebook Post Scheduled (ID: ${JSON.parse(fbRes.content[0].text).id})`);
-      results.push({ channel: 'facebook', topic: item.topic, status: 'scheduled', time: scheduledTime });
-    } catch (err) {
-      console.error(`  ✗ Error scheduling Facebook: ${err.message}`);
+    if (!alreadyScheduledFB) {
+      try {
+        const fbRes = await callMcpTool('create_post', {
+          channelId: CONFIG.channels.facebook,
+          schedulingType: 'automatic',
+          mode: 'customScheduled',
+          dueAt: scheduledTime,
+          text: item.facebookText,
+          metadata: { facebook: { type: 'post' } },
+          assets: [{ image: { url: item.image, metadata: { altText: item.altText } } }]
+        });
+        console.log(`  ✓ Facebook Post Scheduled (ID: ${JSON.parse(fbRes.content[0].text).id})`);
+        results.push({ channel: 'facebook', topic: item.topic, status: 'scheduled', time: scheduledTime });
+      } catch (err) {
+        console.error(`  ✗ Error scheduling Facebook: ${err.message}`);
+      }
+    } else {
+      console.log(`  ↷ Facebook Post skipped (Already scheduled for ${targetDateStr})`);
     }
 
     console.log('--------------------------------------------------');
   }
 
-  console.log(`\nCampaign Scheduling Complete. ${results.length} posts queued.`);
+  console.log(`\nCampaign Scheduling Complete. ${results.length} new posts queued.`);
   return results;
 }
 
